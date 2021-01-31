@@ -14,53 +14,22 @@
     <h1></h1>
     <h1>welcome to<br>nomad's land</h1>
     <img src="images/jimmy-nomad-logo.jpeg" alt="jimmy nomad logo: bearded man walking">
-    <div id="promo">
-        <p>
-            HELP US EXPAND!<BR>
-            if you<br>
-            1. join<br>
-            2. review 10+ locations you've visited within the past 5 years<br>
-            3. recruit 3+ more people<br>
-            you'll get:<br>
-            1. free membership for life<br>
-            2. 40% off all gear for life<br>
-            3. this shirt<br>
-            <img id="tshirt" src="images/tshirt.jpg" alt="tshirt that says i have a tiny penis lol">
 
-        </p>
-    </div>
     <div id="login">
-        <h1>login<br>if you already have an account</h1>
-        <form id="login" action="accountLogin.html">
-            <input type="text" name="username" placeholder="my username is" class="fields"><br><br>
-            <input type="password" id="psw" placeholder="my password is" class="fields"><br><br>
+        <h1>login</h1>
+        <form id="login" action="/login" method="post">
+            <input type="text" name="username" placeholder="my username is" class="fields" required><br><br>
+            <input type="password" name="psw" placeholder="my password is" class="fields" required><br><br>
             <input type="submit" name="loginButton" value="let me in">
         </form>
     </div>
     <div>
-        <h1>if not<br>register</h2>
-            <form id="register" action="accountLogin.html">
-                <input type="text" name="name" placeholder="my friends call me" required><br><br>
-                <input type="text" name="email" placeholder="my email is" required><br><br>
-                <input type="tel" name="phoneNumber" placeholder="my phone number is" required><br><br>
-                <input type="text" name="username" placeholder="my username will be" class="fields" required><br><br>
-                <input type="password" name="name" placeholder="my password will be" class="fields" required><br><br>
-                <input type="submit" name="registerButton" value="sign me up">
-            </form>
+        <h1>
+            or<br><a href="/signup">sign up</a><br>
+            <a href="javascript:void(0)" onclick="instagramLogin();">login using instagram</a>
+        </h1>
+
     </div>
-    <div>
-        <h1>or login with instagram</h3>
-            <!-- Display login status -->
-            <div id="status"></div>
-
-            <!-- Instagram login or logout button -->
-            <a href="javascript:void(0)" onclick="instagramLogin();">Login with Instagram</a>
-
-            <!-- Display user profile data -->
-            <div id="userData"></div>
-    </div>
-
-
 
 </body>
 

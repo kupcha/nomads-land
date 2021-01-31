@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.post('/login', (req, res) => {
+app.post('/', (req, res) => {
     const { psw } = req.body;
     if (psw == 'bettercallmecraig') {
         res.cookie('betaAccess', 'Y', { maxAge: 900000, httpOnly: true });
@@ -26,6 +26,11 @@ app.post('/login', (req, res) => {
         res.render('home');
     }
 });
+
+app.post('/login', (req, res) => {
+    const {username , psw } = req.body;
+    res.send(`${username} : ${psw}`);
+})
 
 
 const port = process.env.port || 3000;
