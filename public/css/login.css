@@ -1,0 +1,37 @@
+html {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background-color: white;
+    display: block;
+    text-align:center;
+    background-color:black;
+  }
+
+#login{
+      display:inline-block;
+  }
+#tshirt{
+  width:150px;
+}
+h1{
+  text-shadow: 1px 1px 1px grey;
+}
+p{
+  font-size: 20px;
+}
+h1, h2, h3{
+    font-size:35px;
+    color:black;
+}
+
+body {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    border: 5px solid black;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 600px;
+  }
