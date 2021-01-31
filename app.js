@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/accountLogin', (req, res) => {
-    res.render.apply('accountLogin');
+    res.render('accountLogin');
 })
 
 
