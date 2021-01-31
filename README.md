@@ -1,1 +1,1 @@
-# travel web app nomadsland created for jimmynomad
+# nomads-land
