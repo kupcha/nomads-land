@@ -14,26 +14,19 @@ app.use(cookieParser());
 
 
 app.get('/', (req, res) => {
+    if (req.cookie){
+        if (req.cookie.access == 1){
+            res.render('login');
+        }
+    }
     res.render('home');
 });
 
-function validateCookies(req, res, next) {
-    const { cookies } = req;
-    if (cookies.access == 'Y'){
-        console.log('hell yeah');
-        next();
-    }
-    else{
-        res.status(403).send({msg: 'wrong'});
-    }
-
-
-}
 
 app.post('/', (req, res) => {
     const { psw } = req.body;
     if (psw == 'bettercallmecraig') {
-        res.cookie('access', 'Y', { maxAge: 900000, httpOnly: true });
+        res.cookie('access', 1, { maxAge: 900000, httpOnly: true });
         res.render('login');
     } else {
         res.render('home');
