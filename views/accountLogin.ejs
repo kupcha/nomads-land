@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>jimmynomad: login</title>
-        <link href="css/login.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">    
-    </head>
-    <body>
-        <h1>welcome to<br>jimmy nomad</h1>
-        <img src="images/jimmy-nomad-logo.jpeg" alt="jimmy nomad logo: bearded man walking">
-        <div id="promo">
-            <p>
-                HELP US EXPAND!<BR>
-                if you<br>
-                1.  join<br>
-                2. review 10+ locations you've visited within the past 5 years<br>
-                3. recruit 3+ more people<br>
-                you'll get:<br>
-                1. free membership for life<br>
-                2. 40% off all gear for life<br>
-                3. this shirt<br>
-                <img id="tshirt" src="images/tshirt.jpg" alt="tshirt that says i have a tiny penis lol">
 
-            </p>
-        </div>
-        <div id="login">
-            <h1>login<br>if you already have an account</h1>
-            <form id="login" action="accountLogin.html">
-                <input type="text" name="username" placeholder="my username is" class="fields"><br><br>
-                <input type="password" id="psw" placeholder="my password is" class="fields"><br><br>
-                <input type="submit" name="loginButton" value="let me in">
-            </form>
-        </div>
-        <div>
-            <h1>if not<br>register</h2>
+<head>
+    <meta charset="utf-8">
+    <title>nomadsland: login</title>
+    <link href="css/login.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <h1>welcome to<br>jimmy nomad</h1>
+    <img src="images/jimmy-nomad-logo.jpeg" alt="jimmy nomad logo: bearded man walking">
+    <div id="promo">
+        <p>
+            HELP US EXPAND!<BR>
+            if you<br>
+            1. join<br>
+            2. review 10+ locations you've visited within the past 5 years<br>
+            3. recruit 3+ more people<br>
+            you'll get:<br>
+            1. free membership for life<br>
+            2. 40% off all gear for life<br>
+            3. this shirt<br>
+            <img id="tshirt" src="images/tshirt.jpg" alt="tshirt that says i have a tiny penis lol">
+
+        </p>
+    </div>
+    <div id="login">
+        <h1>login<br>if you already have an account</h1>
+        <form id="login" action="accountLogin.html">
+            <input type="text" name="username" placeholder="my username is" class="fields"><br><br>
+            <input type="password" id="psw" placeholder="my password is" class="fields"><br><br>
+            <input type="submit" name="loginButton" value="let me in">
+        </form>
+    </div>
+    <div>
+        <h1>if not<br>register</h2>
             <form id="register" action="accountLogin.html">
                 <input type="text" name="name" placeholder="my friends call me" required><br><br>
                 <input type="text" name="email" placeholder="my email is" required><br><br>
@@ -43,20 +46,21 @@
                 <input type="password" name="name" placeholder="my password will be" class="fields" required><br><br>
                 <input type="submit" name="registerButton" value="sign me up">
             </form>
-        </div>
-        <div>
-            <h1>or login with instagram</h3>
+    </div>
+    <div>
+        <h1>or login with instagram</h3>
             <!-- Display login status -->
-<div id="status"></div>
+            <div id="status"></div>
 
-<!-- Instagram login or logout button -->
-<a href="javascript:void(0)" onclick="instagramLogin();">Login with Instagram</a>
+            <!-- Instagram login or logout button -->
+            <a href="javascript:void(0)" onclick="instagramLogin();">Login with Instagram</a>
 
-<!-- Display user profile data -->
-<div id="userData"></div>
-        </div>
+            <!-- Display user profile data -->
+            <div id="userData"></div>
+    </div>
 
 
 
-    </body>
+</body>
+
 </html>
