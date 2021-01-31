@@ -16,12 +16,12 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.post('/accountLogin', (req, res) => {
+app.post('/login', (req, res) => {
     const { psw } = req.body;
     if (psw == 'bettercallmecraig') {
         res.cookie('betaAccess', 'Y', { maxAge: 900000, httpOnly: true });
         console.log('login cookie created');
-        res.render('accountLogin');
+        res.render('login');
     } else {
         res.render('home');
     }
