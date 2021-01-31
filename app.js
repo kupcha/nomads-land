@@ -13,6 +13,10 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/accountLogin', (req, res) => {
+    res.render.apply('accountLogin');
+})
+
 
 const port = process.env.port || 3000;
 app.listen(port, () => {
