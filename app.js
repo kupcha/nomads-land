@@ -1,7 +1,8 @@
 const express = require('express');
-const app = express();
 const path = require('path');
-const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser'); 
+const app = express();
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
@@ -16,11 +17,23 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+function validateCookies(req, res, next) {
+    const { cookies } = req;
+    if (cookies.access == 'Y'){
+        console.log('hell yeah');
+        next();
+    }
+    else{
+        res.status(403).send({msg: 'wrong'});
+    }
+
+
+}
+
 app.post('/', (req, res) => {
     const { psw } = req.body;
     if (psw == 'bettercallmecraig') {
-        res.cookie('betaAccess', 'Y', { maxAge: 900000, httpOnly: true });
-        console.log('login cookie created');
+        res.cookie('access', 'Y', { maxAge: 900000, httpOnly: true });
         res.render('login');
     } else {
         res.render('home');
