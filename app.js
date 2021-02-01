@@ -25,10 +25,14 @@ app.post('/', (req, res) => {
 
 app.get('/', (req, res) => {
     if (req.cookies.access){
-        res.render('login');
+        res.redirect('login');
     }
     res.render('home');
 });
+
+app.get('/login', (req, res) => {
+    res.render('login');
+})
 
 app.post('/login', (req, res) => {
     const {username , psw } = req.body;
