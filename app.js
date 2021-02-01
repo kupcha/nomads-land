@@ -24,7 +24,7 @@ app.post('/', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    if (req.cookie.access){
+    if (req.cookies.access){
         res.render('login');
     }
     res.render('home');
