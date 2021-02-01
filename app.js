@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.post('/', (req, res) => {
     const { psw } = req.body;
     if (psw == 'bettercallmecraig') {
-        res.cookie('access', 1, { maxAge: 900000 });
+        res.cookie('access', 1, { maxAge: (3600000 * 24 * 30) });
         res.render('login');
     } else {
         res.render('home');
