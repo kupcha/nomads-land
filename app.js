@@ -13,24 +13,21 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-app.get('/', (req, res) => {
-    if (req.cookie){
-        if (req.cookie.access == 1){
-            res.render('login');
-        }
-    }
-    res.render('home');
-});
-
-
 app.post('/', (req, res) => {
     const { psw } = req.body;
     if (psw == 'bettercallmecraig') {
-        res.cookie('access', 1, { maxAge: 900000, httpOnly: true });
+        res.cookie('access', 1, { maxAge: 900000 });
         res.render('login');
     } else {
         res.render('home');
     }
+});
+
+app.get('/', (req, res) => {
+    if (req.cookie.access){
+        res.render('login');
+    }
+    res.render('home');
 });
 
 app.post('/login', (req, res) => {
