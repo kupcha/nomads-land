@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
+const User = require('./models/user');
 mongoose.connect('mongodb://localhost:27017/nomadsland', {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
     console.log("connected to mongodb")
@@ -11,38 +12,6 @@ mongoose.connect('mongodb://localhost:27017/nomadsland', {useNewUrlParser: true,
     console.log(err)
 });
 const app = express();
-
-// schema for mongoDB to describe a single user
-const userSchema = new mongoose.Schema({
-    username:{
-        type: String,
-        required: true,
-        maxlength: 20
-    },
-    phone:{
-        type: Number,
-        required: true,
-        maxlength: 15
-    },
-    password:{
-        type: String,
-        required: true,
-        maxlength: 15
-    },
-
-    elevation:{
-        type:Number,
-        required: true,
-        default: 0
-    },
-    referrals:{
-        type: Number,
-        required: true,
-        default: 0
-
-    }
-});
-const User = mongoose.model('user', userSchema);
 
 
 app.set('view engine', 'ejs');
@@ -79,6 +48,7 @@ app.post('/login', async (req, res) => {
     const {username , psw } = req.body;
     const user = await User.find({});
     console.log(user);
+    res.send(user);
 })
 
 
