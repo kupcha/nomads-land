@@ -19,17 +19,17 @@ const userSchema = new mongoose.Schema({
         required: true,
         maxlength: 20
     },
-
-    password:{
-        type: String,
-        required: true,
-        maxlength: 15
-    },
     phone:{
         type: Number,
         required: true,
         maxlength: 15
     },
+    password:{
+        type: String,
+        required: true,
+        maxlength: 15
+    },
+
     elevation:{
         type:Number,
         required: true,
@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema({
 
     }
 });
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('user', userSchema);
 
 
 app.set('view engine', 'ejs');
@@ -75,9 +75,10 @@ app.get('/login', (req, res) => {
     res.render('login');
 })
 
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
     const {username , psw } = req.body;
-    res.send(username + ":" + psw);
+    const user = await User.find({});
+    console.log(user);
 })
 
 
