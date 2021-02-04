@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>nomadsland: signup</title>
+    
+    <link rel="stylesheet" href="\css\signup.css">
+    <script src ="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <h1>
+        registration
+      </h1>
+      <div>
+        <img src="images/jimmy-nomad-logo.jpeg" alt="jimmy nomad logo: bearded man walking">
+        <form id="signup" action="/signup" method="post">
+            <input type="text" name="username" placeholder="my username will be" class="fields" required><br><br>
+            <input type="password" name="psw" placeholder="my password will be" class="fields" required><br><br>
+            <input type="password" name="pswConfirm" placeholder="its definitely my password" class="fields" required><br><br>
+            <input type="phone" name="phone" placeholder="my phone number is" class="fields" required><br><br>
+            <input type="submit" name="loginButton" value="sign me up">
+        </form>
+      </div>
+</body>
+</html>

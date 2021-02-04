@@ -1,17 +1,17 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const mongoose = require('mongoose');
-const User = require('./models/user');
-mongoose.connect('mongodb://localhost:27017/nomadsland', {useNewUrlParser: true, useUnifiedTopology: true})
-.then(() => {
-    console.log("connected to mongodb")
-})
-.catch(err => {
-    console.log("error connecting to mongodb")
-    console.log(err)
-});
+
 const app = express();
+
+const mongoose = require('mongoose');
+const User = require('./models/user.js');
+const { nextTick } = require('process');
+const mongoDB = "mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.mongodb.net/nomadsland?retryWrites=true&w=majority";
+mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 
 app.set('view engine', 'ejs');
@@ -29,31 +29,33 @@ app.post('/', (req, res) => {
         res.cookie('access', 1, { maxAge: (3600000 * 24 * 30) });
         res.redirect('login');
     } else {
-        res.redirect('home');
+        res.render('home');
     }
 });
 
 app.get('/', (req, res) => {
     if (req.cookies.access){
         res.redirect('login');
+    }else{
+        res.render('home');
     }
-    res.render('home');
 });
 
 app.get('/login', (req, res) => {
-    res.render('login');
-})
-
-app.post('/login', async (req, res) => {
-    const {username , psw } = req.body;
-    const user = await User.find({});
-    console.log(user);
-    res.send(user);
+    res.render("login");
 })
 
 
+app.get('/signup', (req, res) => {
+    res.render('signup');
+})
 
-const port = process.env.port || 3001;
+app.post('/signup', (req, res) => {
+    const{ username, psw, phone } = req.body;
+    res.send(username + " : " + psw )
+})
+
+const port = process.env.port || 3000;
 app.listen(port, () => {
     console.log("sup craig");
 });
