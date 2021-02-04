@@ -36,7 +36,7 @@ app.get('/login', (req, res) => {
 
 app.post('/login', (req, res) => {
     const {username , psw } = req.body;
-    await MyModel.find({name:username, password:psw}).exec()
+    await User.find({name:username, password:psw}).exec()
     .then(user => console.log(user));
 })
 
