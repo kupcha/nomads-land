@@ -1,7 +1,48 @@
 const express = require('express');
 const path = require('path');
-const cookieParser = require('cookie-parser'); 
+const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/nomadsland', {useNewUrlParser: true, useUnifiedTopology: true})
+.then(() => {
+    console.log("connected to mongodb")
+})
+.catch(err => {
+    console.log("error connecting to mongodb")
+    console.log(err)
+});
 const app = express();
+
+// schema for mongoDB to describe a single user
+const userSchema = new mongoose.Schema({
+    username:{
+        type: String,
+        required: true,
+        maxlength: 20
+    },
+
+    password:{
+        type: String,
+        required: true,
+        maxlength: 15
+    },
+    phone:{
+        type: Number,
+        required: true,
+        maxlength: 15
+    },
+    elevation:{
+        type:Number,
+        required: true,
+        default: 0
+    },
+    referrals:{
+        type: Number,
+        required: true,
+        default: 0
+
+    }
+});
+const User = mongoose.model('User', userSchema);
 
 
 app.set('view engine', 'ejs');
