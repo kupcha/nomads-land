@@ -1,46 +1,35 @@
-
- h1 {    
-    margin: 0;
-    padding: 0 0;
-    color: black;
-    text-shadow: 1px 1px 1px grey;
-  }
-  html {
-    font-size: 16px;
+html {
     font-family: 'Alegreya Sans SC', sans-serif;
-    background-color: black;
-  }
-  
-  body {
-    width: 600px;
-    margin: 0 auto;
     background-color: white;
-    padding: 0 20px 20px 20px;
-    border: 5px solid black;
+    display: block;
+    text-align:center;
+    background-color:black;
   }
-  
+
+#login{
+      display:inline-block;
+  }
+#tshirt{
+  width:150px;
+}
+h1{
+  text-shadow: 1px 1px 1px grey;
+}
+p{
+  font-size: 20px;
+}
+
+
+body {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    border: 5px solid black;
+    padding: 0 20px 20px 20px;
+  }
+
   img {
     display: block;
     margin: 0 auto;
-    width: 300px;
-  }
-  div{
-        margin: auto;
-        width: 50%;
-        padding: 10px;
-  }
-  
-  input:invalid {
-    border: 2px dashed red;
-  }
-  
-  input:valid {
-    border: 2px solid black;
-  }
-  
-  form{
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    align-content: center;
+    width: 600px;
   }
