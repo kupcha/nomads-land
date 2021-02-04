@@ -36,8 +36,10 @@ app.get('/login', (req, res) => {
 
 app.post('/login', (req, res) => {
     const {username , psw } = req.body;
-    res.send(`${username} : ${psw}`);
+    await MyModel.find({name:username, password:psw}).exec()
+    .then(user => console.log(user));
 })
+
 
 
 const port = process.env.port || 3000;
