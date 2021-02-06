@@ -17,7 +17,7 @@ const { auth } = require('express-openid-connect');
 app.use(
   auth({
     auth0Logout: true,
-    authRequired: true,
+    authRequired: false,
     issuerBaseURL: process.env.ISSUER_BASE_URL,
     baseURL: process.env.BASE_URL,
     clientID: process.env.CLIENT_ID,
