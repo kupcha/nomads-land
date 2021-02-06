@@ -3,6 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 
 const app = express();
+const dotenv = require('dotenv').config();
 
 const mongoose = require('mongoose');
 const User = require('./models/user.js');
@@ -12,7 +13,18 @@ mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-
+const { auth } = require('express-openid-connect');
+app.use(
+  auth({
+    auth0Logout: true,
+    authRequired: true,
+    issuerBaseURL: process.env.ISSUER_BASE_URL,
+    baseURL: process.env.BASE_URL,
+    clientID: process.env.CLIENT_ID,
+    secret: process.env.SECRET,
+    idpLogout: true,
+  })
+);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
@@ -55,8 +67,12 @@ app.post('/signup', (req, res) => {
     res.send(username + " : " + psw )
 })
 
+app.get('/logo', (req, res) => {
+    res.render('logo');
+})
+
 const port = process.env.port || 3000;
 app.listen(port, () => {
-    console.log("sup craig");
+    console.log("app listening....");
 });
 
