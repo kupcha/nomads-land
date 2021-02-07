@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser('KzUgcUH58ekEZE19szOQM-0oc8g5saJNGSYTSNCPTOXvsDUZgCE6iD507COrOHLS'));
 
 
 app.post('/', (req, res) => {
