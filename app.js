@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cookieParser('KzUgcUH58ekEZE19szOQM-0oc8g5saJNGSYTSNCPTOXvsDUZgCE6iD507COrOHLS'));
+app.use(cookieParser());
 
 
 app.post('/', (req, res) => {
@@ -68,7 +68,7 @@ app.post('/signup', (req, res) => {
 })
 
 app.get('/logo', (req, res) => {
-    res.render('logo');
+    res.send("<img src='images/jimmy-nomad-logo-square.jpeg'></img>");
 })
 
 const port = process.env.port || 3000;
