@@ -71,6 +71,10 @@ app.get('/logo', (req, res) => {
     res.send("<img src='images/jimmy-nomad-logo-square.jpeg'></img>");
 })
 
+app.get('/welcome', (req, res) => {
+    res.render('welcome');
+})
+
 const port = process.env.port || 3000;
 app.listen(port, () => {
     console.log("app listening....");
