@@ -46,9 +46,6 @@ web_modules/
 # TypeScript cache
 *.tsbuildinfo
 
-# Optional npm cache directory
-.npm
-
 # Optional eslint cache
 .eslintcache
 
@@ -150,9 +147,6 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
-
-# Dependency directories
-jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
