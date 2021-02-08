@@ -184,6 +184,30 @@ function remove(id, callback) {
 
 }
 
+passport.use(strategy);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// You can use this section to keep a smaller payload
+passport.serializeUser(function (user, done) {
+    done(null, user);
+  });
+  
+  passport.deserializeUser(function (user, done) {
+    done(null, user);
+  });
+
+var userInViews = require('./lib/middleware/userInViews');
+var authRouter = require('./routes/auth');
+var indexRouter = require('./routes/index');
+
+// ..
+app.use(userInViews());
+app.use('/', authRouter);
+app.use('/', indexRouter);
+// ..
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 app.use(express.static(path.join(__dirname, 'public')));
