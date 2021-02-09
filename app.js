@@ -35,9 +35,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-app.get('/', (req, res) => {
+app.get('/', requiresAuth(), (req, res) => {
     req.oidc.isAuthenticated() ? res.redirect('welcome') : res.redirect('login');
 });
+
+app.post('/', requiresAuth(), (req, res) => {
+    req.oidc.isAuthenticated() ? res.redirect('welcome') : res.redirect('login');
+})
 
 app.get('/logo', (req, res) => {
     res.send("<img src='images/jimmy-nomad-logo-square.jpeg'></img>");
