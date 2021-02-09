@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 const dotenv = require('dotenv').config();
-const { auth, requiresAuth } = require('express-openid-connect');
+const { auth } = require('express-openid-connect');
 
 app.use(
     auth({
