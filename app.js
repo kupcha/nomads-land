@@ -34,6 +34,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/', (req, res) => {
+    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out' );
+})
+
+
 const port = process.env.port || 3000;
 app.listen(port, () => {
     console.log(`listening on port ${port}...`);
