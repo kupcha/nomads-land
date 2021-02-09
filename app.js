@@ -35,11 +35,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-app.get('/', requiresAuth(), (req, res) => {
-    req.oidc.isAuthenticated() ? res.redirect('welcome') : res.redirect('login');
+app.get('/', (req, res) => {
+    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
-app.post('/', requiresAuth(), (req, res) => {
+app.post('/', (req, res) => {
     req.oidc.isAuthenticated() ? res.redirect('welcome') : res.redirect('login');
 })
 
