@@ -14,6 +14,7 @@ app.use(
         secret: process.env.SECRET,
         idpLogout: true,
         authRequired: false,
+        auth0Logout: true
     })
 );
 
@@ -34,57 +35,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-
-app.post('/', (req, res) => {
-    const { psw } = req.body;
-    if (psw == 'bettercallmecraig') {
-        res.cookie('access', 1, { maxAge: (3600000 * 24 * 30) });
-        res.redirect('login');
-    } else {
-        res.render('home');
-    }
-});
-
 app.get('/', (req, res) => {
     req.oidc.isAuthenticated() ? res.redirect('welcome') : res.redirect('login');
 });
 
-app.get('/login', (req, res) => {
-    res.render("login");
-})
-
-
-app.get('/signup', (req, res) => {
-    res.render('signup');
-})
-
-app.post('/signup', (req, res) => {
-    const { username, psw, phone } = req.body;
-    res.send(username + " : " + psw)
-})
-
 app.get('/logo', (req, res) => {
     res.send("<img src='images/jimmy-nomad-logo-square.jpeg'></img>");
-})
-
-app.get('/welcome', requiresAuth(), (req, res) => {
-    res.render('welcome');
-})
-
-app.get('/callback', requiresAuth(), (req, res) => {
-    res.redirect('welcome');
-})
-
-app.get('/login/callback', requiresAuth(), (req, res) => {
-    res.redirect('welcome');
-})
-
-app.post('/callback', requiresAuth(), (req, res) => {
-    res.redirect('welcome');
-})
-
-app.get('/profile', requiresAuth(), (req, res) => {
-    res.send(JSON.stringify(req.oidc.user));
 })
 
 
