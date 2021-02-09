@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 const dotenv = require('dotenv').config();
-const { auth } = require('express-openid-connect');
+const { auth, requiresAuth } = require('express-openid-connect');
 
 app.use(
     auth({
@@ -13,6 +13,7 @@ app.use(
         clientID: process.env.CLIENT_ID,
         secret: process.env.SECRET,
         idpLogout: true,
+        authRequired: false
     })
 );
 
@@ -81,6 +82,11 @@ app.get('/callback', (req, res) => {
 app.post('/callback', (req, res) => {
     res.redirect('welcome');
 })
+
+app.get('/profile', requiresAuth(), (req, res) => {
+    res.send(JSON.stringify(req.oidc.user));
+})
+
 
 const port = process.env.port || 3000;
 app.listen(port, () => {
