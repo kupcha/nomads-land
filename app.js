@@ -71,11 +71,14 @@ app.get('/logo', (req, res) => {
     res.send("<img src='images/jimmy-nomad-logo-square.jpeg'></img>");
 })
 
-app.get('/welcome', (req, res) => {
+app.get('/welcome', requiresAuth(), (req, res) => {
     res.render('welcome');
 })
 
-app.get('/callback', (req, res) => {
+app.get('/callback', requiresAuth(), (req, res) => {
+    res.redirect('welcome');
+})
+app.get('/login/callback', requiresAuth(), (req, res) => {
     res.redirect('welcome');
 })
 
