@@ -46,7 +46,7 @@ app.post('/', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+    req.oidc.isAuthenticated() ? res.redirect('welcome') : res.redirect('login');
 });
 
 app.get('/login', (req, res) => {
