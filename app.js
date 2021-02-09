@@ -46,11 +46,7 @@ app.post('/', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    if (req.cookies.access) {
-        res.redirect('login');
-    } else {
-        res.render('home');
-    }
+    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
 app.get('/login', (req, res) => {
@@ -78,11 +74,12 @@ app.get('/welcome', requiresAuth(), (req, res) => {
 app.get('/callback', requiresAuth(), (req, res) => {
     res.redirect('welcome');
 })
+
 app.get('/login/callback', requiresAuth(), (req, res) => {
     res.redirect('welcome');
 })
 
-app.post('/callback', (req, res) => {
+app.post('/callback', requiresAuth(), (req, res) => {
     res.redirect('welcome');
 })
 
