@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 const dotenv = require('dotenv').config();
-const { auth } = require('express-openid-connect');
+const { auth, requiresAuth } = require('express-openid-connect');
 
 app.use(
     auth({
@@ -13,8 +13,7 @@ app.use(
         clientID: process.env.CLIENT_ID,
         secret: process.env.SECRET,
         idpLogout: true,
-        authRequired: false,
-        auth0Logout: true
+        authRequired: true
     })
 );
 
@@ -34,19 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-
-app.get('/', (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-});
-
-app.post('/', (req, res) => {
-    req.oidc.isAuthenticated() ? res.redirect('welcome') : res.redirect('login');
-})
-
-app.get('/logo', (req, res) => {
-    res.send("<img src='images/jimmy-nomad-logo-square.jpeg'></img>");
-})
-
 
 const port = process.env.port || 3000;
 app.listen(port, () => {
