@@ -20,7 +20,7 @@ const config = {
   secret: 'KzUgcUH58ekEZE19szOQM-0oc8g5saJNGSYTSNCPTOXvsDUZgCE6iD507COrOHLS',
   baseURL: 'https://nomadsland-env.eba-sgsdjyz3.us-east-1.elasticbeanstalk.com',
   clientID: 'rilqQv6b8h1Tnr1NAXd8Kqe8uX48Bkay',
-  issuerBaseURL: 'https://dev-51-wtmvz.us.auth0.com'
+  issuerBaseURL: 'https://nomadsland-env.eba-sgsdjyz3.us-east-1.elasticbeanstalk.com'
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
