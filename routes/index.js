@@ -24,7 +24,7 @@ router.get('/callback', requiresAuth(), function (req, res, next) {
 });
 
 router.get('/logo', function(req, res, next) {
-  res.sendFile('./public/images/jimmy-nomad-logo-square.jpeg');
+  res.sendFile('/GitHub/nomads-land/public/images/jimmy-nomad-logo-square.jpeg');
 })
 
 module.exports = router;
