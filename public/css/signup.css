@@ -3,6 +3,7 @@ html {
     background-color: white;
     display: block;
     background-color:black;
+    padding: 10px;
   }
 h{
   text-shadow: 1px 1px 1px grey;
