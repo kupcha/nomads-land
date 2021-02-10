@@ -2,17 +2,9 @@ html {
     font-family: 'Alegreya Sans SC', sans-serif;
     background-color: white;
     display: block;
-    text-align:center;
     background-color:black;
   }
-
-#login{
-      display:inline-block;
-  }
-#tshirt{
-  width:150px;
-}
-h1{
+h{
   text-shadow: 1px 1px 1px grey;
 }
 p{
