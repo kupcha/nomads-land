@@ -28,3 +28,7 @@ body {
   div{
     line-height: 85%;
   }
+
+  #login{
+    text-align: center;
+  }
