@@ -1,37 +1,14 @@
 {
-  "name": "nomadsland",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kupcha/nomads-land.git"
-  },
-  "keywords": [],
-  "author": "craygbot",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kupcha/nomads-land/issues"
-  },
-  "homepage": "https://github.com/kupcha/nomads-land#readme",
+  "name": "auth0-express-webapp-sample",
+  "scripts": {},
   "dependencies": {
     "cookie-parser": "^1.4.5",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
+    "debug": "~2.6.9",
+    "dotenv": "^6.1.0",
+    "ejs": "^2.7.4",
     "express": "^4.17.1",
-    "express-openid-connect": "^2.2.1",
-    "express-session": "^1.17.1",
-    "instagram-node": "^0.5.6",
-    "instagram-web-api": "^2.2.2",
-    "mongodb": "^3.6.3",
-    "mongoose": "^5.11.15",
-    "nodemon": "^2.0.7",
-    "passport": "^0.4.1",
-    "passport-auth0": "^1.4.0",
-    "passport-instagram": "^1.0.0"
+    "express-openid-connect": "^2.0.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
   }
 }
