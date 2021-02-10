@@ -3,7 +3,8 @@ html {
     background-color: white;
     display: block;
     background-color:black;
-    padding: 30px;
+    border: 30px;
+    border-color: white;
   }
 h{
   text-shadow: 1px 1px 1px grey;
