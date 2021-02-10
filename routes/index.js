@@ -15,4 +15,11 @@ router.get('/profile', requiresAuth(), function (req, res, next) {
   });
 });
 
+router.get('/callback', requiresAuth(), function (req, res, next) {
+  res.redirect('profile', {
+    userProfile: JSON.stringify(req.oidc.user, null, 2),
+    title: 'Profile page'
+  });
+});
+
 module.exports = router;
