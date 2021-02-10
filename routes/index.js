@@ -5,7 +5,7 @@ router.get('/', function (req, res, next) {
   if (req.oidc.isAuthenticated()) {
     res.redirect('profile');
   } else {
-    res.render('welcome');
+    res.render('index');
   }
 });
 

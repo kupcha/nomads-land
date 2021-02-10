@@ -1,11 +1,78 @@
-<%- include('partials/header') -%>
+<!DOCTYPE html>
+<html>
 
-<h1 class="text-4xl">Hello World</h1>
+<head>
+    <meta charset="utf-8">
+    <title>nomadsland</title>
 
-<% if (locals.isAuthenticated) { %>
-    <p>You are logged in. <a href="/profile" class="underline">View your profile</a>.</p>
-<% } else { %>
-    <p>You are not logged in. <a href="/login" class="underline">Login</a>.</p>
-<% } %>
+    <link rel="stylesheet" href="\css\signup.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap"
+        rel="stylesheet">
+</head>
 
-<%- include('partials/footer') -%>
+<body>
+    <% if (locals.isAuthenticated) { %>
+        <p>Welcome, <%= user.nickname %>!</p>
+        <div id="promo">
+            <p>
+                HELP US EXPAND!<BR>
+                if you<br>
+                1. join<br>
+                2. review 10+ locations you've visited within the past 5 years<br>
+                3. recruit 3+ more people<br>
+                you'll get:<br>
+                1. free membership for life<br>
+                2. 40% off all gear for life<br>
+                3. this shirt<br>
+                <img id="tshirt" src="images/tshirt.jpg" alt="tshirt that says i have a tiny penis lol">
+    
+            </p>
+        </div>
+        <a href='/logout'>log me out</a>
+    <% } else { %>
+
+        <body>
+            <h2>welcome to</h2>
+            <h1>NOMADSLAND</h1>
+            <h2>travel's single source of truth</h2>
+            <h3>we are currently in beta with limited access</h3>
+            <img src="images/jimmy-nomad-logo.jpeg" alt="jimmy nomad logo: bearded man walking">
+            <div>
+                <div>
+                    <h3>ELEVATE</h3>
+                    <p>the platform by sharing knowledge</p>
+                </div>
+                <div>
+                    <h3>EXPLORE</h3>
+                    <p>global insights that inspire adventure</p>
+                </div>
+                <div>
+                    <h3>ENHANCE</h3>
+                    <p>your travel plans using interactive data</p>
+                </div>
+                <div>
+                    <h3>ENGAGE</h3>
+                    <p>in communities that pursue interests</p>
+                </div>
+            </div>
+        
+
+
+
+
+
+            <div id="login">
+                <a href='/login'>log me in<br>or<br>sign me up</a>
+                <p>we are using <a href='https://auth0.com/'>auth0</a> to ensure your data and personal information remain secure and protected</p>
+            </div>
+        </body>
+        
+    <% } %>
+
+
+</body>
+
+</html>
