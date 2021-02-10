@@ -2,10 +2,11 @@ var router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
 
 router.get('/', function (req, res, next) {
-  res.render('welcome', {
-    title: 'nomadsland',
-    isAuthenticated: req.oidc.isAuthenticated()
-  });
+  if (req.oidc.isAuthenticated()) {
+    res.redirect('profile');
+  } else {
+    res.render('welcome');
+  }
 });
 
 router.get('/profile', requiresAuth(), function (req, res, next) {
