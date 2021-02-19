@@ -5,6 +5,7 @@ const logger = require('morgan');
 const path = require('path');
 const { auth, requiresAuth } = require('express-openid-connect');
 const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
 
 const router = require('./routes/index');
 
