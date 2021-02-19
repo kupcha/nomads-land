@@ -1,5 +1,13 @@
 var router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.mongodb.net/nomadsland?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('connected to mongo')
+});
+
 
 router.get('/', function (req, res, next) {
   if (req.oidc.isAuthenticated()) {
