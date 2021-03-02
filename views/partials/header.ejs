@@ -7,40 +7,40 @@
     <title>
         <%= locals.title || "nomadsland" %>
     </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">    <link rel="icon" href="/images/nomad.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="icon" href="/images/nomad.jpg">
 </head>
 
 <body>
     <!-- Just an image -->
     <nav class="navbar navbar-green-500 bg-green-500">
         <div class="container">
+
             <img src="/images/nomad.jpg" alt="" width="30" height="24">
-    
-        </div>
 
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow">
-            <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Home</a>
-            <% if (locals.user) { %>
-                <a href="/profile"
-                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Profile</a>
-                <a href="/logout"
-                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Logout</a>
-                <% } else { %>
-                    <a href="/login"
-                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Login</a>
-                    <% } %>
-        </div>
+            <div class="text-sm lg:flex-grow">
+                <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Home</a>
+                <% if (locals.user) { %>
+                    <a href="/profile"
+                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Profile</a>
+                    <a href="/logout"
+                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Logout</a>
+                    <% } else { %>
+                        <a href="/login"
+                            class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Login</a>
+                        <% } %>
+            </div>
 
-        <div>
-            <a href="https://github.com/auth0/express-openid-connect" target="blank"
-                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">
-                <span class="font-semibold text-xl tracking-tight">GitHub</span>
+            <div>
+                <a href="https://github.com/auth0/express-openid-connect" target="blank"
+                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">
+                    <span class="font-semibold text-xl tracking-tight">GitHub</span>
 
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
-  </nav>
+    </nav>
 
 
 
