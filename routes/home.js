@@ -5,7 +5,7 @@ mongoose.connect('mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.m
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('connected to mongo')
+  console.log('connected to mongo');
 });
 
 
@@ -20,14 +20,14 @@ router.get('/', function (req, res, next) {
 router.get('/profile', requiresAuth(), function (req, res, next) {
   res.render('profile', {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
-    title: 'Profile page'
+    title: 'nomadsland'
   });
 });
 
 router.get('/callback', requiresAuth(), function (req, res, next) {
   res.redirect('profile', {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
-    title: 'Profile page'
+    title: 'nomadsland'
   });
 });
 
