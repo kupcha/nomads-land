@@ -13,34 +13,9 @@
 </head>
 
 <body>
-    <!-- Just an image -->
-    <nav class="navbar navbar-success bg-dark">
-        <div class="container">
 
-            <img src="/images/nomad.jpg" alt="" width="30" height="24">
-                <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Home</a>
-                <% if (locals.user) { %>
-                    <a href="/profile"
-                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Profile</a>
-                    <a href="/logout"
-                        class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Logout</a>
-                    <% } else { %>
-                        <a href="/login"
-                            class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Login</a>
-                        <% } %>
+    <nav class="navbar fixed-top navbar-success style="background-color: #198754;"">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Fixed top</a>
         </div>
-    </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </nav>
