@@ -30,6 +30,8 @@ body {
 
 .mottos{
   display: inline-block;
+  text-align: center;
+  align-content: space-between;
 }
 .logo {
   width: 600px;
