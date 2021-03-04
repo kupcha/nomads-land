@@ -45,7 +45,7 @@ body {
 }
 
 .mottoBox{
-  display: inline-block;
+  display: block;
   align-content:inherit;
   margin-left:auto;
   margin-right:auto;
