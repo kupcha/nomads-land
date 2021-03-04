@@ -39,11 +39,15 @@ body {
   align-content:center;
   margin: 3 auto;
   padding: 25px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .mottoBox{
   display: inline-block;
   align-content:inherit;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .logo{
@@ -51,4 +55,6 @@ body {
   margin: 0 auto;
   width: 600px;
   padding: 50px;
+  margin-left:auto;
+  margin-right:auto;
 }
