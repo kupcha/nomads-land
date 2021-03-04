@@ -28,6 +28,9 @@ body {
   border: 5px solid black;
 }
 
+.mottos{
+  display: block;
+}
 .logo {
   width: 600px;
 }
