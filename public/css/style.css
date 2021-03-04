@@ -47,7 +47,7 @@ tyle: solid;
 
 
 .logo {
-  width: 400px;
+  max-width: 60%;
   display: inline-block;
 }
 
