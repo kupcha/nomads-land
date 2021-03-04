@@ -29,7 +29,7 @@ body {
 }
 
 .mottos{
-  display: block;
+  display: inline-block;
 }
 .logo {
   width: 600px;
