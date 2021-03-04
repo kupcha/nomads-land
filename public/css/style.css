@@ -46,14 +46,14 @@ body {
 }
 
 .mottoBox{
-  display: inline-block;
+  display: block;
   align-content:inherit;
   margin-left:auto;
   margin-right:auto;
 }
 
 .logo{
-  display: inline-block;
+  display: block;
   margin: 0 auto;
   max-width: 30%;
   min-width: 350px;
