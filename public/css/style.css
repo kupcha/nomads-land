@@ -16,9 +16,6 @@ h2 {
   color: black;
   text-shadow: 1px 1px 1px grey;
 }
-p{
-  color: white;
-}
 
 html {
   font-size: 16px;
@@ -55,4 +52,5 @@ body {
   display: inline-block;
   margin: 0 auto;
   width: 600px;
+  padding: 50px;
 }
