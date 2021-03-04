@@ -47,6 +47,7 @@ tyle: solid;
 
 .logo {
   width: 450px;
+  display: inline-block;
 }
 
 p{
