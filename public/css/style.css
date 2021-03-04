@@ -52,7 +52,7 @@ body {
 }
 
 .logo{
-  display: inline-block;
+  display: block;
   margin: 0 auto;
   max-width: 30%;
   min-width: 345px;
@@ -60,4 +60,8 @@ body {
   padding-left: 50px;
   margin-left:auto;
   margin-right:auto;
+}
+
+.message{
+  max-width: 1400px;
 }
