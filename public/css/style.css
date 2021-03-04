@@ -34,6 +34,7 @@ body {
   align-content: space-between;
   border: mediumaquamarine;
   border-width: 5px;
+  border-style: solid;
 }
 .logo {
   width: 450px;
