@@ -1,7 +1,7 @@
 
 .content{
   text-shadow: 1px 1px 1px grey;
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Alegreya Sans SC', sans-serif;
   align-content: center;
 }
@@ -19,7 +19,7 @@ h2 {
 }
 
 html {
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Alegreya Sans SC', sans-serif;
   background-color: black;
   max-width: 1400;
@@ -47,6 +47,7 @@ body {
   align-content:inherit;
   margin-left:auto;
   margin-right:auto;
+  font-size:20px;
 }
 
 .logo{
