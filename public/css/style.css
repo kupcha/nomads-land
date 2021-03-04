@@ -54,8 +54,7 @@ html {
   min-width: 346px;
   height:auto;
   padding-left: 50px;
-  margin-left:auto;
-  margin-right:auto;
+  align-content:center;
 }
 
 .message{
