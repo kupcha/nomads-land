@@ -38,9 +38,9 @@ body {
   align-content: space-between;
   margin: 3 auto;
   padding: 25px;
-  border:lightslategrey;
+  border:black;
   border-width: 2px;
-  border-style: solid;
+  border-style:double;
 }
 
 .mottoBox{
