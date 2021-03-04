@@ -35,6 +35,7 @@ body {
 }
 
 .mottoBox{
+  display: inline-block;
   border:lightslategrey;
   border-width: 2px;
   border-style: solid;
