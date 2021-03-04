@@ -32,6 +32,8 @@ body {
   display: inline-block;
   text-align: center;
   align-content: space-between;
+  border: mediumaquamarine;
+  border-width: 5px;
 }
 .logo {
   width: 600px;
