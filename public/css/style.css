@@ -49,7 +49,7 @@ tyle: solid;
 
 
 .logo{
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   width: 600px;
 }
