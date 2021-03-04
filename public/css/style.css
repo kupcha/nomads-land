@@ -55,6 +55,7 @@ body {
   display: inline-block;
   margin: 0 auto;
   max-width: 30%;
+  min-width: 20%;
   height:auto;
   padding-left: 50px;
   margin-left:auto;
