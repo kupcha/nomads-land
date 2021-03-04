@@ -42,13 +42,13 @@ html {
 }
 
 .mottoBox{
-  display: block;
+  display: inline-block;
   margin-left:auto;
   margin-right:auto;
 }
 
 .logo{
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   max-width: 30%;
   min-width: 348px;
@@ -58,4 +58,9 @@ html {
   margin-right:auto;
 }
 
+.message{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
 
