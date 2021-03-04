@@ -32,10 +32,16 @@ body {
   display: inline-block;
   text-align: center;
   align-content: space-between;
-  border: mediumaquamarine;
-  border-width: 5px;
+}
+
+.mottoBox{
+  border:lightslategrey;
+  border-width: 2px;
   border-style: solid;
 }
+tyle: solid;
+
+
 .logo {
   width: 450px;
 }
