@@ -48,6 +48,7 @@ tyle: solid;
 
 .logo {
   max-width: 60%;
+  height:auto;
   display: inline-block;
 }
 
