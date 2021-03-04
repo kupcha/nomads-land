@@ -1,4 +1,9 @@
 
+.content{
+  text-shadow: 1px 1px 1px grey;
+  font-size: 16px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
  h1 {    
   margin: 0;
   padding: 0 0;
@@ -45,21 +50,9 @@ body {
   display: inline-block;
   align-content:inherit;
 }
-tyle: solid;
-
 
 .logo{
   display: inline-block;
   margin: 0 auto;
   width: 600px;
-}
-
-p{
-  color: black;
-}
-
-.content{
-  text-shadow: 1px 1px 1px grey;
-  font-size: 16px;
-  font-family: 'Alegreya Sans SC', sans-serif;
 }
