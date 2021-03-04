@@ -34,6 +34,10 @@ img {
   width: 600px;
 }
 
+.logo {
+  width: 600px;
+}
+
 input:invalid {
   border: 2px dashed red;
 }
