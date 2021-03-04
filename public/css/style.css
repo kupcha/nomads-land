@@ -35,12 +35,9 @@ body {
 .mottos{
   display: inline-block;
   text-align: center;
-  align-content: space-between;
+  align-content:center;
   margin: 3 auto;
   padding: 25px;
-  border:black;
-  border-width: 2px;
-  border-style:double;
 }
 
 .mottoBox{
