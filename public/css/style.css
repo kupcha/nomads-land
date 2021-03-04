@@ -49,8 +49,9 @@ tyle: solid;
 
 
 .logo{
-  width: 400px;
-  height:auto;
+  display: block;
+  margin: 0 auto;
+  width: 600px;
 }
 
 p{
