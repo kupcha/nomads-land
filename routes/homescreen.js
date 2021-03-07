@@ -28,7 +28,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/profile', requiresAuth(), async function (req, res, next) {
-  const users = awaitUser.find();
+  const users = await User.find();
   console.log(users);
   res.send('All your shit is mine :)');
   // res.render('profile', {
