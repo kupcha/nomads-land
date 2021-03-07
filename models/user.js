@@ -13,12 +13,12 @@ const userSchema = new mongoose.Schema({
     elevation: {
         type: Number,
         required: true,
-        default: 0;
+        default: 0,
     },
     referrals: {
         type: Number,
         required: true,
-        default: 0;
+        default: 0,
     }
 });
 
