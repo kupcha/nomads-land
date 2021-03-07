@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.m
     console.log("Error connecting to MongoDB:")
     console.log(err)
   });
-
+  
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
