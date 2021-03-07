@@ -1,7 +1,7 @@
 var router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
 const mongoose = require('mongoose');
-const User = require('./models/product');
+const User = require('./models/user');
 
 mongoose.connect('mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.mongodb.net/nomadsland?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -30,7 +30,7 @@ router.get('/', function (req, res, next) {
 router.get('/profile', requiresAuth(), async function (req, res, next) {
   const users = awaitUser.find();
   console.log(users);
-  res.send('All your shit is mine :)')
+  res.send('All your shit is mine :)');
   // res.render('profile', {
   //   userProfile: JSON.stringify(req.oidc.user, null, 2),
   //   title: 'nomadsland'
