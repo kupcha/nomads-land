@@ -30,7 +30,7 @@ router.get('/', function (req, res, next) {
 router.get('/profile', requiresAuth(), async function (req, res, next) {
   const users = await User.find();
   console.log(users);
-  res.send('All your shit is mine :)');
+  res.send(users);
   // res.render('profile', {
   //   userProfile: JSON.stringify(req.oidc.user, null, 2),
   //   title: 'nomadsland'
