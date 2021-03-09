@@ -31,6 +31,7 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
   const userEmail = res.locals.user.email;
   const currentNomad = await User.findOne({email: userEmail});
   res.render('profile', {
+    username: currentNomad.username,
     elevation: currentNomad.elevation,
     trips: currentNomad.trips,
     userProfile: JSON.stringify(req.oidc.user, null, 2),
