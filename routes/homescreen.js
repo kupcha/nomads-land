@@ -43,7 +43,7 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
 
 
 router.get('/about', function (req, res, next) {
-  res.send('/images/homescreen.jpg')
+  res.render('test')
 });
 
 router.get('/callback', requiresAuth(), function (req, res, next) {
