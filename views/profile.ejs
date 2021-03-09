@@ -4,9 +4,20 @@
 <br>
   <h1 class="text-4xl mb-4">welcome back, <span class="username"><%= username %></span>.</h1>
 
-  
-  <div class
+  <div class="userStats">
+    <div class="elevation">
+      <%= elevation %><br>
+      feet
+    </div><br>
+    <div class="trips">
+      <%= trips %><br>
+      trips
+    </div><br>
+    <div class="referrals">
+      <%= referrals %><br>
+      tips
+    </div><br>
 
-  <pre class="block bg-gray-300 p-4 text-sm overflow-scroll"><%= userProfile %></pre>
+  </div>
 
 <%- include('partials/footer') -%>
