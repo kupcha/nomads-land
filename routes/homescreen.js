@@ -31,10 +31,11 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
   // const users = await User.find();
   // console.log(users);
   // res.send(users);
-  const userEmail = req.oidc.
+  const userProfile = JSON.stringify(req.oidc.user, null, 2);
+  const userEmail = userProfile.email;
   res.render('profile', {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
-    title: 'nomadsland'
+    title: `userEmail`
   });
 
 
