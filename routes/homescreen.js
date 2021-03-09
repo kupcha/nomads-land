@@ -30,7 +30,7 @@ router.get('/', function (req, res, next) {
 router.get('/profile', requiresAuth(), async function (req, res, next) {
   const userEmail = res.locals.user.email;
   const currentNomad = await User.findOne({email: userEmail});
-  res.send(currentNomad.elevation);
+  res.send(currentNomad);
   // res.render('profile', {
   //   userProfile: JSON.stringify(req.oidc.user, null, 2),
   //   title: 'nomadsland'
