@@ -47,7 +47,7 @@ router.get('/about', function (req, res, next) {
 });
 
 router.get('/callback', requiresAuth(), function (req, res, next) {
-  res.redirect('profile', {
+  res.redirect('about', {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
     title: 'nomadsland'
   });
