@@ -41,9 +41,13 @@ body {
 }
 
 .userStats{
-  display: block;
+  display: inline-block;
   align-content:inherit;
   margin-left:auto;
   margin-right:auto;
   font-size:20px;
+}
+
+.survey{
+  display: inline-block;
 }
