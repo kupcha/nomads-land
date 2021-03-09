@@ -39,10 +39,11 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
     title: 'nomadsland'
   });
 
+});
 
 
-
-
+router.get('/about', function (req, res, next) {
+  res.render('about');
 });
 
 router.get('/callback', requiresAuth(), function (req, res, next) {
