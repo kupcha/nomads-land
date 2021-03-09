@@ -21,7 +21,7 @@ db.once('open', function () {
 
 router.get('/', function (req, res, next) {
   if (req.oidc.isAuthenticated()) {
-    res.redirect('profile');
+    res.redirect('about');
   } else {
     res.render('welcome');
   }
@@ -56,7 +56,7 @@ router.get('/callback', requiresAuth(), function (req, res, next) {
 
 router.post('/survey', requiresAuth(), function (req, res, next) {
   res.redirect('survey', {
-    destination: req.destination
+    destination: req.location
   })
 })
 
