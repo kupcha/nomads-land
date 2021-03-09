@@ -53,4 +53,11 @@ router.get('/callback', requiresAuth(), function (req, res, next) {
   });
 });
 
+
+router.post('/survey', requiresAuth(), function (req, res, next) {
+  res.redirect('survey', {
+    destination: req.destination
+  })
+})
+
 module.exports = router;
