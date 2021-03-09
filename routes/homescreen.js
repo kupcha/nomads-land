@@ -46,6 +46,10 @@ router.get('/about', function (req, res, next) {
   res.render('test')
 });
 
+router.get('/test', function (req, res, next) {
+  res.render('test2');
+})
+
 router.get('/callback', requiresAuth(), function (req, res, next) {
   res.redirect('about', {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
