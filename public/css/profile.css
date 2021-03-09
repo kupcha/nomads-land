@@ -40,15 +40,16 @@ body {
 }
 
 .userStats{
-  display: inline-block;
+  display: inline;
   align-content:inherit;
   margin-left:auto;
   margin-right:auto;
   font-size:20px;
   text-shadow: 1px 1px 1px grey;
+  padding-left: 10px;
 }
 
 .survey{
-  display: inline-block;
+  display: inline;
   text-shadow: 1px 1px 1px grey;
 }
