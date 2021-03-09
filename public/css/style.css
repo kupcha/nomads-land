@@ -59,3 +59,8 @@ body {
   margin-left:auto;
   margin-right:auto;
 }
+
+.welcome{
+  display: block;
+  margin: 0 auto;
+}
