@@ -7,7 +7,9 @@
   
   html {
     font-size: 16px;
-    font-family: 'messapiabold', sans-serif;
+    font-family: 'messapiabold', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
     background-color: black;
     max-width: 1400;
   }
