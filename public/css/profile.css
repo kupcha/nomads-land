@@ -8,6 +8,7 @@
  h1 {    
   margin: 0;
   padding: 0 0;
+  text-shadow: 1px 1px 1px grey;
  }
 
 html {
@@ -15,7 +16,6 @@ html {
   font-family: 'Alegreya Sans SC', sans-serif;
   background-color: black;
   max-width: 1400;
-  text-shadow: 1px 1px 1px grey;
 }
 
 body {
@@ -31,4 +31,8 @@ body {
 
 .username{
   color:coral;
+}
+
+.userStats{
+
 }
