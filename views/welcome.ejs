@@ -18,25 +18,23 @@
 
 <body>
 
+
     <nav class="flex items-center justify-between flex-wrap navbar-success" style="background-color: #fff;"">
         <div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow">
-            <a class="navbar-brand" href="profile"><img src="/images/nomad.jpg" width="35" height="35"></a>
-            <a href="https://instagram.com/jimmynomad" target="_blank">
-                <img src="/images/ig.png" width="25" height="25"></a>
-            <img src="/images/twitter.jpg" width="25" height="25">
-            <% if (locals.user) { %>
-                <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">free
-                    gear</a>
-                <a href="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign
-                    out</a>
-                <% } else { %>
-                    <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign
-                        in</a>
-                    <% } %>
-        </div>
-        </div>
-    </nav>
+    <div class="text-sm lg:flex-grow">
+      <a class="navbar-brand" href="profile"><img src="/images/nomad.jpg" width="35" height="35"></a>
+      <a href="https://instagram.com/jimmynomad" target="_blank">
+        <img src="/images/ig.png" width="25" height="25"></a>
+      <img src="/images/twitter.jpg" width="25" height="25">
+      <% if (locals.user) { %>
+        <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">about</a>
+        <a href="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign out</a>
+        <% } else { %>
+          <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign in</a>
+          <% } %>
+    </div>
+    </div>
+  </nav>
     <div class="content">
         <h1>welcome to<br>
             Nomadsland.</h1>
