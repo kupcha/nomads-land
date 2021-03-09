@@ -36,5 +36,6 @@ body {
 .userStats{
   display:inline-block;
   text-align: center;
-  width: fit-content;
+  width: 300 px;
+  height: 150 px;
 }
