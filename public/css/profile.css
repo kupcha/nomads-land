@@ -33,12 +33,17 @@ body {
   color:coral;
 }
 
-.userStats{
-  display:inline-block;
+.stat{
   text-align: center;
-  width: 300 px;
-  height: 150 px;
   align-content:center;
   margin: 3 auto;
   padding: 25px;
+}
+
+.userStats{
+  display: block;
+  align-content:inherit;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:20px;
 }
