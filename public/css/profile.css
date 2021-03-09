@@ -38,4 +38,7 @@ body {
   text-align: center;
   width: 300 px;
   height: 150 px;
+  align-content:center;
+  margin: 3 auto;
+  padding: 25px;
 }
