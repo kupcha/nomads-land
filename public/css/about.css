@@ -26,9 +26,3 @@
       height: auto;
       width: auto;
   }
-
-  @media (max-width: 480px) {
-    #nomad{
-      max-width: 480px;
-    }
-  }
