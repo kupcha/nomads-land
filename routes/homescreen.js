@@ -43,7 +43,7 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
 
 
 router.get('/about', function (req, res, next) {
-  res.render('test')
+  res.render('about')
 });
 
 router.get('/test', function (req, res, next) {
