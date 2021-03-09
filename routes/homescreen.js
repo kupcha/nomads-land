@@ -40,6 +40,13 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
       title: 'nomadsland'
     })
   }else{
+    const newUser = {
+      email : `${userEmail}`,
+      elevation : 0,
+      trips : 0,
+      referrals : 0 
+    }
+    db.collection('users').insert(newUser);
     res.send('fuck you');
   }
 ;
