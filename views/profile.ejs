@@ -1,19 +1,55 @@
-<%- include('partials/header') -%>
-<br>
-  <h1 class="text-4xl mb-4">welcome back, <span class="username"><%= username %></span>.</h1>
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-200">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= locals.title || "nomadsland" %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="icon" href="/images/nomad.jpg">
+  <link rel="stylesheet" href="\css\profile.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="flex items-center justify-between flex-wrap navbar-success" style="background-color: #fff;"">
+        <div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow">
+      <a class="navbar-brand" href="profile"><img src="/images/nomad.jpg" width="35" height="35"></a>
+      <a href="https://instagram.com/jimmynomad" target="_blank">
+        <img src="/images/ig.png" width="25" height="25"></a>
+      <img src="/images/twitter.jpg" width="25" height="25">
+      <% if (locals.user) { %>
+        <a href="/gear" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">about</a>
+        <a href="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign out</a>
+        <% } else { %>
+          <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign in</a>
+          <% } %>
+    </div>
+    </div>
+  </nav>
+  <br>
+  <h1 class="text-4xl mb-4">welcome back, <span class="username">
+      <%= username %>
+    </span>.</h1>
 
   <div class="userStats">
     <div class="elevation">
       <%= elevation %><br>
-      feet
+        feet
     </div><br>
     <div class="stat">
       <%= trips %><br>
-      trips
+        trips
     </div><br>
     <div class="stat">
       <%= referrals %><br>
-      tips
+        tips
     </div>
   </div><br>
 
@@ -24,4 +60,4 @@
     </form>
   </div>
 
-<%- include('partials/footer') -%>
+  <%- include('partials/footer') -%>
