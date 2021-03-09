@@ -29,15 +29,20 @@ router.get('/', function (req, res, next) {
 
 router.get('/profile', requiresAuth(), async function (req, res, next) {
   const userEmail = res.locals.user.email;
-  const currentNomad = await User.find({email: userEmail});
-  res.render('profile', {
-    username: currentNomad.username,
-    elevation: currentNomad.elevation,
-    trips: currentNomad.trips,
-    referrals: currentNomad.referrals,
-    userProfile: JSON.stringify(req.oidc.user, null, 2),
-    title: 'nomadsland'
-  });
+  const currentNomad = await User.findOne({email: userEmail});
+  if (currentNomad){
+    res.render('profile', {
+      username: currentNomad.username,
+      elevation: currentNomad.elevation,
+      trips: currentNomad.trips,
+      referrals: currentNomad.referrals,
+      userProfile: JSON.stringify(req.oidc.user, null, 2),
+      title: 'nomadsland'
+    })
+  }else{
+    res.send('fuck you');
+  }
+;
 
 });
 
