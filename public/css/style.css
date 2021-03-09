@@ -63,4 +63,7 @@ body {
 .welcome{
   display: block;
   margin: 0 auto;
+  margin-left:auto;
+  margin-right:auto;
+  font-size: 20 px;
 }
