@@ -31,8 +31,7 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
   // const users = await User.find();
   // console.log(users);
   // res.send(users);
-  const userProfile = JSON.stringify(req.oidc.user, null, 2);
-  const userEmail = userProfile.email;
+  const userEmail = user.email;
   res.render('profile', {
     userProfile: JSON.stringify(req.oidc.user, null, 2),
     title: userEmail
