@@ -35,6 +35,7 @@ body {
   align-content:center;
   padding: 25px;
   display:inline-block;
+  max-width:240px;
 }
 
 .mottoBox{
