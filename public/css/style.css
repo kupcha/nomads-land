@@ -39,6 +39,7 @@ body {
 
 .mottoBox{
   display:grid;
+  align-content:inherit;
   margin-left:auto;
   margin-right:auto;
   font-size:20px;
