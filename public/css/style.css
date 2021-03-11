@@ -31,7 +31,6 @@ body {
 }
 
 .mottos{
-  text-align: left;
   padding: 25px;
   display:inline-block;
   max-width:240px;
@@ -58,6 +57,8 @@ height:auto;
   margin-left:auto;
   margin-right:auto;
   font-size: 20 px;
+  text-align: center;
+  display:inline-block;
 }
 
 .username{
@@ -67,9 +68,4 @@ height:auto;
 .tabs{
   max-width: 240px;
   max-height: auto;
-}
-
-.welcome{
-  text-align: center;
-  display:inline-block;
 }
