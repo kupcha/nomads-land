@@ -48,8 +48,8 @@ body {
 .looker{
   display: block;
   margin: 0 auto;
-  max-width: 23%;
-  height:auto;
+  max-height: 23%;
+  width:auto;
   margin-left:auto;
   margin-right:auto;
 }
