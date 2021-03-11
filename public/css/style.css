@@ -32,7 +32,6 @@ body {
 
 .mottos{
   text-align: left;
-  align-content:center;
   padding: 25px;
   display:inline-block;
   max-width:240px;
@@ -41,10 +40,7 @@ body {
 .mottoBox{
   display:block;
   font-size:18px;
-  margin: 0 auto;
-  margin-left:auto;
-  margin-right:auto;
-  
+  align-content: center;
 }
 
 .looker{
