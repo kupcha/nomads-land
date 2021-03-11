@@ -31,15 +31,16 @@ body {
 }
 
 .mottos{
-  padding: 20px;
+  padding: 30px;
   display:inline-block;
   max-width:240px;
+  margin: 0 auto;
   margin-left:auto;
   margin-right:auto;
 }
 
 .mottoBox{
-  display:inline-flex;
+  display:flex;
   justify-content: center;
   font-size:18px;
 }
@@ -47,8 +48,8 @@ body {
 .looker{
   display: block;
   margin: 0 auto;
-  max-width: 50%;
-  height:auto;
+max-width: 50%;
+height:auto;
   margin-left:auto;
   margin-right:auto;
 }
