@@ -34,7 +34,6 @@ body {
   padding: 30px;
   display:inline-block;
   max-width:240px;
-  margin: 0 auto;
   margin-left:auto;
   margin-right:auto;
 }
@@ -48,8 +47,8 @@ body {
 .looker{
   display: block;
   margin: 0 auto;
-max-width: 50%;
-height:auto;
+  max-width: 50%;
+  height:auto;
   margin-left:auto;
   margin-right:auto;
 }
