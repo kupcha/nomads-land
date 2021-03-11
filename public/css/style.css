@@ -54,8 +54,7 @@ body {
 .logo{
   display: block;
   margin: 0 auto;
-  max-width: 30%;
-  min-width: 345px;
+  max-width: 550px;
   height:auto;
   margin-left:auto;
   margin-right:auto;
