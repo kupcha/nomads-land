@@ -72,3 +72,8 @@ body {
 .username{
   color:coral;
 }
+
+.tabs{
+  max-width: 240px;
+  max-height: auto;
+}
