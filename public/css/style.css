@@ -2,14 +2,14 @@
  h1 {    
   margin: 0;
   padding: 0 0;
-  color: black;
+  color: white;
   text-shadow: 1px 1px 1px grey;
   font-size: 50px;
 }
 h2 {    
   margin: 0;
   padding: 0 0;
-  color: black;
+  color: white;
   text-shadow: 1px 1px 1px grey;
   font-size:40px;
 }
@@ -20,7 +20,7 @@ font-size: 25px;
 
 html {
   font-family: 'Alegreya Sans SC', sans-serif;
-  background-color: black;
+  background-color: white;
   max-width: 1400;
   text-shadow: 1px 1px 1px grey;
 }
@@ -29,7 +29,7 @@ body {
   margin: 0 auto;
   background-color:white;
   border: 5px solid black;
-  color: black;
+  color: #f47c3c;
   max-width: 1400px;
   padding: 10px 10px 10px 10px;
 
