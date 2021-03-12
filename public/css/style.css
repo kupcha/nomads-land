@@ -38,7 +38,7 @@ body {
 .mottos{
   padding: 15px;
   display:inline-block;
-  max-width:20%;
+  max-width:280px;
   margin: 0 auto;
   margin-left:auto;
   margin-right:auto;
@@ -46,12 +46,12 @@ body {
   color:white;
 }
 
-/* .container{
+.container{
   display:block;
   font-size:18px;
   text-align:center;
   max-width: 100%;
-} */
+}
 
 .looker{
   display:inline-block;
