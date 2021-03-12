@@ -108,3 +108,7 @@ p{
   box-shadow: 0 5px #333333;
   transform: translateY(4px);
 }
+
+nav{
+  font-size: 16px;
+}
