@@ -71,7 +71,7 @@ height:auto;
 }
 
 .username{
-  color:coral;
+  color:#f47c3c;
 }
 
 .tabs{
@@ -92,8 +92,9 @@ p{
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #dae9eb;
-  background-color: #9cac8c;
+  color: #f47c3c;
+  background-color: white;
+  color: ;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #333333;
