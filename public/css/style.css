@@ -29,7 +29,7 @@ body {
   margin: 0 auto;
   background-color:#f47c3c;
   border: 5px solid black;
-  color: #white;
+  color: white;
   max-width: 1400px;
   padding: 10px 10px 10px 10px;
 
@@ -53,7 +53,7 @@ body {
 }
 
 .looker{
-  display: block;
+  display:inline-block;
   margin: 0 auto;
 max-width: 45%;
 height:auto;
