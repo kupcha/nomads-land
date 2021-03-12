@@ -43,6 +43,7 @@ body {
   margin-left:auto;
   margin-right:auto;
   text-align: center;
+  color:white;
 }
 
 .mottoBox{
@@ -82,7 +83,6 @@ height:auto;
 
 p{
   font-size: 11px;
-  color: #9cac8c;
 }
 
 .joinButton {
@@ -111,4 +111,5 @@ p{
 
 nav{
   font-size: 16px;
+  color: white;
 }
