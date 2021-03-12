@@ -83,3 +83,26 @@ height:auto;
 p{
   font-size: 11px;
 }
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #dae9eb;
+  background-color: #9cac8c;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #333333;
+}
+
+.button:hover {background-color: #6c7d85}
+
+.button:active {
+  background-color: #6c7d85;
+  box-shadow: 0 5px #333333;
+  transform: translateY(4px);
+}
