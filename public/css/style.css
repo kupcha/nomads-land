@@ -70,8 +70,10 @@ body {
 }
 
 .welcomeMessage{
-  max-width: 50%;
+  max-width: 45%;
   display: inline-block;
+  padding: 20px;
+  text-align: center;
 }
 
 .tabs{
