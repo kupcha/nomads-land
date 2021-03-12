@@ -40,19 +40,13 @@ body {
 }
 
 .userStats{
-  display: inline;
-  align-content:center;
-  margin-left:auto;
-  margin-right:auto;
+  display: inline-block;
   font-size:20px;
   text-shadow: 1px 1px 1px grey;
   padding-left: 10px;
 }
 
 .survey{
-  display: inline;
+  display: inline-block;
   text-shadow: 1px 1px 1px grey;
-  margin-left:auto;
-  margin-right:auto;
-  align-content:center;
 }
