@@ -44,7 +44,7 @@ body {
 }
 
 .mottoBox{
-  display:flex;
+  display:block;
   justify-content: center;
   font-size:18px;
 }
