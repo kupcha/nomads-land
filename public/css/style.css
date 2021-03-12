@@ -62,7 +62,7 @@ height:auto;
 }
 
 .welcome{
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   margin-left:auto;
   margin-right:auto;
