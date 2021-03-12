@@ -34,7 +34,7 @@ body {
 }
 
 .mottos{
-  padding: 30px;
+  padding: 40px;
   display:inline-block;
   max-width:240px;
   margin: 0 auto;
@@ -73,6 +73,6 @@ height:auto;
 }
 
 .tabs{
-  max-width: 240px;
+  max-width: 220px;
   max-height: auto;
 }
