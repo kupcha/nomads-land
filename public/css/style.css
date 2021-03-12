@@ -55,6 +55,7 @@ body {
 .looker{
   display:inline-block;
   margin: 0 auto;
+  max-width: 45%;
   height:auto;
 }
 
