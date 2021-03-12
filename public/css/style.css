@@ -75,6 +75,7 @@ height:auto;
 .tabs{
   max-width: 260px;
   max-height: auto;
+  padding-bottom: 10px;
 }
 
 p{
