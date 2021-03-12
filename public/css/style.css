@@ -71,6 +71,7 @@ body {
 
 .welcomeMessage{
   max-width: 50%;
+  display: inline-block;
 }
 
 .tabs{
