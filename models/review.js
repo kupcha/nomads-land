@@ -10,20 +10,18 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    elevation: {
-        type: Number,
-        required: true,
-        default: 0,
-    },
-    referrals: {
-        type: Number,
-        required: true,
-        default: 0,
-    },
-    trips: {
-        type: Number,
-        required: true,
-        default: 0
+
+
+
+
+
+
+
+
+
+
+
+    
     }
 });
 
