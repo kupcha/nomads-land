@@ -20,6 +20,7 @@ body {
   border: 5px solid black;
   color: white;
   max-width: 1400px;
+  background-image: url{'/images/profileBackground.jpg'};
 
 }
 
