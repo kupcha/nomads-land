@@ -50,3 +50,7 @@ body {
   display: inline-block;
   text-shadow: 1px 1px 1px grey;
 }
+
+.takeFlight{
+  height: 30px;
+}
