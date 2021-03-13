@@ -52,6 +52,7 @@ body {
 }
 
 .takeFlight{
+  inline-block;
   height: 30px;
   width:30px;
   background-image: url("/images/takeFlight.png");
