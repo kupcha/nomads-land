@@ -1,0 +1,36 @@
+
+ h1 {    
+    margin: 0;
+    padding: 0 0;
+    color: white;
+    text-shadow: 1px 1px 1px grey;
+    font-size: 50px;
+  }
+  
+  html {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background-color: white;
+    max-width: 1400;
+    text-shadow: 1px 1px 1px grey;
+  }
+  
+  body {
+    margin: 0 auto;
+    background-color:#f47c3c;
+    border: 5px solid #333333;
+    color: white;
+    max-width: 1400px;
+    padding: 10px 10px 10px 10px;
+  
+  }
+
+
+  
+  nav{
+    font-size: 20px;
+    color: white;
+  }
+
+  .location{
+      color: #333333;
+  }

@@ -70,9 +70,13 @@ router.get('/callback', requiresAuth(), function (req, res, next) {
 router.post('/survey', requiresAuth(), function (req, res, next) {
   const answer = req.body;
   const destination = answer.location;
-  res.render('survey', {
+  res.redirect('survey', {
     location : `${destination}`
   })
+})
+
+router.get('/survey', requiresAuth(), function (req, res, next) {
+  res.redirect('profile');
 })
 
 module.exports = router;
