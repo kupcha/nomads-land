@@ -75,8 +75,4 @@ router.post('/survey', requiresAuth(), function (req, res, next) {
   })
 })
 
-router.get('/survey', requiresAuth(), function (req, res, next) {
-  res.redirect('profile');
-})
-
 module.exports = router;
