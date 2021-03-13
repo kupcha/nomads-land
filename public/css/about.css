@@ -10,15 +10,15 @@
     font-family: 'messapiabold', Arial, sans-serif;
     font-weight:normal;
     font-style:normal;
-    background-color: black;
+    background-color: #333333;
     max-width: 1400;
   }
   
   body {
     margin: 0 auto;
     background-color: white;
-    border: 5px solid black;
-    color: black;
+    border: 5px solid #333333;
+    color: #333333;
     padding: 0 20px 20px 20px;
     max-width: 1400px;
   
