@@ -51,6 +51,7 @@ body {
   display: inline-block;
   text-shadow: 1px 1px 1px grey;
   align-items: center;
+  margin: auto;
 }
 
 .takeFlight{
@@ -63,5 +64,5 @@ body {
 
 #location{
   height: 40px;
-  text-align: center;
+  margin: auto;
 }
