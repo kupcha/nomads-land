@@ -69,7 +69,7 @@ router.get('/callback', requiresAuth(), function (req, res, next) {
 
 router.post('/survey', requiresAuth(), function (req, res, next) {
   const destination = req.destination;
-  res.render(req.body);
+  res.send(req.body);
   // res.render('survey', {
   //   location : `${destination}`
   // })
