@@ -29,7 +29,7 @@ body {
   margin: 0 auto;
   background-color:#f47c3c;
   border: 5px solid black;
-  color: #white;
+  color: white;
   max-width: 1400px;
   padding: 10px 10px 10px 10px;
 
@@ -46,23 +46,22 @@ body {
   color:white;
 }
 
-.mottoBox{
+.container{
   display:block;
   font-size:18px;
   text-align:center;
+  max-width: 100%;
 }
 
 .looker{
-  display: block;
+  display:inline-block;
   margin: 0 auto;
-max-width: 50%;
-height:auto;
-  margin-left:auto;
-  margin-right:auto;
+  max-width: 45%;
+  height:auto;
 }
 
 .welcome{
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   margin-left:auto;
   margin-right:auto;
@@ -71,8 +70,13 @@ height:auto;
   display:inline-block;
 }
 
-.username{
-  color:#f47c3c;
+.welcomeMessage{
+  max-width: 45%;
+  display: inline-block;
+  padding: 25px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tabs{
