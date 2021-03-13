@@ -70,7 +70,7 @@ router.get('/callback', requiresAuth(), function (req, res, next) {
 router.post('/survey', requiresAuth(), function (req, res, next) {
   const destination = res.destination;
   res.render('survey', {
-    location : `${destination}`;
+    location : `${destination}`
   })
 })
 
