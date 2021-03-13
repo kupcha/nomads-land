@@ -49,9 +49,7 @@ body {
 
 .survey{
   display: inline-block;
-  text-shadow: 1px 1px 1px grey;
-  align-items: center;
-  margin: auto;
+  text-align: center;
 }
 
 .takeFlight{
