@@ -5,6 +5,7 @@
   font-family: 'Alegreya Sans SC', sans-serif;
   align-content: center;
 }
+
  h1 {    
   margin: 0;
   padding: 0 0;
@@ -57,4 +58,8 @@ body {
   width:30px;
   background-image: url('/images/takeFlight.png');
   background-size: 28px 28px;
+}
+
+.location{
+  height: 32px;
 }
