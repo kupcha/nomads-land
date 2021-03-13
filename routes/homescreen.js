@@ -47,10 +47,8 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
       referrals : 0 
     }
     db.collection('users').insertOne(newUser);
-    res.send('fuck you');
+    res.redirect('profile');
   }
-;
-
 });
 
 
@@ -70,7 +68,7 @@ router.get('/callback', requiresAuth(), function (req, res, next) {
 router.post('/survey', requiresAuth(), function (req, res, next) {
   const answer = req.body;
   const destination = answer.location;
-  res.redirect('survey', {
+  res.render('survey', {
     location : `${destination}`
   })
 })
