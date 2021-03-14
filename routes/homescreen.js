@@ -77,12 +77,15 @@ router.get('/callback', requiresAuth(), function (req, res, next) {
 router.post('/survey', requiresAuth(), function (req, res, next) {
   const answer = req.body;
   const destination = answer.location;
+  const userEmail = res.locals.user.email;
   res.render('survey', {
-    location : `${destination}`
+    location : `${destination}`,
+    userEmail : userEmail
   })
 });
 
 router.post('/survey/recommendations', requiresAuth(), function(req, res, next) {
+  const baseReview = req.body;
   res.render('recommendations');
 });
 
