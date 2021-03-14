@@ -5,23 +5,21 @@
     text-shadow: 1px 1px 1px grey;
    }
   
-  html {
-    font-size: 16px;
-    font-family: 'messapiabold', Arial, sans-serif;
-    font-weight:normal;
-    font-style:normal;
-    background-color: #333333;
+
+   html {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background-color: white;
     max-width: 1400;
+    
   }
   
   body {
     margin: 0 auto;
-    background-color: white;
+    background-color:#f47c3c;
     border: 5px solid #333333;
-    color: #333333;
-    padding: 0 20px 20px 20px;
+    color: white;
     max-width: 1400px;
-  
+    padding: 10px 10px 10px 10px;
   }
 
   #nomad{
