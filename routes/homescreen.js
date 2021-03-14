@@ -24,9 +24,8 @@ router.get('/', async function (req, res, next) {
     const userEmail = res.locals.user.email;
     const currentNomad = await User.findOne({email: userEmail});
     if (currentNomad.shownAboutScreen == 0){
-      const emailQuery = {email : `${userEmail}`};
-      const update = {shownAboutScreen : 1};
-      const checkHistory = db.collection('users').findOneAndUpdate(emailQuery, update);
+      currentNomad.shownAboutScreen = 1;
+      currentNomad.save;
       res.redirect('about');
     }else{
       res.redirect('profile');
