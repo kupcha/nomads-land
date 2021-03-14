@@ -25,7 +25,7 @@ router.get('/', async function (req, res, next) {
     const currentNomad = await User.findOne({email: userEmail});
     if (currentNomad.shownAboutScreen == 0){
       currentNomad.shownAboutScreen = 1;
-      User.findOne({email: userEmail}, {shownAboutScreen : 1});
+      User.findOneAndUpdate({email: userEmail}, {shownAboutScreen : 1});
       res.redirect('about');
     }else{
       res.redirect('profile');
