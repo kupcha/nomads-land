@@ -3,14 +3,14 @@
   margin: 0;
   padding: 0 0;
   color: white;
-  text-shadow: 1px 1px 1px grey;
+  text-shadow: 1px 1px 1px #333333;
   font-size: 50px;
 }
 h2 {    
   margin: 0;
   padding: 0 0;
   color: white;
-  text-shadow: 1px 1px 1px grey;
+  text-shadow: 1px 1px 1px #333333;
   font-size:40px;
 }
 
@@ -20,9 +20,9 @@ font-size: 25px;
 
 html {
   font-family: 'Alegreya Sans SC', sans-serif;
-  background-color: white;
+  background-color: #333333;
   max-width: 1400;
-  text-shadow: 1px 1px 1px grey;
+  text-shadow: 1px 1px 1px #333333;
 }
 
 body {
