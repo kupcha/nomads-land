@@ -82,8 +82,8 @@ router.post('/survey', requiresAuth(), function (req, res, next) {
   })
 });
 
-router.post('/survey/recommendations', requiresAuth(), function(req, res, next)) {
-  res.render('recommendations')
-}
+router.post('/survey/recommendations', requiresAuth(), function(req, res, next) {
+  res.render('recommendations');
+});
 
 module.exports = router;
