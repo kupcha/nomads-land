@@ -46,32 +46,38 @@
     </span></h1>
 
   <div class="row justify-content-center">
-
-      <div class="userStats">
-        <div class="stat">
-          <%= elevation %><br>
-            feet
-        </div><br>
-        <div class="stat">
-          <%= trips %><br>
-            trips
-        </div><br>
-        <div class="stat">
-          <%= referrals %><br>
-            tips
+    <div class="survey">
+      where have you been recently?<br>
+      city, state if in USA or city, country if international
+      <form id="destination" action="/survey" method="post">
+        <input type="text" name="location" placeholder="i've been to..." required><br>
+        <button class="takeFlight" type="submit"> </button>
+      </form>
+    </div>
+    <br><br>
+    <div class="userStats">
+      <div class="row">
+        <div class="col-sm">
+          <div class="stat">
+            <%= elevation %><br>
+              feet
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="stat">
+            <%= trips %><br>
+              trips
+          </div </div>
+          <div class="col-sm">
+            <div class="stat">
+              <%= referrals %><br>
+                tips
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="survey">
-        where have you been recently?<br>
-        city, state if in USA or city, country if international
-        <form id="destination" action="/survey" method="post">
-          <input type="text" name="location" placeholder="i've been to..." required><br>
-          <button class="takeFlight" type="submit"> </button>
-        </form>
-      </div>
 
 
-
-  </div>
-  <%- include('partials/footer') -%>
+    </div>
+    <%- include('partials/footer') -%>
