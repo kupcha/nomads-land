@@ -11,7 +11,7 @@
     font-family: 'Alegreya Sans SC', sans-serif;
     background-color: white;
     max-width: 1400;
-    text-shadow: 1px 1px 1px grey;
+    
   }
   
   body {
@@ -21,6 +21,7 @@
     color: white;
     max-width: 1400px;
     padding: 10px 10px 10px 10px;
+    text-shadow: 2px 2px 2px #333333;
   
   }
 
