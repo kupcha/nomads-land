@@ -44,6 +44,21 @@
         </div>
     </nav>
     <h1> my trip to <%= location %></h1>
+    <form action="/profile" method="post" name="tripReviewForm">
+        <p>when were you there?</p>
+        <input type="radio" id="spring" name="seasons" value="spring">
+        <label for="seasons">spring</label><br>
+        <input type="radio" id="summer" name="seasons" value="summer">
+        <label for="seasons">summer</label><br>
+        <input type="radio" id="fall" name="seasons" value="fall">
+        <label for="seasons">fall</label><br>
+        <input type="radio" id="winter" name="seasons" value="winter">
+        <label for="seasons">winter</label><br>
+        <input type="number" id="dates" min="1900" max="2021">
+        <br>
+
+
+    </form>
 
 
 
