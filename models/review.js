@@ -10,29 +10,29 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    month: {
-        type: Number,
-        required: false
+    season: {
+        type: String,
+        required: true
     },
     year: {
         type: Number,
-        required: false
+        required: true
     },
     funRating: {
         type: Number,
-        required: false
+        required: true
     },
     activities:{
         type: Array[ActivitySchema],
-        required: false
+        required: true
     },
     foodRating: {
         type: Number,
-        required: false
+        required: true
     },
     foodRec:{
         type: Array[String],
-        required: false
+        required: true
     },
 
 

@@ -50,7 +50,7 @@
         <form action="/survey/recommendations" method="post" name="tripReviewForm">
             <h2>complete this form to elevate yourself 10 feet</h2>
             <label for="location">location: </label>
-            <input type="text" id="location" required value="<%= location %>" disabled style="text-align: center;">
+            <input type="text" id="location" required value="<%= location %>"  style="text-align: center;">
             <p>When were you there?</p>
             <label for="year">year: </label>
             <input type="number" id="year" min="2000" max="2021" required><br>
@@ -65,43 +65,43 @@
 
             <br><br>
             <p>Was it fun?</p>
-            <input type="radio" id="sofun" name="fun" value="4" required>
+            <input type="radio" id="sofun" name="fun" value="so fun!" required>
             <label for="sofun">so fun!</label><br>
-            <input type="radio" id="yes" name="fun" value="3">
+            <input type="radio" id="yes" name="fun" value="yes">
             <label for="yes">yes</label><br>
-            <input type="radio" id="somewhat" name="fun" value="2">
+            <input type="radio" id="somewhat" name="fun" value="somewhat">
             <label for="somewhat">somewhat</label><br>
-            <input type="radio" id="gross" name="fun" value="1">
+            <input type="radio" id="gross" name="fun" value="gross">
             <label for="gross">gross</label><br>
             <br><br>
             <p>How was the food?</p>
-            <input type="radio" id="awesome" name="food" value="4" required>
+            <input type="radio" id="awesome" name="food" value="awesome!" required>
             <label for="awesome">awesome!</label><br>
-            <input type="radio" id="good" name="food" value="3">
+            <input type="radio" id="good" name="food" value="good">
             <label for="good">good</label><br>
-            <input type="radio" id="okay" name="food" value="2">
+            <input type="radio" id="okay" name="food" value="okay">
             <label for="okay">okay</label><br>
-            <input type="radio" id="gross" name="food" value="1">
+            <input type="radio" id="gross" name="food" value="gross">
             <label for="gross">gross</label><br>
             <br><br>
             <p>How was the sightseeing?</p>
-            <input type="radio" id="stunning" name="sights" value="4" required>
+            <input type="radio" id="stunning" name="sights" value="stunning!" required>
             <label for="stunning">stunning!</label><br>
-            <input type="radio" id="goodSights" name="sights" value="3">
+            <input type="radio" id="goodSights" name="sights" value="good">
             <label for="goodSights">good</label><br>
-            <input type="radio" id="okaySights" name="sights" value="2">
+            <input type="radio" id="okaySights" name="sights" value="okay">
             <label for="okaySights">okay</label><br>
-            <input type="radio" id="bogus" name="sights" value="1">
+            <input type="radio" id="bogus" name="sights" value="bogus!">
             <label for="bogus">bogus!</label><br>
             <br><br>
             <p>How did the locals treat you?</p>
-            <input type="radio" id="amazing" name="locals" value="4" required>
+            <input type="radio" id="amazing" name="locals" value="amazing!" required>
             <label for="amazing">amazing!</label><br>
-            <input type="radio" id="goodLocals" name="locals" value="3">
+            <input type="radio" id="goodLocals" name="locals" value="good">
             <label for="goodLocals">good</label><br>
-            <input type="radio" id="okayLocals" name="locals" value="2">
+            <input type="radio" id="okayLocals" name="locals" value="okay">
             <label for="okayLocals">okay</label><br>
-            <input type="radio" id="hostile" name="locals" value="1">
+            <input type="radio" id="hostile" name="locals" value="hostile!">
             <label for="hostile">hostile!</label><br>
             <br><br>
             <p>Overall, how affordable was it?</p>
@@ -131,9 +131,8 @@
             <label for="wooded">wooded</label><br>
             <br>
             <button type="submit">put it on record</button>
-
         </form>
-
+        <br><br><br><br>
     </div>
 
 
