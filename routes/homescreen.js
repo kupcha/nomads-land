@@ -75,7 +75,7 @@ router.get('/callback', requiresAuth(), function (req, res, next) {
 });
 
 
-router.post('/survey', requiresAuth(), function (req, res, next) {
+router.post('/survey', requiresAuth(), async function (req, res, next) {
   const answer = req.body;
   const destination = answer.location;
   const userEmail = res.locals.user.email;
@@ -89,7 +89,6 @@ router.post('/survey', requiresAuth(), function (req, res, next) {
 
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
   const baseReview = req.body;
-
   await db.collection('review').insertOne(baseReview);
   res.send(baseReview);
 });
