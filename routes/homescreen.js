@@ -80,6 +80,10 @@ router.post('/survey', requiresAuth(), function (req, res, next) {
   res.render('survey', {
     location : `${destination}`
   })
-})
+});
+
+router.post('/survey/recommendations', requiresAuth(), function(req, res, next)) {
+  res.render('recommendations')
+}
 
 module.exports = router;
