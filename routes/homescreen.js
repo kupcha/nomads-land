@@ -79,6 +79,8 @@ router.post('/survey', requiresAuth(), function (req, res, next) {
   const answer = req.body;
   const destination = answer.location;
   const userEmail = res.locals.user.email;
+  const newReview = new Review({"email": userEmail, "location": destination});
+  await newReview.save();
   res.render('survey', {
     location : `${destination}`,
     userEmail : userEmail
@@ -87,6 +89,7 @@ router.post('/survey', requiresAuth(), function (req, res, next) {
 
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
   const baseReview = req.body;
+
   await db.collection('review').insertOne(baseReview);
   res.send(baseReview);
 });

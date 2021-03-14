@@ -12,35 +12,35 @@ const reviewSchema = new mongoose.Schema({
     },
     seasons: {
         type: String,
-        required: true
+        required: false
     },
     year: {
         type: Number,
-        required: true
+        required: false
     },
     fun: {
         type: String,
-        required: true
+        required: false
     },
     food: {
         type: String,
-        required: true
+        required: false
     },
     sights: {
         type: String,
-        required: true
+        required: false
     },
     locals: {
         type: String,
-        required: true
+        required: false
     },
     price: {
         type: String,
-        required: true
+        required: false
     },
     enviro: {
         type: String,
-        required: true
+        required: false
     },
     mscEnviro: {
         type: String,
