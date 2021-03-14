@@ -2,7 +2,7 @@
    h1 {    
     margin: 0;
     padding: 0 0;
-    text-shadow: 1px 1px 1px grey;
+    text-shadow: 1px 1px 1px #6c7d85;
    }
   
 
@@ -16,7 +16,7 @@
   body {
     margin: 0 auto;
     border: 5px solid #333333;
-    color: white;
+    color: #333333;
     max-width: 1400px;
     padding: 10px 10px 10px 10px;
   }
