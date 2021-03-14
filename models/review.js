@@ -12,15 +12,15 @@ const reviewSchema = new mongoose.Schema({
     },
     month: {
         type: Number,
-        required: true
+        required: false
     },
     year: {
         type: Number,
-        required: true
+        required: false
     },
     funRating: {
         type: Number,
-        required: true
+        required: false
     },
     activities:{
         type: Array[ActivitySchema],
@@ -28,7 +28,7 @@ const reviewSchema = new mongoose.Schema({
     },
     foodRating: {
         type: Number,
-        required: true
+        required: false
     },
     foodRec:{
         type: Array[String],
