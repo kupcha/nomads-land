@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
     const userEmail = res.locals.user.email;
     const currentNomad = await User.findOne({email: userEmail});
     if (currentNomad.shownAboutScreen == 0){
-      await User.findOneAndUpdate({email : userEmail}, {shownAboutScreen : 1});
+      User.findOneAndUpdate({email : userEmail}, {shownAboutScreen : 1});
       res.render('about');
     }else{
       res.render('profile');
