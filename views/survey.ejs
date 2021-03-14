@@ -44,57 +44,59 @@
         </div>
     </nav>
     <div class="survey">
-    <h1> my trip to <span class="place"><%= location %></span></h1>
-    <form action="/profile" method="post" name="tripReviewForm">
-        <h2>basic questions (worth 10 feet of elevation):</h2>
+        <h1> my trip to <span class="place">
+                <%= location %>
+            </span></h1>
+        <form action="/profile" method="post" name="tripReviewForm">
+            <h2>basic questions (worth 10 feet of elevation):</h2>
 
-        <p>When were you there?</p>
-        <input type="radio" id="spring" name="seasons" value="spring" required>
-        <label for="seasons">spring</label><br>
-        <input type="radio" id="summer" name="seasons" value="summer">
-        <label for="seasons">summer</label><br>
-        <input type="radio" id="fall" name="seasons" value="fall">
-        <label for="seasons">fall</label><br>
-        <input type="radio" id="winter" name="seasons" value="winter">
-        <label for="seasons">winter</label><br><br>
-        <label for="year">year: </label>
-        <input type="number" id="dates" min="2000" max="2021" required>
-        <br><br>
-        <p>Was it fun?</p>
-        <input type="radio" id="sofun" name="fun" value="4" required>
-        <label for="sofun">so fun!</label><br>
-        <input type="radio" id="yes" name="fun" value="3">
-        <label for="yes">yes</label><br>
-        <input type="radio" id="somewhat" name="fun" value="2">
-        <label for="somewhat">somewhat</label><br>
-        <input type="radio" id="gross" name="food" value="1">
-        <label for="gross">gross</label><br>
-        <br><br>
-        <p>How was the food?</p>
-        <input type="radio" id="awesome" name="food" value="4" required>
-        <label for="awesome">awesome!</label><br>
-        <input type="radio" id="good" name="food" value="3">
-        <label for="good">good</label><br>
-        <input type="radio" id="okay" name="food" value="2">
-        <label for="okay">okay</label><br>
-        <input type="radio" id="gross" name="food" value="1">
-        <label for="gross">gross</label><br>
-        <br><br>
-        <p>How was the sightseeing?</p>
-        <input type="radio" id="stunning" name="sights" value="4" required>
-        <label for="stunning">stunning!</label><br>
-        <input type="radio" id="goodSights" name="sights" value="3">
-        <label for="goodSights">good</label><br>
-        <input type="radio" id="okaySights" name="sights" value="2">
-        <label for="okaySights">okay</label><br>
-        <input type="radio" id="bogus" name="sights" value="1">
-        <label for="bogus">bogus!</label><br>
+            <p>When were you there?</p>
+            <input type="radio" id="spring" name="seasons" value="spring" required>
+            <label for="seasons">spring</label><br>
+            <input type="radio" id="summer" name="seasons" value="summer">
+            <label for="seasons">summer</label><br>
+            <input type="radio" id="fall" name="seasons" value="fall">
+            <label for="seasons">fall</label><br>
+            <input type="radio" id="winter" name="seasons" value="winter">
+            <label for="seasons">winter</label><br><br>
+            <label for="year">year: </label>
+            <input type="number" id="dates" min="2000" max="2021" required>
+            <br><br>
+            <p>Was it fun?</p>
+            <input type="radio" id="sofun" name="fun" value="4" required>
+            <label for="sofun">so fun!</label><br>
+            <input type="radio" id="yes" name="fun" value="3">
+            <label for="yes">yes</label><br>
+            <input type="radio" id="somewhat" name="fun" value="2">
+            <label for="somewhat">somewhat</label><br>
+            <input type="radio" id="gross" name="food" value="1">
+            <label for="gross">gross</label><br>
+            <br><br>
+            <p>How was the food?</p>
+            <input type="radio" id="awesome" name="food" value="4" required>
+            <label for="awesome">awesome!</label><br>
+            <input type="radio" id="good" name="food" value="3">
+            <label for="good">good</label><br>
+            <input type="radio" id="okay" name="food" value="2">
+            <label for="okay">okay</label><br>
+            <input type="radio" id="gross" name="food" value="1">
+            <label for="gross">gross</label><br>
+            <br><br>
+            <p>How was the sightseeing?</p>
+            <input type="radio" id="stunning" name="sights" value="4" required>
+            <label for="stunning">stunning!</label><br>
+            <input type="radio" id="goodSights" name="sights" value="3">
+            <label for="goodSights">good</label><br>
+            <input type="radio" id="okaySights" name="sights" value="2">
+            <label for="okaySights">okay</label><br>
+            <input type="radio" id="bogus" name="sights" value="1">
+            <label for="bogus">bogus!</label><br>
 
 
 
-    </form>
+        </form>
 
-</div>
+    </div>
 
 
 
