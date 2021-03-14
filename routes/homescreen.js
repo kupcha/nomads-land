@@ -21,15 +21,15 @@ db.once('open', function () {
 
 router.get('/', async function (req, res, next) {
   if (req.oidc.isAuthenticated()) {
-    const userEmail = res.locals.user.email;
-    const currentNomad = await User.findOne({email: userEmail});
-    if (currentNomad.shownAboutScreen == 0){
-      currentNomad.shownAboutScreen = 1;
-      User.findOneAndUpdate({email: userEmail}, {shownAboutScreen : 1});
-      res.redirect('about');
-    }else{
-      res.redirect('profile');
-    }
+    // const userEmail = res.locals.user.email;
+    // const currentNomad = await User.findOne({email: userEmail});
+    // if (currentNomad.shownAboutScreen == 0){
+    //   User.findOneAndUpdate({email: userEmail}, {shownAboutScreen : 1});
+    //   res.redirect('about');
+    // }else{
+    //   res.redirect('profile');
+    // }
+    res.redirect('profile');
   } else {
     res.render('welcome');
   }
