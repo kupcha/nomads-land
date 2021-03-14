@@ -2,6 +2,7 @@ var router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
 const mongoose = require('mongoose');
 const User = require('../models/user');
+const Review = require('../models/review');
 
 mongoose.connect('mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.mongodb.net/nomadsland?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -85,7 +86,8 @@ router.post('/survey', requiresAuth(), function (req, res, next) {
 });
 
 router.post('/survey/recommendations', requiresAuth(), function(req, res, next) {
-  const baseReview = req.body;
+  const baseReview = new Review(req.body);
+  await baseReview.save();
   res.render('recommendations');
 });
 

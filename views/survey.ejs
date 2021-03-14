@@ -49,7 +49,8 @@
             </span></h1>
         <form action="/survey/recommendations" method="post" name="tripReviewForm">
             <h2>complete this form to elevate yourself 10 feet</h2>
-            <input type="text" id="username" required value="<%= userEmail %>" style="text-align: center;" disabled>
+            <label for="email">email: </label>
+            <input type="text" id="email" required value="<%= userEmail %>" style="text-align: center;" disabled><br>
             <label for="location">location: </label>
             <input type="text" id="location" required value="<%= location %>"  style="text-align: center;">
             <p>When were you there?</p>

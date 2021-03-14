@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
  
 
 const reviewSchema = new mongoose.Schema({
-    user: {
+    email: {
         type: String,
         required: true
     },
@@ -10,7 +10,7 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    season: {
+    seasons: {
         type: String,
         required: true
     },
@@ -18,41 +18,49 @@ const reviewSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    funRating: {
-        type: Number,
+    fun: {
+        type: String,
         required: true
     },
-    activities:{
-        type: Array[ActivitySchema],
+    food: {
+        type: String,
         required: true
     },
-    foodRating: {
-        type: Number,
+    sights: {
+        type: String,
         required: true
     },
-    foodRec:{
-        type: Array[String],
+    locals: {
+        type: String,
         required: true
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    price: {
+        type: String,
+        required: true
+    },
+    enviro: {
+        type: String,
+        required: true
+    },
+    mscEnviro: {
+        type: String,
+        required: false
+    },
+    activityRecs: {
+        type: Array[activitySchema],
+        required: false
+    },
+    foodRecs: {
+        type: Array[foodRecSchema],
+        required: false
+    },
+    sightRecs: {
+        type: Array[sightRecSchema],
+        required: false
     }
 });
 
 
-const User = mongoose.model('User', userSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
-module.exports = User;
+module.exports = Review;
