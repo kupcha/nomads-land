@@ -5,20 +5,21 @@
   font-size: 50px;
  }
 
-html {
-  font-size: 16px;
+
+ html {
   font-family: 'Alegreya Sans SC', sans-serif;
-  background-color: #333333;
-  max-width: 1440;
-  text-shadow: 1px 1px 1px grey;
+  background-color: white;
+  max-width: 1400;
+  
 }
 
 body {
   margin: 0 auto;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
+  background-color:#f47c3c;
+  border: 5px solid #333333;
   color: white;
   max-width: 1400px;
+  padding: 10px 10px 10px 10px;
   background-image: url('/images/profileBackground.jpg');
   background-size: 1440px 990px;
 
