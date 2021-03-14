@@ -19,7 +19,7 @@ db.once('open', function () {
 });
 
 
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
   if (req.oidc.isAuthenticated()) {
     const userEmail = res.locals.user.email;
     const currentNomad = await User.findOne({email: userEmail});
