@@ -27,9 +27,9 @@ router.get('/', async function (req, res, next) {
       const emailQuery = {email : `${userEmail}`};
       const update = {shownAboutScreen : 1};
       const checkHistory = User.findOneAndUpdate(emailQuery, update);
-      res.render('about');
+      res.redirect('about');
     }else{
-      res.render('profile');
+      res.redirect('profile');
     }
   } else {
     res.render('welcome');
