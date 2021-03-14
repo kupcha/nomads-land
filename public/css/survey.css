@@ -22,7 +22,7 @@
     max-width: 1400px;
     padding: 10px 10px 10px 10px;
     background-image: url('/images/surveyBackground.jpg');
-    background-size: 1440px 990px;
+    background-size: auto 100%;
   
   }
 
