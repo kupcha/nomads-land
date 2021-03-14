@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: 'messapiabold';
-  src: url('https://nomadsland.app/css/fonts/messapia-bold.otf') format('opentype');
+  src: url('/css/fonts/Messapia-Bold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
