@@ -24,6 +24,11 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: true,
         default: 0
+    },
+    shownAboutScreen: {
+    type: Number,
+    required: true,
+    default: 0
     }
 });
 

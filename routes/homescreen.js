@@ -21,7 +21,14 @@ db.once('open', function () {
 
 router.get('/', function (req, res, next) {
   if (req.oidc.isAuthenticated()) {
-    res.redirect('about');
+    const userEmail = res.locals.user.email;
+    const currentNomad = await User.findOne({email: userEmail});
+    if (currentNomad.shownAboutScreen == 0){
+      await User.findOneAndUpdate({email : userEmail}, {shownAboutScreen : 1});
+      res.redirect('about');
+    }else{
+      res.redirect('profile');
+    }
   } else {
     res.render('welcome');
   }
@@ -44,7 +51,8 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
       email : `${userEmail}`,
       elevation : 0,
       trips : 0,
-      referrals : 0 
+      referrals : 0,
+      shownAboutScreen : 0
     }
     db.collection('users').insertOne(newUser);
     res.redirect('profile');
