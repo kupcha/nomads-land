@@ -46,18 +46,18 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    activityRecs: {
-        type: Array[activitySchema],
-        required: false
-    },
-    foodRecs: {
-        type: Array[foodRecSchema],
-        required: false
-    },
-    sightRecs: {
-        type: Array[sightRecSchema],
-        required: false
-    }
+    // activityRecs: {
+    //     type: Array[activitySchema],
+    //     required: false
+    // },
+    // foodRecs: {
+    //     type: Array[foodRecSchema],
+    //     required: false
+    // },
+    // sightRecs: {
+    //     type: Array[sightRecSchema],
+    //     required: false
+    // }
 });
 
 
