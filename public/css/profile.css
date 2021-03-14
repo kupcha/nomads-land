@@ -31,10 +31,11 @@ body {
 
 .stat{
   text-align: center;
-  align-content:center;
-  margin: 3 auto;
 }
 
+.helperText{
+  font-size: 20px;
+}
 .userStats{
   display: inline-block;
   font-size:30px;
