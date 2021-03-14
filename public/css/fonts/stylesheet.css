@@ -4,9 +4,8 @@
 
 @font-face {
     font-family: 'messapiabold';
-    src: url('https://nomadsland.app/css/fonts/messapia-bold-webfont.woff2') format('woff2'),
-         url('https://nomadsland.app/css/fonts/messapia-bold-webfont.woff') format('woff');
+    src: url('https://nomadsland.app/css/fonts/messapia-bold.otf') format('opentype'),
+         url('https://nomadsland.app/css/fonts/messapia-regular.woff') format('opentype');
     font-weight: normal;
     font-style: normal;
-
 }
