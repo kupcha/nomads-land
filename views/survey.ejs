@@ -50,9 +50,9 @@
         <form action="/survey/recommendations" method="post" name="tripReviewForm">
             <h2>complete this form to elevate yourself 10 feet</h2>
             <label for="reviewersEmail">email: </label>
-            <input type="email" id="reviewersEmail" required value="<%= userEmail %>" style="text-align: center;" disabled><br>
+            <input type="email" id="reviewersEmail" name="reviewersEmail" required value="<%= userEmail %>" style="text-align: center;" disabled><br>
             <label for="location">location: </label>
-            <input type="text" id="location" required value="<%= location %>"  style="text-align: center;">
+            <input type="text" id="location" name="location" required value="<%= location %>"  style="text-align: center;">
             <script type="text/javascript">
                 const email = document.getElementById('email');
                 const currentEmail = document.getElementById('email').value;
@@ -63,7 +63,7 @@
             </script>
             <p>When were you there?</p>
             <label for="yearOfVisit">year: </label>
-            <input type="number" id="yearOfVisit" min="2000" max="2021" required><br>
+            <input type="number" id="yearOfVisit" name="yearOfVisit" min="2000" max="2021" required><br>
             <input type="radio" id="spring" name="seasons" value="spring" required>
             <label for="spring">spring</label><br>
             <input type="radio" id="summer" name="seasons" value="summer">
@@ -142,7 +142,7 @@
             <br>
             <button type="submit">put it on record</button>
         </form>
-        <br><br><br><br>
+        <br><br>
     </div>
 
 
