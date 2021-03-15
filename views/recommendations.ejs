@@ -64,7 +64,8 @@
                 activityLocationLabel.setAttribute('value', 'where? ');
                 temp.appendChild(activityLocationLabel);
 
-                document.getElementsByTagName('body').appendChild(temp);
+                document.getElementsByTagName('body')[0]
+                .appendChild(temp);
             }
 
             makeActivityRec();
