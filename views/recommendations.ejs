@@ -58,17 +58,16 @@
                 activityLocation.required = true;
                 activityLocation.setAttribute('id', 'activityLocation');
                 activityLocation.setAttribute('name', 'activityLocation');
-                temp.appendChild(activityLocation);
+                
                 const activityLocationLabel = document.createElement('label');
-                activityLocationLabel.setAttribute('for', 'activityLocation');
-                activityLocationLabel.setAttribute('value', 'where? ');
+                activityLocationLabel.htmlFor = 'activityLocation';
+                activityLocation.innerHTML = "where?"
+                activityLocationLabel.appendChild(activityLocationLabel);
                 temp.appendChild(activityLocationLabel);
-
+                temp.appendChild(activityLocation);
                 const body = document.getElementsByTagName('body')[0];
                 body.appendChild(temp);
             }
-
-            makeActivityRec();
         </script>
         <button onclick="makeActivityRec()" name="funActivityRec">did you do anything fun?</button>
         <button name="foodRec" onclick="">did you eat anywhere awesome?</button>
