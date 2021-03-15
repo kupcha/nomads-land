@@ -49,8 +49,17 @@
         <button onclick="makeActivityRec()" name="funActivityRec" >did you do anything fun?</button>
         <button name ="foodRec" onclick="makeFoodRec()">did you eat anywhere awesome?</button>
         <button name="sightRec" onclick="makeSightRec()">did you see anything awesome?</button>
-        <script>
+        <script type= 'text/javascript'>
+            function makeActivityRec() {
+                const temp = document.createElement('form');
+                temp.setAttribute('class', 'activityRecForm')
+                temp.setAttribute('method', 'put');
+                temp.setAttribute('action', '/');
+            }
+
+            }
             document.getElementsByClassName('currentRecs');
+
         </script>
         <div class="currentRecs">
         <p>current recommendations:</p>
