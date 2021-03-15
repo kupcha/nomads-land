@@ -46,7 +46,15 @@
     <h1>make some recommendations</h1>
     <h3>+10 feet of elevation for every recommendation</h3>
     <div class="container">
+        <button onclick="makeActivityRec()" name="funActivityRec" >did you do anything fun?</button>
+        <button name ="foodRec" onclick="makeFoodRec()">did you eat anywhere awesome?</button>
+        <button name="sightRec" onclick="makeSightRec()">did you see anything awesome?</button>
+        <script>
+            document.getElementsByClassName('currentRecs');
+        </script>
+        <div class="currentRecs">
         <p>current recommendations:</p>
+        </div>
     </div>
 
 
