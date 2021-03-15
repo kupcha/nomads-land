@@ -88,9 +88,8 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
 });
 
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
-  const baseReview = req.body;
-  await db.collection('review').insertOne(baseReview);
-  res.send(baseReview);
+  const location = req.body.location;
+  res.send(location);
 });
 
 module.exports = router;
