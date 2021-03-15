@@ -98,7 +98,25 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
 });
 
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
-  res.send(JSON.stringify(req.body))
+  const userEmail = res.locals.user.email;
+  const survey = req.body;
+  const newSurvey = {
+    email : userEmail;
+    location : survey.location,
+    seasons : survey.seasons,
+    fun : survey.fun,
+    food : survey.food,
+    sights : survey.sights,
+    locals : survey.locals,
+    price : survey.price,
+    enviro : survey.enviro
+  };
+  if (survey.mscEnviro){
+    newSurvey.mscEnviro = survey.mscEnvir;
+  }
+  await db.collection('reviews').insertOne(newSurvey);
+  res.render('/recommendations')
+  // res.send(JSON.stringify(req.body))
 });
 
 module.exports = router;
