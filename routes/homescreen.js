@@ -80,8 +80,9 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
   const destination = answer.location;
   const userEmail = res.locals.user.email;
   const newReview = new Review({"email": userEmail, "location": destination});
-  if (Review.findOne({email: userEmail, location:destination})){
-    res.send('You have already reviewed this location');
+  const foundReview = Review.findOne({email: userEmail, location:destination});
+  if (foundReview){
+    res.send(foundReview);
   }
   else{
     await newReview.save();
@@ -90,7 +91,6 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
       userEmail : userEmail
     })
   }
-
 });
 
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
