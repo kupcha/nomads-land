@@ -79,12 +79,12 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
   const answer = req.body;
   const destination = answer.location;
   const userEmail = res.locals.user.email;
-  const newReview = new Review({"email": userEmail, "location": destination});
   const foundReview = Review.findOne({email: userEmail, location : destination});
-  if (foundReview == newReview){
+  if (foundReview){
     res.send(foundReview);
   }
   else{
+    const newReview = new Review({"email": userEmail, "location": destination});
     await newReview.save();
     res.render('survey', {
       location : `${destination}`,
