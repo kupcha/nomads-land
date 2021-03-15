@@ -63,8 +63,9 @@
                 const activityLocationLabel = document.createElement('label');
                 activityLocationLabel.htmlFor = 'activityLocation';
                 activityLocation.innerHTML = "where?";
-                temp.appendChild(activityLocationLabel);
+                
                 temp.appendChild(activityLocation);
+                temp.appendChild(activityLocationLabel);
                 const body = document.getElementsByTagName('body')[0];
                 body.appendChild(temp);
             }
