@@ -51,6 +51,7 @@
             function makeActivityRec() {
                 const temp = document.createElement('form');
                 temp.setAttribute('class', 'activityRecForm');
+                temp.setAttribute('style', 'text-align: center;');
                 temp.setAttribute('method', 'put');
                 temp.setAttribute('action', '/');
                 const activityLocation = document.createElement('input');
@@ -61,8 +62,7 @@
                 
                 const activityLocationLabel = document.createElement('label');
                 activityLocationLabel.htmlFor = 'activityLocation';
-                activityLocation.innerHTML = "where?"
-                activityLocationLabel.appendChild(activityLocationLabel);
+                activityLocation.innerHTML = "where?";
                 temp.appendChild(activityLocationLabel);
                 temp.appendChild(activityLocation);
                 const body = document.getElementsByTagName('body')[0];
