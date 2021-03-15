@@ -79,23 +79,23 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
   const answer = req.body;
   const destination = answer.location;
   const userEmail = res.locals.user.email;
-  const foundReview = Review.findOne({email: userEmail, location : destination});
-  if (foundReview){
-    res.send(foundReview);
-  }
-  else{
-    const newReview = new Review({"email": userEmail, "location": destination});
-    await newReview.save();
-    res.render('survey', {
-      location : `${destination}`,
-      userEmail : userEmail
-    })
-  }
+  // const foundReview = Review.findOne({email: userEmail, location : destination});
+  // if (foundReview){
+  //   res.send(foundReview);
+  // }
+  // else{
+  //   const newReview = new Review({"email": userEmail, "location": destination});
+  //   await newReview.save();
+  //   res.render('survey', {
+  //     location : `${destination}`,
+  //     userEmail : userEmail
+  //   })
+  // }
+  res.redirect('survey');
 });
 
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
-  const location = req.body.location;
-  res.send(location);
+  res.send(req.body)
 });
 
 module.exports = router;
