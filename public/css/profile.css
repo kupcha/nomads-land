@@ -19,10 +19,10 @@ body {
   color: white;
   max-width: 1400px;
   padding: 10px 10px 10px 10px;
-  /* background-image: url('/images/profileBackground.jpg'); */
+  background-image: url('/images/profileBackground.jpg'); */
   background-size: 1440px 990px;
-  /* background-attachment: fixed; */
-  /* background-repeat: repeat-n; */
+  background-attachment: fixed;
+  background-repeat: repeat-n;
 
 }
 
