@@ -101,7 +101,7 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
   const userEmail = res.locals.user.email;
   const survey = req.body;
   const newSurvey = {
-    email : userEmail;
+    email : userEmail,
     location : survey.location,
     seasons : survey.seasons,
     fun : survey.fun,
@@ -115,7 +115,7 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
     newSurvey.mscEnviro = survey.mscEnvir;
   }
   await db.collection('reviews').insertOne(newSurvey);
-  res.render('/recommendations')
+  res.render('/recommendations');
   // res.send(JSON.stringify(req.body))
 });
 
