@@ -98,7 +98,7 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
 });
 
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
-  res.send(req.body)
+  res.send(JSON.stringify(req.body))
 });
 
 module.exports = router;
