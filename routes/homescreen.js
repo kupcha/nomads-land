@@ -91,7 +91,7 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
   //     userEmail : userEmail
   //   })
   // }
-  res.redirect('survey');
+  res.render('survey');
 });
 
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
