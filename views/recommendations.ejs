@@ -22,7 +22,8 @@
     <nav class="flex items-center justify-between flex-wrap navbar-success" style="background-color: transparent;"">
         <div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
-            <a class="navbar-brand" href="https://nomadsland.app/profile"><img src="/images/whitenomad.png" width="35" height="35"></a>
+            <a class="navbar-brand" href="https://nomadsland.app/profile"><img src="/images/whitenomad.png" width="35"
+                    height="35"></a>
             <a href="https://instagram.com/jimmynomad" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-instagram" viewBox="0 0 16 16">
@@ -46,10 +47,10 @@
     <h1>make some recommendations</h1>
     <h3>+10 feet of elevation for every recommendation</h3>
     <div class="container">
-        <button onclick="makeActivityRec()" name="funActivityRec" >did you do anything fun?</button>
-        <button name ="foodRec" onclick="makeFoodRec()">did you eat anywhere awesome?</button>
+        <button onclick="makeActivityRec()" name="funActivityRec">did you do anything fun?</button>
+        <button name="foodRec" onclick="makeFoodRec()">did you eat anywhere awesome?</button>
         <button name="sightRec" onclick="makeSightRec()">did you see anything awesome?</button>
-        <script type= 'text/javascript'>
+        <script type='text/javascript'>
             function makeActivityRec() {
                 const temp = document.createElement('form');
                 temp.setAttribute('class', 'activityRecForm');
@@ -65,19 +66,22 @@
                 activityLocationLabel.setAttribute('for', 'activityLocation');
                 activityLocationLabel.setAttribute('value', 'where? ');
                 temp.appendChild(activityLocationLabel);
+
+                document.getElementsByClassName('putFormHere').appendChild(temp);
             }
 
-            }
-            document.getElementsByClassName('currentRecs');
-
+            makeActivityRec();
         </script>
+        <div class="putFormHere">
+
+        </div>
         <div class="currentRecs">
-        <p>current recommendations:</p>
+            <p>current recommendations:</p>
         </div>
     </div>
 
 
-<button onclick="window.location.href='/profile'">i don't have any</button>
+    <button onclick="window.location.href='/profile'">i don't have any</button>
 
 
 </body>
