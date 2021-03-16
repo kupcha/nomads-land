@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: messapiabold;
-  src: url('/css/fonts/Messapia-Bold.otf');
+  src: url('https://nomadsland.app/css/fonts/messapia-bold.otf');
 }
 
  h1 {    
@@ -104,7 +104,7 @@ p{
   outline: none;
   color: #f47c3c;
   background-color: white;
-  color: ;
+  color: white;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #333333;
