@@ -1,7 +1,8 @@
 
 @font-face {
   font-family: 'messapiabold';
-  src: url('/css/fonts/Messapia-Bold.otf');
+  src: url('/css/fonts/messapia-bold-webfont.woff') format('woff'),
+  url('/css/fonts/messapia-bold-webfont.woff') format('woff2')
 }
 
  h1 {    
