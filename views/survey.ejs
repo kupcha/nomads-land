@@ -43,6 +43,28 @@
         </div>
         </div>
     </nav>
+    <script type='text/javascript'>
+        function makeActivityRec() {
+            const temp = document.createElement('form');
+            temp.setAttribute('class', 'activityRecForm');
+            temp.setAttribute('style', 'text-align: center;');
+            temp.setAttribute('method', 'put');
+            temp.setAttribute('action', '/');
+            const activityLocation = document.createElement('input');
+            activityLocation.setAttribute('type', 'text');
+            activityLocation.required = true;
+            activityLocation.setAttribute('id', 'activityLocation');
+            activityLocation.setAttribute('name', 'activityLocation');
+            
+            const activityLocationLabel = document.createElement('label');
+            activityLocationLabel.htmlFor = 'activityLocation';
+            activityLocation.innerHTML = "where?";
+            temp.appendChild(activityLocation);
+            temp.appendChild(activityLocationLabel);
+            const body = document.getElementsByTagName('body')[0];
+            body.appendChild(temp);
+        }
+    </script>
     <div class="survey">
         <h1> my trip to <span class="place">
                 <%= location %>
@@ -142,12 +164,12 @@
             <br>
             <label for="recsMade">reccomendations made: </label>
             <div class="recList"></div>
-            <input type="number" id="recsMade" value="0" disabled required><br><br>
-            <button onclick="makeActivityRec()" name="funActivityRec">did you do anything fun?</button>
-            <button name="foodRec" onclick="">did you eat anywhere awesome?</button>
-            <button name="sightRec" onclick="">did you see anything awesome?</button><br><br>
-            <button type="submit">put it on record</button>
+            <input type="number" id="recsMade" value="0" disabled required style="text-align: center;"><br><br>
         </form>
+        <button onclick="makeActivityRec()" name="funActivityRec">did you do anything fun?</button>
+        <button name="foodRec" onclick="">did you eat anywhere awesome?</button>
+        <button name="sightRec" onclick="">did you see anything awesome?</button><br><br>
+        <button type="submit">put it on record</button>
         <br><br>
     </div>
 
