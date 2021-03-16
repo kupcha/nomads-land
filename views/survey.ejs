@@ -45,6 +45,10 @@
     </nav>
     <script type='text/javascript'>
         function makeActivityRec() {
+            const rec = document.createElement('div');
+            const lineBreak = document.createElement('br');
+            rec.setAttribute('class', 'rec');
+            rec.setAttribute('id', 'rec')
             const activityLocation = document.createElement('input');
             activityLocation.setAttribute('type', 'text');
             activityLocation.required = true;
@@ -54,7 +58,8 @@
             activityLocationLabel.htmlFor = activityLocation;
             activityLocation.innerHTML = "where?";
             const recDiv = document.getElementById('recList');
-            recDiv.append(activityLocation);
+            recDiv.append(rec);
+            recDiv.append(lineBreak);
         }
     </script>
     <div class="survey">
