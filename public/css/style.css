@@ -1,9 +1,7 @@
 
 @font-face {
-  font-family: 'messapiabold';
+  font-family: messapiabold;
   src: url('/css/fonts/Messapia-Bold.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
 }
 
  h1 {    
@@ -26,7 +24,7 @@ font-size: 25px;
 }
 
 html {
-  font-family: 'messapiabold';
+  font-family: messapiabold;
   background-color: #333333;
   max-width: 1400;
   text-shadow: 1px 1px 1px #333333;
