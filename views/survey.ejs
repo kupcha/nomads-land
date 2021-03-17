@@ -66,7 +66,7 @@
             activityLocation.setAttribute('id', 'activityLocation');
             activityLocation.setAttribute('name', 'activityLocation');
             activityLocation.setAttribute('placeholder', 'where?');
-            activityLocation.setAttribute('style', 'display: inline; text-align: center;margin: 0; padding:0;');
+            activityLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
             const selectionList = document.createElement('select');
             selectionList.id = 'selection';
             for (var i = 0; i < activityChoices.length; i++){
@@ -75,12 +75,12 @@
                 option.text = activityChoices[i];
                 selectionList.append(option);
             }
-            selectionList.setAttribute('style', 'display: inline; text-align: center;margin: 0; padding:0;');
+            selectionList.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
             selectionList.required = true;
             const recDiv = document.getElementById('recList');
             const cancelButton = document.createElement('button');
             cancelButton.setAttribute('onClick', "removeDiv(this)");
-            cancelButton.setAttribute('style', 'display: inline; text-align: center;margin: 0;');
+            cancelButton.setAttribute('style', 'display: flex; text-align: center;margin: 0;');
             cancelButton.innerHTML = 'cancel';
             rec.setAttribute('style', 'width: 40%; max-width: 50%; display: flex; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
             rec.append(selectionList);
