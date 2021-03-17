@@ -70,7 +70,7 @@
             selectionList.required = true;
             const recDiv = document.getElementById('recList');
             const cancelButton = document.createElement('button');
-            cancelButton.setAttribute('onClick', "document.body.remove(rec)");
+            cancelButton.setAttribute('onClick', "document.body.remove(document.getElementById('rec'))");
             cancelButton.innerHTML = 'cancel';
             rec.append(selectionList);
             rec.append(lineBreak);
