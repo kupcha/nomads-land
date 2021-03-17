@@ -45,6 +45,8 @@
     </nav>
     <script type='text/javascript'>
         function makeActivityRec() {
+            const activityChoices = ['art + culture', 'drive + ride', 'entertainment', 'food + drink',
+             'nature + outdoors', 'sports + fitness', 'tours', 'wellness', 'wacky + wild'];
             const rec = document.createElement('div');
             const lineBreak = document.createElement('br');
             rec.setAttribute('class', 'rec');
@@ -55,14 +57,23 @@
             activityLocation.setAttribute('id', 'activityLocation');
             activityLocation.setAttribute('name', 'activityLocation');
             activityLocation.setAttribute('placeholder', 'where?');
-            activityLocation.setAttribute('style', 'text-align: center')
-            const activityLocationLabel = document.createElement('label');
-            activityLocationLabel.htmlFor = activityLocation;
-            activityLocation.innerHTML = "where?";
+            activityLocation.setAttribute('style', 'text-align: center');
+            const selectionList = document.createElement('select');
+            selectList.id = 'selection';
+            for (var i = 0; i < activityChoices.length; i++){
+                const option = document.createElement('option');
+                option.value = activityChoices[i];
+                option.text = activityChoices[i];
+                selectionList.append(option);
+            }
             const recDiv = document.getElementById('recList');
+            rec.append(selectionList);
+            rec.append(lineBreak);
             rec.append(activityLocation);
             recDiv.append(rec);
             recDiv.append(lineBreak);
+            
+            }
         }
     </script>
     <div class="survey">
