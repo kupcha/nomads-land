@@ -57,7 +57,7 @@
             activityLocation.setAttribute('id', 'activityLocation');
             activityLocation.setAttribute('name', 'activityLocation');
             activityLocation.setAttribute('placeholder', 'where?');
-            activityLocation.setAttribute('style', 'text-align: center; padding: 7px 7px 7px 7px');
+            activityLocation.setAttribute('style', 'text-align: center');
             const selectionList = document.createElement('select');
             selectionList.id = 'selection';
             for (var i = 0; i < activityChoices.length; i++){
@@ -66,7 +66,7 @@
                 option.text = activityChoices[i];
                 selectionList.append(option);
             }
-            selectionList.setAttribute('style', 'text-align: center; padding: 7px 7px 7px 7px;');
+            selectionList.setAttribute('style', 'text-align: center');
             selectionList.required = true;
             const recDiv = document.getElementById('recList');
             const cancelButton = document.createElement('button');
