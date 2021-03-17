@@ -69,6 +69,9 @@
             selectionList.setAttribute('style', 'text-align: center; padding: 7px 7px 7px 7px;');
             selectionList.required = true;
             const recDiv = document.getElementById('recList');
+            const cancelButton = document.createElement('button');
+            cancelButton.setAttribute('onClick', "document.body.removeChild(this.parentNode)");
+            cancelButton.innerHTML = 'cancel';
             rec.append(selectionList);
             rec.append(lineBreak);
             rec.append(activityLocation);
