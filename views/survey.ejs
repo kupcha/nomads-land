@@ -43,6 +43,11 @@
         </div>
         </div>
     </nav>
+    <script type="text/javascript">
+        function removeDiv(btn){
+            ((btn.parentNode).parentNode).removeChild(btn.parentNode);
+        }
+    </script>
     <script type='text/javascript'>
         function makeActivityRec() {
             const activityChoices = ['art + culture', 'drive + ride', 'entertainment', 'food + drink',
@@ -70,7 +75,7 @@
             selectionList.required = true;
             const recDiv = document.getElementById('recList');
             const cancelButton = document.createElement('button');
-            cancelButton.setAttribute('onClick', "document.body.remove(document.getElementById('rec'))");
+            cancelButton.setAttribute('onClick', "removeDiv(this)");
             cancelButton.innerHTML = 'cancel';
             rec.append(selectionList);
             rec.append(lineBreak);
