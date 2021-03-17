@@ -82,8 +82,13 @@
             rec.append(activityLocation);
             rec.append(cancelButton);
             const content = document.getElementById('survey');
-            content.append(rec);
+            recDiv.append(rec);
             recDiv.append(lineBreak);
+            const recsMadeObject = getElementById('recsMade');
+            const recsMade = recsMadeObject.value;
+            recsMadeObject.setAttribute('value', (recsMade + 1));
+
+
             }
     </script>
     <div class="survey" id="survey">
