@@ -16,7 +16,7 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body id="body">
 
 
     <nav class="flex items-center justify-between flex-wrap navbar-success" style="background-color: transparent;"">
@@ -76,7 +76,7 @@
             rec.append(lineBreak);
             rec.append(activityLocation);
             rec.append(cancelButton);
-            const content = document.getElementsByTagName('body');
+            const content = document.getElementById('body');
             content.append(rec);
             recDiv.append(lineBreak);
             }
