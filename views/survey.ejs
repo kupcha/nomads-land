@@ -47,7 +47,7 @@
         function removeDiv(btn){
             ((btn.parentNode).parentNode).removeChild(btn.parentNode);
             const recsMadeObject = document.getElementById('recsMade');
-            var recsMade = recsMadeObject.value;
+            var recsMade = parseInt(recsMadeObject.value);
             recsMade -= 1;
             recsMadeObject.setAttribute('value', (recsMade));
         }
@@ -88,7 +88,7 @@
             const content = document.getElementById('survey');
             recDiv.append(rec);
             const recsMadeObject = document.getElementById('recsMade');
-            var recsMade = recsMadeObject.value;
+            var recsMade = parseInt(recsMadeObject.value);
             recsMade += 1;
             recsMadeObject.setAttribute('value', (recsMade));
 
