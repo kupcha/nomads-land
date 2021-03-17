@@ -70,7 +70,7 @@
             selectionList.required = true;
             const recDiv = document.getElementById('recList');
             const cancelButton = document.createElement('button');
-            cancelButton.setAttribute('onClick', "document.body.removeChild(this.parentNode)");
+            cancelButton.setAttribute('onClick', "document.body.remove(rec)");
             cancelButton.innerHTML = 'cancel';
             rec.append(selectionList);
             rec.append(lineBreak);
@@ -79,7 +79,6 @@
             const body = document.getElementsByTagName('body');
             body.append(rec);
             recDiv.append(lineBreak);
-            
             }
     </script>
     <div class="survey">
