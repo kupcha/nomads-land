@@ -48,7 +48,7 @@
             ((btn.parentNode).parentNode).removeChild(btn.parentNode);
             const recsMadeObject = document.getElementById('recsMade');
             const recsMade = recsMadeObject.value;
-            recsMadeObject.setAttribute('value', (recsMade - 1));
+            recsMadeObject.setAttribute('value', (--recsMade));
         }
     </script>
     <script type='text/javascript'>
@@ -86,10 +86,9 @@
             rec.append(cancelButton);
             const content = document.getElementById('survey');
             recDiv.append(rec);
-            recDiv.append(lineBreak);
             const recsMadeObject = document.getElementById('recsMade');
             const recsMade = recsMadeObject.value;
-            recsMadeObject.setAttribute('value', (recsMade + 1));
+            recsMadeObject.setAttribute('value', (++recsMade));
 
 
             }
