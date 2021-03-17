@@ -48,7 +48,8 @@
             ((btn.parentNode).parentNode).removeChild(btn.parentNode);
             const recsMadeObject = document.getElementById('recsMade');
             var recsMade = recsMadeObject.value;
-            recsMadeObject.setAttribute('value', (recsMade--));
+            recsMade -= 1;
+            recsMadeObject.setAttribute('value', (recsMade));
         }
     </script>
     <script type='text/javascript'>
@@ -88,7 +89,8 @@
             recDiv.append(rec);
             const recsMadeObject = document.getElementById('recsMade');
             var recsMade = recsMadeObject.value;
-            recsMadeObject.setAttribute('value', (recsMade++));
+            recsMade += 1;
+            recsMadeObject.setAttribute('value', (recsMade));
 
 
             }
