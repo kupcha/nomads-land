@@ -76,12 +76,12 @@
             rec.append(lineBreak);
             rec.append(activityLocation);
             rec.append(cancelButton);
-            const content = document.getElementById('body');
+            const content = document.getElementById('survey');
             content.append(rec);
             recDiv.append(lineBreak);
             }
     </script>
-    <div class="survey">
+    <div class="survey" id="survey">
         <h1> my trip to <span class="place">
                 <%= location %>
             </span></h1>
