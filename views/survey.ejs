@@ -47,7 +47,7 @@
         function removeDiv(btn){
             ((btn.parentNode).parentNode).removeChild(btn.parentNode);
             const recsMadeObject = document.getElementById('recsMade');
-            const recsMade = recsMadeObject.value;
+            var recsMade = recsMadeObject.value;
             recsMadeObject.setAttribute('value', (recsMade--));
         }
     </script>
@@ -87,7 +87,7 @@
             const content = document.getElementById('survey');
             recDiv.append(rec);
             const recsMadeObject = document.getElementById('recsMade');
-            const recsMade = recsMadeObject.value;
+            var recsMade = recsMadeObject.value;
             recsMadeObject.setAttribute('value', (recsMade++));
 
 
