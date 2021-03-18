@@ -119,4 +119,9 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
   // res.send(JSON.stringify(req.body))
 });
 
+
+router.post('/thankyou', requiresAuth(), function(req, res, next) {
+  res.send(req.body);
+})
+
 module.exports = router;
