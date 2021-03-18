@@ -97,19 +97,19 @@
             }
     </script>
     <script type='text/javascript'>
-            function makeActivityRec() {
+            function makeFoodRec() {
             const activityChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
             const rec = document.createElement('div');
             const lineBreak = document.createElement('br');
             rec.setAttribute('class', 'rec');
             rec.setAttribute('id', 'rec')
-            const activityLocation = document.createElement('input');
-            activityLocation.setAttribute('type', 'text');
-            activityLocation.required = true;
-            activityLocation.setAttribute('id', 'foodLocation');
-            activityLocation.setAttribute('name', 'foodLocation');
-            activityLocation.setAttribute('placeholder', 'where?');
-            activityLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+            const foodLocation = document.createElement('input');
+            foodLocation.setAttribute('type', 'text');
+            foodLocation.required = true;
+            foodLocation.setAttribute('id', 'foodLocation');
+            foodLocation.setAttribute('name', 'foodLocation');
+            foodLocation.setAttribute('placeholder', 'where?');
+            foodLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
             const selectionList = document.createElement('select');
             selectionList.id = 'selection';
             for (var i = 0; i < activityChoices.length; i++){
@@ -127,7 +127,7 @@
             cancelButton.innerHTML = 'cancel';
             rec.setAttribute('style', 'width: 40%; max-width: 50%; display: flex; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
             rec.append(selectionList);
-            rec.append(activityLocation);
+            rec.append(foodLocation);
             rec.append(cancelButton);
             const content = document.getElementById('survey');
             recDiv.append(rec);
@@ -240,7 +240,7 @@
             <div class="recList" id="recList"></div>
         </form>
         <button onclick="makeActivityRec()" name="funActivityRec">did you do anything fun?</button>
-        <button name="foodRec" onclick="">did you eat anywhere awesome?</button>
+        <button name="foodRec" onclick="makeFoodRec()">did you eat anywhere awesome?</button>
         <button name="sightRec" onclick="">did you see anything awesome?</button><br><br>
         <button type="submit">put it on record</button>
         <br><br>
