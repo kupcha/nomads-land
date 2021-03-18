@@ -220,7 +220,7 @@
         <h1> my trip to <span class="place">
                 <%= location %>
             </span></h1>
-        <form action="/survey/recommendations" method="post" name="tripReviewForm">
+        <form action="/survey/recommendations" method="post" name="tripReviewForm" id="tripReviewForm">
             <h2>complete this form to elevate yourself 10 feet</h2>
             <label for="reviewersEmail">email: </label>
             <input type="email" id="reviewersEmail" name="reviewersEmail" required value="<%= userEmail %>"
@@ -322,7 +322,7 @@
         <button onclick="makeActivityRec()" name="funActivityRec">did you do anything fun?</button>
         <button name="foodRec" onclick="makeFoodRec()">did you eat anywhere awesome?</button>
         <button name="sightRec" onclick="makeAwesomeRec()">did you see anything awesome?</button><br><br>
-        <button type="submit">put it on record</button>
+        <button type="submit" for="tripReviewForm">put it on record</button>
         <br><br>
     </div>
 
