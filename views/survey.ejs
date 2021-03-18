@@ -96,6 +96,49 @@
 
             }
     </script>
+    <script type='text/javascript'>
+            function makeActivityRec() {
+            const activityChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
+            const rec = document.createElement('div');
+            const lineBreak = document.createElement('br');
+            rec.setAttribute('class', 'rec');
+            rec.setAttribute('id', 'rec')
+            const activityLocation = document.createElement('input');
+            activityLocation.setAttribute('type', 'text');
+            activityLocation.required = true;
+            activityLocation.setAttribute('id', 'foodLocation');
+            activityLocation.setAttribute('name', 'foodLocation');
+            activityLocation.setAttribute('placeholder', 'where?');
+            activityLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+            const selectionList = document.createElement('select');
+            selectionList.id = 'selection';
+            for (var i = 0; i < activityChoices.length; i++){
+                const option = document.createElement('option');
+                option.value = activityChoices[i];
+                option.text = activityChoices[i];
+                selectionList.append(option);
+            }
+            selectionList.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+            selectionList.required = true;
+            const recDiv = document.getElementById('recList');
+            const cancelButton = document.createElement('button');
+            cancelButton.setAttribute('onClick', "removeDiv(this)");
+            cancelButton.setAttribute('style', 'display: flex; text-align: center;margin: 0;');
+            cancelButton.innerHTML = 'cancel';
+            rec.setAttribute('style', 'width: 40%; max-width: 50%; display: flex; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
+            rec.append(selectionList);
+            rec.append(activityLocation);
+            rec.append(cancelButton);
+            const content = document.getElementById('survey');
+            recDiv.append(rec);
+            const recsMadeObject = document.getElementById('recsMade');
+            var recsMade = parseInt(recsMadeObject.value);
+            recsMade += 1;
+            recsMadeObject.setAttribute('value', (recsMade));
+
+
+            }
+    </script>
     <div class="survey" id="survey">
         <h1> my trip to <span class="place">
                 <%= location %>
@@ -125,7 +168,6 @@
             <label for="fall">fall</label><br>
             <input type="radio" id="winter" name="seasons" value="winter">
             <label for="winter">winter</label><br><br>
-
             <br><br>
             <p>Was it fun?</p>
             <input type="radio" id="sofun" name="fun" value="so fun!" required>
