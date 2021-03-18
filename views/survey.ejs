@@ -111,43 +111,59 @@
     </script>
     <script type='text/javascript'>
         function makeFoodRec() {
-            const activityChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
-            const rec = document.createElement('div');
-            const lineBreak = document.createElement('br');
-            rec.setAttribute('class', 'rec');
-            rec.setAttribute('id', 'rec')
-            const foodLocation = document.createElement('input');
-            foodLocation.setAttribute('type', 'text');
-            foodLocation.required = true;
-            foodLocation.setAttribute('id', 'foodLocation');
-            foodLocation.setAttribute('name', 'foodLocation');
-            foodLocation.setAttribute('placeholder', 'where?');
-            foodLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
-            const selectionList = document.createElement('select');
-            selectionList.id = 'selection';
-            for (var i = 0; i < activityChoices.length; i++) {
-                const option = document.createElement('option');
-                option.value = activityChoices[i];
-                option.text = activityChoices[i];
-                selectionList.append(option);
-            }
-            selectionList.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
-            selectionList.required = true;
-            const recDiv = document.getElementById('recList');
-            const cancelButton = document.createElement('button');
-            cancelButton.setAttribute('onClick', "removeDiv(this)");
-            cancelButton.setAttribute('style', 'display: flex; text-align: center;margin: 0;');
-            cancelButton.innerHTML = 'cancel';
-            rec.setAttribute('style', 'width: 40%; max-width: 50%; display: flex; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
-            rec.append(selectionList);
-            rec.append(foodLocation);
-            rec.append(cancelButton);
-            const content = document.getElementById('survey');
-            recDiv.append(rec);
             const recsMadeObject = document.getElementById('recsMade');
             var recsMade = parseInt(recsMadeObject.value);
-            recsMade += 1;
-            recsMadeObject.setAttribute('value', (recsMade));
+            if (recsMade < 6) {
+                recsMade += 1;
+                recsMadeObject.setAttribute('value', (recsMade));
+                const foodChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
+                const rec = document.createElement('div');
+                const lineBreak = document.createElement('br');
+                rec.setAttribute('class', 'rec');
+                rec.setAttribute('id', 'rec')
+                const foodLocation = document.createElement('input');
+                foodLocation.setAttribute('type', 'text');
+                foodLocation.required = true;
+                foodLocation.setAttribute('id', 'foodLocation');
+                foodLocation.setAttribute('name', 'foodLocation');
+                foodLocation.setAttribute('placeholder', 'where?');
+                foodLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+                const selectionList = document.createElement('select');
+                selectionList.id = 'selection';
+                for (var i = 0; i < activityChoices.length; i++) {
+                    const option = document.createElement('option');
+                    option.value = foodChoices[i];
+                    option.text = foodChoices[i];
+                    selectionList.append(option);
+                }
+                selectionList.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+                selectionList.required = true;
+                const recDiv = document.getElementById('recList');
+                const cancelButton = document.createElement('button');
+                cancelButton.setAttribute('onClick', "removeDiv(this)");
+                cancelButton.setAttribute('style', 'display: flex; text-align: center;margin: 0;');
+                cancelButton.innerHTML = 'cancel';
+                rec.setAttribute('style', 'width: 40%; max-width: 50%; display: flex; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
+                rec.append(selectionList);
+                rec.append(foodLocation);
+                rec.append(cancelButton);
+                const content = document.getElementById('survey');
+                recDiv.append(rec);
+            } else {
+                if (!document.getElementById('errorMessage')) {
+                    const errorMessage = document.createElement('p');
+                    errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
+                    errorMessage.setAttribute('id', 'errorMessage');
+                    errorMessage.setAttribute('style','text-align:center;')
+                    const recDiv = document.getElementById('recList');
+                    recDiv.append(errorMessage);
+                }
+
+            }
+
+
+
+
 
 
         }
