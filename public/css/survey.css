@@ -9,7 +9,7 @@
   
   html {
     font-family: 'Alegreya Sans SC', sans-serif;
-    background-color: white;
+    background-color: #6c7d85;
     max-width: 1400;
     
   }
@@ -18,7 +18,7 @@
     margin: 0 auto;
     background-color:#f47c3c;
     border: 5px solid #333333;
-    color: #6c7d85;
+    color: white;
     max-width: 1400px;
     padding: 10px 10px 10px 10px;
     background-image: url('/images/surveyBackground.jpg');
