@@ -54,6 +54,19 @@
     </script>
     <script type='text/javascript'>
         function makeActivityRec() {
+            const recsMadeObject = document.getElementById('recsMade');
+            var recsMade = parseInt(recsMadeObject.value);
+            if (recsMade < 7){}else{
+                if (!document.getElementById('errorMessage')){
+                    const errorMessage = document.createElement('p');
+                    errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
+                    errorMessage.setAttribute('id', 'errorMessage');
+                    recDiv.append(errorMessage);
+                }
+
+            }
+            recsMade += 1;
+            recsMadeObject.setAttribute('value', (recsMade));
             const activityChoices = ['art + culture', 'drive + ride', 'entertainment', 'food + drink',
              'nature + outdoors', 'sports + fitness', 'tours', 'wellness', 'wacky + wild'];
             const rec = document.createElement('div');
@@ -88,10 +101,6 @@
             rec.append(cancelButton);
             const content = document.getElementById('survey');
             recDiv.append(rec);
-            const recsMadeObject = document.getElementById('recsMade');
-            var recsMade = parseInt(recsMadeObject.value);
-            recsMade += 1;
-            recsMadeObject.setAttribute('value', (recsMade));
 
 
             }
