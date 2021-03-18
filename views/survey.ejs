@@ -99,8 +99,8 @@
                     errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
                     errorMessage.setAttribute('id', 'errorMessage');
                     errorMessage.setAttribute('style','text-align:center;')
-                    const recDiv = document.getElementById('recList');
-                    recDiv.append(errorMessage);
+                    const errorDiv = document.getElementById('error');
+                    errorDiv.append(errorMessage);
                 }
 
             }
@@ -155,8 +155,8 @@
                     errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
                     errorMessage.setAttribute('id', 'errorMessage');
                     errorMessage.setAttribute('style','text-align:center;')
-                    const recDiv = document.getElementById('recList');
-                    recDiv.append(errorMessage);
+                    const errorDiv = document.getElementById('error');
+                    errorDiv.append(errorMessage);
                 }
             }
         }
@@ -262,6 +262,7 @@
             <label for="recsMade">reccomendations made: </label>
             <input type="number" id="recsMade" value="0" disabled required style="text-align: center;"><br><br>
             <div class="recList" id="recList"></div>
+            <div class="error" id="error"></div>
         </form>
         <button onclick="makeActivityRec()" name="funActivityRec">did you do anything fun?</button>
         <button name="foodRec" onclick="makeFoodRec()">did you eat anywhere awesome?</button>
