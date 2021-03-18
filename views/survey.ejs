@@ -98,6 +98,7 @@
                     const errorMessage = document.createElement('p');
                     errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
                     errorMessage.setAttribute('id', 'errorMessage');
+                    errorMessage.setAttribute('style','text-align:center;')
                     const recDiv = document.getElementById('recList');
                     recDiv.append(errorMessage);
                 }
