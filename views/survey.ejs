@@ -50,9 +50,9 @@
             var recsMade = parseInt(recsMadeObject.value);
             recsMade -= 1;
             recsMadeObject.setAttribute('value', (recsMade));
-            const errorBox = document.getElementsById('error');
-            document.getElementById('error').innerHTML = ""; 
-
+            const errorBox = document.getElementById('errorBox');
+            errorBox.setAttribute('innerHTML', "");
+            document.getElementById('errorBox').innerHTML = ""; 
         }
     </script>
     <script type='text/javascript'>
@@ -265,7 +265,7 @@
             <label for="recsMade">reccomendations made: </label>
             <input type="number" id="recsMade" value="0" disabled required style="text-align: center;"><br><br>
             <div class="recList" id="recList"></div>
-            <div class="error" id="error"></div>
+            <div class="errorBox" id="error"></div>
         </form>
         <button onclick="makeActivityRec()" name="funActivityRec">did you do anything fun?</button>
         <button name="foodRec" onclick="makeFoodRec()">did you eat anywhere awesome?</button>
