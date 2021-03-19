@@ -32,8 +32,51 @@
   }
 
   .loveithere{
-    height: 500px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+.elevate{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.worldKnowledge{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.questions{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itsSimple{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.needYourHelp{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.elevateNow{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
   div{
     width: 100%;
