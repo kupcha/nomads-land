@@ -150,7 +150,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   const activiytLocation = req.body.activiytLocation;
   const activityList = new Array();
   for (var i = 0; i < activitySelection.length; i++){
-    const temp = {key: activitySelection, value: activiytLocation};
+    const temp = {key: activitySelection[i], value: activiytLocation[i]};
     activityList[i] = temp;
   }
   res.send(activityList);
