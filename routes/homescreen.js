@@ -3,6 +3,7 @@ const { requiresAuth } = require('express-openid-connect');
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const Review = require('../models/review');
+const ActivityRec = require('../models/activityRec');
 
 mongoose.connect('mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.mongodb.net/nomadsland?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -100,13 +101,14 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
   const userEmail = res.locals.user.email;
   const survey = req.body;
-  const activitySelection = req.body.activitySelection;
-  const activiytLocation = req.body.activiytLocation;
-  const activityList = new Array();
+
+  const activitySelection = survey.activitySelection;
+  const activityLocation = survey.activiytLocation;
+  let activityList = new Array(activitySelection.length);
   for (var i = 0; i < activitySelection.length; i++){
-    const temp = {key: activitySelection, value: activiytLocation};
-    activityList[i] = temp;
+    activityList[i] = new ActivityRec({type: activitySelection[i], location: activityLocation[i]});
   }
+
   const newSurvey = {
     email : userEmail,
     location : survey.location,
@@ -116,7 +118,8 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
     sights : survey.sights,
     locals : survey.locals,
     price : survey.price,
-    enviro : survey.enviro
+    enviro : survey.enviro,
+    activityRecs : activityList
   };
   if (survey.mscEnviro){
     newSurvey.mscEnviro = survey.mscEnvir;
