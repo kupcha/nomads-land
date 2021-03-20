@@ -152,9 +152,7 @@ router.post('/thankyou', requiresAuth(), function(req, res, next) {
   const activityList = new Array(activitySelection.length);
   var i;
   for (i = 0; i < activitySelection.length; i++){
-    var map = new Map();
-    map.set(activitySelection[i], activiytLocation[i]);
-    activityList[i] = map;
+    activityList[i] = activitySelection[i] + " at " + activityLocation[i];
   }
   res.send(activityList);
 })
