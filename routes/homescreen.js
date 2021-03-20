@@ -100,6 +100,13 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
 router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
   const userEmail = res.locals.user.email;
   const survey = req.body;
+  const activitySelection = req.body.activitySelection;
+  const activiytLocation = req.body.activiytLocation;
+  const activityList = new Array();
+  for (var i = 0; i < activitySelection.length; i++){
+    const temp = {key: activitySelection, value: activiytLocation};
+    activityList[i] = temp;
+  }
   const newSurvey = {
     email : userEmail,
     location : survey.location,
@@ -139,7 +146,14 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   // }
   // await db.collection('reviews').insertOne(newSurvey);
   // res.render('recommendations');
-  res.send(req.body);
+  const activitySelection = req.body.activitySelection;
+  const activiytLocation = req.body.activiytLocation;
+  const activityList = new Array();
+  for (var i = 0; i < activitySelection.length; i++){
+    const temp = {key: activitySelection, value: activiytLocation};
+    activityList[i] = temp;
+  }
+  res.send(activityList);
 })
 
 module.exports = router;
