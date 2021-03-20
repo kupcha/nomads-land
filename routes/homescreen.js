@@ -148,15 +148,15 @@ router.post('/thankyou', requiresAuth(), function(req, res, next) {
   // res.render('recommendations');
   const formData = req.body;
   const activitySelection = formData.activitySelection;
-  const activiytLocation = formData.activiytLocation;
+  const activiytLocation = formData.activityLocation;
   const activityList = new Array(activitySelection.length);
-  res.send(activiytLocation[0]);
-  // var i;
-  // for (i = 0; i < activitySelection.length; i++){
-  //   var map = new Map();
-  //   map.set(activitySelection[i], activiytLocation[i]);
-  //   activityList.insert(i, map);
-  // }
+  var i;
+  for (i = 0; i < activitySelection.length; i++){
+    var map = new Map();
+    map.set(activitySelection[i], activiytLocation[i]);
+    activityList.insert(i, map);
+  }
+  res.send(activityList);
 })
 
 module.exports = router;
