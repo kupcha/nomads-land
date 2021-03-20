@@ -157,11 +157,8 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     activityRecs : activityList,
     mscEnviro : survey.mscEnvir
   };
-  if (survey.mscEnviro){
-    newSurvey.mscEnviro = survey.mscEnvir;
-  }
   await db.collection('reviews').insertOne(newSurvey);
-  res.render('recommendations');
+  res.render('thankyou');
 
 
 
