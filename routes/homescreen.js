@@ -110,7 +110,8 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
   const activityLocation = survey.activiytLocation;
   let activityList = new Array(activitySelection.length);
   for (var i = 0; i < activitySelection.length; i++){
-    activityList[i] = new ActivityRec({type: activitySelection[i], location: activityLocation[i]});
+    const currRec = { type: activitySelection[i], location: activityLocation[i]};
+     activityList[i] = currRec;
   }
   const newSurvey = {
     email : userEmail,
