@@ -51,11 +51,11 @@ const reviewSchema = new mongoose.Schema({
         required: false
     },
     foodRecs: {
-        type: [{ type: Schema.Types.ObjectId, ref: 'FoodRec' }],
+        type: [],
         required: false
     },
     sightRecs: {
-        type: [{ type: Schema.Types.ObjectId, ref: 'SightRec' }],
+        type: [],
         required: false
     }
 });
