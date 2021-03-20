@@ -3,9 +3,6 @@ const { requiresAuth } = require('express-openid-connect');
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const Review = require('../models/review');
-const ActivityRec = require('../models/activityRec');
-const FoodRec = require('../models/foodRec');
-const SightRec = require('../models/sightRec');
 
 
 
@@ -153,9 +150,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     sights : survey.sights,
     locals : survey.locals,
     price : survey.price,
-    enviro : survey.enviro,
-    activityRecs : activityList,
-    mscEnviro : survey.mscEnvir
+    enviro : survey.enviro
   };
   await db.collection('reviews').insertOne(newSurvey);
   res.render('thankyou');
