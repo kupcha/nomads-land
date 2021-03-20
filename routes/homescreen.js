@@ -137,9 +137,12 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   const activityLocation = survey.activiytLocation;
   let activityList = new Array(activitySelection.length);
   for (var i = 0; i < activitySelection.length; i++){
-    activityList[i] = new ActivityRec({type: activitySelection[i], location: activityLocation[i]});
+    const currActivity = {type: activitySelection[i], location: activityLocation[i]};
+    activityList[i] = currActivity;
   }
-
+  if (survey.mscEnviro){
+    newSurvey.mscEnviro = survey.mscEnvir;
+  }
   const newSurvey = {
     email : userEmail,
     location : survey.location,
@@ -152,11 +155,9 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     enviro : survey.enviro,
     activityRecs : activityList
   };
-  if (survey.mscEnviro){
-    newSurvey.mscEnviro = survey.mscEnvir;
-  }
+
   await db.collection('reviews').insertOne(newSurvey);
-  res.render('thankyou');
+  res.redirect('thankyou');
 
 
 
