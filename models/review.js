@@ -47,7 +47,7 @@ const reviewSchema = new mongoose.Schema({
         required: false
     },
     activityRecs: {
-        type: [{ type: Schema.Types.ObjectId, ref: 'ActivityRec' }],
+        type: [],
         required: false
     },
     foodRecs: {
