@@ -150,13 +150,13 @@ router.post('/thankyou', requiresAuth(), function(req, res, next) {
   const activitySelection = formData.activitySelection;
   const activiytLocation = formData.activiytLocation;
   const activityList = new Array(activitySelection.length);
-  res.send(activitySelection);
-  var i;
-  for (i = 0; i < activitySelection.length; i++){
-    var map = new Map();
-    map.set(activitySelection[i], activiytLocation[i]);
-    activityList.insert(i, map);
-  }
+  res.send(activitySelection[0]);
+  // var i;
+  // for (i = 0; i < activitySelection.length; i++){
+  //   var map = new Map();
+  //   map.set(activitySelection[i], activiytLocation[i]);
+  //   activityList.insert(i, map);
+  // }
 })
 
 module.exports = router;
