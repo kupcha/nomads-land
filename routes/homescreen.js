@@ -151,9 +151,9 @@ router.post('/thankyou', requiresAuth(), function(req, res, next) {
   const activiytLocation = formData.activiytLocation;
   const activityList = new Array();
   for (let i = 0; i < activitySelection.length; i++){
-    var map = new Map();
-    map.set(activitySelection[i], activiytLocation[i]);
-    activityList[i] = map;
+    //var map = new Map();
+    //map.set(activitySelection[i], activiytLocation[i]);
+    //activityList[i] = map;
   }
   res.send(formData);
 })
