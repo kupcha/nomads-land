@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
- 
+const Schema = mongoose.Schema;
 
 const reviewSchema = new mongoose.Schema({
     email: {
@@ -46,20 +46,19 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    // activityRecs: {
-    //     type: Array[activitySchema],
-    //     required: false
-    // },
-    // foodRecs: {
-    //     type: Array[foodRecSchema],
-    //     required: false
-    // },
-    // sightRecs: {
-    //     type: Array[sightRecSchema],
-    //     required: false
-    // }
+    activityRecs: {
+        type: [{ type: Schema.Types.ObjectId, ref: 'ActivityRec' }],
+        required: false
+    },
+    foodRecs: {
+        type: [{ type: Schema.Types.ObjectId, ref: 'FoodRec' }],
+        required: false
+    },
+    sightRecs: {
+        type: [{ type: Schema.Types.ObjectId, ref: 'SightRec' }],
+        required: false
+    }
 });
-
 
 const Review = mongoose.model('Review', reviewSchema);
 
