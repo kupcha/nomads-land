@@ -151,11 +151,10 @@ router.post('/thankyou', requiresAuth(), function(req, res, next) {
   const activityLocation = formData.activityLocation;
   const activityList = new Array(activitySelection.length);
   var i;
-  var map = new Map();
   for (i = 0; i < activitySelection.length; i++){
-    map.set(activitySelection[i], activityLocation[i]);
+   activtyList[i] = activitySelection + ":" + activityLocation;
   }
-  res.send(map);
+  res.send(activityList);
 })
 
 module.exports = router;
