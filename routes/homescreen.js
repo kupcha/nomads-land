@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const User = require('../models/user');
 const Review = require('../models/review');
 const ActivityRec = require('../models/activityRec');
+const FoodRec = require('../models/foodRec');
+const SightRec = require('../models/sightRec');
+
+
 
 mongoose.connect('mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.mongodb.net/nomadsland?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -108,7 +112,6 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
   for (var i = 0; i < activitySelection.length; i++){
     activityList[i] = new ActivityRec({type: activitySelection[i], location: activityLocation[i]});
   }
-
   const newSurvey = {
     email : userEmail,
     location : survey.location,
@@ -137,7 +140,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   const activityLocation = survey.activiytLocation;
   let activityList = new Array(activitySelection.length);
   for (var i = 0; i < activitySelection.length; i++){
-    const currActivity = {type: activitySelection[i], location: activityLocation[i]};
+    const currActivity = new ActivityRec({type: activitySelection[i], location: activityLocation[i]});
     activityList[i] = currActivity;
   }
   if (survey.mscEnviro){
