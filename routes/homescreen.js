@@ -146,7 +146,7 @@ router.post('/thankyou', requiresAuth(), function(req, res, next) {
   // }
   // await db.collection('reviews').insertOne(newSurvey);
   // res.render('recommendations');
-  // const formData = req.body;
+  const formData = req.body;
   // const activitySelection = formData.activitySelection;
   // const activityLocation = formData.activityLocation;
   // const activityList = new Array(activitySelection.length);
