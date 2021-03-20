@@ -146,10 +146,11 @@ router.post('/thankyou', requiresAuth(), function(req, res, next) {
   // }
   // await db.collection('reviews').insertOne(newSurvey);
   // res.render('recommendations');
-  const activitySelection = req.body.activitySelection;
-  const activiytLocation = req.body.activiytLocation;
+  const formData = req.body;
+  const activitySelection = formDataactivitySelection;
+  const activiytLocation = formData.activiytLocation;
   const activityList = new Array();
-  for (var i = 0; i < activitySelection.length; i++){
+  for (let i = 0; i < activitySelection.length; i++){
     var map = new Map();
     map.set(activitySelection[i], activiytLocation[i]);
     activityList[i] = map;
