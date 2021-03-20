@@ -48,15 +48,18 @@ const reviewSchema = new mongoose.Schema({
     },
     activityRecs: {
         type: [],
-        required: false
+        required: false,
+        default: undefined
     },
     foodRecs: {
         type: [],
-        required: false
+        required: false,
+        default: undefined
     },
     sightRecs: {
         type: [],
-        required: false
+        required: false,
+        default: undefined
     }
 });
 
