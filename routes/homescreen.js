@@ -155,7 +155,7 @@ router.post('/thankyou', requiresAuth(), function(req, res, next) {
     map.set(activitySelection[i], activiytLocation[i]);
     activityList[i] = map;
   }
-  res.send(activityList);
+  res.send(formData);
 })
 
 module.exports = router;
