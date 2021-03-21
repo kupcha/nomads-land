@@ -141,6 +141,20 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     const currRec = { type: activitySelection[i], location: activityLocation[i]};
      activityList[i] = currRec;
   }
+  const foodSelection = survey.foodSelection;
+  const foodLocation = survey.foodLocation;
+  let foodList = newArray(recsMade);
+  for (var i = 0; i < recsMade; i++){
+    const currRec = { type: foodSelection[i], location: foodLocation[i]};
+     foodList[i] = currRec;
+  }
+  const sightSelection = survey.sightSelection;
+  const sightLocation = survey.sightLocation;
+  let sightList = newArray(recsMade);
+  for (var i = 0; i < recsMade; i++){
+    const currRec = { type: sightSelection[i], location: sightLocation[i]};
+    sightList[i] = currRec;
+  }
   const newSurvey = {
     email : userEmail,
     location : survey.location,
@@ -152,6 +166,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     price : survey.price,
     enviro : survey.enviro,
     activityRecs : activityList,
+    foodRecs : foodList,
     mscEnviro : survey.mscEnviro
   };
   await db.collection('reviews').insertOne(newSurvey);
