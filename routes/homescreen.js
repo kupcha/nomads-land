@@ -170,12 +170,12 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     sightRecs : sightList,
     mscEnviro : survey.mscEnviro
   };
-  const currUser = User.findOne({email : `${userEmail}`});
+  const currUser = User.findOne({email : userEmail}).exec();
   var userElevation = currUser.elevation;
   userElevation = 10 + (10 * recsMade) + userElevation;
   var userTrips = currUser.trips;
   userTrips++;
-  User.updateOne({email : `${userEmail}`}, {trips : userTrips} )
+  User.updateOne({email : userEmail}, {trips : userTrips} )
   await db.collection('reviews').insertOne(newSurvey);
   res.render('thankyou');
 
