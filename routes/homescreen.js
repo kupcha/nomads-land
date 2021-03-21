@@ -152,7 +152,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     price : survey.price,
     enviro : survey.enviro,
     activityRecs : activityList,
-    mscEnviro : survey.mscEnvir
+    mscEnviro : survey.mscEnviro
   };
   await db.collection('reviews').insertOne(newSurvey);
   res.render('thankyou');
