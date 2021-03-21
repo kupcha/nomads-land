@@ -143,14 +143,14 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   }
   const foodSelection = survey.foodSelection;
   const foodLocation = survey.foodLocation;
-  let foodList = newArray(recsMade);
+  let foodList = new Array(recsMade);
   for (var i = 0; i < recsMade; i++){
     const currRec = { type: foodSelection[i], location: foodLocation[i]};
      foodList[i] = currRec;
   }
   const sightSelection = survey.sightSelection;
   const sightLocation = survey.sightLocation;
-  let sightList = newArray(recsMade);
+  let sightList = new Array(recsMade);
   for (var i = 0; i < recsMade; i++){
     const currRec = { type: sightSelection[i], location: sightLocation[i]};
     sightList[i] = currRec;
