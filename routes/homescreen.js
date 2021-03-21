@@ -136,7 +136,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   const recsMade = survey.recsMade;
   const activitySelection = survey.activitySelection;
   const activityLocation = survey.activiytLocation;
-  let activityList = new Array(activitySelection.length);
+  let activityList = new Array(recsMade);
   for (var i = 0; i < recsMade; i++){
     const currRec = { type: activitySelection[i], location: activityLocation[i]};
      activityList[i] = currRec;
