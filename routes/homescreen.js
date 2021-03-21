@@ -133,29 +133,29 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   const userEmail = res.locals.user.email;
   const survey = req.body;
-res.send(req.body);
-  // const activitySelection = survey.activitySelection;
-  // const activityLocation = survey.activiytLocation;
-  // let activityList = new Array(activitySelection.length);
-  // for (var i = 0; i < activitySelection.length; i++){
-  //   const currRec = { type: activitySelection[i], location: activityLocation[i]};
-  //    activityList[i] = currRec;
-  // }
-  // const newSurvey = {
-  //   email : userEmail,
-  //   location : survey.location,
-  //   seasons : survey.seasons,
-  //   fun : survey.fun,
-  //   food : survey.food,
-  //   sights : survey.sights,
-  //   locals : survey.locals,
-  //   price : survey.price,
-  //   enviro : survey.enviro,
-  //   activityRecs : activityList,
-  //   mscEnviro : survey.mscEnvir
-  // };
-  // await db.collection('reviews').insertOne(newSurvey);
-  // res.render('thankyou');
+  const recsMade = survey.recsMade;
+  const activitySelection = survey.activitySelection;
+  const activityLocation = survey.activiytLocation;
+  let activityList = new Array(activitySelection.length);
+  for (var i = 0; i < recsMade; i++){
+    const currRec = { type: activitySelection[i], location: activityLocation[i]};
+     activityList[i] = currRec;
+  }
+  const newSurvey = {
+    email : userEmail,
+    location : survey.location,
+    seasons : survey.seasons,
+    fun : survey.fun,
+    food : survey.food,
+    sights : survey.sights,
+    locals : survey.locals,
+    price : survey.price,
+    enviro : survey.enviro,
+    activityRecs : activityList,
+    mscEnviro : survey.mscEnvir
+  };
+  await db.collection('reviews').insertOne(newSurvey);
+  res.render('thankyou');
 
 
 
