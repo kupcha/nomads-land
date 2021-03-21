@@ -175,7 +175,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   userElevation = 10 + (10 * recsMade) + userElevation;
   var userTrips = currUser.trips;
   userTrips+=1;
-  db.collection('users').updateOne({email: userEmail}, {trips : userTrips, elevation: userElevation});
+  User.findOneAndUpdate({email: userEmail}, {trips : userTrips, elevation: userElevation});
   await db.collection('reviews').insertOne(newSurvey);
   res.render('thankyou');
 
