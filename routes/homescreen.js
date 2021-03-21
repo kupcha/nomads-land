@@ -171,11 +171,11 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     mscEnviro : survey.mscEnviro
   };
   const currUser = await User.findOne({email: userEmail});
-  res.send(currUser);
-  // var userElevation = currUser.elevation;
-  // userElevation = 10 + (10 * recsMade) + userElevation;
-  // var userTrips = currUser.trips;
-  // userTrips+=1;
+  var userElevation = currUser.elevation;
+  userElevation = 10 + (10 * recsMade) + userElevation;
+  var userTrips = currUser.trips;
+  userTrips+=1;
+  res.send(userTrips + " " + userElevation);
   // User.updateOne({email : userEmail}, {trips : userTrips} )
   // await db.collection('reviews').insertOne(newSurvey);
   // res.render('thankyou');
