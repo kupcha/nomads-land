@@ -170,8 +170,8 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     sightRecs : sightList,
     mscEnviro : survey.mscEnviro
   };
-  const currUser = User.findOne({email: userEmail});
-  res.send(currUser)
+  const currUser = await User.findOne({email: userEmail});
+  res.send(currUser);
   // var userElevation = currUser.elevation;
   // userElevation = 10 + (10 * recsMade) + userElevation;
   // var userTrips = currUser.trips;
