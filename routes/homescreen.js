@@ -133,7 +133,7 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   const userEmail = res.locals.user.email;
   const survey = req.body;
-res.send(survey.activityLocation.length);
+res.send(req.body);
   // const activitySelection = survey.activitySelection;
   // const activityLocation = survey.activiytLocation;
   // let activityList = new Array(activitySelection.length);
