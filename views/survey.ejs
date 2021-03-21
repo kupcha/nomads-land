@@ -223,7 +223,7 @@
         <h1> my trip to <span class="place">
                 <%= location %>
             </span></h1>
-        <form action="/thankyou" method="post" name="tripReviewForm" id="tripReviewForm">
+        <form action="/thankyou" method="post" name="tripReviewForm" id="tripReviewForm" onsubmit="this.querySelectorAll('input').forEach(i => i.disabled = false)">
             <h2>complete this form to elevate yourself 10 feet</h2>
 
             <label for="location">location: </label>
