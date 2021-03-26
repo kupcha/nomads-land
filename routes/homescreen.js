@@ -99,35 +99,9 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
   });
 });
 
-router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
-  const userEmail = res.locals.user.email;
-  const survey = req.body;
-
-  const activitySelection = survey.activitySelection;
-  const activityLocation = survey.activiytLocation;
-  let activityList = new Array(activitySelection.length);
-  for (var i = 0; i < activitySelection.length; i++){
-    const currRec = { type: activitySelection[i], location: activityLocation[i]};
-     activityList[i] = currRec;
-  }
-  const newSurvey = {
-    email : userEmail,
-    location : survey.location,
-    seasons : survey.seasons,
-    fun : survey.fun,
-    food : survey.food,
-    sights : survey.sights,
-    locals : survey.locals,
-    price : survey.price,
-    enviro : survey.enviro,
-    activityRecs : activityList
-  };
-  if (survey.mscEnviro){
-    newSurvey.mscEnviro = survey.mscEnvir;
-  }
-  await db.collection('reviews').insertOne(newSurvey);
-  res.render('recommendations');
-});
+router.get('/test', requiresAuth(), function(req, res, next) {
+  res.render('test')
+})
 
 
 router.post('/thankyou', requiresAuth(), async function(req, res, next) {
@@ -178,38 +152,6 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, elevation: userElevation}});
   await db.collection('reviews').insertOne(newSurvey);
   res.render('thankyou');
-
-
-
-
-
-  // // const userEmail = res.locals.user.email;
-  // // const survey = req.body;
-  // // const newSurvey = {
-  // //   email : userEmail,
-  // //   location : survey.location,
-  // //   seasons : survey.seasons,
-  // //   fun : survey.fun,
-  // //   food : survey.food,
-  // //   sights : survey.sights,
-  // //   locals : survey.locals,
-  // //   price : survey.price,
-  // //   enviro : survey.enviro
-  // // };
-  // // if (survey.mscEnviro){
-  // //   newSurvey.mscEnviro = survey.mscEnvir;
-  // // }
-  // // await db.collection('reviews').insertOne(newSurvey);
-  // // res.render('recommendations');
-  // const formData = req.body;
-  // // const activitySelection = formData.activitySelection;
-  // // const activityLocation = formData.activityLocation;
-  // // const activityList = new Array(activitySelection.length);
-  // // var i;
-  // // for (i = 0; i < activitySelection.length; i++){
-  // //  activityList[i] = activitySelection[i] + ":" + activityLocation[i];
-  // // }
-  // res.send(formData);
 });
 
 module.exports = router;
