@@ -84,6 +84,10 @@ router.get('/test', requiresAuth(), async function (req, res, next) {
     db.collection('users').insertOne(newUser);
     res.redirect('test');
   }
+});
+
+router.get('/testresults', function (req, res, next) {
+  res.send(req.body);
 })
 
 
