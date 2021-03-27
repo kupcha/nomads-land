@@ -4,8 +4,6 @@ const mongoose = require('mongoose');
 const User = require('../models/user');
 const Review = require('../models/review');
 
-
-
 mongoose.connect('mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.mongodb.net/nomadsland?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Connected to MongoDB instance.")
@@ -99,56 +97,15 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
   });
 });
 
-router.get('/test', requiresAuth(), async function (req, res, next) {
-  const userEmail = res.locals.user.email;
-  const currentNomad = await User.findOne({email: userEmail});
-  if (currentNomad){
-    res.render('test', {
-      username: currentNomad.username,
-      elevation: currentNomad.elevation,
-      trips: currentNomad.trips,
-      referrals: currentNomad.referrals,
-      userProfile: JSON.stringify(req.oidc.user, null, 2),
-      title: 'nomadsland'
-    })
-  }else{
-    const newUser = {
-      email : `${userEmail}`,
-      elevation : 0,
-      trips : 0,
-      referrals : 0,
-      shownAboutScreen : 0
-    }
-    db.collection('users').insertOne(newUser);
-    res.redirect('test');
-  }
-});
-
-
-router.post('/thankyou', requiresAuth(), async function(req, res, next) {
+router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
   const userEmail = res.locals.user.email;
   const survey = req.body;
-  const recsMade = survey.recsMade;
-  const activitySelection = survey.activitySelection;
-  const activityLocation = survey.activityLocation;
-  let activityList = new Array(recsMade);
-  for (var i = 0; i < recsMade; i++){
-    const currRec = { type: activitySelection[i], location: activityLocation[i]};
-     activityList[i] = currRec;
-  }
-  const foodSelection = survey.foodSelection;
-  const foodLocation = survey.foodLocation;
-  let foodList = new Array(recsMade);
-  for (var i = 0; i < recsMade; i++){
-    const currRec = { type: foodSelection[i], location: foodLocation[i]};
-     foodList[i] = currRec;
-  }
-  const sightSelection = survey.sightSelection;
-  const sightLocation = survey.sightLocation;
-  let sightList = new Array(recsMade);
-  for (var i = 0; i < recsMade; i++){
-    const currRec = { type: sightSelection[i], location: sightLocation[i]};
-    sightList[i] = currRec;
+  const activitySelection = req.body.activitySelection;
+  const activiytLocation = req.body.activiytLocation;
+  const activityList = new Array();
+  for (var i = 0; i < activitySelection.length; i++){
+    const temp = {key: activitySelection, value: activiytLocation};
+    activityList[i] = temp;
   }
   const newSurvey = {
     email : userEmail,
@@ -159,20 +116,45 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     sights : survey.sights,
     locals : survey.locals,
     price : survey.price,
-    enviro : survey.enviro,
-    activityRecs : activityList,
-    foodRecs : foodList,
-    sightRecs : sightList,
-    mscEnviro : survey.mscEnviro
+    enviro : survey.enviro
   };
-  const currUser = await User.findOne({email: userEmail});
-  var userElevation = currUser.elevation;
-  userElevation = 10 + (10 * recsMade) + userElevation;
-  var userTrips = currUser.trips;
-  userTrips+=1;
-  db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, elevation: userElevation}});
+  if (survey.mscEnviro){
+    newSurvey.mscEnviro = survey.mscEnvir;
+  }
   await db.collection('reviews').insertOne(newSurvey);
-  res.render('thankyou');
+  res.render('recommendations');
+  // res.send(JSON.stringify(req.body))
 });
+
+
+router.post('/thankyou', requiresAuth(), function(req, res, next) {
+  // const userEmail = res.locals.user.email;
+  // const survey = req.body;
+  // const newSurvey = {
+  //   email : userEmail,
+  //   location : survey.location,
+  //   seasons : survey.seasons,
+  //   fun : survey.fun,
+  //   food : survey.food,
+  //   sights : survey.sights,
+  //   locals : survey.locals,
+  //   price : survey.price,
+  //   enviro : survey.enviro
+  // };
+  // if (survey.mscEnviro){
+  //   newSurvey.mscEnviro = survey.mscEnvir;
+  // }
+  // await db.collection('reviews').insertOne(newSurvey);
+  // res.render('recommendations');
+  const formData = req.body;
+  const activitySelection = formData.activitySelection;
+  const activityLocation = formData.activityLocation;
+  const activityList = new Array(activitySelection.length);
+  var i;
+  for (i = 0; i < activitySelection.length; i++){
+   activityList[i] = activitySelection[i] + ":" + activityLocation[i];
+  }
+  res.send(activityList);
+})
 
 module.exports = router;

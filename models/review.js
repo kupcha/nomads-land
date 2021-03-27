@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+ 
 
 const reviewSchema = new mongoose.Schema({
     email: {
@@ -12,56 +12,54 @@ const reviewSchema = new mongoose.Schema({
     },
     seasons: {
         type: String,
-        required: true
+        required: false
     },
     year: {
         type: Number,
-        required: true
+        required: false
     },
     fun: {
         type: String,
-        required: true
+        required: false
     },
     food: {
         type: String,
-        required: true
+        required: false
     },
     sights: {
         type: String,
-        required: true
+        required: false
     },
     locals: {
         type: String,
-        required: true
+        required: false
     },
     price: {
         type: String,
-        required: true
+        required: false
     },
     enviro: {
         type: String,
-        required: true
+        required: false
     },
     mscEnviro: {
         type: String,
         required: false
     },
-    activityRecs: {
-        type: [],
-        required: false,
-        default: undefined
-    },
-    foodRecs: {
-        type: [],
-        required: false,
-        default: undefined
-    },
-    sightRecs: {
-        type: [],
-        required: false,
-        default: undefined
-    }
+    // activityRecs: {
+    //     type: Array[activitySchema],
+    //     required: false
+    // },
+    // foodRecs: {
+    //     type: Array[foodRecSchema],
+    //     required: false
+    // },
+    // sightRecs: {
+    //     type: Array[sightRecSchema],
+    //     required: false
+    // }
 });
+
 
 const Review = mongoose.model('Review', reviewSchema);
 
