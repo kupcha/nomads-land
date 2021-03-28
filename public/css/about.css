@@ -1,5 +1,5 @@
 
-   h1 {    
+   h1, h3 {    
     margin: 0;
     padding: 0 0;
     text-shadow: 1px 1px 1px #6c7d85;
@@ -9,7 +9,6 @@
    html {
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: large;
-    max-width: 1400;
     text-align: center;
     
   }
