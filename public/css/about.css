@@ -111,6 +111,7 @@
   background-color: #f47c3c;
   display: inline-block;
   text-align: center;
+  align-items: center;
 }
 .itsThatSimple{
   color:#bcc4a4;
