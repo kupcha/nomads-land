@@ -78,9 +78,15 @@
   color: white;
 }
 
+#simplePictures{
+  float: inline-start;
+}
+
 .itsSimple{
-  height: 400px;
-  display: block;
+  height: 800px;
+  color: white;
+  background-color: #f47c3c;
+  display: inline-block;
   justify-content: center;
   align-items: center;
 }
