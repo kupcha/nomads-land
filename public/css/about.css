@@ -109,8 +109,7 @@
   color: white;
   background-color: #f47c3c;
   display: inline-block;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 .itsThatSimple{
   color:#bcc4a4;
