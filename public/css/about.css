@@ -80,7 +80,9 @@
 }
 
 #simplePictures{
-  float: inline-start;
+  height: 600px;
+  width: auto;
+  vertical-align: middle;
 }
 
 .itsSimple{
