@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0 0;
     text-shadow: 1px 1px 1px #6c7d85;
+    text-align: center;
    }
   
 
@@ -113,6 +114,7 @@
 }
 .itsThatSimple{
   color:#bcc4a4;
+  text-align: center;
 }
 .needYourHelp{
   height: 400px;
