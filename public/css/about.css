@@ -14,11 +14,7 @@
   }
   
   body {
-    margin: 0 auto;
-    border: 5px solid #333333;
-    color: #333333;
-    max-width: 100%;
-    padding: 10px 10px 10px 10px;
+    width: 100%;
   }
 
   #nomad{
