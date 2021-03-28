@@ -36,6 +36,9 @@
 .elevate{
   height: 400px;
   background-image: url('/images/laptop.jpg');
+  background-size: auto 100%;
+  background-attachment:scroll;
+  background-repeat: repeat-n;
   color: #f47c3c;
   text-shadow: 1px 1px 1px white;
 }
