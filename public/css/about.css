@@ -85,10 +85,29 @@
   position: absolute;
   top: 0px;
   left: 0px;
-
   vertical-align: middle;
   padding: 5px 5px 5px 5px;
 }
+#barPicture{
+  height: 400px;
+  width: auto;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  vertical-align: middle;
+  padding: 5px 5px 5px 5px;
+}
+#trailerPicture{
+  height: 400px;
+  width: auto;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  vertical-align: middle;
+  padding: 5px 5px 5px 5px;
+}
+
+
 .itsThatSimple{
   color:#bcc4a4;
 }
