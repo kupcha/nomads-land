@@ -68,13 +68,14 @@
   color: #f47c3c;
 }
 .questions{
-  height: 600px;
+  height: 800px;
   text-align: center;
-  padding:25% 0;
+  padding:20% 0;
   background-image: url('/images/texting.jpg');
   background-size: 100% auto;
   background-attachment:scroll;
   background-repeat: repeat-n;
+  color: white;
 }
 
 .itsSimple{
