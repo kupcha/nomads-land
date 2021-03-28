@@ -35,10 +35,9 @@
   }
 .elevate{
   height: 400px;
-  display: block;
-  justify-content: center;
-  align-items: center;
   background-image: url('/images/laptop.jpg');
+  color: #f47c3c;
+  text-shadow: 1px 1px 1px white;
 }
 .showYouAround{
   color: #9cac8c;
@@ -74,11 +73,6 @@
   display: block;
   justify-content: center;
   align-items: center;
-}
-
-
-div{
-    width: 100%;
 }
 
 .jimmynomad{
