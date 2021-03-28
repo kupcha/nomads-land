@@ -34,13 +34,14 @@
     vertical-align: auto;
   }
 .elevate{
-  height: 400px;
+  height: 600px;
   background-image: url('/images/laptop.jpg');
   background-size: 100% auto;
   background-attachment:scroll;
   background-repeat: repeat-n;
   color: #f47c3c;
   text-shadow: 1px 1px 1px white;
+  padding: 25% 0;
 }
 .showYouAround{
   color: #9cac8c;
