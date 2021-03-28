@@ -52,17 +52,20 @@
   color: #bcc4a4;
 }
 .power{
-  
-  color: #85d0e6;
+  color: #84d3eb;
 }
 .itseasy{
   color:white;
 }
 .worldKnowledge{
-  height: 400px;
-  display: block;
-  justify-content: center;
-  align-items: center;
+  height: 500px;
+  text-align: center;
+  padding: 25% 0;
+  background-color: #84d3eb;
+  color: white;
+}
+.elevAndWorld{
+  color: #f47c3c;
 }
 .questions{
   height: 400px;
