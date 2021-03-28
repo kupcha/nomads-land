@@ -116,7 +116,7 @@
   color:#bcc4a4;
   text-align: center;
 }
-.needYourHelp{
+.usesElevation{
   height: 650px;
   text-align: center;
   background-image: url('/images/mountainBackground.jpg');
@@ -124,9 +124,14 @@
   background-attachment:scroll;
   background-repeat: repeat-n;
   padding: 25% 0;
-
+  color:#f47c3c
 }
-
+.pursue{
+  color: #84d3eb;
+}
+.needYourHelp{
+  color:white;
+}
 .elevateNow{
   height: 400px;
   display: block;
