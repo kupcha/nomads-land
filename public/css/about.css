@@ -19,7 +19,7 @@
 
   #nomad{
       width:50%;
-      float: left;
+      text-align: left;
       align-content: left;
   }
 
