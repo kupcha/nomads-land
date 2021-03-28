@@ -26,6 +26,8 @@
     width: 50%;
   }
   #nomad{
+    height: 100%;
+    width: auto;
     max-width: 100%;
   }
 
