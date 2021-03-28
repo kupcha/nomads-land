@@ -8,7 +8,6 @@
 
    html {
     font-family: 'Alegreya Sans SC', sans-serif;
-    background-color: white;
     max-width: 1400;
     text-align: center;
     
@@ -33,7 +32,7 @@
 
   .loveithere{
     height: 400px;
-    width: 50%;
+    width: 100%;
     display: block;
     justify-content: center;
     align-items: center;
@@ -89,5 +88,5 @@
   }
 
   .jimmynomad{
-    width: 100%;
+    width: 50%;
   }
