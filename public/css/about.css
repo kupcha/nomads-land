@@ -14,7 +14,7 @@
     
     
   }
-  .nav{
+  nav{
     background-color: #bcc4a4;
   }
   
@@ -96,7 +96,7 @@
 .intro{
   width: 100%;
   display: flex;
-  background-color: #bcc4a4;
+  background-color: #d4d3ab;
 }
 
 .founder{
