@@ -109,6 +109,8 @@
   text-align: center;
   align-items: center;
   vertical-align: middle;
+  margin-left: auto;
+    margin-right: auto
 }
 .itsThatSimple{
   color:#bcc4a4;
