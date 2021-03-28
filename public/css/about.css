@@ -84,10 +84,11 @@
 }
 
 
-  div{
+div{
     width: 100%;
-  }
+}
 
-  .jimmynomad{
+.jimmynomad{
     width: 50%;
-  }
+    text-align: left;
+}
