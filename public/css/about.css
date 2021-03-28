@@ -124,12 +124,16 @@
   background-attachment:scroll;
   background-repeat: repeat-n;
   padding: 25% 0;
+  margin-left: auto;
+  margin-right: auto
   
 }
 .usesElevationText{
   color:#f47c3c;
   max-width: 50%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto
 }
 .pursue{
   color: #84d3eb;
