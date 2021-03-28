@@ -119,10 +119,11 @@
 .needYourHelp{
   height: 650px;
   text-align: center;
-  background-image: url('/images/mountianBackground.jpg');
+  background-image: url('/images/mountainnBackground.jpg');
   background-size: 100% auto;
   background-attachment:scroll;
   background-repeat: repeat-n;
+  padding: 25% 0;
 
 }
 
