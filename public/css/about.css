@@ -108,16 +108,20 @@
   display: inline-block;
   text-align: center;
   align-items: center;
+  vertical-align: middle;
 }
 .itsThatSimple{
   color:#bcc4a4;
   text-align: center;
 }
 .needYourHelp{
-  height: 400px;
-  display: block;
-  justify-content: center;
-  align-items: center;
+  height: 650px;
+  text-align: center;
+  background-image: url('/images/mountianBackground.jpg');
+  background-size: 100% auto;
+  background-attachment:scroll;
+  background-repeat: repeat-n;
+
 }
 
 .elevateNow{
