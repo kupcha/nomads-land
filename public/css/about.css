@@ -14,10 +14,7 @@
     
     
   }
-  nav{
-    background-color: #bcc4a4;
-  }
-  
+
   body {
     width: 100%;
   }
@@ -102,4 +99,8 @@
 
 .founder{
   color:#9cac8c;
+}
+
+a{
+  color: white;
 }
