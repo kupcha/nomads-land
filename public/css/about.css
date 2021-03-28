@@ -36,7 +36,7 @@
 .elevate{
   height: 400px;
   background-image: url('/images/laptop.jpg');
-  background-size: auto 100%;
+  background-size: 100% auto;
   background-attachment:scroll;
   background-repeat: repeat-n;
   color: #f47c3c;
@@ -80,7 +80,7 @@
 
 .jimmynomad{
     width: 50%;
-    text-align: right;
+    text-align: center;
     padding: 25% 0;
 }
 .intro{
