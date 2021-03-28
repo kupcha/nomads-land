@@ -22,8 +22,6 @@
   }
   #nomad{
     width: 50%;
-      text-align: left;
-      align-content: left;
   }
 
   .loveithere{
@@ -86,9 +84,8 @@ div{
 .jimmynomad{
     width: 50%;
     text-align: right;
-    display: inline-block;
 }
 .intro{
   width: 100%;
-  display: inline-block;
+  display: flex;
 }
