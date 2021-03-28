@@ -89,7 +89,15 @@
   vertical-align: middle;
   padding: 5px 5px 5px 5px;
 }
+.itsThatSimple{
+  color:#bcc4a4;
+}
 
+.andIfYouSaw{
+  position: absolute;
+  top: 700px;
+  text-align: center;
+}
 .itsSimple{
   height: 1400px;
   color: white;
