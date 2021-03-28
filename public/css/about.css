@@ -26,12 +26,13 @@
     max-width: 100%;
   }
 
+
   .loveithere{
     height: 400px;
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #6c7d85;
+    background-color: #9cac8c;
     color: white;
     padding: 25% 0;
   }
@@ -46,7 +47,7 @@
   padding: 25% 0;
 }
 .showYouAround{
-  color: #9cac8c;
+  color: #bcc4a4;
 }
 .worldKnowledge{
   height: 400px;
@@ -85,8 +86,14 @@
     width: 50%;
     text-align: center;
     padding: 25% 0;
+    color: white;
 }
 .intro{
   width: 100%;
   display: flex;
+  background-color: #bcc4a4;
+}
+
+.founder{
+  color:#9cac8c;
 }
