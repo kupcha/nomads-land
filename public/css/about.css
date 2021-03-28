@@ -22,13 +22,9 @@
   }
 
   #nomad{
-      max-width:50%;
-      height: auto;
-      width: auto;
+      width:50%;
       display: inline-block;
       align-content: left;
-      margin-left: auto;
-      margin-right: auto;
   }
 
   .loveithere{
