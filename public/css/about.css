@@ -97,12 +97,11 @@
 }
 
 
-.itsThatSimple{
-  color:#bcc4a4;
-}
+
 
 .andIfYouSaw{
   text-align: center;
+  max-width: 50%;
 }
 
 .itsSimple{
@@ -112,6 +111,9 @@
   display: inline-block;
   justify-content: center;
   align-items: center;
+}
+.itsThatSimple{
+  color:#bcc4a4;
 }
 .needYourHelp{
   height: 400px;
