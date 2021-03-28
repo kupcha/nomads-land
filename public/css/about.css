@@ -79,9 +79,13 @@
   color: white;
 }
 
-#simplePictures{
-  height: 600px;
+#cookingPicture{
+  height: 400px;
   width: auto;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
   vertical-align: middle;
   padding: 5px 5px 5px 5px;
 }
