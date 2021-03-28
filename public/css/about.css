@@ -17,9 +17,11 @@
     width: 100%;
   }
 
+  .nomadPicture{
+    width: 50%;
+  }
   #nomad{
-      width:50%;
-      display: inline-block;
+    width: 100%;
       text-align: left;
       align-content: left;
   }
