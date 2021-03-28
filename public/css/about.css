@@ -91,6 +91,7 @@ div{
 .jimmynomad{
     width: 50%;
     text-align: left;
+    display: inline-block;
 }
 .intro{
   width: 100%;
