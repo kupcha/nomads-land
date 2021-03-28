@@ -119,7 +119,7 @@
 .needYourHelp{
   height: 650px;
   text-align: center;
-  background-image: url('/images/mountainnBackground.jpg');
+  background-image: url('/images/mountainBackground.jpg');
   background-size: 100% auto;
   background-attachment:scroll;
   background-repeat: repeat-n;
