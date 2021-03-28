@@ -26,7 +26,7 @@
       max-width:50%;
       height: auto;
       width: auto;
-      display: block;
+      display: inline-block;
       margin-left: auto;
       margin-right: auto;
   }
@@ -37,14 +37,19 @@
     display: block;
     justify-content: center;
     align-items: center;
+    background-color: #6c7d85;
+    color: white;
   }
 .elevate{
   height: 400px;
   display: block;
   justify-content: center;
   align-items: center;
+  background-image: url('/images/laptop.jpg');
 }
-
+.showYouAround{
+  color: #9cac8c;
+}
 .worldKnowledge{
   height: 400px;
   display: block;
