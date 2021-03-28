@@ -23,7 +23,7 @@
   }
 
   #nomad{
-      max-width:80%;
+      max-width:50%;
       height: auto;
       width: auto;
       display: block;
@@ -33,6 +33,7 @@
 
   .loveithere{
     height: 400px;
+    width: 50%;
     display: block;
     justify-content: center;
     align-items: center;
@@ -79,5 +80,9 @@
 
 
   div{
+    width: 100%;
+  }
+
+  .jimmynomad{
     width: 100%;
   }
