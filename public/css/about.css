@@ -83,10 +83,11 @@
   height: 600px;
   width: auto;
   vertical-align: middle;
+  padding: 5px 5px 5px 5px;
 }
 
 .itsSimple{
-  height: 800px;
+  height: 1400px;
   color: white;
   background-color: #f47c3c;
   display: inline-block;
