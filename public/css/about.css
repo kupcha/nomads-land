@@ -44,12 +44,19 @@
   background-size: 100% auto;
   background-attachment:scroll;
   background-repeat: repeat-n;
-  color: white;
+  color: #f47c3c;
   text-shadow: 1px 1px 1px white;
   padding: 25% 0;
 }
 .showYouAround{
   color: #bcc4a4;
+}
+.power{
+  
+  color: #85d0e6;
+}
+.itseasy{
+  color:white;
 }
 .worldKnowledge{
   height: 400px;
