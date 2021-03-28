@@ -110,7 +110,9 @@
   align-items: center;
   vertical-align: middle;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .itsThatSimple{
   color:#bcc4a4;
