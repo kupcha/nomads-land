@@ -310,4 +310,10 @@ a:hover{
     margin-left: auto;
     margin-right: auto;
   }
+  .needYourHelp{
+    text-align: center;
+  }
+  .usesElevationText{
+    width: 90%;
+  }
 }
