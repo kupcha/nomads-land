@@ -208,6 +208,9 @@ a:hover{
 }
 
 @media only screen and (max-width: 700px) {
+  body{
+    font-size: 25px;
+  }
   .intro{
     display: block;
   }
@@ -222,5 +225,9 @@ a:hover{
   #jimmynomad{
     display: block;
     width: 100%;
+    font-size: 25px;
+  }
+  h3{
+    font-size: 25px;
   }
 }
