@@ -274,14 +274,17 @@ a:hover{
   }
 
   .questions{
+    height: auto;
     background-image: url('/images/texting.jpg');
     background-size: auto 100%;
     background-attachment:scroll;
+
   }
   .usesElevation{
     background-image: url('/images/mountainBackground.jpg');
     background-size: auto 100%;
     background-attachment:scroll;
+    padding: 25% 0;
   }
   .elevateNow{
     height: auto;
