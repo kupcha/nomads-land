@@ -132,6 +132,16 @@ a:hover{
   color:#333333;
   text-decoration: none;
 }
+
+#howItWorks{
+  color:#9cac8c;
+}
+.bottomHalf{
+  background-color: white;
+}
+#nomadCollects{
+  color: #9cac8c;
+}
 @media only screen and (max-width: 700px) {
   body{
     font-size: 15px;

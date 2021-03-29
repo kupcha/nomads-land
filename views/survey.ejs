@@ -29,8 +29,9 @@
               mapTypeId: "roadmap",
             });
             // Create the search box and link it to the UI element.
-            const input = document.getElementById("pac-input");
-            const searchBox = new google.maps.places.SearchBox(input);
+            const inputs = document.getElementsByName("pac-input");
+            inputs.forEach( () => {
+              const searchBox = new google.maps.places.SearchBox(input);
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
             // Bias the SearchBox results towards current map's viewport.
             map.addListener("bounds_changed", () => {
@@ -82,7 +83,9 @@
                 }
               });
               map.fitBounds(bounds);
-            });
+            })
+            }
+            )
           }
         </script>
 </head>
@@ -302,8 +305,6 @@
     <div class="survey" id="survey">
         <h1> my trip to<br><span class="place"><%= location %></span></h1>
         <form action="/thankyou" method="post" name="tripReviewForm" id="tripReviewForm">
-            <h2>complete this form to elevate yourself 10 feet</h2>
-            <label for="location">location: </label>
             <input type="text" id="location" name="location" required disabled value="<%= location %>"
                 style="text-align: center;"><br>
             <script type="text/javascript">

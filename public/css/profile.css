@@ -60,12 +60,12 @@ body {
 }
 
 .takeFlight{
-  display:inline-block;
+  display: block;
   height: 30px;
   width:30px;
   background-image: url('/images/takeFlight.png');
-  background-size: 28px 28px;
-  background-repeat: repeat-n;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 nav{
