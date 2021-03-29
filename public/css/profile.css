@@ -90,6 +90,10 @@ a:hover{
   body{
     font-size: 20px;
     max-width: 100%;
+    height: auto;
+    background-image: url('/images/profileBackground.jpg');
+    background-size: auto 100%;
+    background-attachment: fixed;
   }
   h1{
     text-align: center;
