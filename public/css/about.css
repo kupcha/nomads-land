@@ -208,10 +208,12 @@ a:hover{
   body{
     display: block;
     font-size: 15px;
+    text-align: center;
   }
   .intro{
     display: block;
     height: auto;
+    text-align: center;
   }
   .loveItHereText{
     height: auto;
@@ -232,6 +234,7 @@ a:hover{
     display: block;
     width: 92%;
     font-size: 30px;
+    text-align: center;
   }
   h3{
     font-size: 30px;
