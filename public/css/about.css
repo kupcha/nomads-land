@@ -279,4 +279,7 @@ a:hover{
   #showYouAround{
     font-size: 25px;
   }
+  .usesElevationText{
+    width: 95%;
+  }
 }
