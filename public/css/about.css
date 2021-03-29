@@ -16,13 +16,14 @@
   
 
    html {
-    font-family: 'messapiabold';
+    
     font-weight: bold;
     font-size:larger;
     text-align: center;
   }
 
   body {
+    font-family: 'messapiabold';
     width: 100%;
     background-color: #333333;
   }
