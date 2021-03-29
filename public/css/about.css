@@ -211,7 +211,7 @@ a:hover{
   #nomadPicture{
     width: 100%;
   }
-  #nomad{
+  .nomad{
     display: block;
     width: 100%;
   }
