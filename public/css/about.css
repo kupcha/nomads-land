@@ -316,4 +316,8 @@ a:hover{
   .usesElevationText{
     width: 90%;
   }
+  .elevateNow{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
