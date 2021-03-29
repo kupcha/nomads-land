@@ -301,9 +301,14 @@ a:hover{
   }
   .andIfYouSaw{
     width: 95%;
+    margin-left: auto;
+    margin-right: auto;
   }
   #showYouAround{
     font-size: 25px;
+  }
+  .usesElevation{
+    width: 100%;
   }
   .usesElevationText{
     width: 95%;
