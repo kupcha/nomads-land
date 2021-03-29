@@ -213,9 +213,12 @@ a:hover{
     display: block;
     height: auto;
   }
-  .loveithere{
+  .loveItHereText{
     height: auto;
     width: 95%;
+  }
+  .loveithere{
+    height: auto;
   }
   #nomadPicture{
     width: 100%;
