@@ -215,6 +215,7 @@ a:hover{
   }
   .loveithere{
     height: auto;
+    width: 95%;
   }
   #nomadPicture{
     width: 100%;
@@ -226,7 +227,7 @@ a:hover{
   }
   #jimmynomad{
     display: block;
-    width: 100%;
+    width: 92%;
     font-size: 30px;
   }
   h3{
