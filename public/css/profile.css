@@ -1,4 +1,12 @@
+@font-face {
+  font-family: 'messapiabold';
+  src: url('/css/fonts/messapia-bold-webfont.woff2') format('woff2'),
+       url('/css/fonts/messapia-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 
+}
+ 
  h1 {    
   margin: 0;
   padding: 0 0;
@@ -7,7 +15,7 @@
 
 
  html {
-  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'messapiabold';
   background-color: #333333;
   max-width: 1400;
   
@@ -41,7 +49,6 @@ body {
 .userStats{
   display: inline-block;
   font-size:30px;
-  text-shadow: 2px 2px 2px #333333;
   padding-left: 10px;
 }
 
