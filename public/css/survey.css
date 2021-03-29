@@ -62,6 +62,12 @@
     color:#333333;
     text-decoration: none;
   }
+  .recList{
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
   
 @media only screen and (max-width: 700px) {
