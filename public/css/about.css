@@ -214,6 +214,10 @@ a:hover{
   }
   .intro{
     display: block;
+    height: auto;
+  }
+  .loveithere{
+    height: auto;
   }
   #nomadPicture{
     width: 100%;
@@ -226,10 +230,10 @@ a:hover{
   #jimmynomad{
     display: block;
     width: 100%;
-    font-size: 20px;
+    font-size: 23px;
   }
   h3{
-    font-size: 20px;
+    font-size: 23px;
   }
   #cookingPicture{
     display: block;
@@ -267,5 +271,8 @@ a:hover{
     background-image: url('/images/mountainBackground.jpg');
     background-size: auto 100%;
     background-attachment:scroll;
+  }
+  .elevateNow{
+    height: auto;
   }
 }
