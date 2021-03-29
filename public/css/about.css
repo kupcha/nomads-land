@@ -220,9 +220,13 @@ a:hover{
   .loveItHereText{
     height: auto;
     width: 95%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .loveithere{
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   #nomadPicture{
     width: 100%;
@@ -243,10 +247,10 @@ a:hover{
     font-size: 28px;
   }
   h2{
-    font-size: 25px;
+    font-size: 35px;
   }
   h3{
-    font-size: 20px;
+    font-size: 22px;
   }
   #cookingPicture{
     display: block;
@@ -270,6 +274,8 @@ a:hover{
     background-image: url('/images/laptop.jpg');
     background-size: auto 100%;
     background-attachment:scroll;
+    margin-left: auto;
+    margin-right: auto;
   }
   .itsSimple{
     height: auto;
@@ -299,5 +305,9 @@ a:hover{
   }
   .usesElevationText{
     width: 95%;
+  }
+  .worldKnowledge{
+    margin-left: auto;
+    margin-right: auto;
   }
 }
