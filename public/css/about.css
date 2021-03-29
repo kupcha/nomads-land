@@ -231,4 +231,27 @@ a:hover{
   h3{
     font-size: 25px;
   }
+  #cookingPicture{
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  #barPicture{
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  #trailerPicture{
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .elevate{
+    background-image: url('/images/laptop.jpg');
+    background-size: auto 100%;
+    background-attachment:scroll;
+  }
 }
