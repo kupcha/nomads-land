@@ -49,6 +49,7 @@ body {
   margin-right:auto;
   text-align: center;
   color:white;
+  pointer-events: none;
 }
 
 .container{
@@ -63,6 +64,7 @@ body {
   margin: 0 auto;
   width: 48%;
   height:auto;
+  pointer-events: none;
 }
 
 .welcome{
@@ -149,6 +151,7 @@ a:hover{
     width: 100%;
     max-width: 100%;
     display: block;
+    pointer-events: none;
   }
   .howItWorks{
     color: #9cac8c;
