@@ -125,3 +125,14 @@ nav{
 a{
   color: white;
 }
+a:hover{
+  color:#333333
+}
+@media only screen and (max-width: 600px) {
+  .welcomeMessage{
+    width: 100%;
+  }
+  .looker{
+    width: 95%;
+  }
+}
