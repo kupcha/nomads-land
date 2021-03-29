@@ -31,7 +31,7 @@
   #nomadPicture{
     width: 50%;
   }
-  #nomad{
+  .nomad{
     width: auto;
     max-width: 100%;
     height: auto;
