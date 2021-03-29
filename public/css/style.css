@@ -134,10 +134,13 @@ a:hover{
   body{
     font-size: 16px;
   }
-  .welcomeMessage{
+  .welcome{
     width: 100%;
   }
+  .welcomeMessage{
+    max-width: 100%;
+  }
   .looker{
-    width: 95%;
+    max-width: 95%;
   }
 }
