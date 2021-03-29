@@ -254,4 +254,7 @@ a:hover{
     background-size: auto 100%;
     background-attachment:scroll;
   }
+  .itsSimple{
+    height: auto;
+  }
 }
