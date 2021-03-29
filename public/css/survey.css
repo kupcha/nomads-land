@@ -49,3 +49,7 @@
   a{
     color: white;
   }
+
+  a:hover{
+    color:#333333
+  }
