@@ -150,4 +150,7 @@ a:hover{
     max-width: 95%;
     display: block;
   }
+  .howItWorks{
+    color: #9cac8c;
+  }
 }
