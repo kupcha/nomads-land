@@ -200,7 +200,7 @@
                 const foodLocation = document.createElement('input');
                 foodLocation.setAttribute('type', 'text');
                 foodLocation.required = true;
-                foodLocation.setAttribute('id', 'foodLocation');
+                foodLocation.setAttribute('id', 'pac-input');
                 foodLocation.setAttribute('name', 'foodLocation');
                 foodLocation.setAttribute('placeholder', 'where?');
                 foodLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
@@ -236,6 +236,7 @@
                     errorDiv.append(errorMessage);
                 }
             }
+            initAutocomplete();
         }
 
 
@@ -253,7 +254,7 @@
                 const sightLocation = document.createElement('input');
                 sightLocation.setAttribute('type', 'text');
                 sightLocation.required = true;
-                sightLocation.setAttribute('id', 'sightLocation');
+                sightLocation.setAttribute('id', 'pac-input');
                 sightLocation.setAttribute('name', 'sightLocation');
                 sightLocation.setAttribute('placeholder', 'where?');
                 sightLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
@@ -289,6 +290,7 @@
                     errorDiv.append(errorMessage);
                 }
             }
+            initAutocomplete();
         }
     </script>
     <div class="survey" id="survey">
@@ -301,7 +303,7 @@
             <input type="email" id="reviewersEmail" name="reviewersEmail" required value="<%= userEmail %>"
                 style="text-align: center;" disabled><br>
             <label for="location">location: </label>
-            <input type="text" id="location" name="location" required value="<%= location %>"
+            <input type="text" id="location" name="location" required disabled value="<%= location %>"
                 style="text-align: center;">
             <script type="text/javascript">
                 const email = document.getElementById('email');
