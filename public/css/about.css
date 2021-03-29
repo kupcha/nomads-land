@@ -27,6 +27,7 @@
 
   #nomadPicture{
     width: 50%;
+    pointer-events: none;
   }
   .nomad{
     width: auto;
@@ -91,16 +92,19 @@
   width: auto;
   vertical-align: middle;
   padding: 5px 5px 5px 5px;
+  pointer-events: none;
 }
 #barPicture{
   height: 400px;
   width: auto;
   padding: 5px 5px 5px 5px;
+  pointer-events: none;
 }
 #trailerPicture{
   height: 400px;
   width: auto;
   padding: 5px 5px 5px 5px;
+  pointer-events: none;
 }
 
 
