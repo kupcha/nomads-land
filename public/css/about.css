@@ -206,3 +206,14 @@ a:hover{
   color:#f47c3c;
   text-decoration: none;
 }
+
+@media only screen and (max-width: 700px) {
+  #nomad{
+    display: block;
+    width: 100%;
+  }
+  .jimmynomad{
+    display: block;
+    width: 100%;
+  }
+}
