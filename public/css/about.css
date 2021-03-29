@@ -8,15 +8,12 @@
 }
    
    
-   h1, h3 {    
-    margin: 0;
-    padding: 0 0;
+   h1, h3 {
     text-align: center;
    }
   
 
    html {
-    
     font-weight: bold;
     font-size:larger;
     text-align: center;
@@ -230,10 +227,10 @@ a:hover{
   #jimmynomad{
     display: block;
     width: 100%;
-    font-size: 23px;
+    font-size: 30px;
   }
   h3{
-    font-size: 23px;
+    font-size: 30px;
   }
   #cookingPicture{
     display: block;
@@ -274,5 +271,8 @@ a:hover{
   }
   .elevateNow{
     height: auto;
+  }
+  .andIfYouSaw{
+    width: 85%;
   }
 }
