@@ -172,10 +172,13 @@
                 cancelButton.setAttribute('style', 'display: block; text-align: center;margin: 0;');
                 cancelButton.innerHTML = 'cancel';
                 rec.append(selectionList);
+                rec.append(lineBreak);
                 rec.append(activityLocation);
+                rec.append(lineBreak);
                 rec.append(cancelButton);
                 const content = document.getElementById('survey');
                 recDiv.append(rec);
+                recDiv.setAttribute('style', 'display: block; text-align: center')
             } else {
                 if (!document.getElementById('errorMessage')) {
                     const errorMessage = document.createElement('p');
