@@ -167,6 +167,10 @@
 .elevateNow{
   background-color: #84d3eb;
   color: white;
+  padding: 25% 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .your{
