@@ -236,8 +236,11 @@ a:hover{
     font-size: 30px;
     text-align: center;
   }
+  h1{
+    font-size: 28px;
+  }
   h3{
-    font-size: 30px;
+    font-size: 23px;
   }
   #cookingPicture{
     display: block;
