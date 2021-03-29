@@ -140,10 +140,12 @@ a:hover{
     display: block;
   }
   .welcomeMessage{
+    width: 100%;
     max-width: 100%;
     display: block;
   }
   .looker{
+    width: 100%;
     max-width: 95%;
     display: block;
   }
