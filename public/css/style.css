@@ -61,7 +61,7 @@ body {
 .looker{
   display:inline-block;
   margin: 0 auto;
-  width: 50%;
+  width: 48%;
   height:auto;
 }
 
@@ -76,7 +76,7 @@ body {
 }
 
 .welcomeMessage{
-  max-width: 50%;
+  width: 48%;
   display: inline-block;
   padding: 10% 0;
   margin-left: auto;
