@@ -257,4 +257,15 @@ a:hover{
   .itsSimple{
     height: auto;
   }
+
+  .questions{
+    background-image: url('/images/texting.jpg');
+    background-size: auto 100%;
+    background-attachment:scroll;
+  }
+  .usesElevation{
+    background-image: url('/images/mountainBackground.jpg');
+    background-size: auto 100%;
+    background-attachment:scroll;
+  }
 }
