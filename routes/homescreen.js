@@ -152,11 +152,11 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 });
 
 
-router.post('/thankyou', requiresAuth(), function(req, res, next) {
+router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   const userEmail = res.locals.user.email;
   const survey = req.body;
   const recsMade = survey.recsMade;
-  
+
   const activitySelection = survey.activitySelection;
   const activityLocation = survey.activityLocation;
   let activityList = new Array(recsMade);
