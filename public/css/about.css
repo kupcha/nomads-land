@@ -54,7 +54,7 @@
   color: #f47c3c;
   padding: 21% 0;
 }
-.showYouAround{
+#showYouAround{
   color: #bcc4a4;
 }
 .power{
@@ -274,5 +274,8 @@ a:hover{
   }
   .andIfYouSaw{
     width: 85%;
+  }
+  #showYouAround{
+    font-size: 25px;
   }
 }
