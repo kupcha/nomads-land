@@ -153,33 +153,54 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 
 
 router.post('/thankyou', requiresAuth(), function(req, res, next) {
-  // const userEmail = res.locals.user.email;
-  // const survey = req.body;
-  // const newSurvey = {
-  //   email : userEmail,
-  //   location : survey.location,
-  //   seasons : survey.seasons,
-  //   fun : survey.fun,
-  //   food : survey.food,
-  //   sights : survey.sights,
-  //   locals : survey.locals,
-  //   price : survey.price,
-  //   enviro : survey.enviro
-  // };
-  // if (survey.mscEnviro){
-  //   newSurvey.mscEnviro = survey.mscEnvir;
-  // }
-  // await db.collection('reviews').insertOne(newSurvey);
-  // res.render('recommendations');
-  const formData = req.body;
-  const activitySelection = formData.activitySelection;
-  const activityLocation = formData.activityLocation;
-  const activityList = new Array(activitySelection.length);
-  var i;
-  for (i = 0; i < activitySelection.length; i++){
-   activityList[i] = activitySelection[i] + ":" + activityLocation[i];
+  const userEmail = res.locals.user.email;
+  const survey = req.body;
+  const recsMade = survey.recsMade;
+  
+  const activitySelection = survey.activitySelection;
+  const activityLocation = survey.activityLocation;
+  let activityList = new Array(recsMade);
+  for (var i = 0; i < recsMade; i++){
+    const currRec = { type: activitySelection[i], location: activityLocation[i]};
+     activityList[i] = currRec;
   }
-  res.send(activityList);
+  const foodSelection = survey.foodSelection;
+  const foodLocation = survey.foodLocation;
+  let foodList = new Array(recsMade);
+  for (var i = 0; i < recsMade; i++){
+    const currRec = { type: foodSelection[i], location: foodLocation[i]};
+     foodList[i] = currRec;
+  }
+  const sightSelection = survey.sightSelection;
+  const sightLocation = survey.sightLocation;
+  let sightList = new Array(recsMade);
+  for (var i = 0; i < recsMade; i++){
+    const currRec = { type: sightSelection[i], location: sightLocation[i]};
+    sightList[i] = currRec;
+  }
+  const newSurvey = {
+    email : userEmail,
+    location : survey.location,
+    seasons : survey.seasons,
+    fun : survey.fun,
+    food : survey.food,
+    sights : survey.sights,
+    locals : survey.locals,
+    price : survey.price,
+    enviro : survey.enviro,
+    activityRecs : activityList,
+    foodRecs : foodList,
+    sightRecs : sightList,
+    mscEnviro : survey.mscEnviro
+  };
+  const currUser = await User.findOne({email: userEmail});
+  var userElevation = currUser.elevation;
+  userElevation = 10 + (10 * recsMade) + userElevation;
+  var userTrips = currUser.trips;
+  userTrips+=1;
+  db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, elevation: userElevation}});
+  await db.collection('reviews').insertOne(newSurvey);
+  res.render('thankyou');
 })
 
 module.exports = router;
