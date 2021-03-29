@@ -150,7 +150,7 @@
                 activityLocation.setAttribute('id', 'pac-input');
                 activityLocation.setAttribute('name', 'activityLocation');
                 activityLocation.setAttribute('placeholder', 'where?');
-                activityLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+                activityLocation.setAttribute('style', 'display: block; text-align: center;margin: 0; padding:0;');
                 const selectionList = document.createElement('select');
                 selectionList.setAttribute('id', 'activitySelection');
                 selectionList.setAttribute('name', 'activitySelection');
@@ -160,14 +160,14 @@
                     option.text = activityChoices[i];
                     selectionList.append(option);
                 }
-                selectionList.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+                selectionList.setAttribute('style', 'display: block; text-align: center;margin: 0; padding:0;');
                 selectionList.required = true;
                 const recDiv = document.getElementById('recList');
                 const cancelButton = document.createElement('button');
                 cancelButton.setAttribute('onClick', "removeDiv(this)");
-                cancelButton.setAttribute('style', 'display: flex; text-align: center;margin: 0;');
+                cancelButton.setAttribute('style', 'display: block; text-align: center;margin: 0;');
                 cancelButton.innerHTML = 'cancel';
-                rec.setAttribute('style', 'width: 40%; max-width: 50%; display: flex; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
+                rec.setAttribute('style', 'width: 40%; max-width: 50%; display: block; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
                 rec.append(selectionList);
                 rec.append(activityLocation);
                 rec.append(cancelButton);
@@ -208,7 +208,7 @@
                 foodLocation.setAttribute('id', 'pac-input');
                 foodLocation.setAttribute('name', 'foodLocation');
                 foodLocation.setAttribute('placeholder', 'where?');
-                foodLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+                foodLocation.setAttribute('style', 'display: block; text-align: center;margin: 0; padding:0;');
                 const selectionList = document.createElement('select');
                 selectionList.setAttribute('id', 'foodSelection');
                 selectionList.setAttribute('name', 'foodSelection');
@@ -218,14 +218,14 @@
                     option.text = foodChoices[i];
                     selectionList.append(option);
                 }
-                selectionList.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+                selectionList.setAttribute('style', 'display: block; text-align: center;margin: 0; padding:0;');
                 selectionList.required = true;
                 const recDiv = document.getElementById('recList');
                 const cancelButton = document.createElement('button');
                 cancelButton.setAttribute('onClick', "removeDiv(this)");
-                cancelButton.setAttribute('style', 'display: flex; text-align: center;margin: 0;');
+                cancelButton.setAttribute('style', 'display: block; text-align: center;margin: 0;');
                 cancelButton.innerHTML = 'cancel';
-                rec.setAttribute('style', 'width: 40%; max-width: 50%; display: flex; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
+                rec.setAttribute('style', 'width: 40%; max-width: 50%; display: block; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
                 rec.append(selectionList);
                 rec.append(foodLocation);
                 rec.append(cancelButton);
@@ -262,7 +262,7 @@
                 sightLocation.setAttribute('id', 'pac-input');
                 sightLocation.setAttribute('name', 'sightLocation');
                 sightLocation.setAttribute('placeholder', 'where?');
-                sightLocation.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+                sightLocation.setAttribute('style', 'display: block; text-align: center;margin: 0; padding:0;');
                 const selectionList = document.createElement('select');
                 selectionList.setAttribute('id', 'awesomeSelection');
                 selectionList.setAttribute('name', 'awesomeSelection');
@@ -272,14 +272,14 @@
                     option.text = sightSelection[i];
                     selectionList.append(option);
                 }
-                selectionList.setAttribute('style', 'display: flex; text-align: center;margin: 0; padding:0;');
+                selectionList.setAttribute('style', 'display: block; text-align: center;margin: 0; padding:0;');
                 selectionList.required = true;
                 const recDiv = document.getElementById('recList');
                 const cancelButton = document.createElement('button');
                 cancelButton.setAttribute('onClick', "removeDiv(this)");
-                cancelButton.setAttribute('style', 'display: flex; text-align: center;margin: 0;');
+                cancelButton.setAttribute('style', 'display: block; text-align: center;margin: 0;');
                 cancelButton.innerHTML = 'cancel';
-                rec.setAttribute('style', 'width: 40%; max-width: 50%; display: flex; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
+                rec.setAttribute('style', 'width: 40%; max-width: 50%; display: block; justify-content: space-between; margin: 0 auto;  text-align: center; padding: 10px 10px 10px 10px')
                 rec.append(selectionList);
                 rec.append(sightLocation);
                 rec.append(cancelButton);
@@ -298,13 +298,14 @@
             initAutocomplete();
         }
     </script>
+    <br><br>
     <div class="survey" id="survey">
         <h1> my trip to<br><span class="place"><%= location %></span></h1>
         <form action="/thankyou" method="post" name="tripReviewForm" id="tripReviewForm">
             <h2>complete this form to elevate yourself 10 feet</h2>
             <label for="location">location: </label>
             <input type="text" id="location" name="location" required disabled value="<%= location %>"
-                style="text-align: center;">
+                style="text-align: center;"><br>
             <script type="text/javascript">
                 const email = document.getElementById('email');
                 const currentEmail = document.getElementById('email').value;
