@@ -164,7 +164,17 @@
   margin-right: auto
 }
 
+.elevateNow{
+  background-color: #84d3eb;
+  color: white;
+}
 
+.your{
+  color:#f47c3c
+}
+.sendUs{
+  color: #333333;
+}
 .intro{
   width: 100%;
   display: flex;
