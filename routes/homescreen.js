@@ -86,10 +86,6 @@ router.get('/test', requiresAuth(), async function (req, res, next) {
   }
 });
 
-router.post('/testresults', function (req, res, next) {
-  res.send(req.body);
-})
-
 
 router.get('/about', function (req, res, next) {
   res.render('about')
