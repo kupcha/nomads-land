@@ -165,6 +165,7 @@
 }
 
 .elevateNow{
+  height: 400px;
   background-color: #84d3eb;
   color: white;
   padding: 25% 0;
