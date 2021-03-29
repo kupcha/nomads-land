@@ -55,15 +55,20 @@
 
   a{
     color: white;
+    text-decoration: none;
   }
 
   a:hover{
-    color:#333333
+    color:#333333;
+    text-decoration: none;
   }
 
   
 @media only screen and (max-width: 700px) {
   h1{
-    font-size: 18px;
+    font-size: 20px;
+  }
+  h2{
+    font-size: 16px;;
   }
 }
