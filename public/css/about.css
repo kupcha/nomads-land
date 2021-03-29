@@ -255,18 +255,21 @@ a:hover{
   #cookingPicture{
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
     text-align: center;
   }
   #barPicture{
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
     text-align: center;
   }
   #trailerPicture{
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
     text-align: center;
   }
@@ -280,6 +283,7 @@ a:hover{
   .itsSimple{
     height: auto;
     width: 100%;
+    max-width: 100%;
   }
 
   .questions{
@@ -295,6 +299,7 @@ a:hover{
     background-attachment:scroll;
     padding: 25% 0;
     width: 100%;
+    max-width: 100%;
   }
   .elevateNow{
     height: auto;
@@ -302,6 +307,7 @@ a:hover{
   }
   .andIfYouSaw{
     width: 98%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -311,10 +317,12 @@ a:hover{
   }
   .usesElevation{
     width: 100%;
+    max-width: 100%;
     text-align: center;
   }
   .usesElevationText{
     width: 98%;
+    max-width: 100%;
     text-align: center;
   }
   .pursue{
