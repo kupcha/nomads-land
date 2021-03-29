@@ -235,7 +235,6 @@ a:hover{
   #jimmynomad{
     display: block;
     width: 92%;
-    font-size: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -243,8 +242,11 @@ a:hover{
   h1{
     font-size: 28px;
   }
+  h2{
+    font-size: 25px;
+  }
   h3{
-    font-size: 23px;
+    font-size: 20px;
   }
   #cookingPicture{
     display: block;
