@@ -279,6 +279,7 @@ a:hover{
   }
   .itsSimple{
     height: auto;
+    width: 100%;
   }
 
   .questions{
@@ -293,6 +294,7 @@ a:hover{
     background-size: auto 100%;
     background-attachment:scroll;
     padding: 25% 0;
+    width: 100%;
   }
   .elevateNow{
     height: auto;
