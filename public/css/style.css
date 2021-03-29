@@ -78,8 +78,7 @@ body {
 .welcomeMessage{
   max-width: 45%;
   display: inline-block;
-  padding: 25px;
-  text-align: left;
+  padding: 10% 0;
   margin-left: auto;
   margin-right: auto;
 }
