@@ -208,11 +208,14 @@ a:hover{
 }
 
 @media only screen and (max-width: 700px) {
+  #nomadPicture{
+    width: 100%;
+  }
   #nomad{
     display: block;
     width: 100%;
   }
-  .jimmynomad{
+  #jimmynomad{
     display: block;
     width: 100%;
   }
