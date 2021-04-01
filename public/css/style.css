@@ -47,7 +47,7 @@ body {
   margin-left:auto;
   margin-right:auto;
   text-align: center;
-  color:white;
+  color:#9cac8c;
   pointer-events: none;
 }
 
@@ -164,7 +164,7 @@ a:hover{
     pointer-events: none;
   }
   #howItWorks{
-    color:#9cac8c;
+    color:#f47c3c;
   }
 
   h1{
