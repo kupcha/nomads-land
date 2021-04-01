@@ -29,7 +29,7 @@
               mapTypeId: "roadmap",
             });
             // Create the search box and link it to the UI element.
-            const inputs = document.getElementsByName("pac-input");
+            const inputs = document.getElementsByClassName("pac-input");
             inputs.forEach( () => {
               const searchBox = new google.maps.places.SearchBox(input);
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -144,12 +144,13 @@
                 const lineBreak = document.createElement('br');
                 rec.setAttribute('class', 'rec');
                 rec.setAttribute('id', 'rec');
-                rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block');
+                rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
                 const activityLocation = document.createElement('input');
                 activityLocation.setAttribute('type', 'text');
                 activityLocation.required = true;
                 activityLocation.setAttribute('id', 'pac-input');
                 activityLocation.setAttribute('name', 'activityLocation');
+                activityLocation.setAttribute('class', 'pac-input');
                 activityLocation.setAttribute('placeholder', 'where?');
                 activityLocation.setAttribute('style', 'display: block; text-align: center;margin: 0; padding:0;');
                 const selectionList = document.createElement('select');
@@ -169,10 +170,9 @@
                 cancelButton.setAttribute('style', 'display: block; text-align: center;margin: 0;');
                 cancelButton.innerHTML = 'cancel';
                 rec.append(selectionList);
-                rec.append(lineBreak);
                 rec.append(activityLocation);
-                rec.append(lineBreak);
                 rec.append(cancelButton);
+                rec.append(lineBreak);
                 const content = document.getElementById('survey');
                 recDiv.append(rec);
                 recDiv.setAttribute('style', 'display: block; text-align: center')
@@ -205,12 +205,13 @@
                 const lineBreak = document.createElement('br');
                 rec.setAttribute('class', 'rec');
                 rec.setAttribute('id', 'rec');
-                rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block');
+                rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
                 const foodLocation = document.createElement('input');
                 foodLocation.setAttribute('type', 'text');
                 foodLocation.required = true;
                 foodLocation.setAttribute('id', 'pac-input');
                 foodLocation.setAttribute('name', 'foodLocation');
+                foodLocation.setAttribute('class', 'pac-input');
                 foodLocation.setAttribute('placeholder', 'where?');
                 foodLocation.setAttribute('style', 'display: block; text-align: center;margin: 0; padding:0;');
                 const selectionList = document.createElement('select');
@@ -232,6 +233,7 @@
                 rec.append(selectionList);
                 rec.append(foodLocation);
                 rec.append(cancelButton);
+                rec.append(lineBreak);
                 const content = document.getElementById('survey');
                 recDiv.append(rec);
             } else {
@@ -259,13 +261,14 @@
                 const lineBreak = document.createElement('br');
                 rec.setAttribute('class', 'rec');
                 rec.setAttribute('id', 'rec');
-                rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block');
+                rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
                 const sightLocation = document.createElement('input');
                 sightLocation.setAttribute('type', 'text');
                 sightLocation.required = true;
                 sightLocation.setAttribute('id', 'pac-input');
                 sightLocation.setAttribute('name', 'sightLocation');
                 sightLocation.setAttribute('placeholder', 'where?');
+                sightLocation.setAttribute('class', 'pac-input');
                 sightLocation.setAttribute('style', 'display: block; text-align: center;margin: 0; padding:0;');
                 const selectionList = document.createElement('select');
                 selectionList.setAttribute('id', 'awesomeSelection');
@@ -286,6 +289,7 @@
                 rec.append(selectionList);
                 rec.append(sightLocation);
                 rec.append(cancelButton);
+                rec.append(lineBreak);
                 const content = document.getElementById('survey');
                 recDiv.append(rec);
             } else {
