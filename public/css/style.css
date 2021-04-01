@@ -133,10 +133,11 @@ a:hover{
 }
 
 #howItWorks{
-  color:#9cac8c;
+  color:#f47c3c;
 }
 .bottomHalf{
   background-color: white;
+  padding: 0 10px 10px 10px;
 }
 #nomadCollects{
   color: #9cac8c;
