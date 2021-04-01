@@ -303,7 +303,7 @@
     <div class="survey" id="survey">
         <h1> my trip to<br><span class="place"><%= location %></span></h1>
         <form action="/thankyou" method="post" name="tripReviewForm" id="tripReviewForm">
-            <input type="text" id="location" name="location" required disabled value="<%= location %>"
+            <input type="hidden" id="location" name="location" required disabled value="<%= location %>"
                 style="text-align: center;width:fit-content"><br>
             <p>When were you there?</p>
             <label for="yearOfVisit">year: </label>
