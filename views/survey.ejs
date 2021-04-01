@@ -22,12 +22,13 @@
           // This example requires the Places library. Include the libraries=places
           // parameter when you first load the API. For example:
           // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-          function initAutocomplete(input) {
+          function initAutocomplete(recNumber) {
             const map = new google.maps.Map(document.getElementById("map"), {
               center: { lat: -33.8688, lng: 151.2195 },
               zoom: 13,
               mapTypeId: "roadmap",
             });
+            const input = document.getElementById(`pac-input${recNumber}`);
             // Create the search box and link it to the UI element.
             const searchBox = new google.maps.places.SearchBox(input);
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -144,7 +145,7 @@
                 const activityLocation = document.createElement('input');
                 activityLocation.setAttribute('type', 'text');
                 activityLocation.required = true;
-                activityLocation.setAttribute('id', 'pac-input');
+                activityLocation.setAttribute('id', `pac-input${recsMade}`);
                 activityLocation.setAttribute('name', 'activityLocation');
                 activityLocation.setAttribute('class', 'pac-input');
                 activityLocation.setAttribute('placeholder', 'where?');
@@ -183,10 +184,7 @@
                 }
 
             }
-            initAutocomplete(activityLocation);
-
-
-
+            initAutocomplete(document.getElementById(recsMade));
         }
     </script>
     <script type='text/javascript'>
@@ -306,7 +304,7 @@
         <h1> my trip to<br><span class="place"><%= location %></span></h1>
         <form action="/thankyou" method="post" name="tripReviewForm" id="tripReviewForm">
             <input type="text" id="location" name="location" required disabled value="<%= location %>"
-                style="text-align: center;"><br>
+                style="text-align: center;width:fit-content"><br>
             <script type="text/javascript">
                 const email = document.getElementById('email');
                 const currentEmail = document.getElementById('email').value;
@@ -400,9 +398,9 @@
             <div id="map"></div>
         </form>
         
-        <button onclick="makeActivityRec()" name="funActivityRec">did you do anything fun?</button>
-        <button name="foodRec" onclick="makeFoodRec()">did you eat anywhere awesome?</button>
-        <button name="sightRec" onclick="makeAwesomeRec()">did you see anything awesome?</button><br><br>
+        <button onclick="makeActivityRec()" name="funActivityRec">do anything fun?</button>
+        <button name="foodRec" onclick="makeFoodRec()">eat anywhere awesome?</button>
+        <button name="sightRec" onclick="makeAwesomeRec()">see anything awesome?</button><br><br>
         <button type="submit" form="tripReviewForm">put it on record</button>
         
         <br><br>
