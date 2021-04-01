@@ -22,16 +22,14 @@
           // This example requires the Places library. Include the libraries=places
           // parameter when you first load the API. For example:
           // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-          function initAutocomplete() {
+          function initAutocomplete(input) {
             const map = new google.maps.Map(document.getElementById("map"), {
               center: { lat: -33.8688, lng: 151.2195 },
               zoom: 13,
               mapTypeId: "roadmap",
             });
             // Create the search box and link it to the UI element.
-            const inputs = document.getElementsByClassName("pac-input");
-            inputs.forEach( () => {
-              const searchBox = new google.maps.places.SearchBox(input);
+            const searchBox = new google.maps.places.SearchBox(input);
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
             // Bias the SearchBox results towards current map's viewport.
             map.addListener("bounds_changed", () => {
@@ -84,8 +82,6 @@
               });
               map.fitBounds(bounds);
             })
-            }
-            )
           }
         </script>
 </head>
@@ -187,7 +183,7 @@
                 }
 
             }
-            initAutocomplete();
+            initAutocomplete(activityLocation);
 
 
 
@@ -246,7 +242,7 @@
                     errorDiv.append(errorMessage);
                 }
             }
-            initAutocomplete();
+            initAutocomplete(foodLocation);
         }
 
 
@@ -302,7 +298,7 @@
                     errorDiv.append(errorMessage);
                 }
             }
-            initAutocomplete();
+            initAutocomplete(sightLocation);
         }
     </script>
     <br><br>
