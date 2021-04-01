@@ -203,7 +203,7 @@
                 const foodLocation = document.createElement('input');
                 foodLocation.setAttribute('type', 'text');
                 foodLocation.required = true;
-                foodLocation.setAttribute('id', 'pac-input');
+                foodLocation.setAttribute('id', `pac-input${recsMade}`);
                 foodLocation.setAttribute('name', 'foodLocation');
                 foodLocation.setAttribute('class', 'pac-input');
                 foodLocation.setAttribute('placeholder', 'where?');
@@ -259,7 +259,7 @@
                 const sightLocation = document.createElement('input');
                 sightLocation.setAttribute('type', 'text');
                 sightLocation.required = true;
-                sightLocation.setAttribute('id', 'pac-input');
+                sightLocation.setAttribute('id', `pac-input${recsMade}`);
                 sightLocation.setAttribute('name', 'sightLocation');
                 sightLocation.setAttribute('placeholder', 'where?');
                 sightLocation.setAttribute('class', 'pac-input');
