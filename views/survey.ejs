@@ -197,7 +197,11 @@
     function makeFoodRec() {
       const recsMadeObject = document.getElementById('recsMade');
       var recsMade = parseInt(recsMadeObject.value);
+      const foodRecsMadeObject = document.getElementById('foodRecsMade');
+      var foodRecsMade = parseInt(foodRecsMadeObject.value);
       if (recsMade < 6) {
+        foodRecsMade += 1;
+        foodRecsMadeObject.setAttribute('value', (foodRecsMade));
         recsMade += 1;
         recsMadeObject.setAttribute('value', (recsMade));
         const foodChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
