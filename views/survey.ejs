@@ -194,6 +194,14 @@
         destinationDiv.append(activityDescriptionSelection);
         activityDescriptionSelection.hidden = true;
       }
+      if (selection.value == 'tours'){
+        const option = document.createElement('option');
+        option.value = "tours";
+        option.text = "tours";
+        activityDescriptionSelection.append(option);
+        destinationDiv.append(activityDescriptionSelection);
+        activityDescriptionSelection.hidden = true;
+      }
     }
   </script>
   <script type='text/javascript'>
