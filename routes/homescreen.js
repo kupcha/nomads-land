@@ -163,9 +163,14 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   var foodRecsMade = survey.foodRecsMade;
   var sightRecsMade = survey.sightRecsMade;
   var activityList = new Array(activityRecsMade);
-  for (var i = 0; i < activityRecsMade && (activitySelection); i++){
-    var currRec = { type: activitySelection[i], location: activityLocation[i]};
-     activityList[i] = currRec;
+  if (activityRecsMade < 2 && activityRecsMade > 0){
+    var currRec = { type: activitySelection, location: activityLocation};
+    activityList[0] = currRec;
+  }else{
+    for (var i = 0; i < activityRecsMade && (activitySelection); i++){
+      var currRec = { type: activitySelection[i], location: activityLocation[i]};
+       activityList[i] = currRec;
+    }
   }
   var foodSelection = survey.foodSelection;
   var foodLocation = survey.foodLocation;
