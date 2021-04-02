@@ -358,7 +358,7 @@
     <h1> my trip to<br><span class="place">
         <%= location %>
       </span></h1>
-    <form action="/thankyou" method="post" name="tripReviewForm" id="tripReviewForm"
+    <form action="/profile" method="post" name="tripReviewForm" id="tripReviewForm"
       onsubmit="this.querySelectorAll('input').forEach(i => i.disabled = false)">
       <input type="hidden" id="location" name="location" required value="<%= location %>"
         style="text-align: center;width:fit-content"><br>

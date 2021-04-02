@@ -152,7 +152,7 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 });
 
 
-router.post('/thankyou', requiresAuth(), async function(req, res, next) {
+router.post('/profile', requiresAuth(), async function(req, res, next) {
   var userEmail = res.locals.user.email;
   var survey = req.body;
   var recsMade = survey.recsMade;
@@ -220,7 +220,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   userTrips+=1;
   db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, elevation: userElevation}});
   await db.collection('reviews').insertOne(newSurvey);
-  res.send(req.body);
+  res.redirect('profile');
 })
 
 module.exports = router;
