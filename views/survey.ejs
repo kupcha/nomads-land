@@ -129,6 +129,24 @@
       errorBox.innerHTML = '';
     }
   </script>
+  <script>
+    function showMenu(recsMade){
+      const activityDescriptionSelection = document.createElement('input');
+      activityDescriptionSelection.setAttribute('type', 'select');
+      activityDescriptionSelection.setAttribute('style', 'text-align:center; margin-right: auto; margin-left:auto');
+      const selection = document.getElementById(`activitySelection${recsMade}`);
+      const attractionChoices = ['museums', 'water & amuesment parks', 'arenas, fields & stadiums', 'casinos & gambling', 'zoos & aquariums', 'spas'];
+      if (selection.value == "attractions"){
+        for (var i = 0; i < attractionChoices.length; i++) {
+          const option = document.createElement('option');
+          option.value = attractionChoices[i];
+          option.text = attractionChoices[i];
+          activityDescriptionSelection.append(option);
+        }
+      }
+
+    }
+  </script>
   <script type='text/javascript'>
     function makeActivityRec() {
       const recsMadeObject = document.getElementById('recsMade');
@@ -157,8 +175,9 @@
         activityLocation.setAttribute('placeholder', 'where?');
         activityLocation.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
         const selectionList = document.createElement('select');
-        selectionList.setAttribute('id', 'activitySelection');
+        selectionList.setAttribute('id', `activitySelection${recsMade}`);
         selectionList.setAttribute('name', 'activitySelection');
+        selectionList.setAttribute('onchange', 'showMenu(recsMade)');
         for (var i = 0; i < activityChoices.length; i++) {
           const option = document.createElement('option');
           option.value = activityChoices[i];
@@ -173,6 +192,10 @@
         cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
         cancelButton.innerHTML = 'cancel';
         rec.append(selectionList);
+        const activityDescription = document.createElement('div');
+        activityDescription.setAttribute('id', `addTypeMenu${recsMade}`);
+        activityDescription.setAttribute('style', 'display:block;text-align:center; margin-right: auto; margin-left:auto;');
+        rec.append(activityDescription);
         rec.append(activityLocation);
         rec.append(cancelButton);
         rec.append(lineBreak);
