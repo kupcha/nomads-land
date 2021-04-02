@@ -153,33 +153,34 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 
 
 router.post('/thankyou', requiresAuth(), async function(req, res, next) {
-  const userEmail = res.locals.user.email;
-  const survey = req.body;
-  const recsMade = parseInt(survey.recsMade);
+  let userEmail = res.locals.user.email;
+  let survey = req.body;
+  let recsMade = parseInt(survey.recsMade);
 
-  const activitySelection = survey.activitySelection;
-  const activityLocation = survey.activityLocation;
+  let activitySelection = survey.activitySelection;
+  let activityLocation = survey.activityLocation;
   let activityList = new Array(recsMade);
   for (var i = 0; i < recsMade; i++){
-    const currRec = { type: activitySelection[i], location: activityLocation[i]};
+    let currRec = { type: activitySelection[i], location: activityLocation[i]};
      activityList[i] = currRec;
   }
-  const foodSelection = survey.foodSelection;
-  const foodLocation = survey.foodLocation;
+  let foodSelection = survey.foodSelection;
+  let foodLocation = survey.foodLocation;
   let foodList = new Array(recsMade);
   for (var i = 0; i < recsMade; i++){
-    const currRec = { type: foodSelection[i], location: foodLocation[i]};
+    let currRec = { type: foodSelection[i], location: foodLocation[i]};
      foodList[i] = currRec;
   }
-  const sightSelection = survey.sightSelection;
-  const sightLocation = survey.sightLocation;
+  let sightSelection = survey.sightSelection;
+  let sightLocation = survey.sightLocation;
   let sightList = new Array(recsMade);
   for (var i = 0; i < recsMade; i++){
-    const currRec = { type: sightSelection[i], location: sightLocation[i]};
+    let currRec = { type: sightSelection[i], location: sightLocation[i]};
     sightList[i] = currRec;
   }
-  const newSurvey = {
+  let newSurvey = {
     email : userEmail,
+    year : survey.year,
     location : survey.location,
     seasons : survey.seasons,
     fun : survey.fun,
@@ -193,10 +194,10 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     sightRecs : sightList,
     mscEnviro : survey.mscEnviro
   };
-  const currUser = await User.findOne({email: userEmail});
-  var userElevation = parseInt(currUser.elevation);
+  let currUser = await User.findOne({email: userEmail});
+  let userElevation = parseInt(currUser.elevation);
   userElevation = 10 + (10 * recsMade) + userElevation;
-  var userTrips = currUser.trips;
+  let userTrips = currUser.trips;
   userTrips+=1;
   db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, elevation: userElevation}});
   await db.collection('reviews').insertOne(newSurvey);
