@@ -2,409 +2,421 @@
 <html lang="en" class="bg-gray-200">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        <%= locals.title || "nomadsland" %>
-    </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="icon" href="/images/nomad.png">
-    <link rel="stylesheet" href="\css\survey.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap"
-        rel="stylesheet">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script>
-          // This example adds a search box to a map, using the Google Place Autocomplete
-          // feature. People can enter geographical searches. The search box will return a
-          // pick list containing a mix of places and predicted search terms.
-          // This example requires the Places library. Include the libraries=places
-          // parameter when you first load the API. For example:
-          // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-            function initAutocomplete(recsNumber) {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -33.8688, lng: 151.2195 },
-    zoom: 13,
-    mapTypeId: "roadmap",
-  });
-  // Create the search box and link it to the UI element.
-  const input = document.getElementById(`pac-input${recsNumber}`);
-  const searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener("bounds_changed", () => {
-    searchBox.setBounds(map.getBounds());
-  });
-  let markers = [];
-  // Listen for the event fired when the user selects a prediction and retrieve
-  // more details for that place.
-  searchBox.addListener("places_changed", () => {
-    const places = searchBox.getPlaces();
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= locals.title || "nomadsland" %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="icon" href="/images/nomad.png">
+  <link rel="stylesheet" href="\css\survey.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script>
+    // This example adds a search box to a map, using the Google Place Autocomplete
+    // feature. People can enter geographical searches. The search box will return a
+    // pick list containing a mix of places and predicted search terms.
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+    function initAutocomplete(recsNumber) {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: -33.8688, lng: 151.2195 },
+        zoom: 13,
+        mapTypeId: "roadmap",
+      });
+      // Create the search box and link it to the UI element.
+      const input = document.getElementById(`pac-input${recsNumber}`);
+      const searchBox = new google.maps.places.SearchBox(input);
+      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+      // Bias the SearchBox results towards current map's viewport.
+      map.addListener("bounds_changed", () => {
+        searchBox.setBounds(map.getBounds());
+      });
+      let markers = [];
+      // Listen for the event fired when the user selects a prediction and retrieve
+      // more details for that place.
+      searchBox.addListener("places_changed", () => {
+        const places = searchBox.getPlaces();
 
-    if (places.length == 0) {
-      return;
+        if (places.length == 0) {
+          return;
+        }
+        // Clear out the old markers.
+        markers.forEach((marker) => {
+          marker.setMap(null);
+        });
+        markers = [];
+        // For each place, get the icon, name and location.
+        const bounds = new google.maps.LatLngBounds();
+        places.forEach((place) => {
+          if (!place.geometry || !place.geometry.location) {
+            console.log("Returned place contains no geometry");
+            return;
+          }
+          const icon = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25),
+          };
+          // Create a marker for each place.
+          markers.push(
+            new google.maps.Marker({
+              map,
+              icon,
+              title: place.name,
+              position: place.geometry.location,
+            })
+          );
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+        });
+        map.fitBounds(bounds);
+      });
     }
-    // Clear out the old markers.
-    markers.forEach((marker) => {
-      marker.setMap(null);
-    });
-    markers = [];
-    // For each place, get the icon, name and location.
-    const bounds = new google.maps.LatLngBounds();
-    places.forEach((place) => {
-      if (!place.geometry || !place.geometry.location) {
-        console.log("Returned place contains no geometry");
-        return;
-      }
-      const icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25),
-      };
-      // Create a marker for each place.
-      markers.push(
-        new google.maps.Marker({
-          map,
-          icon,
-          title: place.name,
-          position: place.geometry.location,
-        })
-      );
-
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
-  });
-}
-        </script>
+  </script>
 </head>
+
 <body id="body">
-    <nav class="flex items-center justify-between flex-wrap navbar-success" style="background-color: transparent;"">
+  <nav class="flex items-center justify-between flex-wrap navbar-success" style="background-color: transparent;"">
         <div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div class="text-sm lg:flex-grow">
-            <a class="navbar-brand" href="https://nomadsland.app"><img src="/images/whitenomad.png" width="35" height="35"></a>
-            <a href="https://instagram.com/jimmynomad" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram"
-                viewBox="0 0 16 16">
-                <path
-                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-              </svg></a>
-            <a href="https://www.facebook.com/Jimmy-Nomad-113627307224031" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
-                viewBox="0 0 16 16">
-                <path
-                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-              </svg></a>
-    
-            <% if (locals.user) { %>
-              <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">about</a>
-              <a href="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign
-                out</a>
-              <% } else { %>
-                <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">about</a>
-                <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign
-                  in</a>
-                <% } %>
-          </div>
-      </div>
-      </nav>
-    <script type="text/javascript">
-        function removeDiv(btn) {
-            ((btn.parentNode).parentNode).removeChild(btn.parentNode);
-            const recsMadeObject = document.getElementById('recsMade');
-            var recsMade = parseInt(recsMadeObject.value);
-            recsMade -= 1;
-            recsMadeObject.setAttribute('value', (recsMade));
-            const errorBox = document.getElementById('errorBox');
-            errorBox.setAttribute('innerHTML', "");
-            errorBox.innerHTML = '';
-        }
-    </script>
-    <script type='text/javascript'>
-        function makeActivityRec() {
-            const recsMadeObject = document.getElementById('recsMade');
-            var recsMade = parseInt(recsMadeObject.value);
-            if (recsMade < 6) {
-                recsMade += 1;
-                recsMadeObject.setAttribute('value', (recsMade));
-                const activityChoices = ['art + culture', 'drive + ride', 'entertainment', 'food + drink',
-                    'nature + outdoors', 'sports + fitness', 'tours', 'wellness', 'wacky + wild'];
-                const rec = document.createElement('div');
-                const lineBreak = document.createElement('br');
-                rec.setAttribute('class', 'rec');
-                rec.setAttribute('id', 'rec');
-                rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
-                const activityLocation = document.createElement('input');
-                activityLocation.setAttribute('type', 'text');
-                activityLocation.required = true;
-                activityLocation.setAttribute('id', `pac-input${recsMade}`);
-                activityLocation.setAttribute('name', 'activityLocation');
-                activityLocation.setAttribute('class', 'pac-input');
-                activityLocation.setAttribute('placeholder', 'where?');
-                activityLocation.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
-                const selectionList = document.createElement('select');
-                selectionList.setAttribute('id', 'activitySelection');
-                selectionList.setAttribute('name', 'activitySelection');
-                for (var i = 0; i < activityChoices.length; i++) {
-                    const option = document.createElement('option');
-                    option.value = activityChoices[i];
-                    option.text = activityChoices[i];
-                    selectionList.append(option);
-                }
-                selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
-                selectionList.required = true;
-                const recDiv = document.getElementById('recList');
-                const cancelButton = document.createElement('button');
-                cancelButton.setAttribute('onClick', "removeDiv(this)");
-                cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
-                cancelButton.innerHTML = 'cancel';
-                rec.append(selectionList);
-                rec.append(activityLocation);
-                rec.append(cancelButton);
-                rec.append(lineBreak);
-                const content = document.getElementById('survey');
-                recDiv.append(rec);
-                recDiv.setAttribute('style', 'display: block; text-align: center')
-            } else {
-                if (!document.getElementById('errorMessage')) {
-                    const errorMessage = document.createElement('p');
-                    errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
-                    errorMessage.setAttribute('id', 'errorMessage');
-                    errorMessage.setAttribute('style','text-align:center;')
-                    const errorDiv = document.getElementById('errorBox');
-                    errorDiv.append(errorMessage);
-                }
+    <div class="text-sm lg:flex-grow">
+      <a class="navbar-brand" href="https://nomadsland.app"><img src="/images/whitenomad.png" width="35"
+          height="35"></a>
+      <a href="https://instagram.com/jimmynomad" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram"
+          viewBox="0 0 16 16">
+          <path
+            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+        </svg></a>
+      <a href="https://www.facebook.com/Jimmy-Nomad-113627307224031" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
+          viewBox="0 0 16 16">
+          <path
+            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+        </svg></a>
 
-            }
-            initAutocomplete(recsMade);
-        }
-    </script>
-    <script type='text/javascript'>
-        function makeFoodRec() {
-            const recsMadeObject = document.getElementById('recsMade');
-            var recsMade = parseInt(recsMadeObject.value);
-            if (recsMade < 6) {
-                recsMade += 1;
-                recsMadeObject.setAttribute('value', (recsMade));
-                const foodChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
-                const rec = document.createElement('div');
-                const lineBreak = document.createElement('br');
-                rec.setAttribute('class', 'rec');
-                rec.setAttribute('id', 'rec');
-                rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
-                const foodLocation = document.createElement('input');
-                foodLocation.setAttribute('type', 'text');
-                foodLocation.required = true;
-                foodLocation.setAttribute('id', `pac-input${recsMade}`);
-                foodLocation.setAttribute('name', 'foodLocation');
-                foodLocation.setAttribute('class', 'pac-input');
-                foodLocation.setAttribute('placeholder', 'where?');
-                foodLocation.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
-                const selectionList = document.createElement('select');
-                selectionList.setAttribute('id', 'foodSelection');
-                selectionList.setAttribute('name', 'foodSelection');
-                for (var i = 0; i < foodChoices.length; i++) {
-                    const option = document.createElement('option');
-                    option.value = foodChoices[i];
-                    option.text = foodChoices[i];
-                    selectionList.append(option);
-                }
-                selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
-                selectionList.required = true;
-                const recDiv = document.getElementById('recList');
-                const cancelButton = document.createElement('button');
-                cancelButton.setAttribute('onClick', "removeDiv(this)");
-                cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
-                cancelButton.innerHTML = 'cancel';
-                rec.append(selectionList);
-                rec.append(foodLocation);
-                rec.append(cancelButton);
-                rec.append(lineBreak);
-                const content = document.getElementById('survey');
-                recDiv.append(rec);
-            } else {
-                if (!document.getElementById('errorMessage')) {
-                    const errorMessage = document.createElement('p');
-                    errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
-                    errorMessage.setAttribute('id', 'errorMessage');
-                    errorMessage.setAttribute('style','text-align:center;')
-                    const errorDiv = document.getElementById('errorBox');
-                    errorDiv.append(errorMessage);
-                }
-            }
-            initAutocomplete(recsMade);
-        }
-
-
-        function makeAwesomeRec() {
-            const recsMadeObject = document.getElementById('recsMade');
-            var recsMade = parseInt(recsMadeObject.value);
-            if (recsMade < 6) {
-                recsMade += 1;
-                recsMadeObject.setAttribute('value', (recsMade));
-                const sightSelection = ['art', 'cityscape', 'garden/parks', 'landmark', 'mountain/nature', 'water'];
-                const rec = document.createElement('div');
-                const lineBreak = document.createElement('br');
-                rec.setAttribute('class', 'rec');
-                rec.setAttribute('id', 'rec');
-                rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
-                const sightLocation = document.createElement('input');
-                sightLocation.setAttribute('type', 'text');
-                sightLocation.required = true;
-                sightLocation.setAttribute('id', `pac-input${recsMade}`);
-                sightLocation.setAttribute('name', 'sightLocation');
-                sightLocation.setAttribute('placeholder', 'where?');
-                sightLocation.setAttribute('class', 'pac-input');
-                sightLocation.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
-                const selectionList = document.createElement('select');
-                selectionList.setAttribute('id', 'awesomeSelection');
-                selectionList.setAttribute('name', 'awesomeSelection');
-                for (var i = 0; i < sightSelection.length; i++) {
-                    const option = document.createElement('option');
-                    option.value = sightSelection[i];
-                    option.text = sightSelection[i];
-                    selectionList.append(option);
-                }
-                selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
-                selectionList.required = true;
-                const recDiv = document.getElementById('recList');
-                const cancelButton = document.createElement('button');
-                cancelButton.setAttribute('onClick', "removeDiv(this)");
-                cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
-                cancelButton.innerHTML = 'cancel';
-                rec.append(selectionList);
-                rec.append(sightLocation);
-                rec.append(cancelButton);
-                rec.append(lineBreak);
-                const content = document.getElementById('survey');
-                recDiv.append(rec);
-            } else {
-                if (!document.getElementById('errorMessage')) {
-                    const errorMessage = document.createElement('p');
-                    errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
-                    errorMessage.setAttribute('id', 'errorMessage');
-                    errorMessage.setAttribute('style','text-align:center;')
-                    const errorDiv = document.getElementById('errorBox');
-                    errorDiv.append(errorMessage);
-                }
-            }
-            initAutocomplete(recsMade);
-        }
-    </script>
-    <br><br>
-    <div class="survey" id="survey">
-        <h1> my trip to<br><span class="place"><%= location %></span></h1>
-        <form action="/thankyou" method="post" name="tripReviewForm" id="tripReviewForm" onsubmit="this.querySelectorAll('input').forEach(i => i.disabled = false)">
-            <input type="hidden" id="location" name="location" required value="<%= location %>"
-                style="text-align: center;width:fit-content"><br>
-            <p>When were you there?</p>
-            <label for="yearOfVisit">year: </label>
-            <input type="number" id="yearOfVisit" name="yearOfVisit" min="2016" max="2021" required><br>
-            <input type="radio" id="spring" name="seasons" value="spring" required>
-            <label for="spring">spring</label><br>
-            <input type="radio" id="summer" name="seasons" value="summer">
-            <label for="summer">summer</label><br>
-            <input type="radio" id="fall" name="seasons" value="fall">
-            <label for="fall">fall</label><br>
-            <input type="radio" id="winter" name="seasons" value="winter">
-            <label for="winter">winter</label><br><br>
-            <br><br>
-            <p>Was it fun?</p>
-            <input type="radio" id="sofun" name="fun" value="so fun!" required>
-            <label for="sofun">so fun!</label><br>
-            <input type="radio" id="yes" name="fun" value="yes">
-            <label for="yes">yes</label><br>
-            <input type="radio" id="somewhat" name="fun" value="somewhat">
-            <label for="somewhat">somewhat</label><br>
-            <input type="radio" id="gross" name="fun" value="gross">
-            <label for="gross">not at all!</label><br>
-            <br><br>
-            <p>How was the food?</p>
-            <input type="radio" id="awesome" name="food" value="awesome!" required>
-            <label for="awesome">awesome!</label><br>
-            <input type="radio" id="good" name="food" value="good">
-            <label for="good">good</label><br>
-            <input type="radio" id="okay" name="food" value="okay">
-            <label for="okay">okay</label><br>
-            <input type="radio" id="gross" name="food" value="gross">
-            <label for="gross">gross!</label><br>
-            <br><br>
-            <p>How was the sightseeing?</p>
-            <input type="radio" id="stunning" name="sights" value="stunning!" required>
-            <label for="stunning">stunning!</label><br>
-            <input type="radio" id="goodSights" name="sights" value="good">
-            <label for="goodSights">good</label><br>
-            <input type="radio" id="okaySights" name="sights" value="okay">
-            <label for="okaySights">okay</label><br>
-            <input type="radio" id="bogus" name="sights" value="bogus!">
-            <label for="bogus">bogus!</label><br>
-            <br><br>
-            <p>How did the locals treat you?</p>
-            <input type="radio" id="amazing" name="locals" value="amazing!" required>
-            <label for="amazing">amazing!</label><br>
-            <input type="radio" id="goodLocals" name="locals" value="good">
-            <label for="goodLocals">good</label><br>
-            <input type="radio" id="okayLocals" name="locals" value="okay">
-            <label for="okayLocals">okay</label><br>
-            <input type="radio" id="hostile" name="locals" value="hostile!">
-            <label for="hostile">hostile!</label><br>
-            <br><br>
-            <p>Overall, how affordable was it?</p>
-            <input type="radio" id="expensive" name="price" value="4" required>
-            <label for="expensive">so expensive!</label><br>
-            <input type="radio" id="pricey" name="price" value="3">
-            <label for="pricey">pricey</label><br>
-            <input type="radio" id="affordable" name="price" value="2">
-            <label for="affordable">affordable</label><br>
-            <input type="radio" id="cheap" name="price" value="1">
-            <label for="cheap">so cheap!</label><br>
-            <br><br>
-            <p>What's it like?</p>
-            <input type="radio" id="rural" name="enviro" value="rural" required>
-            <label for="rural">rural</label><br>
-            <input type="radio" id="suburban" name="enviro" value="suburban">
-            <label for="suburban">suburban</label><br>
-            <input type="radio" id="urban" name="enviro" value="urban">
-            <label for="urban">urban</label><br>
-            <br><br>
-            <p>Is it any of these?</p>
-            <input type="radio" id="desert" name="mscEnviro" value="desert">
-            <label for="desert">desert</label><br>
-            <input type="radio" id="waterfront" name="mscEnviro" value="waterfront">
-            <label for="waterfront">waterfront</label><br>
-            <input type="radio" id="wooded" name="mscEnviro" value="wooded">
-            <label for="wooded">wooded</label><br>
-            <br>
-            <label for="recsMade">tips made: </label>
-            <input type="number" id="recsMade" name="recsMade" value="0" disabled required style="text-align: center;"><br><br>
-            <div class="recList" id="recList"></div>
-            <div class="errorBox" id="errorBox"></div>
-            <div id="map"></div>
-        </form>
-        
-        <button onclick="makeActivityRec()" name="funActivityRec">do anything fun?</button>
-        <button name="foodRec" onclick="makeFoodRec()">eat anywhere awesome?</button>
-        <button name="sightRec" onclick="makeAwesomeRec()">see anything amazing?</button><br><br>
-        <button type="submit" form="tripReviewForm">put it on record</button>
-        
-        <br><br>
+      <% if (locals.user) { %>
+        <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">about</a>
+        <a href="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign
+          out</a>
+        <% } else { %>
+          <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">about</a>
+          <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">sign
+            in</a>
+          <% } %>
     </div>
+    </div>
+  </nav>
+  <script type="text/javascript">
+    function removeDiv(btn) {
+      ((btn.parentNode).parentNode).removeChild(btn.parentNode);
+      const recsMadeObject = document.getElementById('recsMade');
+      var recsMade = parseInt(recsMadeObject.value);
+      recsMade -= 1;
+      recsMadeObject.setAttribute('value', (recsMade));
+      const errorBox = document.getElementById('errorBox');
+      errorBox.setAttribute('innerHTML', "");
+      errorBox.innerHTML = '';
+    }
+  </script>
+  <script type='text/javascript'>
+    function makeActivityRec() {
+      const recsMadeObject = document.getElementById('recsMade');
+      const recsMadeObject = document.getElementById('activityRecsMade');
+      var recsMade = parseInt(recsMadeObject.value);
+      var activityRecsMade = parseInt(activityRecsMade.value);
+
+      if (recsMade < 6) {
+        activityRecsMade += 1;
+        activityRecsMade.setAttribute('value', (activityRecsMade));
+        recsMade += 1;
+        recsMadeObject.setAttribute('value', (recsMade));
+        const activityChoices = ['art + culture', 'drive + ride', 'entertainment', 'food + drink',
+          'nature + outdoors', 'sports + fitness', 'tours', 'wellness', 'wacky + wild'];
+        const rec = document.createElement('div');
+        const lineBreak = document.createElement('br');
+        rec.setAttribute('class', 'rec');
+        rec.setAttribute('id', 'rec');
+        rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
+        const activityLocation = document.createElement('input');
+        activityLocation.setAttribute('type', 'text');
+        activityLocation.required = true;
+        activityLocation.setAttribute('id', `pac-input${recsMade}`);
+        activityLocation.setAttribute('name', 'activityLocation');
+        activityLocation.setAttribute('class', 'pac-input');
+        activityLocation.setAttribute('placeholder', 'where?');
+        activityLocation.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
+        const selectionList = document.createElement('select');
+        selectionList.setAttribute('id', 'activitySelection');
+        selectionList.setAttribute('name', 'activitySelection');
+        for (var i = 0; i < activityChoices.length; i++) {
+          const option = document.createElement('option');
+          option.value = activityChoices[i];
+          option.text = activityChoices[i];
+          selectionList.append(option);
+        }
+        selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
+        selectionList.required = true;
+        const recDiv = document.getElementById('recList');
+        const cancelButton = document.createElement('button');
+        cancelButton.setAttribute('onClick', "removeDiv(this)");
+        cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
+        cancelButton.innerHTML = 'cancel';
+        rec.append(selectionList);
+        rec.append(activityLocation);
+        rec.append(cancelButton);
+        rec.append(lineBreak);
+        const content = document.getElementById('survey');
+        recDiv.append(rec);
+        recDiv.setAttribute('style', 'display: block; text-align: center')
+      } else {
+        if (!document.getElementById('errorMessage')) {
+          const errorMessage = document.createElement('p');
+          errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
+          errorMessage.setAttribute('id', 'errorMessage');
+          errorMessage.setAttribute('style', 'text-align:center;')
+          const errorDiv = document.getElementById('errorBox');
+          errorDiv.append(errorMessage);
+        }
+
+      }
+      initAutocomplete(recsMade);
+    }
+  </script>
+  <script type='text/javascript'>
+    function makeFoodRec() {
+      const recsMadeObject = document.getElementById('recsMade');
+      var recsMade = parseInt(recsMadeObject.value);
+      if (recsMade < 6) {
+        recsMade += 1;
+        recsMadeObject.setAttribute('value', (recsMade));
+        const foodChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
+        const rec = document.createElement('div');
+        const lineBreak = document.createElement('br');
+        rec.setAttribute('class', 'rec');
+        rec.setAttribute('id', 'rec');
+        rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
+        const foodLocation = document.createElement('input');
+        foodLocation.setAttribute('type', 'text');
+        foodLocation.required = true;
+        foodLocation.setAttribute('id', `pac-input${recsMade}`);
+        foodLocation.setAttribute('name', 'foodLocation');
+        foodLocation.setAttribute('class', 'pac-input');
+        foodLocation.setAttribute('placeholder', 'where?');
+        foodLocation.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
+        const selectionList = document.createElement('select');
+        selectionList.setAttribute('id', 'foodSelection');
+        selectionList.setAttribute('name', 'foodSelection');
+        for (var i = 0; i < foodChoices.length; i++) {
+          const option = document.createElement('option');
+          option.value = foodChoices[i];
+          option.text = foodChoices[i];
+          selectionList.append(option);
+        }
+        selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
+        selectionList.required = true;
+        const recDiv = document.getElementById('recList');
+        const cancelButton = document.createElement('button');
+        cancelButton.setAttribute('onClick', "removeDiv(this)");
+        cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
+        cancelButton.innerHTML = 'cancel';
+        rec.append(selectionList);
+        rec.append(foodLocation);
+        rec.append(cancelButton);
+        rec.append(lineBreak);
+        const content = document.getElementById('survey');
+        recDiv.append(rec);
+      } else {
+        if (!document.getElementById('errorMessage')) {
+          const errorMessage = document.createElement('p');
+          errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
+          errorMessage.setAttribute('id', 'errorMessage');
+          errorMessage.setAttribute('style', 'text-align:center;')
+          const errorDiv = document.getElementById('errorBox');
+          errorDiv.append(errorMessage);
+        }
+      }
+      initAutocomplete(recsMade);
+    }
+
+
+    function makeAwesomeRec() {
+      const recsMadeObject = document.getElementById('recsMade');
+      var recsMade = parseInt(recsMadeObject.value);
+      if (recsMade < 6) {
+        recsMade += 1;
+        recsMadeObject.setAttribute('value', (recsMade));
+        const sightSelection = ['art', 'cityscape', 'garden/parks', 'landmark', 'mountain/nature', 'water'];
+        const rec = document.createElement('div');
+        const lineBreak = document.createElement('br');
+        rec.setAttribute('class', 'rec');
+        rec.setAttribute('id', 'rec');
+        rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
+        const sightLocation = document.createElement('input');
+        sightLocation.setAttribute('type', 'text');
+        sightLocation.required = true;
+        sightLocation.setAttribute('id', `pac-input${recsMade}`);
+        sightLocation.setAttribute('name', 'sightLocation');
+        sightLocation.setAttribute('placeholder', 'where?');
+        sightLocation.setAttribute('class', 'pac-input');
+        sightLocation.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
+        const selectionList = document.createElement('select');
+        selectionList.setAttribute('id', 'awesomeSelection');
+        selectionList.setAttribute('name', 'awesomeSelection');
+        for (var i = 0; i < sightSelection.length; i++) {
+          const option = document.createElement('option');
+          option.value = sightSelection[i];
+          option.text = sightSelection[i];
+          selectionList.append(option);
+        }
+        selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
+        selectionList.required = true;
+        const recDiv = document.getElementById('recList');
+        const cancelButton = document.createElement('button');
+        cancelButton.setAttribute('onClick', "removeDiv(this)");
+        cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
+        cancelButton.innerHTML = 'cancel';
+        rec.append(selectionList);
+        rec.append(sightLocation);
+        rec.append(cancelButton);
+        rec.append(lineBreak);
+        const content = document.getElementById('survey');
+        recDiv.append(rec);
+      } else {
+        if (!document.getElementById('errorMessage')) {
+          const errorMessage = document.createElement('p');
+          errorMessage.innerHTML = 'you have reached the maximum number of recommendations for this review';
+          errorMessage.setAttribute('id', 'errorMessage');
+          errorMessage.setAttribute('style', 'text-align:center;')
+          const errorDiv = document.getElementById('errorBox');
+          errorDiv.append(errorMessage);
+        }
+      }
+      initAutocomplete(recsMade);
+    }
+  </script>
+  <br><br>
+  <div class="survey" id="survey">
+    <h1> my trip to<br><span class="place">
+        <%= location %>
+      </span></h1>
+    <form action="/thankyou" method="post" name="tripReviewForm" id="tripReviewForm"
+      onsubmit="this.querySelectorAll('input').forEach(i => i.disabled = false)">
+      <input type="hidden" id="location" name="location" required value="<%= location %>"
+        style="text-align: center;width:fit-content"><br>
+      <p>When were you there?</p>
+      <label for="yearOfVisit">year: </label>
+      <input type="number" id="yearOfVisit" name="yearOfVisit" min="2016" max="2021" required><br>
+      <input type="radio" id="spring" name="seasons" value="spring" required>
+      <label for="spring">spring</label><br>
+      <input type="radio" id="summer" name="seasons" value="summer">
+      <label for="summer">summer</label><br>
+      <input type="radio" id="fall" name="seasons" value="fall">
+      <label for="fall">fall</label><br>
+      <input type="radio" id="winter" name="seasons" value="winter">
+      <label for="winter">winter</label><br><br>
+      <br><br>
+      <p>Was it fun?</p>
+      <input type="radio" id="sofun" name="fun" value="so fun!" required>
+      <label for="sofun">so fun!</label><br>
+      <input type="radio" id="yes" name="fun" value="yes">
+      <label for="yes">yes</label><br>
+      <input type="radio" id="somewhat" name="fun" value="somewhat">
+      <label for="somewhat">somewhat</label><br>
+      <input type="radio" id="gross" name="fun" value="gross">
+      <label for="gross">not at all!</label><br>
+      <br><br>
+      <p>How was the food?</p>
+      <input type="radio" id="awesome" name="food" value="awesome!" required>
+      <label for="awesome">awesome!</label><br>
+      <input type="radio" id="good" name="food" value="good">
+      <label for="good">good</label><br>
+      <input type="radio" id="okay" name="food" value="okay">
+      <label for="okay">okay</label><br>
+      <input type="radio" id="gross" name="food" value="gross">
+      <label for="gross">gross!</label><br>
+      <br><br>
+      <p>How was the sightseeing?</p>
+      <input type="radio" id="stunning" name="sights" value="stunning!" required>
+      <label for="stunning">stunning!</label><br>
+      <input type="radio" id="goodSights" name="sights" value="good">
+      <label for="goodSights">good</label><br>
+      <input type="radio" id="okaySights" name="sights" value="okay">
+      <label for="okaySights">okay</label><br>
+      <input type="radio" id="bogus" name="sights" value="bogus!">
+      <label for="bogus">bogus!</label><br>
+      <br><br>
+      <p>How did the locals treat you?</p>
+      <input type="radio" id="amazing" name="locals" value="amazing!" required>
+      <label for="amazing">amazing!</label><br>
+      <input type="radio" id="goodLocals" name="locals" value="good">
+      <label for="goodLocals">good</label><br>
+      <input type="radio" id="okayLocals" name="locals" value="okay">
+      <label for="okayLocals">okay</label><br>
+      <input type="radio" id="hostile" name="locals" value="hostile!">
+      <label for="hostile">hostile!</label><br>
+      <br><br>
+      <p>Overall, how affordable was it?</p>
+      <input type="radio" id="expensive" name="price" value="4" required>
+      <label for="expensive">so expensive!</label><br>
+      <input type="radio" id="pricey" name="price" value="3">
+      <label for="pricey">pricey</label><br>
+      <input type="radio" id="affordable" name="price" value="2">
+      <label for="affordable">affordable</label><br>
+      <input type="radio" id="cheap" name="price" value="1">
+      <label for="cheap">so cheap!</label><br>
+      <br><br>
+      <p>What's it like?</p>
+      <input type="radio" id="rural" name="enviro" value="rural" required>
+      <label for="rural">rural</label><br>
+      <input type="radio" id="suburban" name="enviro" value="suburban">
+      <label for="suburban">suburban</label><br>
+      <input type="radio" id="urban" name="enviro" value="urban">
+      <label for="urban">urban</label><br>
+      <br><br>
+      <p>Is it any of these?</p>
+      <input type="radio" id="desert" name="mscEnviro" value="desert">
+      <label for="desert">desert</label><br>
+      <input type="radio" id="waterfront" name="mscEnviro" value="waterfront">
+      <label for="waterfront">waterfront</label><br>
+      <input type="radio" id="wooded" name="mscEnviro" value="wooded">
+      <label for="wooded">wooded</label><br>
+      <br>
+      <label for="recsMade">tips made: </label>
+      <input type="number" id="recsMade" name="recsMade" value="0" disabled required
+        style="text-align: center;"><br><br>
+      <input type="hidden" id="activityRecsMade" name="activityRecsMade" value="0" disabled required>
+      <input type="hidden" id="foodRecsMade" name="foodRecsMade" value="0" disabled required>
+      <input type="hidden" id="sightRecsMade" name="sightRecsMade" value="0" disabled required>
+      <div class="recList" id="recList"></div>
+      <div class="errorBox" id="errorBox"></div>
+      <div id="map"></div>
+    </form>
+
+    <button onclick="makeActivityRec()" name="funActivityRec">do anything fun?</button>
+    <button name="foodRec" onclick="makeFoodRec()">eat anywhere awesome?</button>
+    <button name="sightRec" onclick="makeAwesomeRec()">see anything amazing?</button><br><br>
+    <button type="submit" form="tripReviewForm">put it on record</button>
+
+    <br><br>
+  </div>
 
 
 
 
-    <script
+  <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&callback=initAutocomplete&libraries=places&v=weekly"
-    async
-  ></script>
+    async></script>
 </body>
 
 </html>

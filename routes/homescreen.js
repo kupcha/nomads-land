@@ -159,8 +159,11 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
 
   var activitySelection = survey.activitySelection;
   var activityLocation = survey.activityLocation;
-  var activityList = new Array(recsMade);
-  for (var i = 0; i < recsMade && (activitySelection); i++){
+  var activityRecsMade = survey.activityRecsMade;
+  var foodRecsMade = survey.foodRecsMade;
+  var sightRecsMade = survey.sightRecsMade;
+  var activityList = new Array(activityRecsMade);
+  for (var i = 0; i < activityRecsMade && (activitySelection); i++){
     var currRec = { type: activitySelection[i], location: activityLocation[i]};
      activityList[i] = currRec;
   }
