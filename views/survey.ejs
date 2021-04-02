@@ -143,18 +143,44 @@
           option.value = attractionChoices[i];
           option.text = attractionChoices[i];
           activityDescriptionSelection.append(option);
+          destinationDiv.append(activityDescriptionSelection);
         }
       }
-      const eventChoices = ['theater & live performances', 'concerts & music festivals', 'sports', 'holiday'];
+      const eventChoices = ['theater & live performances', 'concerts & music festivals',
+       'sports', 'holiday'];
       if (selection.value == 'events'){
         for (var i = 0; i < eventChoices.length; i++) {
           const option = document.createElement('option');
           option.value = eventChoices[i];
           option.text = eventChoices[i];
           activityDescriptionSelection.append(option);
+          destinationDiv.append(activityDescriptionSelection);
         }
       }
-      destinationDiv.append(activityDescriptionSelection);
+      const foodChoices = ['bars & clubs', 'wineries & vineyards', 'breweries', 'distilleries',
+       'farmers markets'];
+      if (selection.value == 'food & drink'){
+        for (var i = 0; i < eventChoices.length; i++) {
+          const option = document.createElement('option');
+          option.value = eventChoices[i];
+          option.text = eventChoices[i];
+          activityDescriptionSelection.append(option);
+          destinationDiv.append(activityDescriptionSelection);
+        }
+      }
+      const outdoorChoices = ['swimming & water sports', 'ski & snow', 'hiking & camping',
+       'gardens & parks', 'aircraft', 'skydiving & bungee jumping', 'ziplining', 'motor vehicles',
+        'watercraft', 'fishing', 'diving & snorkeling', 'cycling', 'running', 'climbing',
+         'skating & BMX', 'golf', 'tennis', 'team sports', 'shooting'];
+      if (selection.value == 'outdoor'){
+        for (var i = 0; i < eventChoices.length; i++) {
+          const option = document.createElement('option');
+          option.value = eventChoices[i];
+          option.text = eventChoices[i];
+          activityDescriptionSelection.append(option);
+          destinationDiv.append(activityDescriptionSelection);
+        }
+      }
     }
   </script>
   <script type='text/javascript'>
