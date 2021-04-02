@@ -30,12 +30,15 @@ html {
 body {
   font-family: 'messapiabold';
   margin: 0 auto;
-  background-color:#f47c3c;
   border: 5px solid #333333;
   color: white;
   max-width: 1400px;
-  padding: 10px 10px 10px 10px;
+  
 
+}
+.topHalf{
+  background-color:#f47c3c;
+  padding: 10px 10px 10px 10px;
 }
 
 .mottos{

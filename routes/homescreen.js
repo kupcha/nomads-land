@@ -53,36 +53,11 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
       email : `${userEmail}`,
       elevation : 0,
       trips : 0,
-      referrals : 0,
+      tips : 0,
       shownAboutScreen : 0
     }
     db.collection('users').insertOne(newUser);
     res.redirect('profile');
-  }
-});
-
-router.get('/test', requiresAuth(), async function (req, res, next) {
-  const userEmail = res.locals.user.email;
-  const currentNomad = await User.findOne({email: userEmail});
-  if (currentNomad){
-    res.render('test', {
-      username: currentNomad.username,
-      elevation: currentNomad.elevation,
-      trips: currentNomad.trips,
-      referrals: currentNomad.referrals,
-      userProfile: JSON.stringify(req.oidc.user, null, 2),
-      title: 'nomadsland'
-    })
-  }else{
-    const newUser = {
-      email : `${userEmail}`,
-      elevation : 0,
-      trips : 0,
-      referrals : 0,
-      shownAboutScreen : 0
-    }
-    db.collection('users').insertOne(newUser);
-    res.redirect('test');
   }
 });
 
@@ -121,36 +96,6 @@ router.post('/survey', requiresAuth(), async function (req, res, next) {
     location : destination
   });
 });
-
-router.post('/survey/recommendations', requiresAuth(), async function(req, res, next) {
-  const userEmail = res.locals.user.email;
-  const survey = req.body;
-  const activitySelection = req.body.activitySelection;
-  const activiytLocation = req.body.activiytLocation;
-  const activityList = new Array();
-  for (var i = 0; i < activitySelection.length; i++){
-    const temp = {key: activitySelection, value: activiytLocation};
-    activityList[i] = temp;
-  }
-  const newSurvey = {
-    email : userEmail,
-    location : survey.location,
-    seasons : survey.seasons,
-    fun : survey.fun,
-    food : survey.food,
-    sights : survey.sights,
-    locals : survey.locals,
-    price : survey.price,
-    enviro : survey.enviro
-  };
-  if (survey.mscEnviro){
-    newSurvey.mscEnviro = survey.mscEnvir;
-  }
-  await db.collection('reviews').insertOne(newSurvey);
-  res.render('recommendations');
-  // res.send(JSON.stringify(req.body))
-});
-
 
 router.post('/profile', requiresAuth(), async function(req, res, next) {
   var userEmail = res.locals.user.email;
