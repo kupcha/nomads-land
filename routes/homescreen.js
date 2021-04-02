@@ -44,7 +44,7 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
       username: currentNomad.username,
       elevation: currentNomad.elevation,
       trips: currentNomad.trips,
-      referrals: currentNomad.referrals,
+      referrals: currentNomad.tips,
       userProfile: JSON.stringify(req.oidc.user, null, 2),
       title: 'nomadsland'
     })
