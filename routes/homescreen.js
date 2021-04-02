@@ -180,7 +180,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   }
   var newSurvey = {
     email : userEmail,
-    year : survey.year.value,
+    year : survey.year,
     location : survey.location,
     seasons : survey.seasons,
     fun : survey.fun,
