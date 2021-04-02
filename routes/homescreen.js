@@ -160,21 +160,21 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   var activitySelection = survey.activitySelection;
   var activityLocation = survey.activityLocation;
   var activityList = new Array(recsMade);
-  for (var i = 0; i < recsMade; i++){
+  for (var i = 0; i < recsMade && (activitySelection); i++){
     var currRec = { type: activitySelection[i], location: activityLocation[i]};
      activityList[i] = currRec;
   }
   var foodSelection = survey.foodSelection;
   var foodLocation = survey.foodLocation;
   var foodList = new Array(recsMade);
-  for (var i = 0; i < recsMade; i++){
+  for (var i = 0; i < recsMade && (foodSelection); i++){
     var currRec = { type: foodSelection[i], location: foodLocation[i]};
      foodList[i] = currRec;
   }
   var sightSelection = survey.sightSelection;
   var sightLocation = survey.sightLocation;
   var sightList = new Array(recsMade);
-  for (var i = 0; i < recsMade; i++){
+  for (var i = 0; i < recsMade && (sightSelection); i++){
     var currRec = { type: sightSelection[i], location: sightLocation[i]};
     sightList[i] = currRec;
   }
