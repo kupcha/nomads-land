@@ -175,15 +175,16 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   var foodSelection = survey.foodSelection;
   var foodLocation = survey.foodLocation;
   var foodList = new Array(recsMade);
-  if (Array.isArray(foodSelection)){
-    for (var i = 0; i < recsMade && (foodSelection); i++){
-      var currRec = { type: foodSelection[i], location: foodLocation[i]};
-        foodList[i] = currRec;
-    }
-  }else{
+  if (foodRecsMade < 2 && foodRecsMade > 0){
     var currRec = { type: foodSelection, location: foodLocation};
-    foodList[i] = currRec;
+    foodList[0] = currRec;
+  }else{
+    for (var i = 0; i < foodRecsMade && (foodSelection); i++){
+      var currRec = { type: foodSelection[i], location: foodLocation[i]};
+      foodList[i] = currRec;
+    }
   }
+
 
   var sightSelection = survey.sightSelection;
   var sightLocation = survey.sightLocation;
