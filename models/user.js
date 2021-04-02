@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         default: 0,
     },
-    referrals: {
+    tips: {
         type: Number,
         required: true,
         default: 0,

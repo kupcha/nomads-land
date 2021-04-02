@@ -217,8 +217,10 @@ router.post('/profile', requiresAuth(), async function(req, res, next) {
   var userElevation = currUser.elevation;
   userElevation = 10 + (10 * recsMade) + userElevation;
   var userTrips = currUser.trips;
+  var userTips = currUser.tips;
+  userTips += activityRecsMade + foodRecsMade + sightRecsMade;
   userTrips+=1;
-  db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, elevation: userElevation}});
+  db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, elevation: userElevation, tips: userTips}});
   await db.collection('reviews').insertOne(newSurvey);
   res.redirect('profile');
 })
