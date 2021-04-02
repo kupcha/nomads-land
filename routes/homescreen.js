@@ -155,7 +155,7 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   let userEmail = res.locals.user.email;
   let survey = req.body;
-  let recsMade = Number.parseInt(survey.recsMade, 10);
+  var recsMade = Number.parseInt(survey.recsMade, 10);
 
   let activitySelection = survey.activitySelection;
   let activityLocation = survey.activityLocation;
