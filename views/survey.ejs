@@ -186,7 +186,7 @@
         const selectionList = document.createElement('select');
         selectionList.setAttribute('id', `activitySelection${recsMade}`);
         selectionList.setAttribute('name', 'activitySelection');
-        selectionList.setAttribute('onchange', 'showMenu(recsMade)');
+        selectionList.setAttribute('onchange', `showMenu(${recsMade})`);
         for (var i = 0; i < activityChoices.length; i++) {
           const option = document.createElement('option');
           option.value = activityChoices[i];
