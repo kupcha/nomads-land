@@ -145,6 +145,7 @@
           option.text = attractionChoices[i];
           activityDescriptionSelection.append(option);
           destinationDiv.append(activityDescriptionSelection);
+          activityDescriptionSelection.hidden = false;
         }
       }
       const eventChoices = ['theater & live performances', 'concerts & music festivals',
@@ -156,6 +157,7 @@
           option.text = eventChoices[i];
           activityDescriptionSelection.append(option);
           destinationDiv.append(activityDescriptionSelection);
+          activityDescriptionSelection.hidden = false;
         }
       }
       const foodChoices = ['bars & clubs', 'wineries & vineyards', 'breweries', 'distilleries',
@@ -167,6 +169,7 @@
           option.text = foodChoices[i];
           activityDescriptionSelection.append(option);
           destinationDiv.append(activityDescriptionSelection);
+          activityDescriptionSelection.hidden = false;
         }
       }
       const outdoorChoices = ['swimming & water sports', 'ski & snow', 'hiking & camping',
@@ -180,6 +183,7 @@
           option.text = outdoorChoices[i];
           activityDescriptionSelection.append(option);
           destinationDiv.append(activityDescriptionSelection);
+          activityDescriptionSelection.hidden = false;
         }
       }
       if (selection.value == 'shopping'){
