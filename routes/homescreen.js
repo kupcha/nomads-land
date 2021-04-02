@@ -174,7 +174,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   }
   var foodSelection = survey.foodSelection;
   var foodLocation = survey.foodLocation;
-  var foodList = new Array(recsMade);
+  var foodList = new Array(foodRecsMade);
   if (foodRecsMade < 2 && foodRecsMade > 0){
     var currRec = { type: foodSelection, location: foodLocation};
     foodList[0] = currRec;
@@ -184,14 +184,17 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
       foodList[i] = currRec;
     }
   }
-
-
   var sightSelection = survey.sightSelection;
   var sightLocation = survey.sightLocation;
-  var sightList = new Array(recsMade);
-  for (var i = 0; i < recsMade && (sightSelection); i++){
-    var currRec = { type: sightSelection[i], location: sightLocation[i]};
-    sightList[i] = currRec;
+  var sightList = new Array(sightRecsMade);
+  if (sightRecsMade < 2 && sightRecsMade > 0){
+    var currRec = { type: sightSelection, location: sightLocation};
+    foodList[0] = currRec;
+  }else{
+    for (var i = 0; i < sightRecsMade && (sightSelection); i++){
+      var currRec = { type: sightSelection[i], location: sightLocation[i]};
+      sightList[i] = currRec;
+    }
   }
   var newSurvey = {
     email : userEmail,
