@@ -134,7 +134,8 @@
       const destinationDiv = document.getElementById(`addTypeMenu${recsMade}`);
       destinationDiv.innerHTML =""; 
       const activityDescriptionSelection = document.createElement('select');
-      activityDescriptionSelection.setAttribute('style', 'text-align:center; margin-right: auto; margin-left:auto');
+      activityDescriptionSelection.setAttribute('name', 'activityDescription');
+      activityDescriptionSelection.setAttribute('style', 'text-align:center; margin-right: auto; margin-left:auto; text-align-last: center;');
       const selection = document.getElementById(`activitySelection${recsMade}`);
       const attractionChoices = ['museums', 'water & amuesment parks', 'arenas, fields & stadiums', 'casinos & gambling', 'zoos & aquariums', 'spas'];
       if (selection.value == "attractions"){
@@ -181,6 +182,14 @@
           destinationDiv.append(activityDescriptionSelection);
         }
       }
+      if (selection.value == 'shopping'){
+        const option = document.createElement('option');
+        option.value = "shopping";
+        option.text = "shopping";
+        activityDescriptionSelection.append(option);
+        destinationDiv.append(activityDescriptionSelection);
+        activityDescriptionSelection.hidden = true;
+      }
     }
   </script>
   <script type='text/javascript'>
@@ -217,7 +226,7 @@
           option.text = activityChoices[i];
           selectionList.append(option);
         }
-        selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
+        selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
         selectionList.required = true;
         const recDiv = document.getElementById('recList');
         const cancelButton = document.createElement('button');
@@ -271,7 +280,7 @@
           option.text = foodChoices[i];
           selectionList.append(option);
         }
-        selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
+        selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;text-align-last: center;');
         selectionList.required = true;
         const recDiv = document.getElementById('recList');
         const cancelButton = document.createElement('button');
@@ -316,7 +325,7 @@
           option.text = sightSelection[i];
           selectionList.append(option);
         }
-        selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
+        selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;text-align-last: center;');
         selectionList.required = true;
         const recDiv = document.getElementById('recList');
         const cancelButton = document.createElement('button');
