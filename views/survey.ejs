@@ -135,8 +135,7 @@
             if (recsMade < 6) {
                 recsMade += 1;
                 recsMadeObject.setAttribute('value', (recsMade));
-                const activityChoices = ['art + culture', 'drive + ride', 'entertainment', 'food + drink',
-                    'nature + outdoors', 'sports + fitness', 'tours', 'wellness', 'wacky + wild'];
+                const activityChoices = ['attractions', 'events', 'food & drink', 'outdoor', 'shopping', 'tours'];
                 const rec = document.createElement('div');
                 const lineBreak = document.createElement('br');
                 rec.setAttribute('class', 'rec');
@@ -160,6 +159,7 @@
                     selectionList.append(option);
                 }
                 selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
+                selectionList.setAttribute('onchange', 'showMenu(this)')
                 selectionList.required = true;
                 const recDiv = document.getElementById('recList');
                 const cancelButton = document.createElement('button');
