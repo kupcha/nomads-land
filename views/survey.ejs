@@ -144,6 +144,15 @@
           activityDescriptionSelection.append(option);
         }
       }
+      const eventChoices = ['theater & live performances', 'concerts & music festivals', 'sports', 'holiday'];
+      if (selection.value == 'events'){
+        for (var i = 0; i < eventChoices.length; i++) {
+          const option = document.createElement('option');
+          option.value = eventChoices[i];
+          option.text = eventChoices[i];
+          activityDescriptionSelection.append(option);
+        }
+      }
 
     }
   </script>
@@ -159,8 +168,7 @@
         activityRecsMadeObject.setAttribute('value', (activityRecsMade));
         recsMade += 1;
         recsMadeObject.setAttribute('value', (recsMade));
-        const activityChoices = ['art + culture', 'drive + ride', 'entertainment', 'food + drink',
-          'nature + outdoors', 'sports + fitness', 'tours', 'wellness', 'wacky + wild'];
+        const activityChoices = ['attractions', 'events', 'food & drink', 'outdoor', 'shopping', 'tours'];
         const rec = document.createElement('div');
         const lineBreak = document.createElement('br');
         rec.setAttribute('class', 'rec');
