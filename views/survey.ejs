@@ -131,8 +131,9 @@
   </script>
   <script>
     function showMenu(recsMade){
-      const activityDescriptionSelection = document.createElement('input');
-      activityDescriptionSelection.setAttribute('type', 'select');
+      const destinationDiv = document.getElementById(`addTypeMenu${recsMade}`);
+      destinationDiv.innerHTML =""; 
+      const activityDescriptionSelection = document.createElement('select');
       activityDescriptionSelection.setAttribute('style', 'text-align:center; margin-right: auto; margin-left:auto');
       const selection = document.getElementById(`activitySelection${recsMade}`);
       const attractionChoices = ['museums', 'water & amuesment parks', 'arenas, fields & stadiums', 'casinos & gambling', 'zoos & aquariums', 'spas'];
