@@ -155,7 +155,7 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   let userEmail = res.locals.user.email;
   let survey = req.body;
-  let recsMade = survey.recsMade;
+  let recsMade = parseInt(survey.recsMade);
 
   let activitySelection = survey.activitySelection;
   let activityLocation = survey.activityLocation;
@@ -201,7 +201,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   userTrips+=1;
   db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, elevation: userElevation}});
   await db.collection('reviews').insertOne(newSurvey);
-  res.render('thankyou');
+  res.send(req.body);
 })
 
 module.exports = router;
