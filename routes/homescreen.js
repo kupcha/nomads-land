@@ -153,32 +153,32 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 
 
 router.post('/thankyou', requiresAuth(), async function(req, res, next) {
-  let userEmail = res.locals.user.email;
-  let survey = req.body;
-  var recsMade = Number.parseInt(survey.recsMade, 10);
+  var userEmail = res.locals.user.email;
+  var survey = req.body;
+  var recsMade = survey.recsMade;
 
-  let activitySelection = survey.activitySelection;
-  let activityLocation = survey.activityLocation;
-  let activityList = new Array(recsMade);
+  var activitySelection = survey.activitySelection;
+  var activityLocation = survey.activityLocation;
+  var activityList = new Array(recsMade);
   for (var i = 0; i < recsMade; i++){
-    let currRec = { type: activitySelection[i], location: activityLocation[i]};
+    var currRec = { type: activitySelection[i], location: activityLocation[i]};
      activityList[i] = currRec;
   }
-  let foodSelection = survey.foodSelection;
-  let foodLocation = survey.foodLocation;
-  let foodList = new Array(recsMade);
+  var foodSelection = survey.foodSelection;
+  var foodLocation = survey.foodLocation;
+  var foodList = new Array(recsMade);
   for (var i = 0; i < recsMade; i++){
-    let currRec = { type: foodSelection[i], location: foodLocation[i]};
+    var currRec = { type: foodSelection[i], location: foodLocation[i]};
      foodList[i] = currRec;
   }
-  let sightSelection = survey.sightSelection;
-  let sightLocation = survey.sightLocation;
-  let sightList = new Array(recsMade);
+  var sightSelection = survey.sightSelection;
+  var sightLocation = survey.sightLocation;
+  var sightList = new Array(recsMade);
   for (var i = 0; i < recsMade; i++){
-    let currRec = { type: sightSelection[i], location: sightLocation[i]};
+    var currRec = { type: sightSelection[i], location: sightLocation[i]};
     sightList[i] = currRec;
   }
-  let newSurvey = {
+  var newSurvey = {
     email : userEmail,
     year : survey.year,
     location : survey.location,
@@ -194,10 +194,10 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     sightRecs : sightList,
     mscEnviro : survey.mscEnviro
   };
-  let currUser = await User.findOne({email: userEmail});
-  let userElevation = currUser.elevation;
+  var currUser = await User.findOne({email: userEmail});
+  var userElevation = currUser.elevation;
   userElevation = 10 + (10 * recsMade) + userElevation;
-  let userTrips = currUser.trips;
+  var userTrips = currUser.trips;
   userTrips+=1;
   db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, elevation: userElevation}});
   await db.collection('reviews').insertOne(newSurvey);
