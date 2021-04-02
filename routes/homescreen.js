@@ -155,7 +155,7 @@ router.post('/survey/recommendations', requiresAuth(), async function(req, res, 
 router.post('/thankyou', requiresAuth(), async function(req, res, next) {
   const userEmail = res.locals.user.email;
   const survey = req.body;
-  const recsMade = survey.recsMade;
+  const recsMade = parseInt(survey.recsMade);
 
   const activitySelection = survey.activitySelection;
   const activityLocation = survey.activityLocation;
@@ -194,7 +194,7 @@ router.post('/thankyou', requiresAuth(), async function(req, res, next) {
     mscEnviro : survey.mscEnviro
   };
   const currUser = await User.findOne({email: userEmail});
-  var userElevation = currUser.elevation;
+  var userElevation = parseInt(currUser.elevation);
   userElevation = 10 + (10 * recsMade) + userElevation;
   var userTrips = currUser.trips;
   userTrips+=1;
