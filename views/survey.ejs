@@ -160,10 +160,10 @@
       const foodChoices = ['bars & clubs', 'wineries & vineyards', 'breweries', 'distilleries',
        'farmers markets'];
       if (selection.value == 'food & drink'){
-        for (var i = 0; i < eventChoices.length; i++) {
+        for (var i = 0; i < foodChoices.length; i++) {
           const option = document.createElement('option');
-          option.value = eventChoices[i];
-          option.text = eventChoices[i];
+          option.value = foodChoices[i];
+          option.text = foodChoices[i];
           activityDescriptionSelection.append(option);
           destinationDiv.append(activityDescriptionSelection);
         }
@@ -173,10 +173,10 @@
         'watercraft', 'fishing', 'diving & snorkeling', 'cycling', 'running', 'climbing',
          'skating & BMX', 'golf', 'tennis', 'team sports', 'shooting'];
       if (selection.value == 'outdoor'){
-        for (var i = 0; i < eventChoices.length; i++) {
+        for (var i = 0; i < outdoorChoices.length; i++) {
           const option = document.createElement('option');
-          option.value = eventChoices[i];
-          option.text = eventChoices[i];
+          option.value = outdoorChoices[i];
+          option.text = outdoorChoices[i];
           activityDescriptionSelection.append(option);
           destinationDiv.append(activityDescriptionSelection);
         }
