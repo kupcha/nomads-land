@@ -15,7 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
 
 <body>
-
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&callback=initAutocomplete&libraries=places&v=weekly"></script>
   <script type="text/javascript">
     google.maps.event.addDomListener(window, 'load', initialize);
     function initialize() {
@@ -33,6 +34,4 @@
   <label id="lblresult"></label>
 
 
-  <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&callback=initAutocomplete&libraries=places&v=weekly"></script>
-  <%- include('partials/footer') -%>
+ <%- include('partials/footer') -%>
