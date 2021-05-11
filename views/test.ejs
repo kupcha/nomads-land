@@ -15,23 +15,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
 
 <body>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&callback=initAutocomplete&libraries=places&v=weekly"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&libraries=places&v=weekly"></script>
   <script type="text/javascript">
-  google.maps.event.addDomListener(window, 'load', initialize);
-  function initialize() {
-    var autocomplete = new google.maps.places.Autocomplete(document.getElementById('txtautocomplete'));
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-      var place = autocomplete.getPlace();
-      var location = "<b>Address:</b>" + place.formatted_address + "<br/>";
-      location += "<b>Latitude:</b>" + place.geometry.location.A + "</br>";
-      location += "<b>Latitude:</b>" + place.geometry.location.A + "<br/>";
-    });
-    document.getElementById('lblresult').innerHTML = location;
-  };
+    google.maps.event.addDomListener(window, 'load', initialize);
+    function initialize() {
+      var autocomplete = new google.maps.places.Autocomplete(document.getElementById('txtautocomplete'));
+      google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        var location = "<b>Address:</b>" + place.formatted_address + "<br/>";
+        location += "<b>Latitude:</b>" + place.geometry.location.A + "</br>";
+        location += "<b>Latitude:</b>" + place.geometry.location.F + "<br/>";
+      });
+      document.getElementById('lblresult').innerHTML = location;
+    };
   </script>
-<span> Location: </span><input type="text" id="txtautocomplete" placeholder="Enter the address" /><br><br>
-<label id="lblresult"></label>
+  <span> Location: </span><input type="text" id="txtautocomplete" placeholder="Enter the address" /><br><br>
+  <label id="lblresult"></label>
 
 
 
-    <%- include('partials/footer') -%>
+  <%- include('partials/footer') -%>
