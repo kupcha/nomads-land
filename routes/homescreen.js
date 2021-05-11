@@ -171,4 +171,8 @@ router.post('/profile', requiresAuth(), async function(req, res, next) {
   res.redirect('profile');
 })
 
+router.get('/test', requiresAuth(), function(req, res, next){
+  res.render('test');
+})
+
 module.exports = router;
