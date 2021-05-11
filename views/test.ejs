@@ -24,8 +24,8 @@
       google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
         var location = "<b>Address:</b>" + place.formatted_address + "<br/>";
-        location += "<b>Latitude:</b>" + place.geometry.location.lat + "</br>";
-        location += "<b>Latitude:</b>" + place.geometry.location.lng + "<br/>";
+        location += "<b>Latitude:</b>" + place.geometry.location.lat() + "</br>";
+        location += "<b>Latitude:</b>" + place.geometry.location.lng() + "<br/>";
         document.getElementById('lblresult').innerHTML = location;
       });
     };
