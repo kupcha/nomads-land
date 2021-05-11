@@ -21,10 +21,10 @@
   function initialize() {
     var autocomplete = new google.maps.places.Autocomplete(document.getElementById('txtautocomplete'));
     google.maps.event.addListener(autocomplete, 'place_changed', function() {
-      var places = autocomplete.getplace();
-      var location = "<b>Location:</b>" + places.formatted_address + "<br/>";
-      location += "<b>Latitude:</b>" + places.geometry.location.A + "</br>";
-      location += "<b>Latitude:</b>" + places.geometry.location.A + "<br/>";
+      var place = autocomplete.getPlace();
+      var location = "<b>Address:</b>" + place.formatted_address + "<br/>";
+      location += "<b>Latitude:</b>" + place.geometry.location.A + "</br>";
+      location += "<b>Latitude:</b>" + place.geometry.location.A + "<br/>";
     });
     document.getElementById('lblresult').innerHTML = location;
   };
