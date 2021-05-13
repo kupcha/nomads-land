@@ -173,6 +173,10 @@ router.post('/profile', requiresAuth(), async function(req, res, next) {
 
 router.get('/test', requiresAuth(), function(req, res, next){
   res.render('test');
+});
+
+router.post('/testSurvey', requiresAuth(), function(req, res, next){
+  res.send(req.body);
 })
 
 module.exports = router;
