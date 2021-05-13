@@ -172,7 +172,28 @@ router.post('/profile', requiresAuth(), async function(req, res, next) {
 })
 
 router.get('/test', requiresAuth(), function(req, res, next){
-  res.render('test');
+  const userEmail = res.locals.user.email;
+  const currentNomad = await User.findOne({email: userEmail});
+  if (currentNomad){
+    res.render('test', {
+      username: currentNomad.username,
+      elevation: currentNomad.elevation,
+      trips: currentNomad.trips,
+      referrals: currentNomad.tips,
+      userProfile: JSON.stringify(req.oidc.user, null, 2),
+      title: 'nomadsland'
+    })
+  }else{
+    const newUser = {
+      email : `${userEmail}`,
+      elevation : 0,
+      trips : 0,
+      tips : 0,
+      shownAboutScreen : 0
+    }
+    db.collection('users').insertOne(newUser);
+    res.redirect('test');
+  }
 });
 
 router.post('/testSurvey', requiresAuth(), function(req, res, next){
