@@ -26,6 +26,7 @@
     function initialize() {
       var autocomplete = new google.maps.places.Autocomplete(document.getElementById('pac-input'));
       google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
         var latitude  = document.getElementById('lat');
         latitude = place.geometry.location.lat();
         var longitude = document.getElementById('long');
