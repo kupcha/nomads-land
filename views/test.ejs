@@ -27,10 +27,12 @@
       var autocomplete = new google.maps.places.Autocomplete(document.getElementById('pac-input'));
       google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
-        var latitude  = document.getElementById('lat');
-        latitude = place.geometry.location.lat();
-        var longitude = document.getElementById('long');
-        longitude = place.geometry.location.lng();
+        var destinationLatitude  = document.getElementById('lat');
+        var latitude = place.geometry.location.lat();
+        destinationLatitude.setAttribute('value', latitude);
+        var destinationLongitude = document.getElementById('long');
+        var longitude = place.geometry.location.lng();
+        destinationLongitude.setAttribute('value', longitude);
       });
     };
   </script>
