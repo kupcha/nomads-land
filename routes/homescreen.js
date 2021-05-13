@@ -171,7 +171,7 @@ router.post('/profile', requiresAuth(), async function(req, res, next) {
   res.redirect('profile');
 })
 
-router.get('/test', requiresAuth(), function(req, res, next){
+router.get('/test', requiresAuth(), async function(req, res, next){
   const userEmail = res.locals.user.email;
   const currentNomad = await User.findOne({email: userEmail});
   if (currentNomad){
