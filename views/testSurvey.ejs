@@ -14,13 +14,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&libraries=places"></script>
   <script>
     // This example adds a search box to a map, using the Google Place Autocomplete
     // feature. People can enter geographical searches. The search box will return a
     // pick list containing a mix of places and predicted search terms.
     // This example requires the Places library. Include the libraries=places
     // parameter when you first load the API. For example:
-    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+    
     function initAutocomplete(recsNumber) {
       // Create the search box and link it to the UI element.
       const input = document.getElementById(`pac-input${recsNumber}`);
@@ -340,11 +341,6 @@
   </div>
 
 
-
-
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&callback=initAutocomplete&libraries=places&v=weekly"
-    async></script>
 </body>
 
 </html>
