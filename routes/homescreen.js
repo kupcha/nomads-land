@@ -197,7 +197,25 @@ router.get('/test', requiresAuth(), async function(req, res, next){
 });
 
 router.post('/testSurvey', requiresAuth(), function(req, res, next){
-  res.send(req.body);
+  const answer = req.body;
+  const destination = answer.location;
+  const userEmail = res.locals.user.email;
+  // const foundReview = Review.findOne({email: userEmail, location : destination});
+  // if (foundReview){
+  //   res.send(foundReview);
+  // }
+  // else{
+  //   const newReview = new Review({"email": userEmail, "location": destination});
+  //   await newReview.save();
+  //   res.render('survey', {
+  //     location : `${destination}`,
+  //     userEmail : userEmail
+  //   })
+  // }
+  res.render('testSurvey',{
+    userEmail : userEmail,
+    location : destination
+  });
 })
 
 module.exports = router;
