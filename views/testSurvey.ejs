@@ -178,6 +178,10 @@
       activityLatitude.setAttribute('type', 'hidden');
       activityLatitude.setAttribute('id', `lat${recsMade}`);
       activityLatitude.setAttribute('name', `lat${recsMade}`);
+      const activityLongitude = document.createElement('input');
+      activityLongitude.setAttribute('type', 'hidden');
+      activityLongitude.setAttribute('id', `long${recsMade}`);
+      activityLongitude.setAttribute('name', `long${recsMade}`);
       const activityLocation = document.createElement('input');
       activityLocation.setAttribute('type', 'text');
       activityLocation.required = true;
@@ -224,6 +228,8 @@
       rec.append(activityDescription);
       rec.append(activityLocation);
       rec.append(cancelButton);
+      rec.append(activityLatitude);
+      rec.append(activityLongitude)
       rec.append(lineBreak);
       const content = document.getElementById('survey');
       recDiv.append(rec);
