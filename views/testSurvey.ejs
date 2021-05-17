@@ -28,6 +28,7 @@
       const searchBox = new google.maps.places.SearchBox(input);
       // HAVE TO ADD LISTENER SO WHEN LOCATION IS SELECTED THE LAT AND LONG ARE ADDED AS HIDDEN INPUTS TO REC DIV TO BE SUBMITTED WITH FORM
       google.maps.event.addListener(input, 'place_changed', function () {
+        var autocomplete = new google.maps.places.Autocomplete(document.getElementById(`pac-input${recsMade}`));
         var place = autocomplete.getPlace();
         var destinationLatitude  = document.getElementById(`lat${recsNumber}`);
         var latitude = place.geometry.location.lat();
@@ -229,7 +230,7 @@
       rec.append(activityLocation);
       rec.append(cancelButton);
       rec.append(activityLatitude);
-      rec.append(activityLongitude)
+      rec.append(activityLongitude);
       rec.append(lineBreak);
       const content = document.getElementById('survey');
       recDiv.append(rec);
