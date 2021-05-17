@@ -23,12 +23,8 @@
     // parameter when you first load the API. For example:
     
     function initAutocomplete(recsNumber) {
-      // Create the search box and link it to the UI element.
-      const input = document.getElementById(`pac-input${recsNumber}`);
-      const searchBox = new google.maps.places.SearchBox(input);
-      // HAVE TO ADD LISTENER SO WHEN LOCATION IS SELECTED THE LAT AND LONG ARE ADDED AS HIDDEN INPUTS TO REC DIV TO BE SUBMITTED WITH FORM
-      google.maps.event.addListener(input, 'place_changed', function () {
-        var autocomplete = new google.maps.places.Autocomplete(document.getElementById(`pac-input${recsMade}`));
+      var autocomplete = new google.maps.places.Autocomplete(document.getElementById(`pac-input${recsNumber}`));
+      google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
         var destinationLatitude  = document.getElementById(`lat${recsNumber}`);
         var latitude = place.geometry.location.lat();
