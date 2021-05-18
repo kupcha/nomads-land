@@ -37,7 +37,7 @@
         origin: center,
         bounds: defaultBounds,
         strictBounds: true,
-        types: ["establishment", "address"]
+        types: ["establishment", "address"],
       };
       var autocomplete = new google.maps.places.Autocomplete(document.getElementById(`pac-input${recsNumber}`), options);
       google.maps.event.addListener(autocomplete, 'place_changed', function () {
