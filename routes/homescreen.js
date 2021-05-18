@@ -199,6 +199,8 @@ router.get('/test', requiresAuth(), async function(req, res, next){
 router.post('/testSurvey', requiresAuth(), function(req, res, next){
   const answer = req.body;
   const destination = answer.location;
+  const lat = answer.lat;
+  const long = answer.long;
   const userEmail = res.locals.user.email;
   // const foundReview = Review.findOne({email: userEmail, location : destination});
   // if (foundReview){
@@ -214,7 +216,9 @@ router.post('/testSurvey', requiresAuth(), function(req, res, next){
   // }
   res.render('testSurvey',{
     userEmail : userEmail,
-    location : destination
+    location : destination,
+    lat : lat,
+    long : long
   });
 });
 

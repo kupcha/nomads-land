@@ -364,6 +364,8 @@
       onsubmit="this.querySelectorAll('input').forEach(i => i.disabled = false)">
       <input type="hidden" id="location" name="location" required value="<%= location %>"
         style="text-align: center;width:fit-content"><br>
+        <input type="hidden" name="tripLat" required value ="<%= lat %>">
+        <input type="hidden" name="tripLong" required value ="<%= long %>">
       <label for="recsMade">tips made: </label>
       <input type="number" id="recsMade" name="recsMade" value="0" disabled required
         style="text-align: center;"><br><br>
