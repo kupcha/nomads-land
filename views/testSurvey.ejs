@@ -37,7 +37,7 @@
       const options = {
         bounds: newBounds,
         origin: center,
-        strictBounds: false,
+        strictBounds: true,
       };
       var autocomplete = new google.maps.places.Autocomplete(document.getElementById(`pac-input${recsNumber}`), options);
       google.maps.event.addListener(autocomplete, 'place_changed', function () {
