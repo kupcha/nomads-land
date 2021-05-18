@@ -26,11 +26,11 @@
       var autocomplete = new google.maps.places.Autocomplete(document.getElementById(`pac-input${recsNumber}`));
       google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
-        var destinationLatitude  = document.getElementById(`lat${recsNumber}`);
         var latitude = place.geometry.location.lat();
-        destinationLatitude.setAttribute('value', latitude);
-        var destinationLongitude = document.getElementById(`long${recsNumber}`);
         var longitude = place.geometry.location.lng();
+        var destinationLatitude  = document.getElementById(`rec${recsNumber}`).getElementsByClassName('latitude')[0];
+        destinationLatitude.setAttribute('value', latitude);
+        var destinationLongitude = document.getElementById(`rec${recsNumber}`).getElementsByClassName('longitude')[0];
         destinationLongitude.setAttribute('value', longitude);
       });
     }
