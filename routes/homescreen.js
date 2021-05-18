@@ -217,8 +217,8 @@ router.post('/testSurvey', requiresAuth(), function(req, res, next){
   res.render('testSurvey',{
     userEmail : userEmail,
     location : destination,
-    lat : lat,
-    long : long
+    tripLat : lat,
+    tripLong : long
   });
 });
 
