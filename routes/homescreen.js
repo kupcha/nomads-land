@@ -216,6 +216,10 @@ router.post('/testSurvey', requiresAuth(), function(req, res, next){
     userEmail : userEmail,
     location : destination
   });
-})
+});
+
+router.post('/testPreview', requiresAuth(), function(req, res, next)){
+  res.send(req.body)
+}
 
 module.exports = router;
