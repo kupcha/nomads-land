@@ -390,7 +390,7 @@
       <div id="map"></div>
     </form>
 
-    <button onclick="makeActivityRec(lat, long)" name="funActivityRec">do anything fun?</button>
+    <button onclick='makeActivityRec("<%= lat %>","<%= long %>")' name="funActivityRec">do anything fun?</button>
     <button name="foodRec" onclick="makeFoodRec()">eat anywhere awesome?</button>
     <button name="sightRec" onclick="makeAwesomeRec()">see anything amazing?</button><br><br>
     <button type="submit" form="tripReviewForm">put it on record</button>
