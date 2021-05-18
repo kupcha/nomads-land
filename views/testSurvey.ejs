@@ -22,8 +22,21 @@
     // This example requires the Places library. Include the libraries=places
     // parameter when you first load the API. For example:
     
-    function initAutocomplete(recsNumber) {
-      var autocomplete = new google.maps.places.Autocomplete(document.getElementById(`pac-input${recsNumber}`));
+    function initAutocomplete(recsNumber, tripLat, tripLong) {
+      const center = { lat: tripLat, lng: tripLong };
+      // Create a bounding box with sides ~10km away from the center point
+      const defaultBounds = {
+        north: center.lat + 0.15,
+        south: center.lat - 0.15,
+        east: center.lng + 0.15,
+        west: center.lng - 0.15,
+      };
+      const options = {
+        bounds: defaultBounds,
+        origin: center,
+        strictBounds: true,
+      };
+      var autocomplete = new google.maps.places.Autocomplete(document.getElementById(`pac-input${recsNumber}`), options);
       google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
         var latitude = place.geometry.location.lat();
@@ -156,7 +169,7 @@
     }
   </script>
   <script type='text/javascript'>
-    function makeActivityRec() {
+    function makeActivityRec(lat, long) {
       const recsMadeObject = document.getElementById('recsMade');
       const activityRecsMadeObject = document.getElementById('activityRecsMade');
       var recsMade = parseInt(recsMadeObject.value);
@@ -233,7 +246,7 @@
       const content = document.getElementById('survey');
       recDiv.append(rec);
       recDiv.setAttribute('style', 'display: block; text-align: center')
-      initAutocomplete(recsMade);
+      initAutocomplete(recsMade, lat, long);
     }
   </script>
   <script type='text/javascript'>
@@ -377,7 +390,7 @@
       <div id="map"></div>
     </form>
 
-    <button onclick="makeActivityRec()" name="funActivityRec">do anything fun?</button>
+    <button onclick="makeActivityRec(lat, long)" name="funActivityRec">do anything fun?</button>
     <button name="foodRec" onclick="makeFoodRec()">eat anywhere awesome?</button>
     <button name="sightRec" onclick="makeAwesomeRec()">see anything amazing?</button><br><br>
     <button type="submit" form="tripReviewForm">put it on record</button>
