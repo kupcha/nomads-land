@@ -28,10 +28,10 @@
       const center = { lat: lat, lng: long };
       // Create a bounding box with sides ~10km away from the center point
       const defaultBounds = {
-        north: center.lat + 0.15,
-        south: center.lat - 0.15,
-        east: center.lng + 0.15,
-        west: center.lng - 0.15,
+        north: center.lat + 0.5,
+        south: center.lat - 0.5,
+        east: center.lng + 0.5,
+        west: center.lng - 0.5,
       };
       const options = {
         bounds: defaultBounds,
