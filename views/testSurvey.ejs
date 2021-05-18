@@ -23,7 +23,7 @@
     // parameter when you first load the API. For example:
     
     function initAutocomplete(recsNumber, tripLat, tripLong) {
-      const center = { lat: tripLat, lng: tripLong };
+      const center = { lat: parseInt(tripLat), lng: parseInt(tripLong) };
       // Create a bounding box with sides ~10km away from the center point
       const defaultBounds = {
         north: center.lat + 0.15,
