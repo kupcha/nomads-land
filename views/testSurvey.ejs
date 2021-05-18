@@ -377,8 +377,8 @@
       onsubmit="this.querySelectorAll('input').forEach(i => i.disabled = false)">
       <input type="hidden" id="location" name="location" required value="<%= location %>"
         style="text-align: center;width:fit-content"><br>
-        <input type="hidden" name="tripLat" required value ="<%= lat %>">
-        <input type="hidden" name="tripLong" required value ="<%= long %>">
+        <input type="hidden" name="tripLat" required value ="<%= tripLat %>">
+        <input type="hidden" name="tripLong" required value ="<%= tripLong %>">
       <label for="recsMade">tips made: </label>
       <input type="number" id="recsMade" name="recsMade" value="0" disabled required
         style="text-align: center;"><br><br>
@@ -389,7 +389,7 @@
       <div class="errorBox" id="errorBox"></div>
       <div id="map"></div>
     </form>
-    tripLat: <%= tripLat %> /// tripLong: <%= tripLong %>
+    tripLat: <%= tripLat %>, tripLong: <%= tripLong %>
     <button onclick='makeActivityRec("<%= tripLat %>","<%= tripLong %>")' name="funActivityRec">do anything fun?</button>
     <button name="foodRec" onclick="makeFoodRec()">eat anywhere awesome?</button>
     <button name="sightRec" onclick="makeAwesomeRec()">see anything amazing?</button><br><br>
