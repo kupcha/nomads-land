@@ -174,11 +174,13 @@
       const activityLatitude = document.createElement('input');
       activityLatitude.setAttribute('type', 'hidden');
       activityLatitude.setAttribute('id', `lat${recsMade}`);
+      activityLatitude.setAttribute('class', 'latitude');
       activityLatitude.setAttribute('name', `lat${recsMade}`);
       const activityLongitude = document.createElement('input');
       activityLongitude.setAttribute('type', 'hidden');
       activityLongitude.setAttribute('id', `long${recsMade}`);
       activityLongitude.setAttribute('name', `long${recsMade}`);
+      activityLongitude.setAttribute('class', 'longitude');
       const activityLocation = document.createElement('input');
       activityLocation.setAttribute('type', 'text');
       activityLocation.required = true;
