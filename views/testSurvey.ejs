@@ -33,8 +33,9 @@
         east: center.lng + 0.15,
         west: center.lng - 0.15,
       };
+      const newBounds = new google.maps.LatLngBounds(defaultBounds)
       const options = {
-        bounds: defaultBounds,
+        bounds: newBounds,
         origin: center,
         strictBounds: false,
       };
