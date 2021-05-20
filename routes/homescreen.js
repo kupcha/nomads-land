@@ -226,4 +226,23 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
   res.send(req.body);
 });
 
+router.post('/testPreview', requiresAuth(), function(req, res, next){
+  var userEmail = res.locals.user.email;
+  var survey = req.body;
+  var recsMade = survey.recsMade;
+  var numberRecsMade = parseInt(recsMade);
+  var lats = survey.lat;
+  var tripLat = survey.tripLat;
+  var tripLong = survey.tripLong;
+  var location = survey.location;
+
+  res.redirect('testPreview', {
+    userEmail : userEmail,
+    tripLat : tripLat,
+    triplLong : tripLong
+  })
+
+})
+
+
 module.exports = router;
