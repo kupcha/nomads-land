@@ -14,7 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&libraries=places"></script>
   <script type='text/javascript'>
     function loadMap(tripLat, tripLong, lats, longs, recsMade){
         var centerLat = parseInt(tripLat);
@@ -87,7 +86,10 @@
   </div>
   <div id="map"></div>
 
-
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&callback=initMap&libraries=&v=weekly"
+  async
+></script>
 </body>
 
 </html>
