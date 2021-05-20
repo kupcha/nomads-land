@@ -16,8 +16,8 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script type='text/javascript'>
     function initMap(tripLat, tripLong, lats, longs, recsMade){
-        var centerLat = parseInt(tripLat);
-        var centerLong = parseInt(tripLong);
+        var centerLat = parseFloat(tripLat);
+        var centerLong = parseFloat(tripLong);
         var numberOfRecsMade = parseInt(recsMade)
         // The location of Uluru
         const center = { lat: centerLat, lng: centerLong};
@@ -27,8 +27,8 @@
             center: center,
         });
         for (var i = 0; i < numberOfRecsMade; i++){
-            var markerLat = parseInt(lats[i]);
-            var markerLong = parseInt(longs[i]);
+            var markerLat = parseFloat(lats[i]);
+            var markerLong = parseFloat(longs[i]);
             var newMarker = {lat: markerLat, lng: markerLong};
         // The marker, positioned at Uluru
         const marker = new google.maps.Marker({
