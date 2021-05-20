@@ -237,7 +237,7 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
   var tripLong = survey.tripLong;
   var location = survey.location;
 
-  res.redirect('testPreview', {
+  res.render('testPreview', {
     userEmail : userEmail,
     location : location,
     tripLat : tripLat,
