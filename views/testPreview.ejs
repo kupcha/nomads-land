@@ -33,7 +33,7 @@
             var newMarker = {lat: markerLat, lng: markerLong};
         // The marker, positioned at Uluru
         const marker = new google.maps.Marker({
-            position: marker,
+            position: newMarker,
             map: map,
         });
         }
@@ -81,10 +81,11 @@
     <h1> my trip to<br><span class="place">
         <%= location %>
       </span></h1>
-    <div id="map"></div>
+    
     <%= tripLat %>
     <br><br>
   </div>
+  <div id="map"></div>
 
 
 </body>
