@@ -245,9 +245,9 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
     activityLats : activityLats,
     activityLong : activityLong,
     recsMade : numberRecsMade
-  })
+  });
 
-})
+});
 
 
 module.exports = router;
