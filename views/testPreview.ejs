@@ -18,10 +18,9 @@
     function initMap(tripLat, tripLong, lats, longs, recsMade){
         var centerLat = parseFloat(tripLat);
         var centerLong = parseFloat(tripLong);
-        var ponto1 = new google.maps.LatLng(centerLat, centerLong);
+        var center = new google.maps.LatLng(centerLat, centerLong);
         var numberOfRecsMade = parseInt(recsMade)
         // The location of Uluru
-        const center = { lat: centerLat, lng: centerLong};
         // The map, centered at Uluru
         const map = new google.maps.Map(document.getElementById("map"), {
             zoom: 4,
