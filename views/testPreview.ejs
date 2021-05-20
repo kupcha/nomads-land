@@ -15,10 +15,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&libraries=places"></script>
+  <script type='text/javascript'>
+    function loadMap(tripLat, tripLong, lats, longs, recsMade){
+        var centerLat = parseInt(tripLat);
+        var centerLong = parseInt(tripLong);
+        var numberOfRecsMade = parseInt(recsMade)
+        // The location of Uluru
+        const center = { lat: centerLat, lng: centerLong};
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: center,
+        });
+        for (var i = 0; i < numberOfRecsMade; i++){
+            var markerLat = parseInt(lats[i]);
+            var markerLong = parseInt(longs[i]);
+            var newMarker = {lat: markerLat, lng: markerLong};
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+            position: marker,
+            map: map,
+        });
+        }
+
+    }
+
+
+</script>
 
 </head>
 
-<body id="body">
+<body id="body" onload='loadMap("<%= tripLat >%", "<%= tripLong >%", "<%= lat >%", "<%= long %>", "<%= recsMade %>")'>
   <nav class="flex items-center justify-between flex-wrap navbar-success" style="background-color: transparent;"">
         <div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="text-sm lg:flex-grow">

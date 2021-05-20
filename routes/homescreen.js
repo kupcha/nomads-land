@@ -231,7 +231,8 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
   var survey = req.body;
   var recsMade = survey.recsMade;
   var numberRecsMade = parseInt(recsMade);
-  var lats = survey.lat;
+  var activityLats = survey.activityLat;
+  var activityLong = survey.activityLong;
   var tripLat = survey.tripLat;
   var tripLong = survey.tripLong;
   var location = survey.location;
@@ -239,7 +240,9 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
   res.redirect('testPreview', {
     userEmail : userEmail,
     tripLat : tripLat,
-    triplLong : tripLong
+    tripLong : tripLong,
+    activityLats : activityLats,
+    activityLong : activityLong
   })
 
 })
