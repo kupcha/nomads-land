@@ -239,10 +239,12 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
 
   res.redirect('testPreview', {
     userEmail : userEmail,
+    location : location,
     tripLat : tripLat,
     tripLong : tripLong,
     activityLats : activityLats,
-    activityLong : activityLong
+    activityLong : activityLong,
+    recsMade : numberRecsMade
   })
 
 })
