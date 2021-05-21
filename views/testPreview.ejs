@@ -15,31 +15,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script type='text/javascript'>
-    function initMap(tripLat, tripLong, lats, longs, recsMade){
-        var centerLat = parseFloat(tripLat);
-        var centerLong = parseFloat(tripLong);
-        var center = new google.maps.LatLng(centerLat, centerLong);
-        var numberOfRecsMade = parseInt(recsMade)
-        // The location of Uluru
-        // The map, centered at Uluru
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 4,
-            center: center,
-        });
-        for (var i = 0; i < numberOfRecsMade; i++){
-            var markerLat = parseFloat(lats[i]);
-            var markerLong = parseFloat(longs[i]);
-            var newMarker = {lat: markerLat, lng: markerLong};
-        // The marker, positioned at Uluru
-        const marker = new google.maps.Marker({
-            position: newMarker,
-            map: map,
-        });
-        }
-
-    }
-
-
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.036 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
 </script>
 
 </head>
@@ -84,11 +74,15 @@
     <%= tripLat %>
     <br><br>
   </div>
+  <h3>My Google Maps Demo</h3>
+  <!--The div element for the map -->
   <div id="map"></div>
 
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
   <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&libraries=&v=weekly"
-></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&callback=initMap&libraries=&v=weekly"
+    async
+  ></script>
 </body>
 
 </html>
