@@ -14,11 +14,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@1,800&display=swap" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <script type='text/javascript'>
+  <script type='text/javascript' tripLat="<%= tripLat %>" tripLong="<%= tripLong %>">
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
-  const uluru = { lat: -25.344, lng: 131.036 };
+  let centerLat = parseFloat(tripLat);
+  let centerLong = parseFloat(tripLong);
+  const uluru = { lat: centerLat, lng: centerLong };
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
@@ -65,13 +67,18 @@ function initMap() {
     </div>
     </div>
   </nav>
+
+  <form id="tripLocation">
+    <input type="hidden" id="tripLat" value="<%= tripLat %>">
+    <input type="hidden" id="tripLong" value="<%= tripLong %>">
+  </form>
+
+
   <br><br>
   <div class="survey" id="survey">
     <h1> my trip to<br><span class="place">
         <%= location %>
       </span></h1>
-    
-    <%= tripLat %>
     <br><br>
   </div>
   <!--The div element for the map -->
