@@ -236,6 +236,7 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
   var tripLat = survey.tripLat;
   var tripLong = survey.tripLong;
   var location = survey.location;
+  var activityLocation = survey.activityLocation;
 
   res.render('testPreview', {
     userEmail : userEmail,
@@ -244,7 +245,8 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
     tripLong : tripLong,
     activityLats : activityLats,
     activityLong : activityLong,
-    recsMade : numberRecsMade
+    recsMade : numberRecsMade,
+    activityLocation : activityLocation
   });
 
 });
