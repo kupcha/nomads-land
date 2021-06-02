@@ -181,7 +181,7 @@
       recsMade += 1;
       recsMadeObject.setAttribute('value', (recsMade));
       const activityChoices = ['attractions', 'events', 'food & drink', 'outdoor', 'shopping', 'tours'];
-      const experienceChoices = ['awesome!', 'good', 'ok', 'bad' ];
+      const experienceChoices = ['awesome!', 'good', 'ok', 'bad!' ];
       const rec = document.createElement('div');
       const description = document.createElement('input');
       description.setAttribute('type', 'text');
@@ -400,6 +400,7 @@
     <h1> my trip to<br><span class="place">
         <%= location %>
       </span></h1>
+      <h3>in the end we'll create a map with your tips that you and other nomads can view</h3>
     <form action="/testPreview" method="post" name="tripReviewForm" id="tripReviewForm"
       onsubmit="this.querySelectorAll('input').forEach(i => i.disabled = false)">
       <input type="hidden" id="location" name="location" required value="<%= location %>"
