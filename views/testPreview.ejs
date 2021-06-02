@@ -23,7 +23,7 @@ function initMap() {
   const uluru = { lat: lat, lng: lng };
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
+    zoom: 7,
     center: uluru,
   });
   // The marker, positioned at Uluru
@@ -95,6 +95,22 @@ function initMap() {
   </div>
   <!--The div element for the map -->
   <div id="map"></div>
+  <div id="tips">
+    <h3>Tip List: </h3>
+    <% if (recsMade == 1){ %>
+      <div id="tip">
+        1. <%= activityLocation %>
+      </div>
+    <% }else{ %>
+      <div id="tipList">
+    <% for (var i = 0; i < recsMade; i++){ %>
+      <div id="tip<%= i %>">
+        <%= i %>. <%= activityLocation[i] %> <br>
+      </div>
+    <% } %>
+    <% } %>
+
+  </div>
 
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
   <script
