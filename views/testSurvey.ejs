@@ -238,7 +238,7 @@
       var label = document.createElement("Label");
 
       abel.htmlFor = "experienceSelection";
-      label.innerHTML="how was your experience?";
+      label.innerHTML = "how was your experience?";
       const recDiv = document.getElementById('recList');
       const cancelButton = document.createElement('button');
       cancelButton.setAttribute('onClick', "removeDiv(this)");
@@ -265,6 +265,7 @@
       rec.append(description);
       rec.append(activityLocation);
       rec.append(activityDescription);
+      rec.append(label);
       rec.append(experienceList);
       rec.append(cancelButton);
       rec.append(activityLatitude);
