@@ -72,8 +72,13 @@ function initMap() {
     <input type="hidden" id="tripLat" value="<%= tripLat %>">
     <input type="hidden" id="tripLong" value="<%= tripLong %>">
     <input type="hidden" id="recsMade" value="<%= recsMade %>">
+    <% if (recsMade == 1){ %>
+      <input type="hidden" class="activityLocation" value="<%= activityLocation %>">
+      <input type="hidden" class="activityLat" value="<%= activityLats %>">
+      <input type="hidden" class="activityLong" value="<%= activityLong %>">
+    <% }else{ %>
     <% for (var i = 0; i < recsMade; i++){ %>
-      <input type="hidden" class="activityLocation" value="<%= activityLocation[i] %>"
+      <input type="hidden" class="activityLocation" value="<%= activityLocation[i] %>">
       <input type="hidden" class="activityLat" value="<%= activityLats[i] %>">
       <input type="hidden" class="activityLong" value="<%= activityLong[i] %>">
     <% } %>
