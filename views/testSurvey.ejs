@@ -181,7 +181,15 @@
       recsMade += 1;
       recsMadeObject.setAttribute('value', (recsMade));
       const activityChoices = ['attractions', 'events', 'food & drink', 'outdoor', 'shopping', 'tours'];
+      const experienceChoices = ['awesome!', 'good', 'ok', 'bad' ];
       const rec = document.createElement('div');
+      const description = document.createElement('input');
+      description.setAttribute('type', 'text');
+      description.setAttribute('placeholder', 'what did you do?');
+      description.setAttribute('id', 'description');
+      description.setAttribute('name', 'description');
+      description.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
+
       const lineBreak = document.createElement('br');
       rec.setAttribute('class', `rec${recsMade}`);
       rec.setAttribute('id', `rec${recsMade}`);
@@ -216,6 +224,18 @@
       }
       selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
       selectionList.required = true;
+      const experienceList = document.createElement('select');
+      experienceList.setAttribute('id', `experienceSelection${recsMade}`);
+      experienceList.setAttribute('name', 'experienceSelection');
+      selecexperienceListtionList.setAttribute('onchange', `showMenu(${recsMade})`);
+      for (var i = 0; i < experienceChoices.length; i++) {
+        const option = document.createElement('option');
+        option.value = experienceChoices[i];
+        option.text = experienceChoices[i];
+        experienceList.append(option);
+      }
+      experienceList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      experienceList.required = true;
       const recDiv = document.getElementById('recList');
       const cancelButton = document.createElement('button');
       cancelButton.setAttribute('onClick', "removeDiv(this)");
@@ -239,8 +259,9 @@
         activityDescription.append(activityDescriptionSelection);
         activityDescriptionSelection.hidden = false;
       }
-      rec.append(activityDescription);
+      rec.append(description);
       rec.append(activityLocation);
+      rec.append(activityDescription);
       rec.append(cancelButton);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
