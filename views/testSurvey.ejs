@@ -235,6 +235,10 @@
       }
       experienceList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
       experienceList.required = true;
+      var label = document.createElement("Label");
+
+      abel.htmlFor = "experienceSelection";
+      label.innerHTML="how was your experience?";
       const recDiv = document.getElementById('recList');
       const cancelButton = document.createElement('button');
       cancelButton.setAttribute('onClick', "removeDiv(this)");
