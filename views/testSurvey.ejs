@@ -212,18 +212,18 @@
       activityLocation.setAttribute('class', 'pac-input');
       activityLocation.setAttribute('placeholder', 'where?');
       activityLocation.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
-      const selectionList = document.createElement('select');
-      selectionList.setAttribute('id', `activitySelection${recsMade}`);
-      selectionList.setAttribute('name', 'activitySelection');
-      selectionList.setAttribute('onchange', `showMenu(${recsMade})`);
-      for (var i = 0; i < activityChoices.length; i++) {
-        const option = document.createElement('option');
-        option.value = activityChoices[i];
-        option.text = activityChoices[i];
-        selectionList.append(option);
-      }
-      selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
-      selectionList.required = true;
+      // const selectionList = document.createElement('select');
+      // selectionList.setAttribute('id', `activitySelection${recsMade}`);
+      // selectionList.setAttribute('name', 'activitySelection');
+      // selectionList.setAttribute('onchange', `showMenu(${recsMade})`);
+      // for (var i = 0; i < activityChoices.length; i++) {
+      //   const option = document.createElement('option');
+      //   option.value = activityChoices[i];
+      //   option.text = activityChoices[i];
+      //   selectionList.append(option);
+      // }
+      // selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      // selectionList.required = true;
       const experienceList = document.createElement('select');
       experienceList.setAttribute('id', `experienceSelection${recsMade}`);
       experienceList.setAttribute('name', 'experienceSelection');
@@ -264,7 +264,7 @@
       }
       rec.append(description);
       rec.append(activityLocation);
-      rec.append(activityDescription);
+      // rec.append(activityDescription);
       rec.append(label);
       rec.append(experienceList);
       rec.append(cancelButton);
