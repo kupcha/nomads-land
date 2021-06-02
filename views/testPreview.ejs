@@ -23,14 +23,24 @@ function initMap() {
   const uluru = { lat: lat, lng: lng };
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 15,
+    zoom: 12,
     center: uluru,
   });
+  var recsMade = parseInt(document.getElementById('recsMade').value);
+  var latList = document.getElementsByClassName('activityLat');
+  var longList = document.getElementsByClassName('activityLong');
+  for (var i = 0; i < recsMade; i++){
+
+    var tipLat = parseFloat(latList[i].value);
+    var tipLong = parseFloat(longList[i].value);
+    const tipMarker = {lat: tipLat, lng: tipLong };
   // The marker, positioned at Uluru
   const marker = new google.maps.Marker({
-    position: uluru,
+    position: tipMarker,
     map: map,
   });
+  }
+
 }
 </script>
 
