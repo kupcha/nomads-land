@@ -26,6 +26,11 @@ function initMap() {
     zoom: 12,
     center: uluru,
   });
+  const centerMarker = new google.maps.Marker({
+    position: tipMarker,
+    map: map
+  });
+  
   var recsMade = parseInt(document.getElementById('recsMade').value);
   var latList = document.getElementsByClassName('activityLat');
   var longList = document.getElementsByClassName('activityLong');
@@ -38,6 +43,9 @@ function initMap() {
   const marker = new google.maps.Marker({
     position: tipMarker,
     map: map,
+    icon: {
+      url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+    }
   });
   }
 
