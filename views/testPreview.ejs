@@ -23,7 +23,7 @@ function initMap() {
   const uluru = { lat: lat, lng: lng };
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
+    zoom: 13,
     center: uluru,
   });
   const centerMarker = new google.maps.Marker({
@@ -134,6 +134,8 @@ function initMap() {
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcC2sq8E4kXCHYO0PlScz7ah2xNRc_jZ4&callback=initMap&libraries=&v=weekly"
     async
   ></script>
+
+  <a href="/profile">back home</a>
 </body>
 
 </html>
