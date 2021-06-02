@@ -73,6 +73,10 @@
   /* The height is 400 pixels */
   width: 75%;
   /* The width is the width of the web page */
+  display: block;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
   
 @media only screen and (max-width: 700px) {
