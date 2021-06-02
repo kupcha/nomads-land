@@ -23,7 +23,7 @@ function initMap() {
   const uluru = { lat: lat, lng: lng };
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 7,
+    zoom: 15,
     center: uluru,
   });
   // The marker, positioned at Uluru
@@ -94,9 +94,9 @@ function initMap() {
     <br><br>
   </div>
   <!--The div element for the map -->
-  <div id="map"></div>
+  <div id="map"></div><br>
   <div id="tips">
-    <h3>Tip List: </h3>
+    <h3><b>Tip List: </b></h3>
     <% if (recsMade == 1){ %>
       <div id="tip">
         1. <%= activityLocation %>
@@ -105,7 +105,7 @@ function initMap() {
       <div id="tipList">
     <% for (var i = 0; i < recsMade; i++){ %>
       <div id="tip<%= i %>">
-        <%= i %>. <%= activityLocation[i] %> <br>
+        <%= i + 1 %>. <%= activityLocation[i] %> <br>
       </div>
     <% } %>
     <% } %>
