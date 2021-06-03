@@ -86,21 +86,24 @@
   <script type="text/javascript">
     function removeDiv(btn) {
       const pNode = btn.parentNode;
-      const tester = document.getElementById('testing');
-      
-      ((btn.parentNode).parentNode).removeChild(btn.parentNode);
       const recsMadeObject = document.getElementById('recsMade');
       var recsMade = parseInt(recsMadeObject.value);
-      if (pNode.id == `rec${recsMade}`){
-        tester.setAttribute('class', 'successfulTest');
-      }else{
-        tester.setAttribute('class', 'unsuccessfulTest');
-      }
       recsMade -= 1;
       recsMadeObject.setAttribute('value', (recsMade));
+      if (pNode.class == `activityRec`){
+        var count = parseInt(getElementById('activityRecsMade').value);
+        getElementById('activityRecsMade').setAttribute('value', `${count - 1}`);
+      }else if (pNode.class == 'foodRec'){
+        var count = parseInt(getElementById('foodRecsMade').value);
+        getElementById('foodRecsMade').setAttribute('value', `${count - 1}`);
+      }else{
+        var count = parseInt(getElementById('sightRecsMade').value);
+        getElementById('sightRecsMade').setAttribute('value', `${count - 1}`);
+      }
       const errorBox = document.getElementById('errorBox');
       errorBox.setAttribute('innerHTML', "");
       errorBox.innerHTML = '';
+      ((btn.parentNode).parentNode).removeChild(btn.parentNode);
     }
   </script>
   <script>
@@ -199,7 +202,7 @@
       description.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
 
       const lineBreak = document.createElement('br');
-      rec.setAttribute('class', `rec${recsMade}`);
+      rec.setAttribute('class', `activityRec`);
       rec.setAttribute('id', `rec${recsMade}`);
       rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
       const activityLatitude = document.createElement('input');
@@ -298,7 +301,7 @@
       const foodChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
       const rec = document.createElement('div');
       const lineBreak = document.createElement('br');
-      rec.setAttribute('class', `rec${recsMade}`);
+      rec.setAttribute('class', `foodRec`);
       rec.setAttribute('id', `rec${recsMade}`);
       rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
       const activityLatitude = document.createElement('input');
@@ -359,7 +362,7 @@
       const sightSelection = ['art', 'cityscape', 'garden/parks', 'landmark', 'mountain/nature', 'water'];
       const rec = document.createElement('div');
       const lineBreak = document.createElement('br');
-      rec.setAttribute('class', `rec${recsMade}`);
+      rec.setAttribute('class', `sightRec`);
       rec.setAttribute('id', `rec${recsMade}`);
       rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
       const sightLocation = document.createElement('input');
