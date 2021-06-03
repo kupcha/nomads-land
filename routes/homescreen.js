@@ -231,12 +231,21 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
   var survey = req.body;
   var recsMade = survey.recsMade;
   var numberRecsMade = parseInt(recsMade);
+  var activityRecsMade = parseInt(survey.activityRecsMade);
+  var foodRecsMade = parseInt(survey.foodRecsMade);
+  var sightRecsMade = parseInt(survey.sightRecsMade);
   var activityLats = survey.activityLat;
   var activityLong = survey.activityLong;
   var tripLat = survey.tripLat;
   var tripLong = survey.tripLong;
   var location = survey.location;
   var activityLocation = survey.activityLocation;
+  var foodLat = survey.foodLat;
+  var foodLong = survey.foodLong;
+  var sightLong = survey.sightLong;
+  var sightLat = survey.sightLat;
+  var foodLocation = survey.foodLocation;
+  var sightLocation = survey.sightLocation;
 
   res.render('testPreview', {
     userEmail : userEmail,
@@ -246,7 +255,16 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
     activityLats : activityLats,
     activityLong : activityLong,
     recsMade : numberRecsMade,
-    activityLocation : activityLocation
+    foodRecsMade : foodRecsMade,
+    sightRecsMade : sightRecsMade,
+    activityRecsMade : activityRecsMade,
+    activityLocation : activityLocation,
+    foodLong : foodLong,
+    foodLat : foodLat,
+    sightLong : sightLong,
+    sightLat : sightLat,
+    foodLocation : foodLocation,
+    sightLocation : sightLocation
   });
 
 });

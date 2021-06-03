@@ -32,9 +32,12 @@ function initMap() {
   });
 
   var recsMade = parseInt(document.getElementById('recsMade').value);
+  var activityRecsMade = parseInt(document.getElementById('activityRecsMade').value);
+  var foodRecsMade = parseInt(document.getElementById('foodRecsMade').value);
+  var sightRecsMade = parseInt(document.getElementById('sightRecsMade').value);
   var latList = document.getElementsByClassName('activityLat');
   var longList = document.getElementsByClassName('activityLong');
-  for (var i = 0; i < recsMade; i++){
+  for (var i = 0; i < activityRecsMade; i++){
     var tipLat = parseFloat(latList[i].value);
     var tipLong = parseFloat(longList[i].value);
     const tipMarker = {lat: tipLat, lng: tipLong };
@@ -46,6 +49,38 @@ function initMap() {
       url: `https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_blue${i + 1}.png`
     }
   });
+}
+var foodLat = document.getElementsByClassName('foodLat');
+var foodLong = document.getElementsByClassName('foodLong');
+  for (var j = 0; j < foodRecsMade; j++){
+    var tipLat = parseFloat(foodLat[j].value);
+    var tipLong = parseFloat(foodLong[j].value);
+    const tipMarker = {lat: tipLat, lng: tipLong };
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: tipMarker,
+    map: map,
+    icon: {
+      url: `https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_yellow${j + 1}.png`
+    }
+  });
+}
+var sightLat = document.getElementsByClassName('sightLat');
+var sightLong = document.getElementsByClassName('sightLong');
+  for (var k = 0; k < sightRecsMade; k++){
+    var tipLat = parseFloat(sightLat[k].value);
+    var tipLong = parseFloat(sightLong[k].value);
+    const tipMarker = {lat: tipLat, lng: tipLong };
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: tipMarker,
+    map: map,
+    icon: {
+      url: `https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_green$kj + 1}.png`
+    }
+  });
+
+
   }
 
 }
@@ -89,7 +124,7 @@ function initMap() {
     <input type="hidden" id="tripLat" value="<%= tripLat %>">
     <input type="hidden" id="tripLong" value="<%= tripLong %>">
     <input type="hidden" id="recsMade" value="<%= recsMade %>">
-    <% if (recsMade == 1){ %>
+    <% if (activityRecsMade == 1){ %>
       <input type="hidden" class="activityLocation" value="<%= activityLocation %>">
       <input type="hidden" class="activityLat" value="<%= activityLats %>">
       <input type="hidden" class="activityLong" value="<%= activityLong %>">
@@ -98,6 +133,30 @@ function initMap() {
       <input type="hidden" class="activityLocation" value="<%= activityLocation[i] %>">
       <input type="hidden" class="activityLat" value="<%= activityLats[i] %>">
       <input type="hidden" class="activityLong" value="<%= activityLong[i] %>">
+    <% } %>
+    <% } %>
+
+    <% if (foodRecsMade == 1){ %>
+      <input type="hidden" class="foodLocation" value="<%= foodLocation %>">
+      <input type="hidden" class="foodLat" value="<%= foodLat %>">
+      <input type="hidden" class="foodLong" value="<%= foodLong %>">
+    <% }else{ %>
+    <% for (var i = 0; i < foodRecsMade; i++){ %>
+      <input type="hidden" class="foodLocation" value="<%= foodLocation[i] %>">
+      <input type="hidden" class="foodLat" value="<%= foodLat[i] %>">
+      <input type="hidden" class="foodLong" value="<%= foodLong[i] %>">
+    <% } %>
+    <% } %>
+
+    <% if (sightRecsMade == 1){ %>
+      <input type="hidden" class="sightLocation" value="<%= sightLocation %>">
+      <input type="hidden" class="sightLat" value="<%= sightLat %>">
+      <input type="hidden" class="sightLong" value="<%= sightLong %>">
+    <% }else{ %>
+    <% for (var i = 0; i < sightRecsMade; i++){ %>
+      <input type="hidden" class="sightLocation" value="<%= sightLocation[i] %>">
+      <input type="hidden" class="sightLat" value="<%= sightLat[i] %>">
+      <input type="hidden" class="sightLong" value="<%= sightLong[i] %>">
     <% } %>
     <% } %>
   </form>
@@ -115,13 +174,39 @@ function initMap() {
   <div id="tips">
     <h3><b>your tips: </b></h3>
     <h4>do:</h4>
-    <% if (recsMade == 1){ %>
+    <% if (activityRecsMade == 1){ %>
       <div id="tip">
         1. <%= activityLocation %>
       </div>
     <% }else{ %>
       <div id="tipList">
-    <% for (var i = 0; i < recsMade; i++){ %>
+    <% for (var i = 0; i < activityRecsMade; i++){ %>
+      <div id="tip<%= i %>">
+        <%= i + 1 %>. <%= activityLocation[i] %> <br>
+      </div>
+    <% } %>
+    <% } %>
+    <h4>eat:</h4>
+    <% if (foodRecsMade == 1){ %>
+      <div id="tip">
+        1. <%= foodLocation %>
+      </div>
+    <% }else{ %>
+      <div id="tipList">
+    <% for (var i = 0; i < foodRecsMade; i++){ %>
+      <div id="tip<%= i %>">
+        <%= i + 1 %>. <%= foodLocation[i] %> <br>
+      </div>
+    <% } %>
+    <% } %>
+    <h4>see:</h4>
+    <% if (sightRecsMade == 1){ %>
+      <div id="tip">
+        1. <%= sightLocation %>
+      </div>
+    <% }else{ %>
+      <div id="tipList">
+    <% for (var i = 0; i < sightRecsMade; i++){ %>
       <div id="tip<%= i %>">
         <%= i + 1 %>. <%= activityLocation[i] %> <br>
       </div>
