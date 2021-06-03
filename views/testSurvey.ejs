@@ -85,9 +85,17 @@
   </nav>
   <script type="text/javascript">
     function removeDiv(btn) {
+      const pNode = btn.parentNode;
+      const tester = document.getElementById('testing');
+      
       ((btn.parentNode).parentNode).removeChild(btn.parentNode);
       const recsMadeObject = document.getElementById('recsMade');
       var recsMade = parseInt(recsMadeObject.value);
+      if (pNode.id == `rec${recsMade}`){
+        tester.setAttribute('class', 'successfulTest');
+      }else{
+        tester.setAttribute('class', 'unsuccessfulTest');
+      }
       recsMade -= 1;
       recsMadeObject.setAttribute('value', (recsMade));
       const errorBox = document.getElementById('errorBox');
@@ -427,7 +435,7 @@
 
     <br><br>
   </div>
-
+  <div id="testing"></div>
 
 </body>
 
