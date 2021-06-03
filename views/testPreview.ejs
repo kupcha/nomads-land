@@ -128,7 +128,7 @@ var sightLong = document.getElementsByClassName('sightLong');
       <input type="hidden" class="activityLocation" value="<%= activityLocation %>">
       <input type="hidden" class="activityLat" value="<%= activityLats %>">
       <input type="hidden" class="activityLong" value="<%= activityLong %>">
-    <% }else{ %>
+    <% }else if (activityRecsMade > 1) { %>
     <% for (var i = 0; i < recsMade; i++){ %>
       <input type="hidden" class="activityLocation" value="<%= activityLocation[i] %>">
       <input type="hidden" class="activityLat" value="<%= activityLats[i] %>">
@@ -140,7 +140,7 @@ var sightLong = document.getElementsByClassName('sightLong');
       <input type="hidden" class="foodLocation" value="<%= foodLocation %>">
       <input type="hidden" class="foodLat" value="<%= foodLat %>">
       <input type="hidden" class="foodLong" value="<%= foodLong %>">
-    <% }else{ %>
+    <% }else if (foodRecsMade > 0){ %>
     <% for (var i = 0; i < foodRecsMade; i++){ %>
       <input type="hidden" class="foodLocation" value="<%= foodLocation[i] %>">
       <input type="hidden" class="foodLat" value="<%= foodLat[i] %>">
@@ -152,7 +152,7 @@ var sightLong = document.getElementsByClassName('sightLong');
       <input type="hidden" class="sightLocation" value="<%= sightLocation %>">
       <input type="hidden" class="sightLat" value="<%= sightLat %>">
       <input type="hidden" class="sightLong" value="<%= sightLong %>">
-    <% }else{ %>
+    <% }else if (sightRecsMade > 0){ %>
     <% for (var i = 0; i < sightRecsMade; i++){ %>
       <input type="hidden" class="sightLocation" value="<%= sightLocation[i] %>">
       <input type="hidden" class="sightLat" value="<%= sightLat[i] %>">
