@@ -99,6 +99,8 @@
       }else{
         var count = parseInt(document.getElementById('sightRecsMade').value);
         document.getElementById('sightRecsMade').setAttribute('value', `${count - 1}`);
+        var test = document.getElementById('testing');
+        test.setAttribute('value', pNode.class);
       }
       const errorBox = document.getElementById('errorBox');
       errorBox.setAttribute('innerHTML', "");
