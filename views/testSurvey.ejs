@@ -195,6 +195,7 @@
       recsMadeObject.setAttribute('value', (recsMade));
       const activityChoices = ['attractions', 'events', 'food & drink', 'outdoor', 'shopping', 'tours'];
       const experienceChoices = ['awesome!', 'good', 'ok', 'bad!' ];
+      const costChoices = ['$', '$$', '$$$', '$$$$'];
       const rec = document.createElement('div');
       const description = document.createElement('input');
       description.setAttribute('type', 'text');
@@ -237,6 +238,7 @@
       // }
       // selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
       // selectionList.required = true;
+      /* setup for experience question */
       const experienceList = document.createElement('select');
       experienceList.setAttribute('id', `experienceSelection${recsMade}`);
       experienceList.setAttribute('name', 'experienceSelection');
@@ -246,12 +248,34 @@
         option.text = experienceChoices[i];
         experienceList.append(option);
       }
-      experienceList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      experienceList.setAttribute('style', 'display: inline; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
       experienceList.required = true;
       var label = document.createElement("Label");
 
       label.htmlFor = "experienceSelection";
-      label.innerHTML = "how was your experience?";
+      label.innerHTML = "experience:";
+
+      /* setup for cost question */
+      const costList = document.createElement('select');
+      costList.setAttribute('id', `costSelection${recsMade}`);
+      costList.setAttribute('name', 'costSelection');
+      for (var i = 0; i < costChoices.length; i++) {
+        const option = document.createElement('option');
+        option.value = costChoices[i];
+        option.text = costChoices[i];
+        costList.append(option);
+      }
+      costList.setAttribute('style', 'display: inline; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      costList.required = true;
+      var label = document.createElement("Label");
+
+      label.htmlFor = "costSelection";
+      label.innerHTML = "cost:";
+
+
+
+
+
       const recDiv = document.getElementById('recList');
       const cancelButton = document.createElement('button');
       cancelButton.setAttribute('onClick', "removeDiv(this)");
