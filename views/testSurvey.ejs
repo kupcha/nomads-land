@@ -271,6 +271,23 @@
       costLabel.htmlFor = "costSelection";
       costLabel.innerHTML = "cost:";
 
+      /* each tag will be appended to this div */
+      var tagDiv = docuement.createElement('div');
+      var tagLabel = document.createElement('p');
+      tagLabel.innerHTML = "tags (select all that apply)";
+      tagDiv.append(tagLabel);
+      /* create list of tags to describe the activity */
+      var indoorTag = document.createElement('input');
+      indoorTag.setAttribute('type', 'checkbox');
+      tagDiv.append(indoorTag);
+
+      var outdoorTag = document.createElement('input');
+      outdoorTag.setAttribute('type', 'checkbox');
+      tagDiv.append(outdoorTag);
+      
+
+
+
       const recDiv = document.getElementById('recList');
       const cancelButton = document.createElement('button');
       cancelButton.setAttribute('onClick', "removeDiv(this)");
