@@ -272,7 +272,6 @@
       costLabel.innerHTML = "cost:";
 
       /* each tag will be appended to this div */
-      var tagDiv = document.createElement('div');
       var tagLabel = document.createElement('p');
       tagLabel.innerHTML = "tags (select all that apply)";
       tagDiv.append(tagLabel);
@@ -321,6 +320,7 @@
       rec.append(experienceList);
       rec.append(costLabel);
       rec.append(costList);
+      rec.append(tagDiv);
       rec.append(cancelButton);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
