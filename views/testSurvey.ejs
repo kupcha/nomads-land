@@ -267,13 +267,9 @@
       costList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
       costList.required = true;
 
-      var costLabel = document.createElement("Label");
+      var costLabel = document.createElement("label");
       costLabel.htmlFor = "costSelection";
       costLabel.innerHTML = "cost:";
-
-
-
-
 
       const recDiv = document.getElementById('recList');
       const cancelButton = document.createElement('button');
@@ -303,6 +299,7 @@
       // rec.append(activityDescription);
       rec.append(label);
       rec.append(experienceList);
+      rec.append(costLabel);
       rec.append(costList);
       rec.append(cancelButton);
       rec.append(activityLatitude);
