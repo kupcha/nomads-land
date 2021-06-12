@@ -279,15 +279,51 @@
       /* create list of tags to describe the activity */
       var indoorTag = document.createElement('input');
       indoorTag.setAttribute('type', 'checkbox');
+      indoorTag.setAttribute('value', 'indoors');
       indoorTag.setAttribute('id', 'tag');
       tagDiv.append(indoorTag);
 
       var outdoorTag = document.createElement('input');
       outdoorTag.setAttribute('type', 'checkbox');
       outdoorTag.setAttribute('id', 'tag');
+      outdoorTag.setAttribute('value', 'outdoors');
       tagDiv.append(outdoorTag);
-      
 
+      var seasonalTag = document.createElement('input');
+      seasonalTag.setAttribute('type', 'checkbox');
+      seasonalTag.setAttribute('id', 'tag');
+      seasonalTag.setAttribute('value', 'seasonal');
+      tagDiv.append(seasonalTag);
+
+      var activeTag = document.createElement('input');
+      activeTag.setAttribute('type', 'checkbox');
+      activeTag.setAttribute('id', 'tag');
+      activeTag.setAttribute('value', 'active');
+      tagDiv.append(activeTag);      
+
+      var leisureTag = document.createElement('input');
+      leisureTag.setAttribute('type', 'checkbox');
+      leisureTag.setAttribute('id', 'tag');
+      leisureTag.setAttribute('value', 'leisure');
+      tagDiv.append(leisureTag);     
+      
+      var soloTag = document.createElement('input');
+      soloTag.setAttribute('type', 'checkbox');
+      soloTag.setAttribute('id', 'tag');
+      soloTag.setAttribute('value', 'solo');
+      tagDiv.append(soloTag);
+
+      var intimateTag = document.createElement('input');
+      intimateTag.setAttribute('type', 'checkbox');
+      intimateTag.setAttribute('id', 'tag');
+      intimateTag.setAttribute('value', 'intimate');
+      tagDiv.append(intimateTag);
+
+      var socialTag = document.createElement('input');
+      socialTag.setAttribute('type', 'checkbox');
+      socialTag.setAttribute('id', 'tag');
+      socialTag.setAttribute('value', 'social');
+      tagDiv.append(socialTag);
 
 
       const recDiv = document.getElementById('recList');
