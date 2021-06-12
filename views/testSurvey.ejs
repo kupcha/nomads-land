@@ -280,8 +280,13 @@
       var indoorTag = document.createElement('input');
       indoorTag.setAttribute('type', 'checkbox');
       indoorTag.setAttribute('value', 'indoors');
-      indoorTag.setAttribute('id', 'tag');
+      indoorTag.setAttribute('id', 'indoorTag');
+      indoorTag.setAttribute('name', 'tag');
+      var indoorLabel = document.createElement("label");
+      indoorLabel.htmlFor = "indoorTag";
+      indoorLabel.innerHTML = "indoors";
       tagDiv.append(indoorTag);
+      tagDiv.append(indoorLabel);
 
       var outdoorTag = document.createElement('input');
       outdoorTag.setAttribute('type', 'checkbox');
@@ -291,37 +296,37 @@
 
       var seasonalTag = document.createElement('input');
       seasonalTag.setAttribute('type', 'checkbox');
-      seasonalTag.setAttribute('id', 'tag');
+      seasonalTag.setAttribute('name', 'tag');
       seasonalTag.setAttribute('value', 'seasonal');
       tagDiv.append(seasonalTag);
 
       var activeTag = document.createElement('input');
       activeTag.setAttribute('type', 'checkbox');
-      activeTag.setAttribute('id', 'tag');
+      activeTag.setAttribute('name', 'tag');
       activeTag.setAttribute('value', 'active');
       tagDiv.append(activeTag);      
 
       var leisureTag = document.createElement('input');
       leisureTag.setAttribute('type', 'checkbox');
-      leisureTag.setAttribute('id', 'tag');
+      leisureTag.setAttribute('name', 'tag');
       leisureTag.setAttribute('value', 'leisure');
       tagDiv.append(leisureTag);     
       
       var soloTag = document.createElement('input');
       soloTag.setAttribute('type', 'checkbox');
-      soloTag.setAttribute('id', 'tag');
+      soloTag.setAttribute('name', 'tag');
       soloTag.setAttribute('value', 'solo');
       tagDiv.append(soloTag);
 
       var intimateTag = document.createElement('input');
       intimateTag.setAttribute('type', 'checkbox');
-      intimateTag.setAttribute('id', 'tag');
+      intimateTag.setAttribute('name', 'tag');
       intimateTag.setAttribute('value', 'intimate');
       tagDiv.append(intimateTag);
 
       var socialTag = document.createElement('input');
       socialTag.setAttribute('type', 'checkbox');
-      socialTag.setAttribute('id', 'tag');
+      socialTag.setAttribute('name', 'tag');
       socialTag.setAttribute('value', 'social');
       tagDiv.append(socialTag);
 
