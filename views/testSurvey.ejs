@@ -251,7 +251,6 @@
       experienceList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
       experienceList.required = true;
       var label = document.createElement("Label");
-
       label.htmlFor = "experienceSelection";
       label.innerHTML = "experience:";
 
@@ -259,7 +258,7 @@
       const costList = document.createElement('select');
       costList.setAttribute('id', `costSelection${recsMade}`);
       costList.setAttribute('name', 'costSelection');
-      for (var i = 0; i < costChoices.length; i++) {
+      for (var j = 0; j < costChoices.length; j++) {
         const option = document.createElement('option');
         option.value = costChoices[i];
         option.text = costChoices[i];
@@ -267,8 +266,8 @@
       }
       costList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
       costList.required = true;
-      var secondLabel = document.createElement("Label");
 
+      var secondLabel = document.createElement("Label");
       secondLabel.htmlFor = "costSelection";
       secondLabel.innerHTML = "cost:";
 
