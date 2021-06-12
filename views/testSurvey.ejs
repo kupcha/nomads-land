@@ -284,7 +284,7 @@
       indoorTag.setAttribute('name', 'tag');
       var indoorLabel = document.createElement("label");
       indoorLabel.htmlFor = "indoorTag";
-      indoorLabel.innerHTML = "indoors";
+      indoorLabel.innerHTML = " indoors ";
       tagDiv.append(indoorTag);
       tagDiv.append(indoorLabel);
 
@@ -292,12 +292,20 @@
       outdoorTag.setAttribute('type', 'checkbox');
       outdoorTag.setAttribute('id', 'tag');
       outdoorTag.setAttribute('value', 'outdoors');
+      var outdoorLabel = document.createElement("label");
+      outdoorLabel.htmlFor = "outdoorTag";
+      outdoorLabel.innerHTML = " outdoors ";
+      tagDiv.append(outdoorLabel);
       tagDiv.append(outdoorTag);
 
       var seasonalTag = document.createElement('input');
       seasonalTag.setAttribute('type', 'checkbox');
       seasonalTag.setAttribute('name', 'tag');
       seasonalTag.setAttribute('value', 'seasonal');
+      var seasonalLabel = document.createElement("label");
+      seasonalLabel.htmlFor = "seasonalTag";
+      seasonalLabel.innerHTML = " seasonal ";
+      tagDiv.append(seasonalLabel);
       tagDiv.append(seasonalTag);
 
       var activeTag = document.createElement('input');
