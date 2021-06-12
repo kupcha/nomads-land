@@ -277,23 +277,24 @@
       cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
       cancelButton.innerHTML = 'cancel';
       //rec.append(selectionList);
-      const activityDescription = document.createElement('div');
-      activityDescription.setAttribute('id', `addTypeMenu${recsMade}`);
-      activityDescription.setAttribute('style', 'display:block;text-align:center; margin-right: auto; margin-left:auto;');
+      // const activityDescription = document.createElement('div');
+      // activityDescription.setAttribute('id', `addTypeMenu${recsMade}`);
+      // activityDescription.setAttribute('style', 'display:block;text-align:center; margin-right: auto; margin-left:auto;');
 
 
-      const activityDescriptionSelection = document.createElement('select');
-      activityDescriptionSelection.setAttribute('name', 'activityDescription');
-      activityDescriptionSelection.setAttribute('style', 'text-align:center; margin-right: auto; margin-left:auto; text-align-last: center;');
-      const attractionChoices = ['museums', 'water & amuesment parks', 'arenas, fields & stadiums', 'casinos & gambling', 'zoos & aquariums', 'spas'];
-      for (var i = 0; i < attractionChoices.length; i++) {
-        const option = document.createElement('option');
-        option.value = attractionChoices[i];
-        option.text = attractionChoices[i];
-        activityDescriptionSelection.append(option);
-        activityDescription.append(activityDescriptionSelection);
-        activityDescriptionSelection.hidden = false;
-      }
+      // const activityDescriptionSelection = document.createElement('select');
+      // activityDescriptionSelection.setAttribute('name', 'activityDescription');
+      // activityDescriptionSelection.setAttribute('style', 'text-align:center; margin-right: auto; margin-left:auto; text-align-last: center;');
+      // const attractionChoices = ['museums', 'water & amuesment parks', 'arenas, fields & stadiums', 'casinos & gambling', 'zoos & aquariums', 'spas'];
+      // for (var i = 0; i < attractionChoices.length; i++) {
+      //   const option = document.createElement('option');
+      //   option.value = attractionChoices[i];
+      //   option.text = attractionChoices[i];
+      //   activityDescriptionSelection.append(option);
+      //   activityDescription.append(activityDescriptionSelection);
+      //   activityDescriptionSelection.hidden = false;
+      // }
+
       rec.append(description);
       rec.append(activityLocation);
       // rec.append(activityDescription);
@@ -307,7 +308,7 @@
       rec.append(lineBreak);
       const content = document.getElementById('survey');
       recDiv.append(rec);
-      recDiv.setAttribute('style', 'display: block; text-align: center')
+      recDiv.setAttribute('style', 'display: block; text-align: center');
       initAutocomplete(recsMade, lat, long);
     }
   </script>
