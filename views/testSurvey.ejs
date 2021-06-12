@@ -248,7 +248,7 @@
         option.text = experienceChoices[i];
         experienceList.append(option);
       }
-      experienceList.setAttribute('style', 'display: inline; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      experienceList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
       experienceList.required = true;
       var label = document.createElement("Label");
 
@@ -265,12 +265,12 @@
         option.text = costChoices[i];
         costList.append(option);
       }
-      costList.setAttribute('style', 'display: inline; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      costList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
       costList.required = true;
-      var label = document.createElement("Label");
+      var secondLabel = document.createElement("Label");
 
-      label.htmlFor = "costSelection";
-      label.innerHTML = "cost:";
+      secondLabel.htmlFor = "costSelection";
+      secondLabel.innerHTML = "cost:";
 
 
 
