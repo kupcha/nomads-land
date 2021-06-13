@@ -197,7 +197,8 @@
       const experienceChoices = ['awesome!', 'good', 'ok', 'bad!' ];
       const costChoices = ['$', '$$', '$$$', '$$$$'];
       const rec = document.createElement('div');
-      rec.innerHTML += `tip #${recsMade}<br>`;
+      const tip = `tip #${recsMade}`;
+      rec.innerHTML += tip;
       const description = document.createElement('input');
       description.setAttribute('type', 'text');
       description.setAttribute('placeholder', 'what did you do?');
@@ -434,7 +435,8 @@
       recsMadeObject.setAttribute('value', (recsMade));
       const foodChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
       const rec = document.createElement('div');
-      rec.innerHTML += `tip #${recsMade}<br>`;
+      const tip = `tip #${recsMade}`;
+      rec.innerHTML += tip;
       const lineBreak = document.createElement('br');
       rec.setAttribute('class', `foodRec`);
       rec.setAttribute('id', `rec${recsMade}`);
@@ -678,7 +680,8 @@
       sightRecsObject.setAttribute('value', (sightRecsMade));
       const sightSelection = ['art', 'cityscape', 'garden/parks', 'landmark', 'mountain/nature', 'water'];
       const rec = document.createElement('div');
-      rec.innerHTML += `tip #${recsMade}<br>`;
+      const tip = `tip #${recsMade}`;
+      rec.innerHTML += tip;
       const lineBreak = document.createElement('br');
       rec.setAttribute('class', `sightRec`);
       rec.setAttribute('id', `rec${recsMade}`);
