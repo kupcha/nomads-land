@@ -197,6 +197,7 @@
       const experienceChoices = ['awesome!', 'good', 'ok', 'bad!' ];
       const costChoices = ['$', '$$', '$$$', '$$$$'];
       const rec = document.createElement('div');
+      rec.innerHTML += `tip #${recsMade}<br>`;
       const description = document.createElement('input');
       description.setAttribute('type', 'text');
       description.setAttribute('placeholder', 'what did you do?');
@@ -433,6 +434,7 @@
       recsMadeObject.setAttribute('value', (recsMade));
       const foodChoices = ['breakfast', 'brunch', 'lunch', 'dinner', 'dessert'];
       const rec = document.createElement('div');
+      rec.innerHTML += `tip #${recsMade}<br>`;
       const lineBreak = document.createElement('br');
       rec.setAttribute('class', `foodRec`);
       rec.setAttribute('id', `rec${recsMade}`);
@@ -504,17 +506,6 @@
       var tagDiv = document.createElement('div');
       tagDiv.setAttribute('style', 'text-align: center')
       tagDiv.innerHTML += "tags (select all that apply)<br>";
-      /* create list of tags to describe the activity */
-      var indoorTag = document.createElement('input');
-      indoorTag.setAttribute('type', 'checkbox');
-      indoorTag.setAttribute('value', 'indoors');
-      indoorTag.setAttribute('id', 'indoorTag');
-      indoorTag.setAttribute('name', `foodTag${foodRecsMade}`);
-      var indoorLabel = document.createElement("label");
-      indoorLabel.htmlFor = "indoorTag";
-      indoorLabel.innerHTML = "  indoors  ";
-      tagDiv.append(indoorTag);
-      tagDiv.append(indoorLabel);
 
       var breakfastTag = document.createElement('input');
       breakfastTag.setAttribute('type', 'checkbox');
@@ -687,6 +678,7 @@
       sightRecsObject.setAttribute('value', (sightRecsMade));
       const sightSelection = ['art', 'cityscape', 'garden/parks', 'landmark', 'mountain/nature', 'water'];
       const rec = document.createElement('div');
+      rec.innerHTML += `tip #${recsMade}<br>`;
       const lineBreak = document.createElement('br');
       rec.setAttribute('class', `sightRec`);
       rec.setAttribute('id', `rec${recsMade}`);
