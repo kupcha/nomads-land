@@ -464,6 +464,9 @@
       cuisine.setAttribute('name', 'cuisine');
       cuisine.required = true;
       cuisine.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
+      
+      const experienceChoices = ['awesome!', 'good', 'ok', 'bad!' ];
+      const costChoices = ['$', '$$', '$$$', '$$$$'];
       /* setup experience input */
       const experienceList = document.createElement('select');
       experienceList.setAttribute('id', `experienceSelection${recsMade}`);
