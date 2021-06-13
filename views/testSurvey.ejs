@@ -203,7 +203,7 @@
       description.setAttribute('id', 'description');
       description.setAttribute('name', 'description');
       description.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
-
+      description.required = true;
       const lineBreak = document.createElement('br');
       rec.setAttribute('class', `activityRec`);
       rec.setAttribute('id', `rec${recsMade}`);
@@ -447,32 +447,82 @@
       activityLongitude.setAttribute('id', `long`);
       activityLongitude.setAttribute('name', `foodLong`);
       activityLongitude.setAttribute('class', 'longitude');
+      /* location of food rec input */
       const foodLocation = document.createElement('input');
       foodLocation.setAttribute('type', 'text');
       foodLocation.required = true;
       foodLocation.setAttribute('id', `pac-input${recsMade}`);
       foodLocation.setAttribute('name', 'foodLocation');
       foodLocation.setAttribute('class', 'foodRec');
-      foodLocation.setAttribute('placeholder', 'where?');
+      foodLocation.setAttribute('placeholder', 'where did you eat?');
       foodLocation.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;');
-      const selectionList = document.createElement('select');
-      selectionList.setAttribute('id', 'foodSelection');
-      selectionList.setAttribute('name', 'foodSelection');
-      for (var i = 0; i < foodChoices.length; i++) {
+      /* setup cuisine input */
+      const cuisine = document.createElement('input');
+      cuisine.setAttribute('type', 'text');
+      cuisine.setAttribute('placeholder', 'cuisine');
+      cuisine.setAttribute('id', 'cuisine');
+      cuisine.setAttribute('name', 'cuisine');
+      cuisine.required = true;
+      cuisine.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
+      /* setup experience input */
+      const experienceList = document.createElement('select');
+      experienceList.setAttribute('id', `experienceSelection${recsMade}`);
+      experienceList.setAttribute('name', 'experienceSelection');
+      for (var i = 0; i < experienceChoices.length; i++) {
         const option = document.createElement('option');
-        option.value = foodChoices[i];
-        option.text = foodChoices[i];
-        selectionList.append(option);
+        option.value = experienceChoices[i];
+        option.text = experienceChoices[i];
+        experienceList.append(option);
       }
-      selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;text-align-last: center;');
-      selectionList.required = true;
+      experienceList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      experienceList.required = true;
+      var label = document.createElement("Label");
+      label.htmlFor = "experienceSelection";
+      label.innerHTML = "experience:";
+
+      /* setup for cost input */
+      const costList = document.createElement('select');
+      costList.setAttribute('id', `costSelection${recsMade}`);
+      costList.setAttribute('name', 'costSelection');
+      for (var j = 0; j < costChoices.length; j++) {
+        const option = document.createElement('option');
+        option.value = costChoices[j];
+        option.text = costChoices[j];
+        costList.append(option);
+      }
+      costList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      costList.required = true;
+
+      var costLabel = document.createElement("label");
+      costLabel.htmlFor = "costSelection";
+      costLabel.innerHTML = "cost:";
+
+
+
+
+      // const selectionList = document.createElement('select');
+      // selectionList.setAttribute('id', 'foodSelection');
+      // selectionList.setAttribute('name', 'foodSelection');
+      // for (var i = 0; i < foodChoices.length; i++) {
+      //   const option = document.createElement('option');
+      //   option.value = foodChoices[i];
+      //   option.text = foodChoices[i];
+      //   selectionList.append(option);
+      // }
+      // selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;text-align-last: center;');
+      // selectionList.required = true;
       const recDiv = document.getElementById('recList');
       const cancelButton = document.createElement('button');
       cancelButton.setAttribute('onClick', "removeDiv(this)");
       cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
       cancelButton.innerHTML = 'cancel';
-      rec.append(selectionList);
+      // rec.append(selectionList);
       rec.append(foodLocation);
+      rec.append(cuisine);
+      rec.append(label);
+      rec.append(experienceList);
+      rec.append(costLabel);
+      rec.append(costList);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
       rec.append(cancelButton);
