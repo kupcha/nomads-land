@@ -360,9 +360,10 @@
       socialTag.setAttribute('value', 'social');
       socialTag.setAttribute('id', 'socialTag');
       var socialLabel = document.createElement("label");
-      intimateLabel.htmlFor = "intimateTag";
-      intimateLabel.innerHTML = " intimate ";
+      socialLabel.htmlFor = "intimateTag";
+      socialLabel.innerHTML = " intimate ";
       tagDiv.append(socialTag);
+      tagDiv.append(socialLabel);
 
 
       const recDiv = document.getElementById('recList');
