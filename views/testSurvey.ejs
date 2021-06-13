@@ -374,7 +374,7 @@
       var descriptionLabel = document.createElement("label");
       descriptionLabel.setAttribute('style', 'display:block');
       descriptionLabel.htmlFor = "activityDescription";
-      descriptionLabel.innerHTML = "details?";
+      descriptionLabel.innerHTML = "details:";
 
 
       const recDiv = document.getElementById('recList');
@@ -464,7 +464,7 @@
       cuisine.setAttribute('name', 'cuisine');
       cuisine.required = true;
       cuisine.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
-      
+
       const experienceChoices = ['awesome!', 'good', 'ok', 'bad!' ];
       const costChoices = ['$', '$$', '$$$', '$$$$'];
       /* setup experience input */
@@ -499,6 +499,144 @@
       var costLabel = document.createElement("label");
       costLabel.htmlFor = "costSelection";
       costLabel.innerHTML = "cost:";
+
+      /* each tag will be appended to this div */
+      var tagDiv = document.createElement('div');
+      tagDiv.setAttribute('style', 'text-align: center')
+      tagDiv.innerHTML += "tags (select all that apply)<br>";
+      /* create list of tags to describe the activity */
+      var indoorTag = document.createElement('input');
+      indoorTag.setAttribute('type', 'checkbox');
+      indoorTag.setAttribute('value', 'indoors');
+      indoorTag.setAttribute('id', 'indoorTag');
+      indoorTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      var indoorLabel = document.createElement("label");
+      indoorLabel.htmlFor = "indoorTag";
+      indoorLabel.innerHTML = "  indoors  ";
+      tagDiv.append(indoorTag);
+      tagDiv.append(indoorLabel);
+
+      var breakfastTag = document.createElement('input');
+      breakfastTag.setAttribute('type', 'checkbox');
+      breakfastTag.setAttribute('id', 'breakfastTag');
+      breakfastTag.setAttribute('value', 'breakfast');
+      breakfastTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      var breakfastLabel = document.createElement("label");
+      breakfastLabel.htmlFor = "breakfastTag";
+      breakfastLabel.innerHTML = "  breakfast ";
+      tagDiv.append(breakfastTag);
+      tagDiv.append(outdoorLabel);
+
+      var brunchTag = document.createElement('input');
+      brunchTag.setAttribute('type', 'checkbox');
+      brunchTag.setAttribute('id', 'brunchTag');
+      brunchTag.setAttribute('name', `foodTag${activityRecsMade}`);
+      brunchTag.setAttribute('value', 'brunch');
+      var brunchLabel = document.createElement("label");
+      brunchLabel.htmlFor = "brunchTag";
+      brunchLabel.innerHTML = " brunch ";
+      tagDiv.append(brunchTag);
+      tagDiv.append(brunchLabel);
+
+      var lunchTag = document.createElement('input');
+      lunchTag.setAttribute('type', 'checkbox');
+      lunchTag.setAttribute('id', 'lunchTag');
+      lunchTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      lunchTag.setAttribute('value', 'lunch');
+      var activeLabel = document.createElement("label");
+      lunchLabel.htmlFor = "lunchTag";
+      lunchLabel.innerHTML = " lunch ";
+      tagDiv.append(lunchTag); 
+      tagDiv.append(lunchLabel);    
+
+      var dinnerTag = document.createElement('input');
+      dinnerTag.setAttribute('type', 'checkbox');
+      dinnerTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      dinnerTag.setAttribute('id', 'dinnerTag');
+      dinnerTag.setAttribute('value', 'dinner');
+      var dinnerLabel = document.createElement("label");
+      dinnerLabel.htmlFor = "dinnerTag";
+      dinnerLabel.innerHTML = " dinner ";
+      tagDiv.append(dinnerTag); 
+      tagDiv.append(dinnerLabel);    
+      
+      var dessertTag = document.createElement('input');
+      dessertTag.setAttribute('type', 'checkbox');
+      dessertTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      dessertTag.setAttribute('id', 'dessertTag');
+      dessertTag.setAttribute('value', 'dessert');
+      var dessertLabel = document.createElement("label");
+      dessertLabel.htmlFor = "dessertTag";
+      dessertLabel.innerHTML = " dessert ";
+      tagDiv.append(dessertTag);
+      tagDiv.append(dessertLabel);
+
+      var drinksTag = document.createElement('input');
+      drinksTag.setAttribute('type', 'checkbox');
+      drinksTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      drinksTag.setAttribute('id', 'drinksTag');
+      drinksTag.setAttribute('value', 'drinks');
+      var drinksLabel = document.createElement("label");
+      drinksLabel.htmlFor = "drinksTag";
+      drinksLabel.innerHTML = " drinks (21+) ";
+      tagDiv.append(drinksTag);
+      tagDiv.append(drinksLabel);
+
+      var casualTag = document.createElement('input');
+      casualTag.setAttribute('type', 'checkbox');
+      casualTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      casualTag.setAttribute('value', 'casual');
+      casualTag.setAttribute('id', 'casualTag');
+      var casualLabel = document.createElement("label");
+      casualLabel.htmlFor = "casualTag";
+      casualLabel.innerHTML = " casual ";
+      tagDiv.append(casualTag);
+      tagDiv.append(casualLabel);
+
+      var classyTag = document.createElement('input');
+      classyTag.setAttribute('type', 'checkbox');
+      classyTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      classyTag.setAttribute('value', 'classy');
+      classyTag.setAttribute('id', 'classyTag');
+      var classyLabel = document.createElement("label");
+      classyLabel.htmlFor = "classyTag";
+      classyLabel.innerHTML = " classy ";
+      tagDiv.append(classyTag);
+      tagDiv.append(classyLabel);
+
+      var walkinTag = document.createElement('input');
+      walkinTag.setAttribute('type', 'checkbox');
+      walkinTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      walkinTag.setAttribute('value', 'walk in');
+      walkinTag.setAttribute('id', 'walkinTag');
+      var walkinLabel = document.createElement("label");
+      walkinLabel.htmlFor = "walkinTag";
+      walkinLabel.innerHTML = " walk in ";
+      tagDiv.append(walkinTag);
+      tagDiv.append(walkinLabel);
+
+      var reserveTag = document.createElement('input');
+      reserveTag.setAttribute('type', 'checkbox');
+      reserveTag.setAttribute('name', `foodTag${foodRecsMade}`);
+      reserveTag.setAttribute('value', 'reserve');
+      reserveTag.setAttribute('id', 'reserveTag');
+      var reserveLabel = document.createElement("label");
+      reserveLabel.htmlFor = "reserveTag";
+      reserveLabel.innerHTML = " reserve ";
+      tagDiv.append(reserveTag);
+      tagDiv.append(reserveLabel);
+
+      /* hopefully create text box for optional descriptions */activeLabel
+      var descriptionBox = document.createElement('textarea');
+      descriptionBox.setAttribute('rows', '4');
+      descriptionBox.setAttribute('cols', '30');
+      descriptionBox.setAttribute('name', `foodDescription${activityRecsMade}`);
+      descriptionBox.setAttribute('id', 'foodDescription');
+      descriptionBox.setAttribute('style', 'display:block; text-align:center;margin-right: auto; margin-left: auto; ')
+      var descriptionLabel = document.createElement("label");
+      descriptionLabel.setAttribute('style', 'display:block');
+      descriptionLabel.htmlFor = "foodDescription";
+      descriptionLabel.innerHTML = "details:";
 
 
 
