@@ -275,7 +275,6 @@
       var tagDiv = document.createElement('div');
       tagDiv.setAttribute('style', 'text-align: center')
       tagDiv.innerHTML += "tags (select all that apply)<br>";
-      tagDiv.append(tagLabel);
       /* create list of tags to describe the activity */
       var indoorTag = document.createElement('input');
       indoorTag.setAttribute('type', 'checkbox');
@@ -365,6 +364,16 @@
       tagDiv.append(socialTag);
       tagDiv.append(socialLabel);
 
+      /* hopefully create text box for optional descriptions */activeLabel
+      var descriptionBox = document.createElement('textarea');
+      descriptionBox.setAttribute('rows', '4');
+      descriptionBox.setAttribute('cols', '60');
+      descriptionBox.setAttribute('name', `activityDescription${activityRecsMade}`);
+      descriptionBox.setAttribute('id', 'activityDescription');
+      var descriptionLabel = document.createElement("label");
+      descriptionLabel.htmlFor = "activityDescription";
+      descriptionLabel.innerHTML = "details?";
+
 
       const recDiv = document.getElementById('recList');
       const cancelButton = document.createElement('button');
@@ -398,6 +407,7 @@
       rec.append(costLabel);
       rec.append(costList);
       rec.append(tagDiv);
+      rec.append(descriptionBox);
       rec.append(cancelButton);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
