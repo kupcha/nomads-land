@@ -525,7 +525,7 @@
       breakfastLabel.htmlFor = "breakfastTag";
       breakfastLabel.innerHTML = "  breakfast ";
       tagDiv.append(breakfastTag);
-      tagDiv.append(outdoorLabel);
+      tagDiv.append(breakfastLabel);
 
       var brunchTag = document.createElement('input');
       brunchTag.setAttribute('type', 'checkbox');
@@ -664,6 +664,8 @@
       rec.append(experienceList);
       rec.append(costLabel);
       rec.append(costList);
+      rec.append(tagDiv);
+      rec.append(descriptionBox);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
       rec.append(cancelButton);
