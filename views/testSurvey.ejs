@@ -367,7 +367,7 @@
       /* hopefully create text box for optional descriptions */activeLabel
       var descriptionBox = document.createElement('textarea');
       descriptionBox.setAttribute('rows', '4');
-      descriptionBox.setAttribute('cols', '60');
+      descriptionBox.setAttribute('cols', '30');
       descriptionBox.setAttribute('name', `activityDescription${activityRecsMade}`);
       descriptionBox.setAttribute('id', 'activityDescription');
       var descriptionLabel = document.createElement("label");
@@ -407,8 +407,8 @@
       rec.append(costLabel);
       rec.append(costList);
       rec.append(tagDiv);
-      rec.append(descriptionBox);
       rec.append(descriptionLabel);
+      rec.append(descriptionBox);
       rec.append(cancelButton);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
