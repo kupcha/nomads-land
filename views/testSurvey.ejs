@@ -273,6 +273,7 @@
 
       /* each tag will be appended to this div */
       var tagDiv = document.createElement('div');
+      tagDiv.setAttribute('style', 'text-align: center')
       var tagLabel = document.createElement('p');
       tagLabel.innerHTML = "tags (select all that apply)";
       tagDiv.append(tagLabel);
@@ -281,7 +282,7 @@
       indoorTag.setAttribute('type', 'checkbox');
       indoorTag.setAttribute('value', 'indoors');
       indoorTag.setAttribute('id', 'indoorTag');
-      indoorTag.setAttribute('name', `tag${activityRecsMade}`);
+      indoorTag.setAttribute('name', `activityTag${activityRecsMade}`);
       var indoorLabel = document.createElement("label");
       indoorLabel.htmlFor = "indoorTag";
       indoorLabel.innerHTML = "  indoors  ";
@@ -292,7 +293,7 @@
       outdoorTag.setAttribute('type', 'checkbox');
       outdoorTag.setAttribute('id', 'outdoorTag');
       outdoorTag.setAttribute('value', 'outdoors');
-      outdoorTag.setAttribute('name', `tag${activityRecsMade}`);
+      outdoorTag.setAttribute('name', `activityTag${activityRecsMade}`);
       var outdoorLabel = document.createElement("label");
       outdoorLabel.htmlFor = "outdoorTag";
       outdoorLabel.innerHTML = "  outdoors ";
@@ -302,7 +303,7 @@
       var seasonalTag = document.createElement('input');
       seasonalTag.setAttribute('type', 'checkbox');
       seasonalTag.setAttribute('id', 'seasonalTag');
-      seasonalTag.setAttribute('name', `tag${activityRecsMade}`);
+      seasonalTag.setAttribute('name', `activityTag${activityRecsMade}`);
       seasonalTag.setAttribute('value', 'seasonal');
       var seasonalLabel = document.createElement("label");
       seasonalLabel.htmlFor = "seasonalTag";
@@ -312,7 +313,8 @@
 
       var activeTag = document.createElement('input');
       activeTag.setAttribute('type', 'checkbox');
-      activeTag.setAttribute('name', 'tag');
+      activeTag.setAttribute('id', 'activeTag');
+      activeTag.setAttribute('name', `activityTag${activityRecsMade}`);
       activeTag.setAttribute('value', 'active');
       var activeLabel = document.createElement("label");
       activeLabel.htmlFor = "activeTag";
@@ -322,17 +324,19 @@
 
       var leisureTag = document.createElement('input');
       leisureTag.setAttribute('type', 'checkbox');
-      leisureTag.setAttribute('name', 'tag');
+      leisureTag.setAttribute('name', `activityTag${activityRecsMade}`);
+      leisureTag.setAttribute('id', 'leisureTag');
       leisureTag.setAttribute('value', 'leisure');
       var leisureLabel = document.createElement("label");
-      leisureLabel.htmlFor = "activeTag";
+      leisureLabel.htmlFor = "leisureTag";
       leisureLabel.innerHTML = " leisure ";
       tagDiv.append(leisureTag); 
       tagDiv.append(leisureLabel);    
       
       var soloTag = document.createElement('input');
       soloTag.setAttribute('type', 'checkbox');
-      soloTag.setAttribute('name', 'tag');
+      soloTag.setAttribute('name', `activityTag${activityRecsMade}`);
+      soloTag.setAttribute('id', 'soloTag');
       soloTag.setAttribute('value', 'solo');
       var soloLabel = document.createElement("label");
       soloLabel.htmlFor = "soloTag";
@@ -342,7 +346,8 @@
 
       var intimateTag = document.createElement('input');
       intimateTag.setAttribute('type', 'checkbox');
-      intimateTag.setAttribute('name', 'tag');
+      intimateTag.setAttribute('name', `activityTag${activityRecsMade}`);
+      intimateTag.setAttribute('id', 'intimateTag');
       intimateTag.setAttribute('value', 'intimate');
       var intimateLabel = document.createElement("label");
       intimateLabel.htmlFor = "intimateTag";
@@ -352,8 +357,12 @@
 
       var socialTag = document.createElement('input');
       socialTag.setAttribute('type', 'checkbox');
-      socialTag.setAttribute('name', 'tag');
+      socialTag.setAttribute('name', `activityTag${activityRecsMade}`);
       socialTag.setAttribute('value', 'social');
+      socialTag.setAttribute('id', 'socialTag');
+      var socialLabel = document.createElement("label");
+      intimateLabel.htmlFor = "intimateTag";
+      intimateLabel.innerHTML = " intimate ";
       tagDiv.append(socialTag);
 
 
