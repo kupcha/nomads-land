@@ -688,7 +688,17 @@
       rec.setAttribute('id', `rec${recsMade}`);
       rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
 
-      const attractionType = document.createElement('radio')
+      const artRadio = document.createElement('radio');
+      artRadio.setAttribute('name', 'sightType');
+      artRadio.setAttribute('value', 'art');
+      artRadio.setAttribute('id', 'artRadio')
+      artRadio.required = true;
+      const artLabel = document.createElement('label');
+      artLabel.htmlFor('artRadio');
+      artLabel.innerHTML = "art";
+      rec.append(artRadio);
+      rec.append(artLabel);
+
 
       const sightLocation = document.createElement('input');
       sightLocation.setAttribute('type', 'text');
