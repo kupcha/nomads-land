@@ -680,12 +680,16 @@
       sightRecsObject.setAttribute('value', (sightRecsMade));
       const sightSelection = ['art', 'cityscape', 'garden/parks', 'landmark', 'mountain/nature', 'water'];
       const rec = document.createElement('div');
-      const tip = `tip #${recsMade}`;
+      const tip = `tip #${recsMade}<br>`;
       rec.innerHTML += tip;
+      rec.innerHTML += "what'd you see?<br>";
       const lineBreak = document.createElement('br');
       rec.setAttribute('class', `sightRec`);
       rec.setAttribute('id', `rec${recsMade}`);
       rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
+
+      const attractionType = document.createElement('radio')
+
       const sightLocation = document.createElement('input');
       sightLocation.setAttribute('type', 'text');
       sightLocation.required = true;
