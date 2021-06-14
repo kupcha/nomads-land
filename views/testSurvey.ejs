@@ -688,6 +688,12 @@
       rec.setAttribute('id', `rec${recsMade}`);
       rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
 
+
+      var tagDiv = document.createElement('div');
+      tagDiv.setAttribute('style', 'text-align: center')
+      tagDiv.innerHTML += "tags (select all that apply)<br>";
+
+
       const artTag = document.createElement('input');
       artTag.setAttribute('type', 'checkBox');
       artTag.setAttribute('name', 'sightType');
@@ -697,8 +703,8 @@
       const artLabel = document.createElement('label');
       artLabel.htmlFor = "artTag";
       artLabel.innerHTML = "art";
-      rec.append(artTag);
-      rec.append(artLabel);
+      tagDiv.append(artTag);
+      tagDiv.append(artLabel);
       
       const architectureTag = document.createElement('input');
       architectureTag.setAttribute('type', 'checkBox');
@@ -709,8 +715,8 @@
       const architectureLabel = document.createElement('label');
       architectureLabel.htmlFor = "architectureTag";
       architectureLabel.innerHTML = "architecture";
-      rec.append(architectureTag);
-      rec.append(architectureLabel);
+      tagDiv.append(architectureTag);
+      tagDiv.append(architectureLabel);
 
       const landmarkTag = document.createElement('input');
       landmarkTag.setAttribute('type', 'checkBox');
@@ -721,8 +727,8 @@
       const landmarkLabel = document.createElement('label');
       landmarkLabel.htmlFor = "landmarkTag";
       landmarkLabel.innerHTML = "landmark";
-      rec.append(landmarkTag);
-      rec.append(landmarkLabel);
+      tagDiv.append(landmarkTag);
+      tagDiv.append(landmarkLabel);
 
       const natureTag = document.createElement('input');
       natureTag.setAttribute('type', 'checkBox');
@@ -733,8 +739,8 @@
       const natureLabel = document.createElement('label');
       natureLabel.htmlFor = "natureTag";
       natureLabel.innerHTML = "nature";
-      rec.append(natureTag);
-      rec.append(natureLabel);
+      tagDiv.append(natureTag);
+      tagDiv.append(natureLabel);
 
       const waterTag = document.createElement('input');
       waterTag.setAttribute('type', 'checkBox');
@@ -745,8 +751,8 @@
       const waterLabel = document.createElement('label');
       waterLabel.htmlFor = "waterTag";
       waterLabel.innerHTML = "water";
-      rec.append(waterTag);
-      rec.append(waterLabel);
+      tagDiv.append(waterTag);
+      tagDiv.append(waterLabel);
 
       const otherTag = document.createElement('input');
       otherTag.setAttribute('type', 'checkBox');
@@ -757,8 +763,8 @@
       const otherLabel = document.createElement('label');
       otherLabel.htmlFor = "otherTag";
       otherLabel.innerHTML = "other (specify)";
-      rec.append(otherTag);
-      rec.append(otherLabel);
+      tagDiv.append(otherTag);
+      tagDiv.append(otherLabel);
 
 
 
@@ -857,7 +863,12 @@
       cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
       cancelButton.innerHTML = 'cancel';
       // rec.append(selectionList);
+      rec.append(tagDiv);
       rec.append(sightLocation);
+      rec.append(label);
+      rec.append(experienceList);
+      rec.append(costLabel);
+      rec.append(costList);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
       rec.append(cancelButton);
