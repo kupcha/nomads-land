@@ -203,7 +203,7 @@
       description.setAttribute('type', 'text');
       description.setAttribute('placeholder', 'what did you do?');
       description.setAttribute('id', 'description');
-      description.setAttribute('name', 'description');
+      description.setAttribute('name', 'activity');
       description.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
       description.required = true;
       const lineBreak = document.createElement('br');
@@ -701,7 +701,7 @@
       otherTagInput.setAttribute('id', `sightTagInput${sightRecsMade}`);
       otherTagInput.setAttribute('name', `sightTag${sightRecsMade}`);
       otherTagInput.setAttribute('style', 'text-align:center; display:block; margin-right: auto; margin-left: auto')
-      otherTagInput.setAttribute('placeholder', 'specify')
+      otherTagInput.setAttribute('placeholder', 'specify tag');
       otherTagInput.required = true;
       tagDiv.append(otherTagInput);
     }
