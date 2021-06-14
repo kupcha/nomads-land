@@ -379,7 +379,7 @@
       descriptionBox.setAttribute('rows', '4');
       descriptionBox.setAttribute('cols', '30');
       descriptionBox.setAttribute('name', `activityDescription${activityRecsMade}`);
-      descriptionBox.setAttribute('id', 'activityDescription');
+      descriptionBox.setAttribute('id', `activityDescription${activityRecsMade}`);
       descriptionBox.setAttribute('style', 'display:block; text-align:center;margin-right: auto; margin-left: auto; ')
       var descriptionLabel = document.createElement("label");
       descriptionLabel.setAttribute('style', 'display:block');
@@ -641,8 +641,8 @@
       var descriptionBox = document.createElement('textarea');
       descriptionBox.setAttribute('rows', '4');
       descriptionBox.setAttribute('cols', '30');
-      descriptionBox.setAttribute('name', `foodDescription${activityRecsMade}`);
-      descriptionBox.setAttribute('id', 'foodDescription');
+      descriptionBox.setAttribute('name', `foodDescription${foodRecsMade}`);
+      descriptionBox.setAttribute('id', `foodDescription${foodRecsMade}`);
       descriptionBox.setAttribute('style', 'display:block; text-align:center;margin-right: auto; margin-left: auto; ')
       var descriptionLabel = document.createElement("label");
       descriptionLabel.setAttribute('style', 'display:block');
@@ -739,7 +739,7 @@
 
       const artTag = document.createElement('input');
       artTag.setAttribute('type', 'checkBox');
-      artTag.setAttribute('name', 'sightType');
+      artTag.setAttribute('name', `sightTag${sightRecsMade}`);
       artTag.setAttribute('value', 'art');
       artTag.setAttribute('id', `artTag${sightRecsMade}`);
       const artLabel = document.createElement('label');
@@ -751,7 +751,7 @@
       
       const architectureTag = document.createElement('input');
       architectureTag.setAttribute('type', 'checkBox');
-      architectureTag.setAttribute('name', 'sightType');
+      architectureTag.setAttribute('name', `sightTag${sightRecsMade}`);
       architectureTag.setAttribute('value', 'architecture');
       architectureTag.setAttribute('id', `architectureTag${sightRecsMade}`);
       const architectureLabel = document.createElement('label');
@@ -763,7 +763,7 @@
 
       const landmarkTag = document.createElement('input');
       landmarkTag.setAttribute('type', 'checkBox');
-      landmarkTag.setAttribute('name', 'sightType');
+      landmarkTag.setAttribute('name', `sightTag${sightRecsMade}`);
       landmarkTag.setAttribute('value', 'landmark');
       landmarkTag.setAttribute('id', `landmarkTag${sightRecsMade}`);
       const landmarkLabel = document.createElement('label');
@@ -775,7 +775,7 @@
 
       const natureTag = document.createElement('input');
       natureTag.setAttribute('type', 'checkBox');
-      natureTag.setAttribute('name', 'sightType');
+      natureTag.setAttribute('name', `sightTag${sightRecsMade}`);
       natureTag.setAttribute('value', 'nature');
       natureTag.setAttribute('id', `natureTag${sightRecsMade}`);
       const natureLabel = document.createElement('label');
@@ -787,7 +787,7 @@
 
       const waterTag = document.createElement('input');
       waterTag.setAttribute('type', 'checkBox');
-      waterTag.setAttribute('name', 'sightType');
+      waterTag.setAttribute('name', `sightTag${sightRecsMade}`);
       waterTag.setAttribute('value', 'water');
       waterTag.setAttribute('id', `waterTag${sightRecsMade}`);
       const waterLabel = document.createElement('label');
@@ -799,7 +799,7 @@
 
       const otherTag = document.createElement('input');
       otherTag.setAttribute('type', 'checkBox');
-      otherTag.setAttribute('name', 'sightType');
+      otherTag.setAttribute('name', `sightTag${sightRecsMade}`);
       otherTag.setAttribute('value', 'other');
       otherTag.setAttribute('id', `otherTag${sightRecsMade}`);
       otherTag.setAttribute('onclick', `handleTagInput(${sightRecsMade})`);
