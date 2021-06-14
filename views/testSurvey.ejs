@@ -682,6 +682,8 @@
       otherTagInput.setAttribute('type', 'text');
       otherTagInput.setAttribute('id', `sightTagInput${sightRecsMade}`);
       otherTagInput.setAttribute('name', `sightTag${sightRecsMade}`);
+      otherTagInput.setAttribute('style', 'display:block')
+      otherTagInput.setAttribute('placeholder', 'specify')
       otherTagInput.required = true;
       tagDiv.append(otherTagInput);
     }
@@ -786,7 +788,7 @@
       otherTag.setAttribute('onclick', `handleTagInput(${sightRecsMade})`);
       const otherLabel = document.createElement('label');
       otherLabel.htmlFor = "otherTag";
-      otherLabel.innerHTML = "other (specify)";
+      otherLabel.innerHTML = "other";
       tagDiv.append(otherTag);
       tagDiv.append(otherLabel);
 
