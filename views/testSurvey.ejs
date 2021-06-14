@@ -297,7 +297,7 @@
       outdoorTag.setAttribute('name', `activityTag${activityRecsMade}`);
       var outdoorLabel = document.createElement("label");
       let outdoorLabelText = `outdoorTag${activityRecsMade}`;
-      indoorLabel.htmlFor = outdoorLabelText;
+      outdoorLabel.htmlFor = outdoorLabelText;
       outdoorLabel.innerHTML = "  outdoors ";
       tagDiv.append(outdoorTag);
       tagDiv.append(outdoorLabel);
@@ -309,7 +309,7 @@
       seasonalTag.setAttribute('value', 'seasonal');
       var seasonalLabel = document.createElement("label");
       let seasonalLabelText = `seasonalTag${activityRecsMade}`
-      indoorLabel.htmlFor = seasonalLabelText;
+      seasonalLabel.htmlFor = seasonalLabelText;
       seasonalLabel.innerHTML = " seasonal ";
       tagDiv.append(seasonalTag);
       tagDiv.append(seasonalLabel);
@@ -321,7 +321,7 @@
       activeTag.setAttribute('value', 'active');
       var activeLabel = document.createElement("label");
       let activeLabelText = `activeTag${activityRecsMade}`
-      indoorLabel.htmlFor = activeLabelText;
+      activeLabel.htmlFor = activeLabelText;
       activeLabel.innerHTML = " active ";
       tagDiv.append(activeTag); 
       tagDiv.append(activeLabel);    
@@ -333,7 +333,7 @@
       leisureTag.setAttribute('value', 'leisure');
       var leisureLabel = document.createElement("label");
       let leisureLabelText = `leisureTag${activityRecsMade}`
-      indoorLabel.htmlFor = leisureLabelText;
+      leisureLabel.htmlFor = leisureLabelText;
       leisureLabel.innerHTML = " leisure ";
       tagDiv.append(leisureTag); 
       tagDiv.append(leisureLabel);    
@@ -345,7 +345,7 @@
       soloTag.setAttribute('value', 'solo');
       var soloLabel = document.createElement("label");
       let soloLabelText = `soloTag${activityRecsMade}`
-      indoorLabel.htmlFor = soloLabelText;
+      soloLabel.htmlFor = soloLabelText;
       soloLabel.innerHTML = " solo ";
       tagDiv.append(soloTag);
       tagDiv.append(soloLabel);
@@ -369,7 +369,7 @@
       socialTag.setAttribute('id', `socialTag${activityRecsMade}`);
       var socialLabel = document.createElement("label");
       let socialLabelText = `socialTag${activityRecsMade}`;
-      indoorLabel.htmlFor = socialLabelText;
+      socialLabel.htmlFor = socialLabelText;
       socialLabel.innerHTML = " social ";
       tagDiv.append(socialTag);
       tagDiv.append(socialLabel);
@@ -524,7 +524,7 @@
       breakfastTag.setAttribute('name', `foodTag${foodRecsMade}`);
       var breakfastLabel = document.createElement("label");
       let breakfastLabelText = `breakfastTag${foodRecsMade}`;
-      indoorLabel.htmlFor = breakfastLabelText;
+      breakfastLabel.htmlFor = breakfastLabelText;
       breakfastLabel.innerHTML = "  breakfast ";
       tagDiv.append(breakfastTag);
       tagDiv.append(breakfastLabel);
@@ -536,7 +536,7 @@
       brunchTag.setAttribute('value', 'brunch');
       var brunchLabel = document.createElement("label");
       let brunchLabelText = `brunchTag${foodRecsMade}`;
-      indoorLabel.htmlFor = brunchLabelText;
+      brunchLabel.htmlFor = brunchLabelText;
       brunchLabel.innerHTML = " brunch ";
       tagDiv.append(brunchTag);
       tagDiv.append(brunchLabel);
@@ -548,7 +548,7 @@
       lunchTag.setAttribute('value', 'lunch');
       var lunchLabel = document.createElement("label");
       let lunchLabelText = `lunchTag${foodRecsMade}`;
-      indoorLabel.htmlFor = lunchLabelText;
+      lunchLabel.htmlFor = lunchLabelText;
       lunchLabel.innerHTML = " lunch ";
       tagDiv.append(lunchTag); 
       tagDiv.append(lunchLabel);    
@@ -560,7 +560,7 @@
       dinnerTag.setAttribute('value', 'dinner');
       var dinnerLabel = document.createElement("label");
       let dinnerLabelText = `dinnerTag${foodRecsMade}`;
-      indoorLabel.htmlFor = dinnerLabelText;
+      dinnerLabel.htmlFor = dinnerLabelText;
       dinnerLabel.innerHTML = " dinner ";
       tagDiv.append(dinnerTag); 
       tagDiv.append(dinnerLabel);    
@@ -572,7 +572,7 @@
       dessertTag.setAttribute('value', 'dessert');
       var dessertLabel = document.createElement("label");
       let dessertLabelText = `dessertTag${foodRecsMade}`;
-      indoorLabel.htmlFor = dessertLabelText;
+      dessertLabel.htmlFor = dessertLabelText;
       dessertLabel.innerHTML = " dessert ";
       tagDiv.append(dessertTag);
       tagDiv.append(dessertLabel);
@@ -584,7 +584,7 @@
       drinksTag.setAttribute('value', 'drinks');
       var drinksLabel = document.createElement("label");
       let drinkLabelText = `drinksTag${foodRecsMade}`;
-      indoorLabel.htmlFor = drinkLabelText;
+      drinksLabel.htmlFor = drinkLabelText;
       drinksLabel.innerHTML = " drinks (21+) ";
       tagDiv.append(drinksTag);
       tagDiv.append(drinksLabel);
@@ -596,7 +596,7 @@
       casualTag.setAttribute('id', `casualTag${foodRecsMade}`);
       var casualLabel = document.createElement("label");
       let casualLabelText = `casualTag${foodRecsMade}`;
-      indoorLabel.htmlFor = casualLabelText;
+      casualLabel.htmlFor = casualLabelText;
       casualLabel.innerHTML = " casual ";
       tagDiv.append(casualTag);
       tagDiv.append(casualLabel);
@@ -608,7 +608,7 @@
       classyTag.setAttribute('id', `classyTag${foodRecsMade}`);
       var classyLabel = document.createElement("label");
       let classyLabelText = `classyTag${foodRecsMade}`;
-      indoorLabel.htmlFor = classyLabelText;
+      classyLabel.htmlFor = classyLabelText;
       classyLabel.innerHTML = " classy ";
       tagDiv.append(classyTag);
       tagDiv.append(classyLabel);
@@ -620,7 +620,7 @@
       walkinTag.setAttribute('id', `walkinTag${foodRecsMade}`);
       var walkinLabel = document.createElement("label");
       let walkingLabelText = `walkinTag${foodRecsMade}`;
-      indoorLabel.htmlFor = walkingLabelText;
+      walkinLabel.htmlFor = walkingLabelText;
       walkinLabel.innerHTML = " walk in ";
       tagDiv.append(walkinTag);
       tagDiv.append(walkinLabel);
@@ -632,7 +632,7 @@
       reserveTag.setAttribute('id', `reserveTag${foodRecsMade}`);
       var reserveLabel = document.createElement("label");
       let reserveLabelText = `reserveTag${foodRecsMade}`;
-      indoorLabel.htmlFor = reserveLabelText;
+      reserveLabel.htmlFor = reserveLabelText;
       reserveLabel.innerHTML = " reserve ";
       tagDiv.append(reserveTag);
       tagDiv.append(reserveLabel);
