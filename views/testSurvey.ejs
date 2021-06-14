@@ -680,12 +680,14 @@
       var tagDiv = document.getElementById(`sightTagDiv${sightRecsMade}`);
       var otherTagInput = document.createElement('input');
       otherTagInput.setAttribute('type', 'text');
+      otherTagInput.setAttribute('id', `sightTagInput${sightRecsMade}`);
+      otherTagInput.setAttribute('name', `sightTag${sightRecsMade}`);
       otherTagInput.required = true;
       tagDiv.append(otherTagInput);
     }
 
     function removeTagInput(sightRecsMade){
-      var tagDiv = document.getElementById(`sightTagDiv${sightRecsMade}`);
+      var tagDiv = document.getElementById(`sightTagInput${sightRecsMade}`);
       tagDiv.remove();
     }
 
