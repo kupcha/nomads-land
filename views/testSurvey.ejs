@@ -688,16 +688,81 @@
       rec.setAttribute('id', `rec${recsMade}`);
       rec.setAttribute('style', 'max-width: 100%; text-align:center; display:block; margin-right: auto; margin-left: auto');
 
-      const artRadio = document.createElement('radio');
-      artRadio.setAttribute('name', 'sightType');
-      artRadio.setAttribute('value', 'art');
-      artRadio.setAttribute('id', 'artRadio')
-      artRadio.required = true;
+      const artTag = document.createElement('input');
+      artTag.setAttribute('type', 'checkBox');
+      artTag.setAttribute('name', 'sightType');
+      artTag.setAttribute('value', 'art');
+      artTag.setAttribute('id', 'artTag')
+      artTag.required = true;
       const artLabel = document.createElement('label');
-      artLabel.htmlFor = "artRadio";
+      artLabel.htmlFor = "artTag";
       artLabel.innerHTML = "art";
-      rec.append(artRadio);
+      rec.append(artTag);
       rec.append(artLabel);
+      
+      const architectureTag = document.createElement('input');
+      architectureTag.setAttribute('type', 'checkBox');
+      architectureTag.setAttribute('name', 'sightType');
+      architectureTag.setAttribute('value', 'architecture');
+      architectureTag.setAttribute('id', 'architectureTag')
+      architectureTag.required = true;
+      const architectureLabel = document.createElement('label');
+      architectureLabel.htmlFor = "architectureTag";
+      architectureLabel.innerHTML = "architecture";
+      rec.append(architectureTag);
+      rec.append(architectureLabel);
+
+      const landmarkTag = document.createElement('input');
+      landmarkTag.setAttribute('type', 'checkBox');
+      landmarkTag.setAttribute('name', 'sightType');
+      landmarkTag.setAttribute('value', 'landmark');
+      landmarkTag.setAttribute('id', 'landmarkTag')
+      landmarkTag.required = true;
+      const landmarkLabel = document.createElement('label');
+      landmarkLabel.htmlFor = "landmarkTag";
+      landmarkLabel.innerHTML = "landmark";
+      rec.append(landmarkTag);
+      rec.append(landmarkLabel);
+
+      const natureTag = document.createElement('input');
+      natureTag.setAttribute('type', 'checkBox');
+      natureTag.setAttribute('name', 'sightType');
+      natureTag.setAttribute('value', 'nature');
+      natureTag.setAttribute('id', 'natureTag')
+      natureTag.required = true;
+      const natureLabel = document.createElement('label');
+      natureLabel.htmlFor = "natureTag";
+      natureLabel.innerHTML = "nature";
+      rec.append(natureTag);
+      rec.append(natureLabel);
+
+      const waterTag = document.createElement('input');
+      waterTag.setAttribute('type', 'checkBox');
+      waterTag.setAttribute('name', 'sightType');
+      waterTag.setAttribute('value', 'water');
+      waterTag.setAttribute('id', 'waterTag')
+      waterTag.required = true;
+      const waterLabel = document.createElement('label');
+      waterLabel.htmlFor = "waterTag";
+      waterLabel.innerHTML = "water";
+      rec.append(waterTag);
+      rec.append(waterLabel);
+
+      const otherTag = document.createElement('input');
+      otherTag.setAttribute('type', 'checkBox');
+      otherTag.setAttribute('name', 'sightType');
+      otherTag.setAttribute('value', 'other');
+      otherTag.setAttribute('id', 'otherTag')
+      otherTag.required = true;
+      const waterLabel = document.createElement('label');
+      waterLabel.htmlFor = "otherTag";
+      waterLabel.innerHTML = "other (specify)";
+      rec.append(otherTag);
+      rec.append(waterLabel);
+
+
+
+
 
 
       const sightLocation = document.createElement('input');
@@ -718,17 +783,22 @@
       activityLongitude.setAttribute('id', `sightLong`);
       activityLongitude.setAttribute('name', `sightLong`);
       activityLongitude.setAttribute('class', 'longitude');
-      const selectionList = document.createElement('select');
-      selectionList.setAttribute('id', 'awesomeSelection');
-      selectionList.setAttribute('name', 'awesomeSelection');
-      for (var i = 0; i < sightSelection.length; i++) {
-        const option = document.createElement('option');
-        option.value = sightSelection[i];
-        option.text = sightSelection[i];
-        selectionList.append(option);
-      }
-      selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;text-align-last: center;');
-      selectionList.required = true;
+      // const selectionList = document.createElement('select');
+      // selectionList.setAttribute('id', 'awesomeSelection');
+      // selectionList.setAttribute('name', 'awesomeSelection');
+      // for (var i = 0; i < sightSelection.length; i++) {
+      //   const option = document.createElement('option');
+      //   option.value = sightSelection[i];
+      //   option.text = sightSelection[i];
+      //   selectionList.append(option);
+      // }
+      // selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;text-align-last: center;');
+      // selectionList.required = true;
+
+
+
+
+
 
       const experienceChoices = ['awesome!', 'good', 'ok', 'bad!' ];
       const costChoices = ['$', '$$', '$$$', '$$$$'];
@@ -786,7 +856,7 @@
       cancelButton.setAttribute('onClick', "removeDiv(this)");
       cancelButton.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto;');
       cancelButton.innerHTML = 'cancel';
-      rec.append(selectionList);
+      // rec.append(selectionList);
       rec.append(sightLocation);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
