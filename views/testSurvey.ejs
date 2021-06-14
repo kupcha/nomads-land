@@ -730,7 +730,8 @@
       selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;text-align-last: center;');
       selectionList.required = true;
 
-
+      const experienceChoices = ['awesome!', 'good', 'ok', 'bad!' ];
+      const costChoices = ['$', '$$', '$$$', '$$$$'];
       /* setup experience input */
       const experienceList = document.createElement('select');
       experienceList.setAttribute('id', `experienceSelection${recsMade}`);
