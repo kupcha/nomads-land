@@ -281,43 +281,47 @@
       var indoorTag = document.createElement('input');
       indoorTag.setAttribute('type', 'checkbox');
       indoorTag.setAttribute('value', 'indoors');
-      indoorTag.setAttribute('id', 'indoorTag');
+      indoorTag.setAttribute('id', `indoorTag${activityRecsMade}`);
       indoorTag.setAttribute('name', `activityTag${activityRecsMade}`);
       var indoorLabel = document.createElement("label");
-      indoorLabel.htmlFor = "indoorTag";
+      let indoorLabelText = `indoorTag${activityRecsMade}`
+      indoorLabel.htmlFor = indoorLabelText;
       indoorLabel.innerHTML = "  indoors  ";
       tagDiv.append(indoorTag);
       tagDiv.append(indoorLabel);
 
       var outdoorTag = document.createElement('input');
       outdoorTag.setAttribute('type', 'checkbox');
-      outdoorTag.setAttribute('id', 'outdoorTag');
+      outdoorTag.setAttribute('id', `outdoorTag${activityRecsMade}`);
       outdoorTag.setAttribute('value', 'outdoors');
       outdoorTag.setAttribute('name', `activityTag${activityRecsMade}`);
       var outdoorLabel = document.createElement("label");
-      outdoorLabel.htmlFor = "outdoorTag";
+      let outdoorLabelText = `outdoorTag${activityRecsMade}`;
+      indoorLabel.htmlFor = outdoorLabelText;
       outdoorLabel.innerHTML = "  outdoors ";
       tagDiv.append(outdoorTag);
       tagDiv.append(outdoorLabel);
 
       var seasonalTag = document.createElement('input');
       seasonalTag.setAttribute('type', 'checkbox');
-      seasonalTag.setAttribute('id', 'seasonalTag');
+      seasonalTag.setAttribute('id', `seasonalTag${activityRecsMade}`);
       seasonalTag.setAttribute('name', `activityTag${activityRecsMade}`);
       seasonalTag.setAttribute('value', 'seasonal');
       var seasonalLabel = document.createElement("label");
-      seasonalLabel.htmlFor = "seasonalTag";
+      let seasonalLabelText = `seasonalTag${activityRecsMade}`
+      indoorLabel.htmlFor = seasonalLabelText;
       seasonalLabel.innerHTML = " seasonal ";
       tagDiv.append(seasonalTag);
       tagDiv.append(seasonalLabel);
 
       var activeTag = document.createElement('input');
       activeTag.setAttribute('type', 'checkbox');
-      activeTag.setAttribute('id', 'activeTag');
+      activeTag.setAttribute('id', `activeTag${activityRecsMade}`);
       activeTag.setAttribute('name', `activityTag${activityRecsMade}`);
       activeTag.setAttribute('value', 'active');
       var activeLabel = document.createElement("label");
-      activeLabel.htmlFor = "activeTag";
+      let activeLabelText = `activeTag${activityRecsMade}`
+      indoorLabel.htmlFor = activeLabelText;
       activeLabel.innerHTML = " active ";
       tagDiv.append(activeTag); 
       tagDiv.append(activeLabel);    
@@ -325,10 +329,11 @@
       var leisureTag = document.createElement('input');
       leisureTag.setAttribute('type', 'checkbox');
       leisureTag.setAttribute('name', `activityTag${activityRecsMade}`);
-      leisureTag.setAttribute('id', 'leisureTag');
+      leisureTag.setAttribute('id', `leisureTag${activityRecsMade}`);
       leisureTag.setAttribute('value', 'leisure');
       var leisureLabel = document.createElement("label");
-      leisureLabel.htmlFor = "leisureTag";
+      let leisureLabelText = `leisureTag${activityRecsMade}`
+      indoorLabel.htmlFor = leisureLabelText;
       leisureLabel.innerHTML = " leisure ";
       tagDiv.append(leisureTag); 
       tagDiv.append(leisureLabel);    
@@ -336,10 +341,11 @@
       var soloTag = document.createElement('input');
       soloTag.setAttribute('type', 'checkbox');
       soloTag.setAttribute('name', `activityTag${activityRecsMade}`);
-      soloTag.setAttribute('id', 'soloTag');
+      soloTag.setAttribute('id', `soloTag${activityRecsMade}`);
       soloTag.setAttribute('value', 'solo');
       var soloLabel = document.createElement("label");
-      soloLabel.htmlFor = "soloTag";
+      let soloLabelText = `soloTag${activityRecsMade}`
+      indoorLabel.htmlFor = soloLabelText;
       soloLabel.innerHTML = " solo ";
       tagDiv.append(soloTag);
       tagDiv.append(soloLabel);
@@ -347,10 +353,11 @@
       var intimateTag = document.createElement('input');
       intimateTag.setAttribute('type', 'checkbox');
       intimateTag.setAttribute('name', `activityTag${activityRecsMade}`);
-      intimateTag.setAttribute('id', 'intimateTag');
+      intimateTag.setAttribute('id', `intimateTag${activityRecsMade}`);
       intimateTag.setAttribute('value', 'intimate');
       var intimateLabel = document.createElement("label");
-      intimateLabel.htmlFor = "intimateTag";
+      let intimateLabelText = `intimateTag${activityRecsMade}`;
+      indoorLabel.htmlFor = intimateLabelText;
       intimateLabel.innerHTML = " intimate ";
       tagDiv.append(intimateTag);
       tagDiv.append(intimateLabel);
@@ -359,10 +366,11 @@
       socialTag.setAttribute('type', 'checkbox');
       socialTag.setAttribute('name', `activityTag${activityRecsMade}`);
       socialTag.setAttribute('value', 'social');
-      socialTag.setAttribute('id', 'socialTag');
+      socialTag.setAttribute('id', `socialTag${activityRecsMade}`);
       var socialLabel = document.createElement("label");
-      socialLabel.htmlFor = "intimateTag";
-      socialLabel.innerHTML = " intimate ";
+      let socialLabelText = `socialTag${activityRecsMade}`;
+      indoorLabel.htmlFor = socialLabelText;
+      socialLabel.innerHTML = " social ";
       tagDiv.append(socialTag);
       tagDiv.append(socialLabel);
 
@@ -511,33 +519,36 @@
 
       var breakfastTag = document.createElement('input');
       breakfastTag.setAttribute('type', 'checkbox');
-      breakfastTag.setAttribute('id', 'breakfastTag');
+      breakfastTag.setAttribute('id', `breakfastTag${foodRecsMade}`);
       breakfastTag.setAttribute('value', 'breakfast');
       breakfastTag.setAttribute('name', `foodTag${foodRecsMade}`);
       var breakfastLabel = document.createElement("label");
-      breakfastLabel.htmlFor = "breakfastTag";
+      let breakfastLabelText = `breakfastTag${foodRecsMade}`;
+      indoorLabel.htmlFor = breakfastLabelText;
       breakfastLabel.innerHTML = "  breakfast ";
       tagDiv.append(breakfastTag);
       tagDiv.append(breakfastLabel);
 
       var brunchTag = document.createElement('input');
       brunchTag.setAttribute('type', 'checkbox');
-      brunchTag.setAttribute('id', 'brunchTag');
+      brunchTag.setAttribute('id', `brunchTag${foodRecsMade}`);
       brunchTag.setAttribute('name', `foodTag${activityRecsMade}`);
       brunchTag.setAttribute('value', 'brunch');
       var brunchLabel = document.createElement("label");
-      brunchLabel.htmlFor = "brunchTag";
+      let brunchLabelText = `brunchTag${foodRecsMade}`;
+      indoorLabel.htmlFor = brunchLabelText;
       brunchLabel.innerHTML = " brunch ";
       tagDiv.append(brunchTag);
       tagDiv.append(brunchLabel);
 
       var lunchTag = document.createElement('input');
       lunchTag.setAttribute('type', 'checkbox');
-      lunchTag.setAttribute('id', 'lunchTag');
+      lunchTag.setAttribute('id', `lunchTag${foodRecsMade}`);
       lunchTag.setAttribute('name', `foodTag${foodRecsMade}`);
       lunchTag.setAttribute('value', 'lunch');
       var lunchLabel = document.createElement("label");
-      lunchLabel.htmlFor = "lunchTag";
+      let lunchLabelText = `lunchTag${foodRecsMade}`;
+      indoorLabel.htmlFor = lunchLabelText;
       lunchLabel.innerHTML = " lunch ";
       tagDiv.append(lunchTag); 
       tagDiv.append(lunchLabel);    
@@ -545,10 +556,11 @@
       var dinnerTag = document.createElement('input');
       dinnerTag.setAttribute('type', 'checkbox');
       dinnerTag.setAttribute('name', `foodTag${foodRecsMade}`);
-      dinnerTag.setAttribute('id', 'dinnerTag');
+      dinnerTag.setAttribute('id', `dinnerTag${foodRecsMade}`);
       dinnerTag.setAttribute('value', 'dinner');
       var dinnerLabel = document.createElement("label");
-      dinnerLabel.htmlFor = "dinnerTag";
+      let dinnerLabelText = `dinnerTag${foodRecsMade}`;
+      indoorLabel.htmlFor = dinnerLabelText;
       dinnerLabel.innerHTML = " dinner ";
       tagDiv.append(dinnerTag); 
       tagDiv.append(dinnerLabel);    
@@ -556,10 +568,11 @@
       var dessertTag = document.createElement('input');
       dessertTag.setAttribute('type', 'checkbox');
       dessertTag.setAttribute('name', `foodTag${foodRecsMade}`);
-      dessertTag.setAttribute('id', 'dessertTag');
+      dessertTag.setAttribute('id', `dessertTag${foodRecsMade}`);
       dessertTag.setAttribute('value', 'dessert');
       var dessertLabel = document.createElement("label");
-      dessertLabel.htmlFor = "dessertTag";
+      let dessertLabelText = `dessertTag${foodRecsMade}`;
+      indoorLabel.htmlFor = dessertLabelText;
       dessertLabel.innerHTML = " dessert ";
       tagDiv.append(dessertTag);
       tagDiv.append(dessertLabel);
