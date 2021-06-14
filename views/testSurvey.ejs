@@ -667,7 +667,27 @@
       recDiv.append(rec);
       initAutocomplete(recsMade);
     }
+    function handleTagInput(sightRecsMade){
+      var otherCheck = document.getElementById(`otherTag${sightRecsMade}`);
+      if (otherCheck.checked == true){
+        addTagInput(sightRecsMade);
+      }else{
+        removeTagInput(sightRecsMade);
+      }
+    }
 
+    function addTagInput(sightRecsMade){
+      var tagDiv = document.getElementById(`sightTagDiv${sightRecsMade}`);
+      var otherTagInput = document.createElement('input');
+      otherTagInput.setAttribute('type', 'text');
+      otherTagInput.required = true;
+      tagDiv.append(otherTagInput);
+    }
+
+    function removeTagInput(sightRecsMade){
+      var tagDiv = document.getElementById(`sightTagDiv${sightRecsMade}`);
+      tagDiv.remove();
+    }
 
     function makeAwesomeRec() {
       const recsMadeObject = document.getElementById('recsMade');
@@ -690,7 +710,8 @@
 
 
       var tagDiv = document.createElement('div');
-      tagDiv.setAttribute('style', 'text-align: center')
+      tagDiv.setAttribute('style', 'text-align: center');
+      tagDiv.setAttribute('id', `sightTagDiv${sightRecsMade}`);
       tagDiv.innerHTML += "tags (select all that apply)<br>";
 
 
@@ -758,8 +779,9 @@
       otherTag.setAttribute('type', 'checkBox');
       otherTag.setAttribute('name', 'sightType');
       otherTag.setAttribute('value', 'other');
-      otherTag.setAttribute('id', 'otherTag')
+      otherTag.setAttribute('id', `otherTag${sightRecsMade}`)
       otherTag.required = true;
+      otherTag.setAttribute('onclick', `handleTagInput(${sightRecsMade})`);
       const otherLabel = document.createElement('label');
       otherLabel.htmlFor = "otherTag";
       otherLabel.innerHTML = "other (specify)";
