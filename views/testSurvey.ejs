@@ -243,7 +243,7 @@
       /* setup for experience question */
       const experienceList = document.createElement('select');
       experienceList.setAttribute('id', `experienceSelection${recsMade}`);
-      experienceList.setAttribute('name', 'experienceSelection');
+      experienceList.setAttribute('name', 'activityExperience');
       for (var i = 0; i < experienceChoices.length; i++) {
         const option = document.createElement('option');
         option.value = experienceChoices[i];
@@ -259,7 +259,7 @@
       /* setup for cost question */
       const costList = document.createElement('select');
       costList.setAttribute('id', `costSelection${recsMade}`);
-      costList.setAttribute('name', 'costSelection');
+      costList.setAttribute('name', 'activityCost');
       for (var j = 0; j < costChoices.length; j++) {
         const option = document.createElement('option');
         option.value = costChoices[j];
@@ -482,7 +482,7 @@
       /* setup experience input */
       const experienceList = document.createElement('select');
       experienceList.setAttribute('id', `experienceSelection${recsMade}`);
-      experienceList.setAttribute('name', 'experienceSelection');
+      experienceList.setAttribute('name', 'foodExperience');
       for (var i = 0; i < experienceChoices.length; i++) {
         const option = document.createElement('option');
         option.value = experienceChoices[i];
@@ -498,7 +498,7 @@
       /* setup for cost input */
       const costList = document.createElement('select');
       costList.setAttribute('id', `costSelection${recsMade}`);
-      costList.setAttribute('name', 'costSelection');
+      costList.setAttribute('name', 'foodCost');
       for (var j = 0; j < costChoices.length; j++) {
         const option = document.createElement('option');
         option.value = costChoices[j];
@@ -855,7 +855,7 @@
       /* setup experience input */
       const experienceList = document.createElement('select');
       experienceList.setAttribute('id', `experienceSelection${recsMade}`);
-      experienceList.setAttribute('name', 'experienceSelection');
+      experienceList.setAttribute('name', 'sightExperience');
       for (var i = 0; i < experienceChoices.length; i++) {
         const option = document.createElement('option');
         option.value = experienceChoices[i];
@@ -871,7 +871,7 @@
       /* setup for cost input */
       const costList = document.createElement('select');
       costList.setAttribute('id', `costSelection${recsMade}`);
-      costList.setAttribute('name', 'costSelection');
+      costList.setAttribute('name', 'sightCost');
       for (var j = 0; j < costChoices.length; j++) {
         const option = document.createElement('option');
         option.value = costChoices[j];
@@ -913,6 +913,7 @@
       rec.append(experienceList);
       rec.append(costLabel);
       rec.append(costList);
+      rec.append(descriptionBox);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
       rec.append(cancelButton);
