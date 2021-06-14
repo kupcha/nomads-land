@@ -694,7 +694,7 @@
       artRadio.setAttribute('id', 'artRadio')
       artRadio.required = true;
       const artLabel = document.createElement('label');
-      artLabel.htmlFor('artRadio');
+      artLabel.htmlFor = "artRadio";
       artLabel.innerHTML = "art";
       rec.append(artRadio);
       rec.append(artLabel);
@@ -729,6 +729,57 @@
       }
       selectionList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0;text-align-last: center;');
       selectionList.required = true;
+
+
+      /* setup experience input */
+      const experienceList = document.createElement('select');
+      experienceList.setAttribute('id', `experienceSelection${recsMade}`);
+      experienceList.setAttribute('name', 'experienceSelection');
+      for (var i = 0; i < experienceChoices.length; i++) {
+        const option = document.createElement('option');
+        option.value = experienceChoices[i];
+        option.text = experienceChoices[i];
+        experienceList.append(option);
+      }
+      experienceList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      experienceList.required = true;
+      var label = document.createElement("Label");
+      label.htmlFor = "experienceSelection";
+      label.innerHTML = "experience:";
+
+      /* setup for cost input */
+      const costList = document.createElement('select');
+      costList.setAttribute('id', `costSelection${recsMade}`);
+      costList.setAttribute('name', 'costSelection');
+      for (var j = 0; j < costChoices.length; j++) {
+        const option = document.createElement('option');
+        option.value = costChoices[j];
+        option.text = costChoices[j];
+        costList.append(option);
+      }
+      costList.setAttribute('style', 'display: block; text-align: center;margin-right: auto; margin-left: auto; padding:0; text-align-last: center;');
+      costList.required = true;
+
+      var costLabel = document.createElement("label");
+      costLabel.htmlFor = "costSelection";
+      costLabel.innerHTML = "cost:";
+
+
+
+
+      /* hopefully create text box for optional descriptions */
+      var descriptionBox = document.createElement('textarea');
+      descriptionBox.setAttribute('rows', '4');
+      descriptionBox.setAttribute('cols', '30');
+      descriptionBox.setAttribute('name', `sightDescription${activityRecsMade}`);
+      descriptionBox.setAttribute('id', 'sightDescription');
+      descriptionBox.setAttribute('style', 'display:block; text-align:center;margin-right: auto; margin-left: auto; ')
+      var descriptionLabel = document.createElement("label");
+      descriptionLabel.setAttribute('style', 'display:block');
+      descriptionLabel.htmlFor = "sightDescription";
+      descriptionLabel.innerHTML = "details:";
+
+
       const recDiv = document.getElementById('recList');
       const cancelButton = document.createElement('button');
       cancelButton.setAttribute('onClick', "removeDiv(this)");
