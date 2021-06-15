@@ -242,14 +242,14 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     let activityExperience = survey.activityExperience;
     let activityCost = survey.activityCost;
     
-    let activityTags = new Array(activityRecsMade);
-    if (activityRecsMade > 1){
-      for (var i = 0; i < activityRecsMade; i++){
-        activityTags[i] = survey.activityTags[i];
-      }
-    }else if (activityRecsMade == 1){
-      activityTags[0] = survey.activityTags;
-    }
+    // let activityTags = new Array(activityRecsMade);
+    // if (activityRecsMade > 1){
+    //   for (var i = 0; i < activityRecsMade; i++){
+    //     activityTags[i] = survey.activityTags[i];
+    //   }
+    // }else if (activityRecsMade == 1){
+    //   activityTags[0] = survey.activityTags;
+    // }
   
   
     let activityDescription = survey.activityDescription;
@@ -263,7 +263,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
         activityLocation : activityLocation,
         activityExperience : activityExperience,
         activityCost : activityCost,
-        activityTags : activityTags,
+        // activityTags : activityTags,
         activityComments : activityDescription,
         activityLat : activityLat,
         activityLong : activityLong
@@ -276,7 +276,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
           activityLocation : activityLocation[i],
           activityExperience : activityExperience[i],
           activityCost : activityCost[i],
-          activityTags : activityTags[i],
+          // activityTags : activityTags[i],
           activityComments : activityDescription[i],
           activityLat : activityLat[i],
           activityLong : activityLong[i]
@@ -294,14 +294,14 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     let foodLat = survey.foodLat;
     let foodLong = survey.foodLong;
   
-    let foodTags = new Array (foodRecsMade);
-    if (foodRecsMade > 1){
-      for (var i = 0; i < foodRecsMade; i++){
-        foodTags[i] = survey.foodTags[i];
-      }
-    }else if (foodRecsMade == 1){
-      foodTags[0] = survey.foodTags;
-    }
+    // let foodTags = new Array (foodRecsMade);
+    // if (foodRecsMade > 1){
+    //   for (var i = 0; i < foodRecsMade; i++){
+    //     foodTags[i] = survey.foodTags[i];
+    //   }
+    // }else if (foodRecsMade == 1){
+    //   foodTags[0] = survey.foodTags;
+    // }
   
     let foodRecs = new Array(foodRecsMade);
     if (foodRecsMade > 1){
@@ -314,7 +314,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
           foodComments : foodComments[i],
           foodLat : foodLat[i],
           foodLong : foodLong[i],
-          foodTags : foodTags[i]
+          // foodTags : foodTags[i]
         }
         foodRecs[i] = tempFoodRec;
       }
@@ -327,7 +327,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
         foodComments : foodComments,
         foodLat : foodLat,
         foodLong : foodLong,
-        foodTags : foodTags
+        // foodTags : foodTags
       }
       foodRecs[0] = tempFoodRec;
     }
@@ -338,14 +338,14 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     let sightLat = survey.sightLat;
     let sightLong = survey.sightLong;
   
-    let sightTags = new Array(sightRecsMade);
-    if (sightRecsMade > 1){
-      for (var i = 0; i < sightRecsMade; i++){
-        sightTags[i] = survey.sightTags[i];
-      }
-    }else if (sightRecsMade == 1){
-      sightTags[0] = survey.sightTags;
-    }
+    // let sightTags = new Array(sightRecsMade);
+    // if (sightRecsMade > 1){
+    //   for (var i = 0; i < sightRecsMade; i++){
+    //     sightTags[i] = survey.sightTags[i];
+    //   }
+    // }else if (sightRecsMade == 1){
+    //   sightTags[0] = survey.sightTags;
+    // }
   
     let sightRecs = new Array(sightRecsMade);
     if (sightRecsMade > 1){
