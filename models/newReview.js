@@ -10,41 +10,29 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    seasons: {
-        type: String,
-        required: false
-    },
-    year: {
+    tripLatitude: {
         type: Number,
-        required: false
+        required: true
     },
-    fun: {
-        type: String,
-        required: false
+    tripLongitude: {
+        type: Number,
+        required: true
     },
-    food: {
-        type: String,
-        required: false
+    recsMade: {
+        type: Number,
+        required: true
     },
-    sights: {
-        type: String,
-        required: false
+    activityRecsMade: {
+        type: Number,
+        required: true
     },
-    locals: {
-        type: String,
-        required: false
+    foodRecsMade: {
+        type: Number,
+        required: true
     },
-    price: {
-        type: String,
-        required: false
-    },
-    enviro: {
-        type: String,
-        required: false
-    },
-    mscEnviro: {
-        type: String,
-        required: false
+    sightRecsMade: {
+        type: Number,
+        required: true
     },
     activityRecs: {
         type: [],
@@ -64,6 +52,6 @@ const reviewSchema = new mongoose.Schema({
 });
 
 
-const Review = mongoose.model('Review', reviewSchema);
+const UpdatedReview = mongoose.model('Review', reviewSchema);
 
 module.exports = Review;
