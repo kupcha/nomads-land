@@ -108,10 +108,10 @@ label{
   }
 }
 
-div[name="activityTagDiv"]{
+div[id="activityTagDiv"]{
   max-width: 90%;
 }
-div[name="foodTagDiv"]{
+div[id="foodTagDiv"]{
   max-width: 90%;
 }
 div[name="sightTagDiv"]{
