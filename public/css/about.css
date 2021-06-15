@@ -27,6 +27,7 @@
     font-family: 'messapiabold';
     width: 100%;
     background-color:#d4d3ab ;
+    padding: 10px 10px 10px 10px;
   }
 
   video{
@@ -44,5 +45,10 @@ a:hover{
 }
 
 @media only screen and (max-width: 700px) {
+
+  video{
+    width: 600px;
+    height: 600px;
+  }
 
 }
