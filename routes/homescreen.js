@@ -257,19 +257,34 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     let activityLong = survey.activityLong;
   
     let activityRecs = new Array(activityRecsMade);
-    for (var i = 0; i < activityRecsMade; i++){
+    if (activityRecsMade == 1){
       var tempActivityRec = {
-        activity : activities[i],
-        activityLocation : activityLocations[i],
-        activityExperience : activityExperience[i],
+        activity : activities,
+        activityLocation : activityLocations,
+        activityExperience : activityExperience,
         activityCost : activityCost,
-        activityTags : activityTags[i],
-        activityComments : activityDescription[i],
-        activityLat : activityLat[i],
-        activityLong : activityLong[i]
+        activityTags : activityTags,
+        activityComments : activityDescription,
+        activityLat : activityLat,
+        activityLong : activityLong
       }
-      activityRecs[i] = tempActivityRec;
+      activityRecs[0] = tempActivityRec;
+    }else if (activityRecsMade > 1){
+      for (var i = 0; i < activityRecsMade; i++){
+        var tempActivityRec = {
+          activity : activities[i],
+          activityLocation : activityLocations[i],
+          activityExperience : activityExperience[i],
+          activityCost : activityCost[i],
+          activityTags : activityTags[i],
+          activityComments : activityDescription[i],
+          activityLat : activityLat[i],
+          activityLong : activityLong[i]
+        }
+        activityRecs[i] = tempActivityRec;
+      }
     }
+
   
     let foodLocation = survey.foodLocation;
     let cuisine = survey.cuisine;
@@ -289,21 +304,33 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     }
   
     let foodRecs = new Array(foodRecsMade);
-    for (var i = 0; i < foodRecsMade; i++){
-      var tempFoodRec = {
-        foodLocation : foodLocation[i],
-        cuisine : cuisine[i],
-        foodExperience : foodExperience[i],
-        foodCost : foodCost[i],
-        foodComments : foodComments[i],
-        foodLat : foodLat[i],
-        foodLong : foodLong[i],
-        foodTags : foodTags[i]
+    if (foodRecsMade > 1){
+      for (var i = 0; i < foodRecsMade; i++){
+        var tempFoodRec = {
+          foodLocation : foodLocation[i],
+          cuisine : cuisine[i],
+          foodExperience : foodExperience[i],
+          foodCost : foodCost[i],
+          foodComments : foodComments[i],
+          foodLat : foodLat[i],
+          foodLong : foodLong[i],
+          foodTags : foodTags[i]
+        }
+        foodRecs[i] = tempFoodRec;
       }
-      foodRecs[i] = tempFoodRec;
+    }else if (foodRecsMade == 1){
+      var tempFoodRec = {
+        foodLocation : foodLocation,
+        cuisine : cuisine,
+        foodExperience : foodExperience,
+        foodCost : foodCost,
+        foodComments : foodComments,
+        foodLat : foodLat,
+        foodLong : foodLong,
+        foodTags : foodTags
+      }
+      foodRecs[0] = tempFoodRec;
     }
-  
-  
     let sightLocation = survey.sightLocation;
     let sightExperience = survey.sightExperience;
     let sightCost = survey.sightCost;
@@ -321,17 +348,30 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     }
   
     let sightRecs = new Array(sightRecsMade);
-    for (var i = 0; i < sightRecsMade; i++){
-      let tempSightRec = {
-        sightLocation : sightLocation[i],
-        sightExperience : sightExperience[i],
-        sightCost : sightCost[i],
-        sightComments : sightDescription[i],
-        sightLat : sightLat[i],
-        sightLong : sightLong[i]
+    if (sightRecsMade > 1){
+      for (var i = 0; i < sightRecsMade; i++){
+        let tempSightRec = {
+          sightLocation : sightLocation[i],
+          sightExperience : sightExperience[i],
+          sightCost : sightCost[i],
+          sightComments : sightDescription[i],
+          sightLat : sightLat[i],
+          sightLong : sightLong[i]
+        }
+        sightRecs[i] = tempSightRec;
       }
-      sightRecs[i] = tempSightRec;
+    }else if (sightRecsMade == 1){
+      let tempSightRec = {
+        sightLocation : sightLocation,
+        sightExperience : sightExperience,
+        sightCost : sightCost,
+        sightComments : sightDescription,
+        sightLat : sightLat,
+        sightLong : sightLong
+      }
+      sightRecs[0] = tempSightRec;
     }
+
   
     var newSurvey = {
       email : userEmail,
