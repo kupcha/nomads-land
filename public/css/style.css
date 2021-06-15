@@ -121,7 +121,7 @@ p{
 }
 
 nav{
-  font-size: 18px;
+  font-size: 22px;
   color: white;
 }
 
@@ -181,4 +181,8 @@ a:hover{
   p{
     font-size: 20px;
   }
+}
+
+#icons{
+  text-align: right;
 }
