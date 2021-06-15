@@ -3,7 +3,7 @@ const { requiresAuth } = require('express-openid-connect');
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const Review = require('../models/review');
-const UpdatedRevieweview = require('../models/newReview');
+const Trip = require('../models/trip');
 
 mongoose.connect('mongodb+srv://jimmy-nomad:bettercallmecraig@nomadsland.ss6yb.mongodb.net/nomadsland?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -351,7 +351,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
       sightRecs : sightRecs
     };
   
-    await db.collection('updatedReviews').insertOne(newSurvey);
+    await db.collection('trips').insertOne(newSurvey);
 
   res.send(req.body);
 });
@@ -484,7 +484,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     sightRecs : sightRecs
   };
 
-  await db.collection('updatedReviews').insertOne(newSurvey);
+  await db.collection('trips').insertOne(newSurvey);
 
 
 
