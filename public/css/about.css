@@ -51,4 +51,8 @@ a:hover{
     height: 400px;
   }
 
+  .nomadPromo{
+    max-width: auto;
+  }
+
 }
