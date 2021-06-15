@@ -96,6 +96,10 @@ label{
     background-size: auto 100%;
     background-attachment: scroll;
   }
+
+  .survey{
+    height: 300px;
+  }
   #map {
     display: block;
     text-align: center;
@@ -120,5 +124,9 @@ div[name="sightTagDiv"]{
 
 #tips{
   text-align: center;
+
+}
+
+.class{
 
 }
