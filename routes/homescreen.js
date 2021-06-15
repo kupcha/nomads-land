@@ -402,7 +402,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     activityLong : activityLong,
     recsMade : numberRecsMade,
     activityRecsMade : activityRecsMade,
-    activity : activity,
+    activity : activities,
     activityLocation : activityLocation,
     activityExperience : activityExperience,
     activityCost : activityCost,
@@ -420,7 +420,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     foodLat : foodLat,
     foodLong : foodLong,
     // foodTags : foodTags
-    
+
     sightRecsMade : sightRecsMade,
     sightLocation : sightLocation,
     sightExperience : sightExperience,
