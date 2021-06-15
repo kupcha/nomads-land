@@ -116,9 +116,11 @@ a:hover{
   }
   .survey{
     font-size: 20px;
+    height: 150px;
   }
   .userStats{
     font-size: 20px;
+    height: 170px;
   }
 }
 
