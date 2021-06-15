@@ -179,13 +179,13 @@ var sightLong = document.getElementsByClassName('sightLong');
     <% if (activityRecsMade == 1){ %>
       <h4>do:</h4>
       <div id="tip">
-        tip #1<br>
-        <%= activity %> @<br>
+        <span id="tipNumber">tip #1</span><br>
+        <span id="standout"><%= activity %></span> @<br>
         <span id=tipLocation><%= activityLocation %></span><br>
-        experience: <%= activityExperience %><br>
-        cost: <%= activityCost %><br>
+        <span id="standout">experience:</span> <%= activityExperience %><br>
+        <span id="standout">cost:</span> <%= activityCost %><br>
         <% if (activityComments){ %>
-        comments: <%= activityComments %><br>
+          <span id="standout">comments:</span> <%= activityComments %><br>
         <% } %>
       </div>
     <% }else{ %>

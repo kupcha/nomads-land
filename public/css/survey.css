@@ -126,3 +126,15 @@ div[name="sightTagDiv"]{
   text-align: center;
 
 }
+
+#tipNumber{
+  color: #333333;
+}
+
+#standout{
+  color: #333333;
+}
+
+#tipLocation{
+  color: #84d3eb;
+}
