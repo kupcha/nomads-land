@@ -108,3 +108,10 @@ a:hover{
     max-width: 100%;
   }
 }
+
+.freeGear{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
