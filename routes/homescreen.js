@@ -176,7 +176,7 @@ router.get('/home', requiresAuth(), async function(req, res, next){
   const userEmail = res.locals.user.email;
   const currentNomad = await User.findOne({email: userEmail});
   if (currentNomad){
-    res.render('test', {
+    res.render('home', {
       username: currentNomad.username,
       elevation: currentNomad.elevation,
       trips: currentNomad.trips,

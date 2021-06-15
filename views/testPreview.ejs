@@ -188,7 +188,7 @@ var sightLong = document.getElementsByClassName('sightLong');
           <span id="standout">comments:</span> <%= activityComments %><br>
         <% } %>
       </div>
-    <% }else{ %>
+    <% }else if (activityRecsMade > 1){ %>
       <h4>do:</h4>
       <div id="tipList">
     <% for (var i = 0; i < activityRecsMade; i++){ %>
@@ -216,7 +216,7 @@ var sightLong = document.getElementsByClassName('sightLong');
           <span id="standout">comments:</span> <%= foodComments %>
         <% } %>
       </div>
-    <% }else{ %>
+    <% }else if (foodRecsMade > 1){ %>
       <h4>eat:</h4>
       <div id="tipList">
     <% for (var i = 0; i < foodRecsMade; i++){ %>
@@ -243,7 +243,7 @@ var sightLong = document.getElementsByClassName('sightLong');
           <span id="standout">comments:</span> <%= sightComments %>
         <% } %>
       </div>
-    <% }else{ %>
+    <% }else if (sightRecsMade > 1){ %>
       <h4>see:</h4>
       <div id="tipList">
     <% for (var i = 0; i < sightRecsMade; i++){ %>
