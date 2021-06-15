@@ -44,11 +44,35 @@ a:hover{
   text-decoration: none;
 }
 
+.joinButton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #f47c3c;
+  background-color: white;
+  color: #333333;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #333333;
+}
+
+.joinButton:hover {background-color: #9cac8c}
+
+.joinButton:active {
+  background-color: #6c7d85;
+  box-shadow: 0 5px #333333;
+  transform: translateY(4px);
+}
+
 @media only screen and (max-width: 700px) {
 
   video{
-    width: 300px;
-    height: 300px;
+    width: 310px;
+    height: 310px;
   }
 
   #nomadPromo{
