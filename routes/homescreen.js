@@ -238,7 +238,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     var tripLocation = survey.location;
   
     var activities = survey.activity;
-    let activityLocations = survey.activityLocation;
+    let activityLocation = survey.activityLocation;
     let activityExperience = survey.activityExperience;
     let activityCost = survey.activityCost;
     
@@ -260,7 +260,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     if (activityRecsMade == 1){
       var tempActivityRec = {
         activity : activities,
-        activityLocation : activityLocations,
+        activityLocation : activityLocation,
         activityExperience : activityExperience,
         activityCost : activityCost,
         activityTags : activityTags,
@@ -273,7 +273,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
       for (var i = 0; i < activityRecsMade; i++){
         var tempActivityRec = {
           activity : activities[i],
-          activityLocation : activityLocations[i],
+          activityLocation : activityLocation[i],
           activityExperience : activityExperience[i],
           activityCost : activityCost[i],
           activityTags : activityTags[i],
