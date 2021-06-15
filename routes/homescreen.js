@@ -432,8 +432,4 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
   });
 });
 
-router.get('/testAbout', requiresAuth(), function(req, res, next){
-  res.render('testAbout');
-});
-
 module.exports = router;
