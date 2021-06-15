@@ -11,27 +11,27 @@ const reviewSchema = new mongoose.Schema({
         required: true
     },
     tripLatitude: {
-        type: Double,
+        type: Number,
         required: true
     },
     tripLongitude: {
-        type: Double,
+        type: Number,
         required: true
     },
     recsMade: {
-        type: Integer,
+        type: Number,
         required: true
     },
     activityRecsMade: {
-        type: Integer,
+        type: Number,
         required: true
     },
     foodRecsMade: {
-        type: Integer,
+        type: Number,
         required: true
     },
     sightRecsMade: {
-        type: Integer,
+        type: Number,
         required: true
     },
     activityRecs: {
