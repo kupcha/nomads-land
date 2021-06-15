@@ -393,7 +393,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     userTrips+=1;
     db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, tips: userTips}});
     await db.collection('trips').insertOne(newSurvey);
-  res.redirect('testPreview', {
+  res.render('testPreview', {
     userEmail : userEmail,
     tripLocation : tripLocation,
     tripLat : tripLat,
