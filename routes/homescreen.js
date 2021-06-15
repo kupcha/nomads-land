@@ -238,7 +238,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     var tripLocation = survey.location;
   
     var activities = survey.activity;
-    let activityLocations = survey.activityLocations;
+    let activityLocations = survey.activityLocation;
     let activityExperience = survey.activityExperience;
     let activityCost = survey.activityCost;
     
