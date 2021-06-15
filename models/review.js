@@ -10,41 +10,29 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    seasons: {
-        type: String,
-        required: false
+    tripLatitude: {
+        type: Double,
+        required: true
     },
-    year: {
-        type: Number,
-        required: false
+    tripLongitude: {
+        type: Double,
+        required: true
     },
-    fun: {
-        type: String,
-        required: false
+    recsMade: {
+        type: Integer,
+        required: true
     },
-    food: {
-        type: String,
-        required: false
+    activityRecsMade: {
+        type: Integer,
+        required: true
     },
-    sights: {
-        type: String,
-        required: false
+    foodRecsMade: {
+        type: Integer,
+        required: true
     },
-    locals: {
-        type: String,
-        required: false
-    },
-    price: {
-        type: String,
-        required: false
-    },
-    enviro: {
-        type: String,
-        required: false
-    },
-    mscEnviro: {
-        type: String,
-        required: false
+    sightRecsMade: {
+        type: Integer,
+        required: true
     },
     activityRecs: {
         type: [],

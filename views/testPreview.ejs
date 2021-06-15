@@ -129,12 +129,12 @@ var sightLong = document.getElementsByClassName('sightLong');
     <input type="hidden" id="sightRecsMade" value="<%= sightRecsMade %>">
     <% if (activityRecsMade == 1){ %>
       <input type="hidden" class="activityLocation" value="<%= activityLocation %>">
-      <input type="hidden" class="activityLat" value="<%= activityLats %>">
+      <input type="hidden" class="activityLat" value="<%= activityLat %>">
       <input type="hidden" class="activityLong" value="<%= activityLong %>">
     <% }else if (activityRecsMade > 1) { %>
     <% for (var i = 0; i < recsMade; i++){ %>
       <input type="hidden" class="activityLocation" value="<%= activityLocation[i] %>">
-      <input type="hidden" class="activityLat" value="<%= activityLats[i] %>">
+      <input type="hidden" class="activityLat" value="<%= activityLat[i] %>">
       <input type="hidden" class="activityLong" value="<%= activityLong[i] %>">
     <% } %>
     <% } %>
@@ -168,7 +168,7 @@ var sightLong = document.getElementsByClassName('sightLong');
   <br><br>
   <div class="survey" id="survey">
     <h1> my trip to<br><span class="place">
-        <%= location %>
+        <%= tripLocation %>
       </span></h1>
     <br><br>
   </div>
