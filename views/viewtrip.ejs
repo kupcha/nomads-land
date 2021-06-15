@@ -208,7 +208,7 @@ var sightLong = document.getElementsByClassName('sightLong');
       <h4>eat:</h4>
       <div id="tip">
         <span id="tipNumber">tip #1</span><br>
-        <span id="standout"><%= cuisine %> @</span><br>
+        <span id="standout"><%= cuisine %></span> @<br>
         <span id="tipLocation"><%= foodLocation %></span><br>
         <span id="standout">experience:</span> <%= foodExperience %><br>
         <span id="standout">cost:</span> <%= foodCost %><br>
@@ -222,7 +222,7 @@ var sightLong = document.getElementsByClassName('sightLong');
     <% for (var i = 0; i < foodRecsMade; i++){ %>
       <div id="tip<%= i %>">
         <span id="tipNumber">tip #<%= i + 1 %></span><br>
-        <span id="standout"><%= cuisine[i] %> @</span><br>
+        <span id="standout"><%= cuisine[i] %></span> @<br>
         <span id="tipLocation"><%= foodLocation[i] %></span><br>
         <span id="standout">experience:</span> <%= foodExperience[i] %>
         <span id="standout">cost:</span> <%= foodCost[i] %>
@@ -268,7 +268,7 @@ var sightLong = document.getElementsByClassName('sightLong');
   ></script>
 
   <br><br>
-  <a href="/profile">back home</a>
+  <a href="/home">back home</a>
 </body>
 
 </html>

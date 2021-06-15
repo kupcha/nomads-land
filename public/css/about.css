@@ -19,6 +19,10 @@
     text-align: center;
   }
 
+  nav{
+    text-align: left;
+  }
+
   body {
     font-family: 'messapiabold';
     width: 100%;
