@@ -31,7 +31,7 @@ body {
   font-family: 'messapiabold';
   margin: 0 auto;
   border: 5px solid #333333;
-  color: white;
+  color: #f47c3c;
   max-width: 1400px;
   
 
@@ -121,7 +121,6 @@ p{
 }
 
 nav{
-  font-size: 20px;
   color: white;
   max-width: 1400px;
   max-height: 35px;
