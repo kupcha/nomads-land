@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
  
 
-const reviewSchema = new mongoose.Schema({
+const tripSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
@@ -52,6 +52,6 @@ const reviewSchema = new mongoose.Schema({
 });
 
 
-const UpdatedReview = mongoose.model('UpdatedReview', reviewSchema);
+const Trip = mongoose.model('Trip', tripSchema);
 
-module.exports = UpdatedReview;
+module.exports = Trip;
