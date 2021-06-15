@@ -386,175 +386,50 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
       foodRecs : foodRecs,
       sightRecs : sightRecs
     };
+    var currUser = await User.findOne({email: userEmail});
+    var userTrips = currUser.trips;
+    var userTips = parseInt(currUser.tips);
+    userTips += numberRecsMade;
+    userTrips+=1;
+    db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, tips: userTips}});
     await db.collection('trips').insertOne(newSurvey);
-  res.send(req.body);
-});
-
-router.post('/testPreview', requiresAuth(), async function(req, res, next){
-  /* user information = email linked to every review */
-  var userEmail = res.locals.user.email;
-  var survey = req.body;
-
-  var recsMade = survey.recsMade;
-  var numberRecsMade = parseInt(recsMade);
-  var activityRecsMade = parseInt(survey.activityRecsMade);
-  var foodRecsMade = parseInt(survey.foodRecsMade);
-  var sightRecsMade = parseInt(survey.sightRecsMade);
-  var tripLat = survey.tripLat;
-  var tripLong = survey.tripLong;
-  var tripLocation = survey.location;
-
-  var activities = survey.activty;
-  let activityLocations = survey.activityLocations;
-  let activityExperience = survey.activityExperience;
-  let activityCost = survey.activityCost;
-  
-  let activityTags = new Array(activityRecsMade);
-  if (activityRecsMade > 1){
-    for (var i = 0; i < activityRecsMade; i++){
-      activityTags[i] = survey.activityTags[i];
-    }
-  }else{
-    activityTags[0] = survey.activityTags;
-  }
-
-
-  let activityDescription = survey.activityDescription;
-  let activityLat = survey.activityLat;
-  let activityLong = survey.activityLong;
-
-  let activityRecs = new Array(activityRecsMade);
-  for (var i = 0; i < activityRecsMade; i++){
-    var tempActivityRec = {
-      activity : activities[i],
-      activityLocation : activityLocations[i],
-      activityExperience : activityExperience[i],
-      activityCost : activityCost,
-      activityTags : activityTags[i],
-      activityComments : activityDescription[i],
-      activityLat : activityLat[i],
-      activityLong : activityLong[i]
-    }
-    activityRecs[i] = tempActivityRec;
-  }
-
-  let foodLocation = survey.foodLocation;
-  let cuisine = survey.cuisine;
-  let foodExperience = survey.foodExperience;
-  let foodCost = survey.foodCost;
-  let foodComments = survey.foodComments;
-  let foodLat = survey.foodLat;
-  let foodLong = survey.foodLong;
-
-  let foodTags = new Array (foodRecsMade);
-  if (foodRecsMade > 1){
-    for (var i = 0; i < foodRecsMade; i++){
-      foodTags[i] = survey.foodTags[i];
-    }
-  }else{
-    foodTags[0] = survey.foodTags;
-  }
-
-  let foodRecs = new Array(foodRecsMade);
-  for (var i = 0; i < foodRecsMade; i++){
-    var tempFoodRec = {
-      foodLocation : foodLocation[i],
-      cuisine : cuisine[i],
-      foodExperience : foodExperience[i],
-      foodCost : foodCost[i],
-      foodComments : foodComments[i],
-      foodLat : foodLat[i],
-      foodLong : foodLong[i],
-      foodTags : foodTags[i]
-    }
-    foodRecs[i] = tempFoodRec;
-  }
-
-
-  let sightLocation = survey.sightLocation;
-  let sightExperience = survey.sightExperience;
-  let sightCost = survey.sightCost;
-  let sightDescription = survey.sightDescription;
-  let sightLat = survey.sightLat;
-  let sightLong = survey.sightLong;
-
-  let sightTags = new Array(sightRecsMade);
-  if (sightRecsMade > 1){
-    for (var i = 0; i < sightRecsMade; i++){
-      sightTags[i] = survey.sightTags[i];
-    }
-  }else{
-    sightTags[0] = survey.sightTags;
-  }
-
-  let sightRecs = new Array(sightRecsMade);
-  for (var i = 0; i < sightRecsMade; i++){
-    let tempSightRec = {
-      sightLocation : sightLocation[i],
-      sightExperience : sightExperience[i],
-      sightCost : sightCost[i],
-      sightComments : sightDescription[i],
-      sightLat : sightLat[i],
-      sightLong : sightLong[i]
-    }
-    sightRecs[i] = tempSightRec;
-  }
-
-
-
-
-
-  var newSurvey = {
-    email : userEmail,
-    location : tripLocation,
-    tripLatitude : tripLat,
-    tripLongitude : tripLong,
-    recsMade : recsMade,
-    activityRecsMade : activityRecsMade,
-    foodRecsMade : foodRecsMade,
-    sightRecsMade : sightRecsMade,
-    activityRecs : activityRecs,
-    foodRecs : foodRecs,
-    sightRecs : sightRecs
-  };
-
-  await db.collection('trips').insertOne(newSurvey);
-
-
-
-
-
-
-
-
-  // var foodLat = survey.foodLat;
-  // var foodLong = survey.foodLong;
-  // var sightLong = survey.sightLong;
-  // var sightLat = survey.sightLat;
-  // var foodLocation = survey.foodLocation;
-  // var sightLocation = survey.sightLocation;
-
-  res.render('testPreview', {
+  res.redirect('testPreview', {
     userEmail : userEmail,
     tripLocation : tripLocation,
     tripLat : tripLat,
     tripLong : tripLong,
-    activityLats : activityLats,
+    activityLats : activityLat,
     activityLong : activityLong,
     recsMade : numberRecsMade,
-    foodRecsMade : foodRecsMade,
-    sightRecsMade : sightRecsMade,
     activityRecsMade : activityRecsMade,
+    activity : activity,
     activityLocation : activityLocation,
-    foodLong : foodLong,
-    foodLat : foodLat,
-    sightLong : sightLong,
-    sightLat : sightLat,
+    activityExperience : activityExperience,
+    activityCost : activityCost,
+    // activityTags : activityTags,
+    activityComments : activityDescription,
+    activityLat : activityLat,
+    activityLong : activityLong,
+
+    foodRecsMade : foodRecsMade,
     foodLocation : foodLocation,
-    sightLocation : sightLocation
+    cuisine : cuisine,
+    foodExperience : foodExperience,
+    foodCost : foodCost,
+    foodComments : foodComments,
+    foodLat : foodLat,
+    foodLong : foodLong,
+    // foodTags : foodTags
+    
+    sightRecsMade : sightRecsMade,
+    sightLocation : sightLocation,
+    sightExperience : sightExperience,
+    sightCost : sightCost,
+    sightComments : sightDescription,
+    sightLat : sightLat,
+    sightLong : sightLong
+
   });
-
 });
-
 
 module.exports = router;
