@@ -193,7 +193,7 @@ var sightLong = document.getElementsByClassName('sightLong');
       <div id="tipList">
     <% for (var i = 0; i < activityRecsMade; i++){ %>
       <div id="tip<%= i %>">
-        <span id="tipNumber">tip #<%= i %><br></span>
+        <span id="tipNumber">tip #<%= i + 1 %><br></span>
         <span id="standout"><%= activity %></span> @
         <span id=tipLocation><%= activityLocation[i] %></span><br>
         <span id="standout">experience:</span> <%= activityExperience[i] %>
@@ -221,7 +221,7 @@ var sightLong = document.getElementsByClassName('sightLong');
       <div id="tipList">
     <% for (var i = 0; i < foodRecsMade; i++){ %>
       <div id="tip<%= i %>">
-        <span id="tipNumber">tip #<%= i %></span><br>
+        <span id="tipNumber">tip #<%= i + 1 %></span><br>
         <span id="standout"><%= cuisine[i] %> @</span><br>
         <span id="tipLocation"><%= foodLocation[i] %></span><br>
         <span id="standout">experience:</span> <%= foodExperience[i] %>
@@ -232,16 +232,29 @@ var sightLong = document.getElementsByClassName('sightLong');
       </div>
     <% } %>
     <% } %>
-    <h4>see:</h4>
     <% if (sightRecsMade == 1){ %>
+      <h4>see:</h4>
       <div id="tip">
-        1. <%= sightLocation %>
+        <span id="tipNumber">tip #1</span><br>
+        <span id="tipLocation"><%= sightLocation %></span><br>
+        <span id="standout">experience:</span> <%= sightExperience %>
+        <span id="standout">cost:</span> <%= sightCost %>
+        <% if (sightComments){ %>
+          <span id="standout">comments:</span> <%= sightComments %>
+        <% } %>
       </div>
     <% }else{ %>
+      <h4>see:</h4>
       <div id="tipList">
     <% for (var i = 0; i < sightRecsMade; i++){ %>
       <div id="tip<%= i %>">
-        <%= i + 1 %>. <%= sightLocation[i] %> <br>
+        <span id="tipNumber">tip #<%= i + 1 %></span><br>
+        <span id="tipLocation"><%= sightLocation[i] %></span><br>
+        <span id="standout">experience:</span> <%= sightExperience[i] %>
+        <span id="standout">cost:</span> <%= sightCost[i] %>
+        <% if (sightComments){ %>
+          <span id="standout">comments:</span> <%= sightComments[i] %>
+        <% } %>
       </div>
     <% } %>
     <% } %>

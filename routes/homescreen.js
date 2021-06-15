@@ -31,7 +31,7 @@ router.get('/', async function (req, res, next) {
     // }else{
     //   res.redirect('profile');
     // }
-    res.redirect('profile');
+    res.redirect('home');
   } else {
     res.render('welcome');
   }
@@ -172,7 +172,7 @@ router.post('/profile', requiresAuth(), async function(req, res, next) {
   res.redirect('profile');
 })
 
-router.get('/test', requiresAuth(), async function(req, res, next){
+router.get('/home', requiresAuth(), async function(req, res, next){
   const userEmail = res.locals.user.email;
   const currentNomad = await User.findOne({email: userEmail});
   if (currentNomad){
