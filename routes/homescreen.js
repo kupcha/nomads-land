@@ -215,7 +215,7 @@ router.post('/submit', requiresAuth(), function(req, res, next){
   //     userEmail : userEmail
   //   })
   // }
-  res.render('testSurvey',{
+  res.render('submit',{
     userEmail : userEmail,
     location : destination,
     tripLat : lat,
@@ -223,7 +223,7 @@ router.post('/submit', requiresAuth(), function(req, res, next){
   });
 });
 
-router.post('/testPreview', requiresAuth(), async function(req, res, next){
+router.post('/viewtrip', requiresAuth(), async function(req, res, next){
     /* user information = email linked to every review */
     var userEmail = res.locals.user.email;
     var survey = req.body;
@@ -393,7 +393,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     userTrips+=1;
     db.collection('users').findOneAndUpdate({email: userEmail}, { $set: {trips : userTrips, tips: userTips}});
     await db.collection('trips').insertOne(newSurvey);
-  res.render('testPreview', {
+  res.render('viewtrip', {
     userEmail : userEmail,
     tripLocation : tripLocation,
     tripLat : tripLat,

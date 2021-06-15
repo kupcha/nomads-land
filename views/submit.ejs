@@ -932,7 +932,7 @@
         <%= location %>
       </span></h1>
       <h3>in the end we'll create a map with your tips that you and other nomads can view</h3>
-    <form action="/testPreview" method="post" name="tripReviewForm" id="tripReviewForm"
+    <form action="/viewtrip" method="post" name="tripReviewForm" id="tripReviewForm"
       onsubmit="this.querySelectorAll('input').forEach(i => i.disabled = false)">
       <input type="hidden" id="location" name="location" required value="<%= location %>"
         style="text-align: center;width:fit-content"><br>
