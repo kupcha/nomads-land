@@ -26,7 +26,11 @@
   body {
     font-family: 'messapiabold';
     width: 100%;
-    background-color:#9cac8c ;
+    background-color:#d4d3ab ;
+  }
+
+  video{
+    padding: 10px 10px 10px 10px;
   }
 
 a{
