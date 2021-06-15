@@ -197,7 +197,7 @@ router.get('/home', requiresAuth(), async function(req, res, next){
   }
 });
 
-router.post('/testSurvey', requiresAuth(), function(req, res, next){
+router.post('/submit', requiresAuth(), function(req, res, next){
   const answer = req.body;
   const destination = answer.location;
   const lat = answer.lat;
