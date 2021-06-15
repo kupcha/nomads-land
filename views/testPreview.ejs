@@ -176,16 +176,30 @@ var sightLong = document.getElementsByClassName('sightLong');
   <div id="map"></div><br>
   <div id="tips">
     <h3><b>your tips: </b></h3>
-    <h4>do:</h4>
     <% if (activityRecsMade == 1){ %>
+      <h4>do:</h4>
       <div id="tip">
-        1. <%= activityLocation %>
+        tip #1<br>
+        <%= activity %> @
+        <span id=tipLocation><%= activityLocation %></span>
+        experience: <%= activityExperience %>
+        cost: <%= activityCost %>
+        <% if (activityComments){ %>
+        comments: <%= activityComments %>
+        <% } %>
       </div>
     <% }else{ %>
+      <h4>do:</h4>
       <div id="tipList">
     <% for (var i = 0; i < activityRecsMade; i++){ %>
       <div id="tip<%= i %>">
-        <%= i + 1 %>. <%= activityLocation[i] %> <br>
+        <%= activity %> @
+        <span id=tipLocation><%= activityLocation[i] %></span>
+        experience: <%= activityExperience[i] %>
+        cost: <%= activityCost[i] %>
+        <% if (activityComments[i]){ %>
+        comments: <%= activityComments[i] %>
+        <% } %>
       </div>
     <% } %>
     <% } %>
