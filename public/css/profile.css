@@ -90,6 +90,13 @@ a:hover{
   color:#f47c3c;
   text-decoration: none;
 }
+.survey{
+  height: 300px;
+}
+
+.userStats{
+  height: 300px;
+}
 
 @media only screen and (max-width: 700px) {
   body{
@@ -107,6 +114,12 @@ a:hover{
   #pac-input{
     max-width: 100%;
   }
+  .survey{
+    font-size: 20px;
+  }
+  .userStats{
+    font-size: 20px;
+  }
 }
 
 #freeGear{
@@ -115,3 +128,4 @@ a:hover{
   margin-right: auto;
 
 }
+
