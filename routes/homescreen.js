@@ -247,7 +247,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
       for (var i = 0; i < activityRecsMade; i++){
         activityTags[i] = survey.activityTags[i];
       }
-    }else{
+    }else if (activityRecsMade == 1){
       activityTags[0] = survey.activityTags;
     }
   
@@ -284,7 +284,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
       for (var i = 0; i < foodRecsMade; i++){
         foodTags[i] = survey.foodTags[i];
       }
-    }else{
+    }else if (foodRecsMade == 1){
       foodTags[0] = survey.foodTags;
     }
   
@@ -316,7 +316,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
       for (var i = 0; i < sightRecsMade; i++){
         sightTags[i] = survey.sightTags[i];
       }
-    }else{
+    }else if (sightRecsMade == 1){
       sightTags[0] = survey.sightTags;
     }
   
@@ -333,16 +333,12 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
       sightRecs[i] = tempSightRec;
     }
   
-  
-  
-  
-  
     var newSurvey = {
       email : userEmail,
       location : tripLocation,
       tripLatitude : tripLat,
       tripLongitude : tripLong,
-      recsMade : recsMade,
+      recsMade : numberRecsMade,
       activityRecsMade : activityRecsMade,
       foodRecsMade : foodRecsMade,
       sightRecsMade : sightRecsMade,
@@ -350,9 +346,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
       foodRecs : foodRecs,
       sightRecs : sightRecs
     };
-  
     await db.collection('trips').insertOne(newSurvey);
-
   res.send(req.body);
 });
 
