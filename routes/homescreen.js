@@ -240,17 +240,79 @@ router.post('/testPreview', requiresAuth(), function(req, res, next){
   var tripLong = survey.tripLong;
   var tripLocation = survey.location;
 
-  var activityLocation = survey.activityLocation;
-  var foodLat = survey.foodLat;
-  var foodLong = survey.foodLong;
-  var sightLong = survey.sightLong;
-  var sightLat = survey.sightLat;
-  var foodLocation = survey.foodLocation;
-  var sightLocation = survey.sightLocation;
+  var activities = survey.activty;
+  let activityLocations = survey.activityLocations;
+  let activityExperience = survey.activityExperience;
+  let activityCost = survey.activityTags;
+  
+  let activityTags = new Array(activityRecsMade);
+  if (activityRecsMade > 1){
+    for (var i = 0; i < activityRecsMade; i++){
+      activityTags[i] = survey.activityTags[i];
+    }
+  }else{
+    activityTags[0] = survey.activityTags;
+  }
+
+
+  let activityDescription = survey.activityDescription;
+  let activityLat = survey.activityLat;
+  let activityLong = survey.activityLong;
+
+  let foodLocation = survey.foodLocation;
+  let cuisine = survey.cuisine;
+  let foodExperience = survey.foodExperience;
+  let foodCost = survey.foodCost;
+  let foodComments = survey.foodComments;
+  let foodLat = survey.foodLat;
+  let foodLong = survey.foodLong;
+
+  let foodTags = new Array (foodRecsMade);
+  if (foodRecsMade > 1){
+    for (var i = 0; i < foodRecsMade; i++){
+      foodTags[i] = survey.foodTags[i];
+    }
+  }else{
+    foodTags[0] = survey.foodTags;
+  }
+
+
+  let sightLocation = survey.sightLocation;
+  let sightExperience = survey.sightExperience;
+  let sightCost = survey.sightCost;
+  let sightDescription = survey.sightDescription;
+  let sightLat = survey.sightLat;
+  let sightLong = survey.sightLong;
+
+  let sightTags = new Array(sightRecsMade);
+  if (sightRecsMade > 1){
+    for (var i = 0; i < sightRecsMade; i++){
+      sightTags[i] = survey.sightTags[i];
+    }
+  }else{
+    sightTags[0] = survey.sightTags;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  // var foodLat = survey.foodLat;
+  // var foodLong = survey.foodLong;
+  // var sightLong = survey.sightLong;
+  // var sightLat = survey.sightLat;
+  // var foodLocation = survey.foodLocation;
+  // var sightLocation = survey.sightLocation;
 
   res.render('testPreview', {
     userEmail : userEmail,
-    location : location,
+    tripLocation : tripLocation,
     tripLat : tripLat,
     tripLong : tripLong,
     activityLats : activityLats,

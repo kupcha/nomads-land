@@ -108,7 +108,15 @@ label{
   }
 }
 
-
+div[name="activityTagDiv"]{
+  max-width: 90%;
+}
+div[name="foodTagDiv"]{
+  max-width: 90%;
+}
+div[name="sightTagDiv"]{
+  max-width: 90%;
+}
 
 #tips{
   text-align: center;
