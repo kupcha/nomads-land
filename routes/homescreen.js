@@ -334,7 +334,7 @@ router.post('/testPreview', requiresAuth(), async function(req, res, next){
     let sightLocation = survey.sightLocation;
     let sightExperience = survey.sightExperience;
     let sightCost = survey.sightCost;
-    let sightDescription = survey.sightDescription;
+    let sightDescription = survey.sightComments;
     let sightLat = survey.sightLat;
     let sightLong = survey.sightLong;
   

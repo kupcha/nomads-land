@@ -250,9 +250,9 @@ var sightLong = document.getElementsByClassName('sightLong');
       <div id="tip<%= i %>">
         <span id="tipNumber">tip #<%= i + 1 %></span><br>
         <span id="tipLocation"><%= sightLocation[i] %></span><br>
-        <span id="standout">experience:</span> <%= sightExperience[i] %>
-        <span id="standout">cost:</span> <%= sightCost[i] %>
-        <% if (sightComments){ %>
+        <span id="standout">experience:</span> <%= sightExperience[i] %><br>
+        <span id="standout">cost:</span> <%= sightCost[i] %><br>
+        <% if (sightComments[i]){ %>
           <span id="standout">comments:</span> <%= sightComments[i] %>
         <% } %>
       </div>
