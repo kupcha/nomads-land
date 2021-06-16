@@ -123,6 +123,9 @@ a:hover{
     font-size: 20px;
     height: 250px;
   }
+  nav{
+    font-size: 18px;
+  }
 }
 
 #freeGear{
