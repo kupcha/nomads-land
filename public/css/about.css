@@ -29,8 +29,7 @@
   video{
     padding: 10px 10px 10px 10px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
   }
 
   form{
@@ -78,8 +77,6 @@ a:hover{
   video{
     width: 335px;
     height: 335px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   #nomadPromo{
