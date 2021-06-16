@@ -315,7 +315,7 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
           cuisine : cuisine[i],
           foodExperience : foodExperience[i],
           foodCost : foodCost[i],
-          foodComments : foodComments[i],
+          foodComments : foodDescription[i],
           foodLat : foodLat[i],
           foodLong : foodLong[i],
           // foodTags : foodTags[i]
@@ -328,7 +328,7 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
         cuisine : cuisine,
         foodExperience : foodExperience,
         foodCost : foodCost,
-        foodComments : foodComments,
+        foodComments : foodDescription,
         foodLat : foodLat,
         foodLong : foodLong,
         // foodTags : foodTags
@@ -358,7 +358,7 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
           sightLocation : sightLocation[i],
           sightExperience : sightExperience[i],
           sightCost : sightCost[i],
-          sightComments : sightDescription[i],
+          sightComments : sightComments[i],
           sightLat : sightLat[i],
           sightLong : sightLong[i]
         }
@@ -369,7 +369,7 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
         sightLocation : sightLocation,
         sightExperience : sightExperience,
         sightCost : sightCost,
-        sightComments : sightDescription,
+        sightComments : sightComments,
         sightLat : sightLat,
         sightLong : sightLong
       }

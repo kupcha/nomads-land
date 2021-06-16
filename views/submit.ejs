@@ -649,7 +649,7 @@
       descriptionBox.setAttribute('style', 'display:block; text-align:center;margin-right: auto; margin-left: auto; ')
       var descriptionLabel = document.createElement("label");
       descriptionLabel.setAttribute('style', 'display:block');
-      descriptionLabel.htmlFor = "foodDescription";
+      descriptionLabel.htmlFor = `foodDescription${foodRecsMade}`;
       descriptionLabel.innerHTML = "details:";
 
 
@@ -902,7 +902,7 @@
       descriptionBox.setAttribute('style', 'display:block; text-align:center;margin-right: auto; margin-left: auto; ')
       var descriptionLabel = document.createElement("label");
       descriptionLabel.setAttribute('style', 'display:block');
-      descriptionLabel.htmlFor = "sightDescription";
+      descriptionLabel.htmlFor = `sightDescription${activityRecsMade}`;
       descriptionLabel.innerHTML = "details:";
 
 
@@ -933,7 +933,7 @@
     <h1> my trip to<br><span class="place">
         <%= location %>
       </span></h1>
-      <h3>in the end we'll create a map with your tips that you and other nomads can view</h3>
+      <h3>submit your trip when you are done to see a map of your tips!</h3>
     <form action="/viewtrip" method="post" name="tripReviewForm" id="tripReviewForm"
       onsubmit="this.querySelectorAll('input').forEach(i => i.disabled = false)">
       <input type="hidden" id="location" name="location" required value="<%= location %>"
