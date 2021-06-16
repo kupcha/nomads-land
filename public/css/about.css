@@ -16,12 +16,8 @@
    html {
     font-weight: bold;
     font-size:larger;
-    text-align: center;
   }
 
-  nav{
-    text-align: left;
-  }
 
   body {
     font-family: 'messapiabold';
@@ -79,4 +75,28 @@ a:hover{
     max-width: auto;
   }
 
+}
+
+nav {
+  margin: 0;
+  overflow: hidden;
+  max-height: 45px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0 6px;
+}
+nav ul li a {
+  display: block;
+  text-decoration: none;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
 }
