@@ -67,6 +67,10 @@ router.get('/about', function (req, res, next) {
   res.render('about');
 });
 
+router.post('/about', function (req, res, next){
+  res.redirect('/about');
+});
+
 
 router.get('/callback', requiresAuth(), function (req, res, next) {
   res.redirect('about', {
