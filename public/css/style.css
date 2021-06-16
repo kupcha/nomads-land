@@ -122,10 +122,31 @@ p{
 
 nav{
   color: white;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: 20px;
+}
+
+nav {
+  margin: 0;
+  overflow: hidden;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+nav ul li a {
+  display: block;
+  line-height: 3em;
+  padding: 1em 3em;
+  text-decoration: none;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
 }
 
 a{
