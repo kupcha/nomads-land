@@ -74,6 +74,7 @@ a:hover{
 @media only screen and (max-width: 700px) {
 
   video{
+    display: block;
     width: 335px;
     height: 335px;
   }
