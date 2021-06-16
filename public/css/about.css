@@ -27,9 +27,7 @@
   }
 
   video{
-    padding: 10px 10px 10px 10px;
-    align-items: center;
-    align-content: center;
+    text-align: center;
     margin: auto;
   }
 
@@ -84,6 +82,10 @@ a:hover{
     max-width: auto;
   }
 
+}
+
+#nomadPromo{
+  text-align: center;
 }
 
 nav {
