@@ -28,7 +28,8 @@
 
   video{
     padding: 10px 10px 10px 10px;
-    text-align: center;
+    align-items: center;
+    align-content: center;
     margin: auto;
   }
 
