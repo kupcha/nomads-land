@@ -76,6 +76,8 @@ a:hover{
   video{
     width: 335px;
     height: 335px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #nomadPromo{
