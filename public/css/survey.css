@@ -98,6 +98,8 @@ label{
     background-image: url('/images/surveyBackground.jpg');
     background-size: auto 100%;
     background-attachment: scroll;
+    height: 100%;
+    width: auto;
   }
 
   .survey{
