@@ -98,8 +98,13 @@ label{
   }
 
   .survey{
-    height: 300px;
+    height: auto;
   }
+
+  nav{
+    font-size: 18px;
+  }
+
   #map {
     display: block;
     text-align: center;
