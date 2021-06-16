@@ -278,6 +278,7 @@
       tagDiv.setAttribute('style', 'text-align: center')
       tagDiv.innerHTML += "tags (select all that apply)<br>";
       tagDiv.setAttribute('id', 'activityTagDiv')
+      tagDiv.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
       /* create list of tags to describe the activity */
       var indoorTag = document.createElement('input');
       indoorTag.setAttribute('type', 'checkbox');
@@ -517,7 +518,8 @@
       var tagDiv = document.createElement('div');
       tagDiv.setAttribute('style', 'text-align: center')
       tagDiv.innerHTML += "tags (select all that apply)<br>";
-      tagDiv.setAttribute('id', 'foodTagDiv')
+      tagDiv.setAttribute('id', 'foodTagDiv');
+      tagDiv.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
 
       var breakfastTag = document.createElement('input');
       breakfastTag.setAttribute('type', 'checkbox');
@@ -737,6 +739,7 @@
       tagDiv.setAttribute('style', 'text-align: center');
       tagDiv.setAttribute('name', 'sightTagDiv');
       tagDiv.setAttribute('id', `sightTagDiv${sightRecsMade}`);
+      tagDiv.setAttribute('style', 'display: block; text-align: center; padding:0;margin-right: auto; margin-left: auto');
       tagDiv.innerHTML += "tags (select all that apply)<br>";
 
 
