@@ -88,6 +88,7 @@ a:hover{
 
 #nomadPromo{
   text-align: center;
+  display: block;
 }
 
 nav {
