@@ -64,7 +64,7 @@ router.get('/profile', requiresAuth(), async function (req, res, next) {
 
 
 router.get('/about', function (req, res, next) {
-  res.render('about')
+  res.render('about');
 });
 
 
