@@ -384,7 +384,7 @@
       descriptionBox.setAttribute('style', 'display:block; text-align:center;margin-right: auto; margin-left: auto; ')
       var descriptionLabel = document.createElement("label");
       descriptionLabel.setAttribute('style', 'display:block');
-      descriptionLabel.htmlFor = "activityDescription";
+      descriptionLabel.htmlFor = `activityDescription${activityRecsMade}`;
       descriptionLabel.innerHTML = "details:";
 
 
@@ -679,6 +679,7 @@
       rec.append(costLabel);
       rec.append(costList);
       rec.append(tagDiv);
+      rec.append(descriptionLabel);
       rec.append(descriptionBox);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
@@ -918,6 +919,7 @@
       rec.append(experienceList);
       rec.append(costLabel);
       rec.append(costList);
+      rec.append(descriptionLabel);
       rec.append(descriptionBox);
       rec.append(activityLatitude);
       rec.append(activityLongitude);
