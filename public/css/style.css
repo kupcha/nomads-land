@@ -148,6 +148,11 @@ a:hover{
   text-decoration: none;
 }
 
+img[name="whitenomad"]:hover{
+  color:#333333;
+  text-decoration: none;
+}
+
 #howItWorks{
   color:#f47c3c;
 }
