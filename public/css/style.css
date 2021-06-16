@@ -133,7 +133,7 @@ nav {
 nav ul {
   margin: 0;
   padding: 0;
-  display: flex;
+  display: inline;
 }
 nav ul li {
   display: inline-block;
