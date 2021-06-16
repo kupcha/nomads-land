@@ -139,3 +139,28 @@ div[name="sightTagDiv"]{
 h4{
   color: #84d3eb;
 }
+
+nav {
+  margin: 0;
+  overflow: hidden;
+  max-height: 45px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0 6px;
+  margin: auto 0;
+}
+nav ul li a {
+  display: block;
+  text-decoration: none;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
+}
