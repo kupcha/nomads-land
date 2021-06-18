@@ -429,7 +429,7 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
     sightLocation : sightLocation,
     sightExperience : sightExperience,
     sightCost : sightCost,
-    sightComments : sightDescription,
+    sightComments : sightComments,
     sightLat : sightLat,
     sightLong : sightLong
 
