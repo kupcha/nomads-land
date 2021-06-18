@@ -108,6 +108,7 @@ router.post('/profile', requiresAuth(), async function(req, res, next) {
   var recsMade = survey.recsMade;
   var numberRecsMade = parseInt(recsMade);
 
+  
   var activitySelection = survey.activitySelection;
   var activityDescription = survey.activityDescription;
   var activityLocation = survey.activityLocation;
