@@ -294,7 +294,7 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
     let cuisine = survey.cuisine;
     let foodExperience = survey.foodExperience;
     let foodCost = survey.foodCost;
-    let foodComments = survey.foodComments;
+    let foodComments = survey.foodDescription;
     let foodLat = survey.foodLat;
     let foodLong = survey.foodLong;
   
@@ -315,7 +315,7 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
           cuisine : cuisine[i],
           foodExperience : foodExperience[i],
           foodCost : foodCost[i],
-          foodComments : foodDescription[i],
+          foodComments : foodComments[i],
           foodLat : foodLat[i],
           foodLong : foodLong[i],
           // foodTags : foodTags[i]
@@ -328,7 +328,7 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
         cuisine : cuisine,
         foodExperience : foodExperience,
         foodCost : foodCost,
-        foodComments : foodDescription,
+        foodComments : foodComments,
         foodLat : foodLat,
         foodLong : foodLong,
         // foodTags : foodTags
@@ -338,7 +338,7 @@ router.post('/viewtrip', requiresAuth(), async function(req, res, next){
     let sightLocation = survey.sightLocation;
     let sightExperience = survey.sightExperience;
     let sightCost = survey.sightCost;
-    let sightDescription = survey.sightComments;
+    let sightComments = survey.sightComments;
     let sightLat = survey.sightLat;
     let sightLong = survey.sightLong;
   
